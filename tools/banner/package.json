@@ -3,6 +3,6 @@
   "private": true,
   "description": "Rendert das README-Banner docs/assets/banner.png; die Screenshots zeichnet Vitrine.exe --screenshots",
   "dependencies": {
-    "playwright-core": "1.64.1"
+    "playwright-core": "1.65.0"
   }
 }
