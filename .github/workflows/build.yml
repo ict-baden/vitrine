@@ -400,7 +400,7 @@ jobs:
       - name: Pakete an Installationstest und Release übergeben
         # Actions-Cache des Repos (eigener Speicher, nicht der geteilte Artefaktspeicher). Schlüssel je Lauf und Versuch;
         # beim erneuten Start nur der gescheiterten Jobs finden msi-test und release über restore-keys den letzten Versuch.
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: |
             dist
@@ -437,7 +437,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Pakete aus dem Bau-Job
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: |
             dist
@@ -494,7 +494,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Geprüfte Pakete
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: |
             dist
