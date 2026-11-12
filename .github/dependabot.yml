@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: nuget
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      nuget:
+        patterns: ["*"]
+    # Diese Sprünge wechseln die Lizenz und sind nach richtlinien/02 nicht erlaubt (siehe CLAUDE.md):
+    ignore:
+      # WiX: 5.x ist MS-RL, ab 6.0 gilt die OSMF-EULA (Gebühr für Firmen)
+      - dependency-name: "WixToolset.*"
+        update-types: ["version-update:semver-major"]
+      # Windows-Kontobroker: msalruntime.dll steht ab NativeInterop 0.20.6 unter Lizenzbedingungen, die die Weitergabe
+      # verbieten (Abschnitt 3 e); Broker ab 4.84.2 zieht 0.20.6 nach. MSAL bleibt deshalb auf 4.84.1, NativeInterop auf
+      # 0.20.4 (MIT). Erst nach Lizenzprüfung anheben (CLAUDE.md, docs/entra-id.md):
+      # https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/6118
+      - dependency-name: "Microsoft.Identity.Client"
+        versions: [">= 4.84.2"]
+      - dependency-name: "Microsoft.Identity.Client.Broker"
+        versions: [">= 4.84.2"]
+      - dependency-name: "Microsoft.Identity.Client.NativeInterop"
+        versions: [">= 0.20.5"]
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+  # Banner der Doku (playwright-core, tools/banner)
+  - package-ecosystem: npm
+    directory: "/tools/banner"
+    schedule:
+      interval: monthly

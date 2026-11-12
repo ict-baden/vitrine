@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Maschinell vorübersetzt – TODO-übersetzen: vor der ersten öffentlichen Version von Muttersprachlern prüfen lassen. Besonders unsichere Einträge tragen zusätzlich den Kommentar „TODO-übersetzen“. -->
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="About_Impressum" xml:space="preserve">
+    <value>法律声明（Impressum）</value>
+  </data>
+  <data name="About_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="About_LanguageDefault" xml:space="preserve">
+    <value>默认（{0}）</value>
+  </data>
+  <data name="About_LanguageManaged" xml:space="preserve">
+    <value>由你的组织通过策略设置。</value>
+  </data>
+  <data name="About_Language_Desc" xml:space="preserve">
+    <value>你在此计算机上的个人选择。西班牙语、法语和中文为机器翻译，尚未经过审校。</value>
+  </data>
+  <data name="About_Licence" xml:space="preserve">
+    <value>许可证</value>
+  </data>
+  <data name="About_LicenceText" xml:space="preserve">
+    <value>{0} · 基于 MIT 许可证的自由开源软件</value>
+  </data>
+  <data name="About_NoData" xml:space="preserve">
+    <value>此软件不会向 ICT-Baden 发送任何数据。</value>
+  </data>
+  <data name="About_NoData_Desc" xml:space="preserve">
+    <value>Microsoft Entra ID 登录直接发送至 Microsoft。详细信息请参阅“数据和隐私”。</value>
+  </data>
+  <data name="About_Notices" xml:space="preserve">
+    <value>第三方许可证</value>
+  </data>
+  <data name="About_Notices_Desc" xml:space="preserve">
+    <value>Microsoft Authentication Library (MSAL)、Windows SDK 投影、.NET 和 WPF。</value>
+  </data>
+  <data name="About_Privacy" xml:space="preserve">
+    <value>数据和隐私</value>
+  </data>
+  <data name="About_Publisher" xml:space="preserve">
+    <value>由 {0} 提供的工具</value>
+  </data>
+  <data name="About_ShowLicence" xml:space="preserve">
+    <value>显示许可证</value>
+  </data>
+  <data name="About_ShowNotices" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="About_Source" xml:space="preserve">
+    <value>源代码</value>
+  </data>
+  <data name="About_Support" xml:space="preserve">
+    <value>帮助和支持</value>
+  </data>
+  <data name="About_Support_Desc" xml:space="preserve">
+    <value>通过 GitHub 免费获取支持；签订支持合同可获得有保障的服务。</value>
+  </data>
+  <data name="About_TextMissing" xml:space="preserve">
+    <value>此安装包中不包含该文本。在线查看：{0}</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>关于 Vitrine</value>
+  </data>
+  <data name="About_Version" xml:space="preserve">
+    <value>版本 {0} · 内部版本 {1} · .NET {2}</value>
+  </data>
+  <data name="About_Website" xml:space="preserve">
+    <value>网站</value>
+  </data>
+  <data name="Admin_EventSourceRegistered" xml:space="preserve">
+    <value>已注册事件源“{0}”。</value>
+  </data>
+  <data name="Admin_Exit" xml:space="preserve">
+    <value>退出 Vitrine</value>
+  </data>
+  <data name="Admin_OpenSettings" xml:space="preserve">
+    <value>打开设置</value>
+  </data>
+  <data name="App_Description" xml:space="preserve">
+    <value>适用于 Windows 的透明屏幕锁定</value>
+  </data>
+  <data name="App_Tagline" xml:space="preserve">
+    <value>只可看，不可碰。</value>
+  </data>
+  <data name="Audit_Enabled" xml:space="preserve">
+    <value>写入审计日志</value>
+  </data>
+  <data name="Audit_Enabled_Desc" xml:space="preserve">
+    <value>可检测篡改：每个条目都包含前一条目的 SHA-256。</value>
+  </data>
+  <data name="Audit_EventLog" xml:space="preserve">
+    <value>Windows 事件日志</value>
+  </data>
+  <data name="Audit_EventLog_Desc" xml:space="preserve">
+    <value>应用程序日志，源为“ICT-Baden Vitrine”。该源由安装程序或“Vitrine.exe --register-eventlog”创建。</value>
+  </data>
+  <data name="Audit_Folder" xml:space="preserve">
+    <value>文件夹</value>
+  </data>
+  <data name="Audit_Folder_Desc" xml:space="preserve">
+    <value>留空 = %ProgramData%\ICT-Baden\Vitrine\Logs</value>
+  </data>
+  <data name="Audit_LockState" xml:space="preserve">
+    <value>记录锁定和解锁</value>
+  </data>
+  <data name="Audit_LockState_Desc" xml:space="preserve">
+    <value>关闭：仅记录失败尝试、签名和更改。</value>
+  </data>
+  <data name="Audit_Network" xml:space="preserve">
+    <value>在网络共享上保存副本</value>
+  </data>
+  <data name="Audit_Network_Desc" xml:space="preserve">
+    <value>例如 \\server\audit$\Vitrine – 每一行也会追加到该位置。</value>
+  </data>
+  <data name="Audit_NoLog" xml:space="preserve">
+    <value>尚无审计日志。</value>
+  </data>
+  <data name="Audit_OpenFolder" xml:space="preserve">
+    <value>打开文件夹</value>
+  </data>
+  <data name="Audit_Recent" xml:space="preserve">
+    <value>最新条目</value>
+  </data>
+  <data name="Audit_Verify" xml:space="preserve">
+    <value>验证链</value>
+  </data>
+  <data name="Common_Browse" xml:space="preserve">
+    <value>浏览…</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Common_Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="Common_ManagedByPolicy" xml:space="preserve">
+    <value>由你的组织通过策略设置</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="Common_Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Entra_Broker" xml:space="preserve">
+    <value>使用 Windows 帐户代理 (WAM)</value>
+  </data>
+  <data name="Entra_Broker_Desc" xml:space="preserve">
+    <value>关闭（推荐）：Vitrine 在自己的窗口中登录，不记住任何内容 – 安全密钥 (FIDO2)、通行密钥、密码或 Authenticator，任何帐户，锁屏上也可用。开启：Windows Hello 企业版和基于设备的条件访问，但代理会记住帐户并使用 Windows 会话的帐户登录 – 仅适用于只有一个个人用户的设备。</value>
+  </data>
+  <data name="Entra_Client" xml:space="preserve">
+    <value>应用程序(客户端) ID</value>
+  </data>
+  <data name="Entra_Fresh" xml:space="preserve">
+    <value>始终重新登录</value>
+  </data>
+  <data name="Entra_Fresh_Desc" xml:space="preserve">
+    <value>如果不启用此选项，现有的 Microsoft 会话可能无需任何输入即可解锁。</value>
+  </data>
+  <data name="Entra_MaxAge" xml:space="preserve">
+    <value>登录的最长有效时间（秒）</value>
+  </data>
+  <data name="Entra_MaxAge_Desc" xml:space="preserve">
+    <value>如果 Microsoft 提供 auth_time，则对其进行检查。0 = 不检查。</value>
+  </data>
+  <data name="Entra_Redirect" xml:space="preserve">
+    <value>重定向 URI</value>
+  </data>
+  <data name="Entra_RedirectPlaceholder" xml:space="preserve">
+    <value>&lt;应用程序 ID&gt;</value>
+  </data>
+  <data name="Entra_Redirect_Desc" xml:space="preserve">
+    <value>在应用注册的“移动和桌面应用程序”下输入此 URI。</value>
+  </data>
+  <data name="Entra_SetupTitle" xml:space="preserve">
+    <value>3 步完成设置</value>
+  </data>
+  <data name="Entra_Step1" xml:space="preserve">
+    <value>1. 在 Microsoft Entra 管理中心创建应用注册（“Vitrine”，仅此组织目录中的帐户）。</value>
+  </data>
+  <data name="Entra_Step2" xml:space="preserve">
+    <value>2. 添加“移动和桌面应用程序”平台，输入下方的重定向 URI，启用“允许公共客户端流”。</value>
+  </data>
+  <data name="Entra_Step3" xml:space="preserve">
+    <value>3. 在此处输入应用程序 ID 和目录 ID。可选：创建应用角色“Vitrine.Admin”/“Vitrine.Unlock”。</value>
+  </data>
+  <data name="Entra_Tenant" xml:space="preserve">
+    <value>目录(租户) ID</value>
+  </data>
+  <data name="Entra_Tenant_Desc" xml:space="preserve">
+    <value>GUID 或域，例如 contoso.onmicrosoft.com。</value>
+  </data>
+  <data name="Entra_Tenants" xml:space="preserve">
+    <value>其他允许的租户</value>
+  </data>
+  <data name="Entra_Tenants_Desc" xml:space="preserve">
+    <value>仅在使用“organizations”或多个租户时需要。每行一个租户 ID。</value>
+  </data>
+  <data name="Entra_Test" xml:space="preserve">
+    <value>测试连接</value>
+  </data>
+  <data name="Entra_TestAdmin" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="Entra_TestAdminYes" xml:space="preserve">
+    <value>是（应用角色 Vitrine.Admin 或全局管理员）</value>
+  </data>
+  <data name="Entra_TestButton" xml:space="preserve">
+    <value>测试登录</value>
+  </data>
+  <data name="Entra_TestGroups" xml:space="preserve">
+    <value>组/角色</value>
+  </data>
+  <data name="Entra_TestMayUnlock" xml:space="preserve">
+    <value>可以解锁</value>
+  </data>
+  <data name="Entra_TestNoGroups" xml:space="preserve">
+    <value>–（未配置组声明）</value>
+  </data>
+  <data name="Entra_TestObjectId" xml:space="preserve">
+    <value>对象 ID</value>
+  </data>
+  <data name="Entra_TestRunning" xml:space="preserve">
+    <value>正在登录…</value>
+  </data>
+  <data name="Entra_TestSessionUser" xml:space="preserve">
+    <value>会话用户</value>
+  </data>
+  <data name="Entra_TestSignedIn" xml:space="preserve">
+    <value>登录身份</value>
+  </data>
+  <data name="Entra_TestTenant" xml:space="preserve">
+    <value>租户</value>
+  </data>
+  <data name="Entra_Test_Desc" xml:space="preserve">
+    <value>使用当前值（包括未保存的值）为你登录，并显示 Vitrine 获取到的信息。</value>
+  </data>
+  <data name="Error_VIT0003" xml:space="preserve">
+    <value>无法加载插件 {0}：{1}</value>
+  </data>
+  <data name="Error_VIT0004" xml:space="preserve">
+    <value>插件 {0}：ID“{1}”已被使用。</value>
+  </data>
+  <data name="Error_VIT0005" xml:space="preserve">
+    <value>{0} 已被其他程序占用。</value>
+  </data>
+  <data name="Error_VIT0006" xml:space="preserve">
+    <value>保存失败：{0}</value>
+  </data>
+  <data name="Error_VIT0007" xml:space="preserve">
+    <value>保存已取消 – 需要管理员权限。</value>
+  </data>
+  <data name="Error_VIT0008" xml:space="preserve">
+    <value>配置文件无效：{0}</value>
+  </data>
+  <data name="Error_VIT0009" xml:space="preserve">
+    <value>操作失败：{0}</value>
+  </data>
+  <data name="Error_VIT0010" xml:space="preserve">
+    <value>意外错误：{0}</value>
+  </data>
+  <data name="Error_VIT0011" xml:space="preserve">
+    <value>无法保存语言：{0}</value>
+  </data>
+  <data name="Error_VIT0013" xml:space="preserve">
+    <value>未加载插件 {0}：标准用户可以更改“Plugins”文件夹。请使用 MSI 安装 Vitrine。</value>
+  </data>
+  <data name="Error_VIT0014" xml:space="preserve">
+    <value>未应用配置：在管理员批准后配置已被更改。</value>
+  </data>
+  <data name="Error_VIT0210" xml:space="preserve">
+    <value>其他程序已占用本地接口的名称；Vitrine 不提供该接口。</value>
+  </data>
+  <data name="Event_AppStarted" xml:space="preserve">
+    <value>已启动</value>
+  </data>
+  <data name="Event_AppStopped" xml:space="preserve">
+    <value>已停止</value>
+  </data>
+  <data name="Event_ConfigChanged" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Event_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="Event_FailureActionTriggered" xml:space="preserve">
+    <value>已执行操作</value>
+  </data>
+  <data name="Event_Locked" xml:space="preserve">
+    <value>已锁定</value>
+  </data>
+  <data name="Event_PromptClosed" xml:space="preserve">
+    <value>对话框已关闭</value>
+  </data>
+  <data name="Event_PromptShown" xml:space="preserve">
+    <value>对话框</value>
+  </data>
+  <data name="Event_SignatureFailed" xml:space="preserve">
+    <value>签名失败</value>
+  </data>
+  <data name="Event_SignatureGranted" xml:space="preserve">
+    <value>已签名</value>
+  </data>
+  <data name="Event_UnlockDenied" xml:space="preserve">
+    <value>已拒绝</value>
+  </data>
+  <data name="Event_UnlockFailed" xml:space="preserve">
+    <value>失败尝试</value>
+  </data>
+  <data name="Event_Unlocked" xml:space="preserve">
+    <value>已解锁</value>
+  </data>
+  <data name="Footer_AllSaved" xml:space="preserve">
+    <value>所有更改均已保存</value>
+  </data>
+  <data name="Footer_Discard" xml:space="preserve">
+    <value>放弃</value>
+  </data>
+  <data name="Footer_NotSavedYet" xml:space="preserve">
+    <value>尚未保存 – 当前使用默认值。</value>
+  </data>
+  <data name="Footer_RedirectCopied" xml:space="preserve">
+    <value>已复制重定向 URI</value>
+  </data>
+  <data name="Footer_Reloaded" xml:space="preserve">
+    <value>已重新加载 – 由策略设置的项：{0}</value>
+  </data>
+  <data name="Footer_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Footer_Saved" xml:space="preserve">
+    <value>已保存</value>
+  </data>
+  <data name="Footer_Unsaved" xml:space="preserve">
+    <value>未保存的更改</value>
+  </data>
+  <data name="Home_AfterMinutes" xml:space="preserve">
+    <value>{0} 分钟后</value>
+  </data>
+  <data name="Home_AutoLock" xml:space="preserve">
+    <value>自动锁定</value>
+  </data>
+  <data name="Home_Hint" xml:space="preserve">
+    <value>程序保持可见，但任何人都无法操作。</value>
+  </data>
+  <data name="Home_Hotkey" xml:space="preserve">
+    <value>快捷键</value>
+  </data>
+  <data name="Home_LastUnlocked" xml:space="preserve">
+    <value>上次由 {0} 解锁。</value>
+  </data>
+  <data name="Home_LockNow" xml:space="preserve">
+    <value>立即锁定</value>
+  </data>
+  <data name="Home_Notices" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="Home_StatusReady" xml:space="preserve">
+    <value>就绪 – 未锁定</value>
+  </data>
+  <data name="Home_UnlockWith" xml:space="preserve">
+    <value>解锁方式</value>
+  </data>
+  <data name="Info_About" xml:space="preserve">
+    <value>许可证、法律声明和隐私</value>
+  </data>
+  <data name="Info_About_Desc" xml:space="preserve">
+    <value>版本、许可证、第三方许可证，以及法律声明、隐私和支持的链接。</value>
+  </data>
+  <data name="Info_CommandLine" xml:space="preserve">
+    <value>命令行</value>
+  </data>
+  <data name="Info_CommandLine_Desc" xml:space="preserve">
+    <value>Vitrine.exe [--lock | --settings | --verify-log 文件 | --register-eventlog] · 重命名为 .scr：屏幕保护程序</value>
+  </data>
+  <data name="Info_DeviceConfig" xml:space="preserve">
+    <value>设备配置</value>
+  </data>
+  <data name="Info_Managed" xml:space="preserve">
+    <value>集中管理</value>
+  </data>
+  <data name="Info_Managed_Desc" xml:space="preserve">
+    <value>适用于组策略和 Intune 的 ADMX 模板位于“policy”文件夹中。策略始终优先。</value>
+  </data>
+  <data name="Info_ReloadPolicy" xml:space="preserve">
+    <value>重新加载策略</value>
+  </data>
+  <data name="Info_Version" xml:space="preserve">
+    <value>版本 {0}</value>
+  </data>
+  <data name="Int_Interface" xml:space="preserve">
+    <value>面向业务应用程序的接口</value>
+  </data>
+  <data name="Int_NoPlugins" xml:space="preserve">
+    <value>未加载插件。文件夹：{0}</value>
+  </data>
+  <data name="Int_OnFailed" xml:space="preserve">
+    <value>失败尝试时</value>
+  </data>
+  <data name="Int_OnLock" xml:space="preserve">
+    <value>锁定时</value>
+  </data>
+  <data name="Int_OnPrompt" xml:space="preserve">
+    <value>对话框出现时</value>
+  </data>
+  <data name="Int_OnUnlock" xml:space="preserve">
+    <value>解锁时</value>
+  </data>
+  <data name="Int_Pipe" xml:space="preserve">
+    <value>本地接口（命名管道）</value>
+  </data>
+  <data name="Int_PipeEvents" xml:space="preserve">
+    <value>（事件以 JSON 行形式提供）</value>
+  </data>
+  <data name="Int_Pipe_Desc" xml:space="preserve">
+    <value>LIMS、MES 或仪器软件可以查询状态、锁定并请求电子签名。</value>
+  </data>
+  <data name="Int_Plugins" xml:space="preserve">
+    <value>加载登录插件</value>
+  </data>
+  <data name="Int_Plugins_Desc" xml:space="preserve">
+    <value>从 Vitrine.exe 旁的“Plugins”文件夹加载实现 IAuthProvider 的 DLL – 例如用于你的 GxP 用户管理的适配器。</value>
+  </data>
+  <data name="Int_Scripts" xml:space="preserve">
+    <value>脚本</value>
+  </data>
+  <data name="Int_Scripts_Desc" xml:space="preserve">
+    <value>命令通过 cmd.exe 在后台运行。变量：%VITRINE_EVENT%、%VITRINE_TRIGGER%、%VITRINE_USER%、%VITRINE_METHOD%、%VITRINE_CODE%、%VITRINE_TIME%。</value>
+  </data>
+  <data name="Key_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="Key_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="Key_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="Key_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="Lock_Autostart" xml:space="preserve">
+    <value>随 Windows 启动</value>
+  </data>
+  <data name="Lock_Autostart_Desc" xml:space="preserve">
+    <value>登录后 Vitrine 在通知区域中启动。按用户设置。</value>
+  </data>
+  <data name="Lock_BlockMouse" xml:space="preserve">
+    <value>固定鼠标指针</value>
+  </data>
+  <data name="Lock_BlockMouse_Desc" xml:space="preserve">
+    <value>关闭：指针可以移动（例如用于指示某处）；单击仍被阻止。</value>
+  </data>
+  <data name="Lock_During" xml:space="preserve">
+    <value>锁定期间</value>
+  </data>
+  <data name="Lock_Hotkey" xml:space="preserve">
+    <value>快捷键</value>
+  </data>
+  <data name="Lock_HotkeyNeedsModifier" xml:space="preserve">
+    <value>请使用 Ctrl、Alt 或 Win</value>
+  </data>
+  <data name="Lock_Hotkey_Desc" xml:space="preserve">
+    <value>单击该字段，然后按下所需的组合键。按 Del 可清除。</value>
+  </data>
+  <data name="Lock_Idle" xml:space="preserve">
+    <value>空闲时锁定</value>
+  </data>
+  <data name="Lock_Idle_Desc" xml:space="preserve">
+    <value>无键盘或鼠标输入的分钟数。0 = 关闭。</value>
+  </data>
+  <data name="Lock_KeepAwake" xml:space="preserve">
+    <value>保持屏幕开启</value>
+  </data>
+  <data name="Lock_KeepAwake_Desc" xml:space="preserve">
+    <value>锁定期间阻止屏幕保护程序和睡眠。</value>
+  </data>
+  <data name="Lock_OnStartup" xml:space="preserve">
+    <value>启动时立即锁定</value>
+  </data>
+  <data name="Lock_OnStartup_Desc" xml:space="preserve">
+    <value>适用于启动后仅供观察的控制室和测量电脑。</value>
+  </data>
+  <data name="Lock_ReplaceWinL" xml:space="preserve">
+    <value>Win + L 使用 Vitrine 锁定</value>
+  </data>
+  <data name="Lock_ReplaceWinL_Desc" xml:space="preserve">
+    <value>代替 Windows 锁屏界面，未锁定时同样有效。Vitrine 运行期间，Ctrl + Alt + Del 界面中不显示“锁定”。</value>
+  </data>
+  <data name="Lock_Schedule" xml:space="preserve">
+    <value>计划</value>
+  </data>
+  <data name="Lock_Schedule_Desc" xml:space="preserve">
+    <value>在固定时间锁定。每行一个条目：18:00  或  07:30@{0}</value>
+  </data>
+  <data name="Lock_Triggers" xml:space="preserve">
+    <value>触发条件</value>
+  </data>
+  <data name="Look_Accent" xml:space="preserve">
+    <value>主题色</value>
+  </data>
+  <data name="Look_AccentWindows" xml:space="preserve">
+    <value>Windows 主题色</value>
+  </data>
+  <data name="Look_Blank" xml:space="preserve">
+    <value>遮盖</value>
+  </data>
+  <data name="Look_Blank_Desc" xml:space="preserve">
+    <value>屏幕被遮盖 – 适用于机密数据。程序继续运行。</value>
+  </data>
+  <data name="Look_Clock" xml:space="preserve">
+    <value>在遮盖的屏幕上显示时钟</value>
+  </data>
+  <data name="Look_Dim" xml:space="preserve">
+    <value>调暗</value>
+  </data>
+  <data name="Look_Dim_Desc" xml:space="preserve">
+    <value>0% = 完全清晰，100% = 黑色。适用于“透明”。</value>
+  </data>
+  <data name="Look_HideCursor" xml:space="preserve">
+    <value>隐藏鼠标指针</value>
+  </data>
+  <data name="Look_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Look_LanguageSystem" xml:space="preserve">
+    <value>Windows 语言</value>
+  </data>
+  <data name="Look_Language_Desc" xml:space="preserve">
+    <value>此设备的默认设置。每位用户都可以在“关于”窗口中选择自己的语言，除非策略已设置语言。</value>
+  </data>
+  <data name="Look_Logo" xml:space="preserve">
+    <value>对话框中的公司徽标</value>
+  </data>
+  <data name="Look_LogoFilter" xml:space="preserve">
+    <value>图像 (*.png;*.jpg)|*.png;*.jpg;*.jpeg</value>
+  </data>
+  <data name="Look_Logo_Desc" xml:space="preserve">
+    <value>PNG 或 JPG，显示在名称上方。</value>
+  </data>
+  <data name="Look_Message" xml:space="preserve">
+    <value>提示文本</value>
+  </data>
+  <data name="Look_Message_Desc" xml:space="preserve">
+    <value>显示在底部的栏中，例如“测量进行中 – 请勿触碰”。</value>
+  </data>
+  <data name="Look_Pill" xml:space="preserve">
+    <value>显示提示栏</value>
+  </data>
+  <data name="Look_Preview" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="Look_PreviewLocked" xml:space="preserve">
+    <value>🔒 已锁定</value>
+  </data>
+  <data name="Look_Preview_Desc" xml:space="preserve">
+    <value>短暂锁定 – 按常规方式解锁。</value>
+  </data>
+  <data name="Look_TestLock" xml:space="preserve">
+    <value>测试锁定</value>
+  </data>
+  <data name="Look_Transparent" xml:space="preserve">
+    <value>透明</value>
+  </data>
+  <data name="Look_Transparent_Desc" xml:space="preserve">
+    <value>程序保持可见 – 适合观察测量和过程。</value>
+  </data>
+  <data name="Look_What" xml:space="preserve">
+    <value>锁定期间显示什么？</value>
+  </data>
+  <data name="Method_PinShort" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="Method_Windows" xml:space="preserve">
+    <value>Windows 密码</value>
+  </data>
+  <data name="Method_WindowsShort" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Nav_Audit" xml:space="preserve">
+    <value>审计日志</value>
+  </data>
+  <data name="Nav_Entra" xml:space="preserve">
+    <value>Microsoft Entra ID</value>
+  </data>
+  <data name="Nav_Home" xml:space="preserve">
+    <value>概述</value>
+  </data>
+  <data name="Nav_Info" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Nav_Integration" xml:space="preserve">
+    <value>集成和脚本</value>
+  </data>
+  <data name="Nav_Lock" xml:space="preserve">
+    <value>锁定</value>
+  </data>
+  <data name="Nav_Look" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Nav_Unlock" xml:space="preserve">
+    <value>解锁</value>
+  </data>
+  <data name="Notice_ConfigErrorTitle" xml:space="preserve">
+    <value>配置有错误</value>
+  </data>
+  <data name="Notice_EntraText" xml:space="preserve">
+    <value>没有应用程序 ID 时，对话框中将隐藏 Microsoft 登录。</value>
+  </data>
+  <data name="Notice_EntraTitle" xml:space="preserve">
+    <value>尚未设置 Entra ID</value>
+  </data>
+  <data name="Notice_HotkeyTitle" xml:space="preserve">
+    <value>快捷键不可用</value>
+  </data>
+  <data name="Notice_LegacyConfigText" xml:space="preserve">
+    <value>已从 {0} 读取。保存时将移至 {1}。</value>
+  </data>
+  <data name="Notice_LegacyConfigTitle" xml:space="preserve">
+    <value>配置仍位于旧文件夹中</value>
+  </data>
+  <data name="Notice_LegacyPolicyText" xml:space="preserve">
+    <value>值仍来自 SOFTWARE\Policies\Vitrine。请导入新的 ADMX 模板；它会写入 SOFTWARE\Policies\ICT-Baden\Vitrine。</value>
+  </data>
+  <data name="Notice_LegacyPolicyTitle" xml:space="preserve">
+    <value>正在使用旧的策略路径</value>
+  </data>
+  <data name="Notice_ManagedText" xml:space="preserve">
+    <value>来自组策略或 Intune 的设置：{0}</value>
+  </data>
+  <data name="Notice_ManagedTitle" xml:space="preserve">
+    <value>部分设置由集中管理</value>
+  </data>
+  <data name="Notice_PinText" xml:space="preserve">
+    <value>使用该密码的解锁无法归属到具体人员。</value>
+  </data>
+  <data name="Notice_PinTitle" xml:space="preserve">
+    <value>共享解锁密码已启用</value>
+  </data>
+  <data name="Notice_PluginTitle" xml:space="preserve">
+    <value>未加载插件</value>
+  </data>
+  <data name="Overlay_DateFormat" xml:space="preserve">
+    <value>M月d日 dddd</value>
+  </data>
+  <data name="Overlay_Hint" xml:space="preserve">
+    <value>自 {0} 起 · {1}</value>
+  </data>
+  <data name="Overlay_HintWithMessage" xml:space="preserve">
+    <value>自 {1} 起由 {0} 锁定 · {2}</value>
+  </data>
+  <data name="Overlay_HowAny" xml:space="preserve">
+    <value>按任意键或单击以解锁</value>
+  </data>
+  <data name="Overlay_HowHotkey" xml:space="preserve">
+    <value>按 {0} 解锁</value>
+  </data>
+  <data name="Overlay_HowKey" xml:space="preserve">
+    <value>按任意键解锁</value>
+  </data>
+  <data name="Overlay_Title" xml:space="preserve">
+    <value>已锁定 · {0}</value>
+  </data>
+  <data name="Pin_Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="Pin_Label" xml:space="preserve">
+    <value>新密码（输入两次）</value>
+  </data>
+  <data name="Pin_Remove" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Pin_Title" xml:space="preserve">
+    <value>设置解锁密码</value>
+  </data>
+  <data name="Prompt_AdminHeading" xml:space="preserve">
+    <value>需要管理员</value>
+  </data>
+  <data name="Prompt_AttemptsLeft" xml:space="preserve">
+    <value>剩余尝试次数：{0}。</value>
+  </data>
+  <data name="Prompt_Confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="Prompt_ContinueWith" xml:space="preserve">
+    <value>使用 {0} 继续</value>
+  </data>
+  <data name="Prompt_ExternalEntra" xml:space="preserve">
+    <value>Microsoft 登录将在单独的窗口中打开。安全密钥、通行密钥、密码或 Authenticator – 取决于公司策略。不会记住任何内容。</value>
+  </data>
+  <data name="Prompt_ExternalHello" xml:space="preserve">
+    <value>人脸、指纹或 Windows Hello PIN。仅限登录到此工作站的人员使用。</value>
+  </data>
+  <data name="Prompt_ExternalOther" xml:space="preserve">
+    <value>使用 {0} 继续。</value>
+  </data>
+  <data name="Prompt_Footer" xml:space="preserve">
+    <value>登录会记录在审计日志中。</value>
+  </data>
+  <data name="Prompt_LockedSince" xml:space="preserve">
+    <value>自 {0} 起锁定 · {1}</value>
+  </data>
+  <data name="Prompt_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Prompt_ReasonUnlock" xml:space="preserve">
+    <value>解锁工作站</value>
+  </data>
+  <data name="Prompt_RequestedBy" xml:space="preserve">
+    <value>请求方：{0}</value>
+  </data>
+  <data name="Prompt_RequestedByProcess" xml:space="preserve">
+    <value>请求方：{0} · {1}</value>
+  </data>
+  <data name="Prompt_Sign" xml:space="preserve">
+    <value>签名</value>
+  </data>
+  <data name="Prompt_SignFooter" xml:space="preserve">
+    <value>你的签名将连同姓名、时间和含义一起记录。</value>
+  </data>
+  <data name="Prompt_SignIntro" xml:space="preserve">
+    <value>你正在进行电子签名</value>
+  </data>
+  <data name="Prompt_SignMeaning" xml:space="preserve">
+    <value>含义：{0}</value>
+  </data>
+  <data name="Prompt_TitleAdmin" xml:space="preserve">
+    <value>Vitrine – 管理员</value>
+  </data>
+  <data name="Prompt_TitleSignature" xml:space="preserve">
+    <value>Vitrine – 电子签名</value>
+  </data>
+  <data name="Prompt_TitleUnlock" xml:space="preserve">
+    <value>Vitrine – 解锁</value>
+  </data>
+  <data name="Prompt_Unlock" xml:space="preserve">
+    <value>解锁</value>
+  </data>
+  <data name="Prompt_UserName" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Sec_Action" xml:space="preserve">
+    <value>失败尝试次数过多后的操作</value>
+  </data>
+  <data name="Sec_ActionLock" xml:space="preserve">
+    <value>锁定 Windows</value>
+  </data>
+  <data name="Sec_ActionLogOff" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="Sec_ActionNone" xml:space="preserve">
+    <value>不执行任何操作</value>
+  </data>
+  <data name="Sec_ActionShutdown" xml:space="preserve">
+    <value>关机</value>
+  </data>
+  <data name="Sec_AuthUi" xml:space="preserve">
+    <value>外部登录期间的登录窗口</value>
+  </data>
+  <data name="Sec_AuthUi_Desc" xml:space="preserve">
+    <value>在 Microsoft 或 Hello 窗口打开期间，只有这些进程可以接收输入。</value>
+  </data>
+  <data name="Sec_Delay" xml:space="preserve">
+    <value>延长等待时间</value>
+  </data>
+  <data name="Sec_Delay_Desc" xml:space="preserve">
+    <value>从第 3 次失败尝试开始，等待时间逐渐增加：2 秒、4 秒、8 秒……最长 30 秒。</value>
+  </data>
+  <data name="Sec_ExitAdmin" xml:space="preserve">
+    <value>仅管理员可退出</value>
+  </data>
+  <data name="Sec_Failures" xml:space="preserve">
+    <value>失败尝试</value>
+  </data>
+  <data name="Sec_MaxFailed" xml:space="preserve">
+    <value>最大失败尝试次数</value>
+  </data>
+  <data name="Sec_MaxFailed_Desc" xml:space="preserve">
+    <value>超过后执行所选操作。0 = 不限制。</value>
+  </data>
+  <data name="Sec_Protection" xml:space="preserve">
+    <value>保护</value>
+  </data>
+  <data name="Sec_Sas" xml:space="preserve">
+    <value>限制 Ctrl + Alt + Del</value>
+  </data>
+  <data name="Sec_Sas_Desc" xml:space="preserve">
+    <value>锁定期间在该界面中隐藏“任务管理器”、“注销”、“更改密码”和“锁定”；Win + L 不起作用。</value>
+  </data>
+  <data name="Sec_SettingsAdmin" xml:space="preserve">
+    <value>仅管理员可更改设置</value>
+  </data>
+  <data name="Sec_UserConfig" xml:space="preserve">
+    <value>每位用户的个人设置</value>
+  </data>
+  <data name="Sec_UserConfig_Desc" xml:space="preserve">
+    <value>除设备配置外，还允许使用 %LocalAppData%\Vitrine\config.json。</value>
+  </data>
+  <data name="Sec_Watchdog" xml:space="preserve">
+    <value>监视程序</value>
+  </data>
+  <data name="Sec_Watchdog_Desc" xml:space="preserve">
+    <value>如果 Vitrine 在锁定期间被结束或崩溃，Windows 将立即锁定。</value>
+  </data>
+  <data name="Settings_Title" xml:space="preserve">
+    <value>Vitrine – 设置</value>
+  </data>
+  <data name="Shots_DemoUser" xml:space="preserve">
+    <value>实验室操作员</value>
+  </data>
+  <data name="Shots_SignMeaning" xml:space="preserve">
+    <value>已审核并批准</value>
+  </data>
+  <data name="Shots_SignReason" xml:space="preserve">
+    <value>批次 4711 放行</value>
+  </data>
+  <data name="Status_Locked" xml:space="preserve">
+    <value>已锁定</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>就绪</value>
+  </data>
+  <data name="Tray_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>退出 Vitrine</value>
+  </data>
+  <data name="Tray_HotkeyHint" xml:space="preserve">
+    <value>{0} 可锁定屏幕并保持内容可见。</value>
+  </data>
+  <data name="Tray_HotkeyTaken" xml:space="preserve">
+    <value>快捷键已被占用</value>
+  </data>
+  <data name="Tray_IdleHint" xml:space="preserve">
+    <value>{0} 分钟后自动锁定。</value>
+  </data>
+  <data name="Tray_LockBlank" xml:space="preserve">
+    <value>锁定（遮盖屏幕）</value>
+  </data>
+  <data name="Tray_LockNow" xml:space="preserve">
+    <value>立即锁定（透明）</value>
+  </data>
+  <data name="Tray_LockedSince" xml:space="preserve">
+    <value>自 {0} 起</value>
+  </data>
+  <data name="Tray_Log" xml:space="preserve">
+    <value>审计日志</value>
+  </data>
+  <data name="Tray_MenuAbout" xml:space="preserve">
+    <value>关于 Vitrine</value>
+  </data>
+  <data name="Tray_MenuExit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Tray_MenuLock" xml:space="preserve">
+    <value>立即锁定</value>
+  </data>
+  <data name="Tray_MenuSettings" xml:space="preserve">
+    <value>设置…</value>
+  </data>
+  <data name="Tray_RunningText" xml:space="preserve">
+    <value>{0} 可锁定屏幕并保持内容可见。</value>
+  </data>
+  <data name="Tray_RunningTitle" xml:space="preserve">
+    <value>Vitrine 正在运行</value>
+  </data>
+  <data name="Tray_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Tray_Tooltip" xml:space="preserve">
+    <value>Vitrine – 屏幕锁定</value>
+  </data>
+  <data name="Tray_TooltipLocked" xml:space="preserve">
+    <value>Vitrine – 已锁定</value>
+  </data>
+  <data name="Tray_TooltipReady" xml:space="preserve">
+    <value>Vitrine – 就绪</value>
+  </data>
+  <data name="Unlock_Admins" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="Unlock_Allowed" xml:space="preserve">
+    <value>授权人员</value>
+  </data>
+  <data name="Unlock_Allowed_Desc" xml:space="preserve">
+    <value>可多选。满足任一条件的人员均可解锁。</value>
+  </data>
+  <data name="Unlock_Anyone" xml:space="preserve">
+    <value>任何有效帐户</value>
+  </data>
+  <data name="Unlock_Dialog" xml:space="preserve">
+    <value>对话框</value>
+  </data>
+  <data name="Unlock_Domains" xml:space="preserve">
+    <value>仅限这些域</value>
+  </data>
+  <data name="Unlock_Domains_Desc" xml:space="preserve">
+    <value>可选。每行一个，例如 CONTOSO 或 contoso.com。留空 = 不限制。</value>
+  </data>
+  <data name="Unlock_Entra_Desc" xml:space="preserve">
+    <value>工作帐户，支持 MFA、Authenticator、通行密钥、Windows Hello 企业版和条件访问。</value>
+  </data>
+  <data name="Unlock_Groups" xml:space="preserve">
+    <value>组</value>
+  </data>
+  <data name="Unlock_Groups_Desc" xml:space="preserve">
+    <value>每行一个：DOMAIN\group、本地组、SID、Entra 组 ID 或应用角色（例如 Vitrine.Unlock）。</value>
+  </data>
+  <data name="Unlock_Hello_Desc" xml:space="preserve">
+    <value>人脸、指纹或 PIN – 仅限已登录的人员。</value>
+  </data>
+  <data name="Unlock_Methods" xml:space="preserve">
+    <value>登录方式</value>
+  </data>
+  <data name="Unlock_Pin" xml:space="preserve">
+    <value>专用解锁密码</value>
+  </data>
+  <data name="Unlock_PinSet" xml:space="preserve">
+    <value>设置…</value>
+  </data>
+  <data name="Unlock_Pin_Desc" xml:space="preserve">
+    <value>共享密码，无法关联到具体人员。不建议在 GxP 环境中使用。</value>
+  </data>
+  <data name="Unlock_Prefill" xml:space="preserve">
+    <value>预填用户名</value>
+  </data>
+  <data name="Unlock_SessionUser" xml:space="preserve">
+    <value>已登录的人员</value>
+  </data>
+  <data name="Unlock_SomeGroups" xml:space="preserve">
+    <value>特定组</value>
+  </data>
+  <data name="Unlock_SomeUsers" xml:space="preserve">
+    <value>特定帐户</value>
+  </data>
+  <data name="Unlock_Timeout" xml:space="preserve">
+    <value>对话框关闭时间</value>
+  </data>
+  <data name="Unlock_Timeout_Desc" xml:space="preserve">
+    <value>无输入的秒数 – 之后将重新全部锁定。</value>
+  </data>
+  <data name="Unlock_Trigger" xml:space="preserve">
+    <value>对话框打开方式</value>
+  </data>
+  <data name="Unlock_TriggerAny" xml:space="preserve">
+    <value>按键或鼠标单击</value>
+  </data>
+  <data name="Unlock_TriggerHotkey" xml:space="preserve">
+    <value>仅快捷键</value>
+  </data>
+  <data name="Unlock_TriggerKey" xml:space="preserve">
+    <value>仅按键</value>
+  </data>
+  <data name="Unlock_Users" xml:space="preserve">
+    <value>帐户</value>
+  </data>
+  <data name="Unlock_Users_Desc" xml:space="preserve">
+    <value>每行一个：DOMAIN\name、name@contoso.com 或 SID。</value>
+  </data>
+  <data name="Unlock_Who" xml:space="preserve">
+    <value>谁可以解锁？</value>
+  </data>
+  <data name="Unlock_Windows_Desc" xml:space="preserve">
+    <value>本地帐户、Active Directory 帐户，或已加入 Entra 的设备上的 Entra 帐户。</value>
+  </data>
+  <data name="VerifyLog_BrokenTitle" xml:space="preserve">
+    <value>审计日志已被更改！</value>
+  </data>
+  <data name="VerifyLog_OkTitle" xml:space="preserve">
+    <value>审计日志完好</value>
+  </data>
+  <data name="Look_Windows" xml:space="preserve">
+    <value>仅显示所选程序</value>
+  </data>
+  <data name="Look_Windows_Desc" xml:space="preserve">
+    <value>除下列程序的窗口外全部遮盖。窗口移动后仍保持可见。</value>
+  </data>
+  <data name="Look_Reveal" xml:space="preserve">
+    <value>保持可见的程序</value>
+  </data>
+  <data name="Look_Reveal_Desc" xml:space="preserve">
+    <value>用于“仅显示所选程序”：每行一个程序文件，例如 Chromeleon.exe。位于其上方的窗口仍被遮盖。</value>
+  </data>
+  <data name="Look_Masks" xml:space="preserve">
+    <value>遮盖区域</value>
+  </data>
+  <data name="Look_Masks_Desc" xml:space="preserve">
+    <value>锁定期间保持遮盖的区域，例如包含患者数据的字段。每行一个区域：显示器:x,y,宽度,高度（百分比，* = 所有显示器）。</value>
+  </data>
+  <data name="Look_MasksDraw" xml:space="preserve">
+    <value>绘制区域…</value>
+  </data>
+  <data name="Look_MasksClear" xml:space="preserve">
+    <value>全部移除</value>
+  </data>
+  <data name="MaskEditor_Title" xml:space="preserve">
+    <value>遮盖区域</value>
+  </data>
+  <data name="MaskEditor_Monitor" xml:space="preserve">
+    <value>显示器 {0}</value>
+  </data>
+  <data name="MaskEditor_Hint" xml:space="preserve">
+    <value>拖动以遮盖区域。右键单击区域可将其移除。</value>
+  </data>
+  <data name="MaskEditor_Done" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="MaskEditor_Remove" xml:space="preserve">
+    <value>右键单击以移除</value>
+  </data>
+  <data name="Entra_AuthContext" xml:space="preserve">
+    <value>身份验证上下文</value>
+  </data>
+  <data name="Entra_AuthContext_Desc" xml:space="preserve">
+    <value>每次登录时请求，例如 c1。配合条件访问策略，Microsoft Entra ID 可要求使用通行密钥或 FIDO2 密钥。留空 = 无。</value>
+  </data>
+  <data name="Entra_SignAuthContext" xml:space="preserve">
+    <value>签名的身份验证上下文</value>
+  </data>
+  <data name="Entra_SignAuthContext_Desc" xml:space="preserve">
+    <value>仅用于电子签名，例如 c2 表示防网络钓鱼登录。留空 = 同上。</value>
+  </data>
+  <data name="Entra_ShareIdToken" xml:space="preserve">
+    <value>将 ID 令牌传递给应用程序</value>
+  </data>
+  <data name="Entra_ShareIdToken_Desc" xml:space="preserve">
+    <value>通过本地接口请求登录或签名的应用程序会收到 ID 令牌，并可自行向 Microsoft 验证。ID 令牌绝不会写入审计日志。</value>
+  </data>
+  <data name="Entra_TokenScopes" xml:space="preserve">
+    <value>应用程序的访问令牌</value>
+  </data>
+  <data name="Entra_TokenScopes_Desc" xml:space="preserve">
+    <value>应用程序可通过本地接口请求访问令牌的权限（范围），每行一个，例如 api://lims/Signature.Write。留空 = 不发放访问令牌。</value>
+  </data>
+  <data name="Lock_Autostart_Service" xml:space="preserve">
+    <value>Vitrine 服务会在每个会话中启动并监控 Vitrine，无需按用户启动。</value>
+  </data>
+  <data name="Entra_Broker_NotIncluded" xml:space="preserve">
+    <value>此版本未包含（构建时未包含 Windows 帐户代理）。Vitrine 在自己的登录窗口中登录。</value>
+  </data>
+  <data name="Event_ServiceStarted" xml:space="preserve">
+    <value>服务已启动</value>
+  </data>
+  <data name="Event_ServiceStopped" xml:space="preserve">
+    <value>服务已停止</value>
+  </data>
+  <data name="Event_AgentLost" xml:space="preserve">
+    <value>Vitrine 意外结束</value>
+  </data>
+  <data name="Event_AgentStopped" xml:space="preserve">
+    <value>Vitrine 未重新启动</value>
+  </data>
+  <data name="Event_AgentStartFailed" xml:space="preserve">
+    <value>启动失败</value>
+  </data>
+  <data name="Event_SessionDisconnected" xml:space="preserve">
+    <value>会话已断开</value>
+  </data>
+  <data name="Event_AgentConnected" xml:space="preserve">
+    <value>Vitrine 已连接到服务</value>
+  </data>
+  <data name="Audit_LockedFor" xml:space="preserve">
+    <value>锁定时长 {0}</value>
+  </data>
+  <data name="Shutdown_Reason" xml:space="preserve">
+    <value>Vitrine：登录失败次数过多</value>
+  </data>
+  <data name="Event_SessionEndRefused" xml:space="preserve">
+    <value>锁定期间拒绝注销或重启</value>
+  </data>
+  <data name="Lock_ShutdownBlockReason" xml:space="preserve">
+    <value>此工作站已由 Vitrine 锁定。</value>
+  </data>
+  <data name="Language_MachineTranslated" xml:space="preserve">
+    <value>{0}（机器翻译）</value>
+  </data>
+  <data name="Audit_ModeServiceTitle" xml:space="preserve">
+    <value>由服务写入并签名</value>
+  </data>
+  <data name="Audit_ModeServiceText" xml:space="preserve">
+    <value>服务 ICT-Baden Vitrine 写入审计日志并为每个条目签名；用户只能读取日志文件夹。电子签名的登录由服务自行验证（Windows 密码、Microsoft Entra ID）。密钥指纹：{0}</value>
+  </data>
+  <data name="Audit_ModeOfflineTitle" xml:space="preserve">
+    <value>无法连接服务</value>
+  </data>
+  <data name="Audit_ModeOfflineText" xml:space="preserve">
+    <value>条目暂存在内存中，服务恢复后发送（{0} 条等待中）。在此之前无法进行电子签名（VIT-0300）。</value>
+  </data>
+  <data name="Audit_ModeLocalTitle" xml:space="preserve">
+    <value>不符合 Part 11</value>
+  </data>
+  <data name="Audit_ModeLocalText" xml:space="preserve">
+    <value>Vitrine 在没有服务的情况下自行写入审计日志（单独的 Vitrine.exe 或使用 SERVICE=0 安装）。条目未签名：任何能写入日志文件夹的人都可以不被察觉地添加或修改条目。如需受保护的审计日志，请安装带服务的 MSI。</value>
+  </data>
+  <data name="AuditKey_Fingerprint" xml:space="preserve">
+    <value>此计算机上审计日志的密钥（SHA-256 指纹）：
+{0}</value>
+  </data>
+  <data name="AuditKey_Exported" xml:space="preserve">
+    <value>审计日志公钥已导出到 {0}。
+指纹（SHA-256）：
+{1}</value>
+  </data>
+  <data name="AuditKey_Rotated" xml:space="preserve">
+    <value>已创建新的审计日志密钥；更换记录已写入日志，并由旧密钥签名。
+新指纹（SHA-256）：{0}</value>
+  </data>
+  <data name="Event_AuditFormatSwitched" xml:space="preserve">
+    <value>审计日志改由服务写入并签名</value>
+  </data>
+  <data name="Event_AuditKeyRotated" xml:space="preserve">
+    <value>审计日志密钥已更换</value>
+  </data>
+  <data name="Event_AuditLocalMode" xml:space="preserve">
+    <value>未经服务写入审计日志（不符合 Part 11）</value>
+  </data>
+  <data name="Method_WindowsLogon" xml:space="preserve">
+    <value>Windows 登录</value>
+  </data>
+  <data name="Method_WindowsLogonShort" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Prompt_ExternalWindowsLogon" xml:space="preserve">
+    <value>Windows 将打开其登录对话框。请使用你的帐户登录：密码、PIN 或智能卡。</value>
+  </data>
+  <data name="Prompt_WindowsLogonMessage" xml:space="preserve">
+    <value>请使用你自己的帐户登录。</value>
+  </data>
+  <data name="Unlock_WindowsLogon_Desc" xml:space="preserve">
+    <value>Windows 安全对话框：密码、PIN 或智能卡（不支持 FIDO2 安全密钥，请使用 Microsoft）– 适用于 Windows 接受的任何帐户，包括从未在此登录过的人员。</value>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>使用 Microsoft 登录</value>
+  </data>
+  <data name="SignIn_Hint" xml:space="preserve">
+    <value>Vitrine 的登录窗口。此设备上不保存任何内容 – 登录后全部删除。</value>
+  </data>
+  <data name="SignIn_Loading" xml:space="preserve">
+    <value>正在加载 Microsoft 登录 …</value>
+  </data>
+  <data name="Entra_SignInHosts" xml:space="preserve">
+    <value>允许的登录主机</value>
+  </data>
+  <data name="Entra_SignInHosts_Desc" xml:space="preserve">
+    <value>Microsoft 登录窗口的其他登录页面，例如你的联合身份验证服务 (adfs.contoso.com, *.okta.com)。每行一个。Microsoft 登录页面始终允许。</value>
+  </data>
+  <data name="Nav_Roles" xml:space="preserve">
+    <value>角色</value>
+  </data>
+  <data name="Roles_Section" xml:space="preserve">
+    <value>谁可以在 Vitrine 中执行哪些操作</value>
+  </data>
+  <data name="Roles_ConfigAdmins" xml:space="preserve">
+    <value>配置管理员</value>
+  </data>
+  <data name="Roles_ConfigAdmins_Desc" xml:space="preserve">
+    <value>可以打开和更改设置并退出 Vitrine。每行一个组（与解锁组相同）。为空 = 仅管理员。</value>
+  </data>
+  <data name="Roles_Registrars" xml:space="preserve">
+    <value>安全密钥登记</value>
+  </data>
+  <data name="Roles_Registrars_Desc" xml:space="preserve">
+    <value>可以为其他人登记和吊销安全密钥。为空 = 仅管理员。</value>
+  </data>
+  <data name="Roles_Auditors" xml:space="preserve">
+    <value>审核员</value>
+  </data>
+  <data name="Roles_Auditors_Desc" xml:space="preserve">
+    <value>可以查看和导出审核日志及授权报告，但不能更改任何内容。配置管理员始终也是审核员。</value>
+  </data>
+  <data name="Roles_AdminsPrivileged" xml:space="preserve">
+    <value>本地管理员拥有所有角色</value>
+  </data>
+  <data name="Roles_AdminsPrivileged_Desc" xml:space="preserve">
+    <value>关闭：本地 Administrators 组的成员在 Vitrine 中没有任何权限（设置、退出、密钥登记、紧急登录），除非他们属于某个角色组。管理员仍可停止服务或编辑配置文件——这只在 Vitrine 中分离职责，而不是在计算机上。</value>
+  </data>
+  <data name="Roles_EmergencySection" xml:space="preserve">
+    <value>紧急登录</value>
+  </data>
+  <data name="Roles_BypassGroups" xml:space="preserve">
+    <value>紧急登录组</value>
+  </data>
+  <data name="Roles_BypassGroups_Desc" xml:space="preserve">
+    <value>即使解锁规则不允许，成员也可以使用其 Windows 密码解锁——但必须填写原因，原因会记录在审核日志中，并作为警告写入 Windows 事件日志。为空 = 无紧急登录。</value>
+  </data>
+  <data name="Roles_BypassMinLength" xml:space="preserve">
+    <value>紧急原因的最小长度</value>
+  </data>
+  <data name="Roles_BypassMinLength_Desc" xml:space="preserve">
+    <value>字符数，至少 1。</value>
+  </data>
+  <data name="Roles_ReasonsSection" xml:space="preserve">
+    <value>原因</value>
+  </data>
+  <data name="Roles_ReasonAdmin" xml:space="preserve">
+    <value>管理员确认时的原因</value>
+  </data>
+  <data name="Roles_ReasonAdmin_Desc" xml:space="preserve">
+    <value>在确认后打开设置或退出时需要填写原因；原因会记录在审核日志中。</value>
+  </data>
+  <data name="Roles_ReasonConfig" xml:space="preserve">
+    <value>更改配置时的原因</value>
+  </data>
+  <data name="Roles_ReasonConfig_Desc" xml:space="preserve">
+    <value>保存设置时需要填写原因。审核日志始终记录哪些值已更改（旧 → 新，机密已隐藏）。</value>
+  </data>
+  <data name="Roles_ReasonMinLength" xml:space="preserve">
+    <value>这些原因的最小长度</value>
+  </data>
+  <data name="Prompt_Emergency" xml:space="preserve">
+    <value>紧急登录</value>
+  </data>
+  <data name="Prompt_EmergencyBack" xml:space="preserve">
+    <value>返回正常登录</value>
+  </data>
+  <data name="Prompt_EmergencyNote" xml:space="preserve">
+    <value>使用 Windows 密码紧急登录。您的原因将被记录并上报。</value>
+  </data>
+  <data name="Prompt_EmergencyUnlock" xml:space="preserve">
+    <value>解锁（紧急）</value>
+  </data>
+  <data name="Prompt_ReasonLabel" xml:space="preserve">
+    <value>原因（至少 {0} 个字符）</value>
+  </data>
+  <data name="Responsible_Since" xml:space="preserve">
+    <value>负责人：{0}，自 {1} 起</value>
+  </data>
+  <data name="Audit_Report" xml:space="preserve">
+    <value>授权报告</value>
+  </data>
+  <data name="Audit_Report_Tip" xml:space="preserve">
+    <value>谁可以解锁、使用紧急登录以及拥有哪些角色——HTML 用于审批，另附 CSV</value>
+  </data>
+  <data name="Audit_ReportFilter" xml:space="preserve">
+    <value>HTML 报告和 CSV (*.html)|*.html|仅 CSV (*.csv)|*.csv</value>
+  </data>
+  <data name="Report_Written" xml:space="preserve">
+    <value>已写入授权报告：{0}</value>
+  </data>
+  <data name="Error_VIT0435" xml:space="preserve">
+    <value>无法写入授权报告：{0}</value>
+  </data>
+  <data name="Reason_Title" xml:space="preserve">
+    <value>更改原因</value>
+  </data>
+  <data name="Reason_Intro" xml:space="preserve">
+    <value>将更改 {0} 个值。更改内容和您的原因将记录在审核日志中。</value>
+  </data>
+  <data name="Reason_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Event_UnlockBypass" xml:space="preserve">
+    <value>紧急解锁</value>
+  </data>
+  <data name="Event_ResponsibilityChanged" xml:space="preserve">
+    <value>负责人已变更</value>
+  </data>
+  <data name="Settings_AuditOnly" xml:space="preserve">
+    <value>只读：审核员访问</value>
+  </data>
+  <data name="Lock_Mode" xml:space="preserve">
+    <value>锁定方式</value>
+  </data>
+  <data name="Lock_Mode_Desc" xml:space="preserve">
+    <value>覆盖层：程序在锁定后保持可见。独立桌面：Vitrine 切换到自己的桌面——其他窗口无法接收输入，也无法覆盖在其上；程序在后台继续运行。Windows Hello 和 Microsoft 登录会短暂返回 Windows 桌面。</value>
+  </data>
+  <data name="Lock_ModeOverlay" xml:space="preserve">
+    <value>覆盖层 – 程序保持可见</value>
+  </data>
+  <data name="Lock_ModeDesktop" xml:space="preserve">
+    <value>独立桌面 – 程序在后台运行</value>
+  </data>
+  <data name="Lock_DesktopPreview" xml:space="preserve">
+    <value>Windows 桌面预览</value>
+  </data>
+  <data name="Lock_DesktopPreview_Desc" xml:space="preserve">
+    <value>使用独立桌面时：显示正在运行的程序的图像（只读，定期刷新）。遵循显示模式：完全遮盖时不显示，仅显示选定的程序，遮盖区域保持遮盖。</value>
+  </data>
+  <data name="Lock_DesktopPreviewSeconds" xml:space="preserve">
+    <value>预览刷新间隔（秒）</value>
+  </data>
+  <data name="Lock_DesktopPreviewSeconds_Desc" xml:space="preserve">
+    <value>1 到 60；0 = 仅在锁定时拍摄一张。</value>
+  </data>
+  <data name="Desktop_PreviewAt" xml:space="preserve">
+    <value>预览 · {0}</value>
+  </data>
+  <data name="Desktop_NoPreview" xml:space="preserve">
+    <value>程序在 Windows 桌面上继续运行</value>
+  </data>
+  <data name="Method_Fido" xml:space="preserve">
+    <value>安全密钥</value>
+  </data>
+  <data name="Method_FidoShort" xml:space="preserve">
+    <value>密钥</value>
+  </data>
+  <data name="Prompt_ExternalFido" xml:space="preserve">
+    <value>Windows 将要求您使用为 Vitrine 注册的安全密钥：插入或靠近读卡器，输入 PIN 并触摸密钥。</value>
+  </data>
+  <data name="Prompt_RegistrarHeading" xml:space="preserve">
+    <value>需要授权人员</value>
+  </data>
+  <data name="Unlock_Fido_Desc" xml:space="preserve">
+    <value>为 Vitrine 注册的 FIDO2 安全密钥（“安全密钥”页面），由 Vitrine 服务验证——无需 Entra 应用，也可离线使用，桌面保持可见。始终需要密钥的 PIN。</value>
+  </data>
+  <data name="Nav_Keys" xml:space="preserve">
+    <value>安全密钥</value>
+  </data>
+  <data name="Keys_Registered" xml:space="preserve">
+    <value>已注册的密钥</value>
+  </data>
+  <data name="Keys_Register" xml:space="preserve">
+    <value>注册密钥…</value>
+  </data>
+  <data name="Keys_Policy" xml:space="preserve">
+    <value>规则</value>
+  </data>
+  <data name="Keys_RpId" xml:space="preserve">
+    <value>RP ID</value>
+  </data>
+  <data name="Keys_RpId_Desc" xml:space="preserve">
+    <value>注册密钥所用的标识符。首次注册后请勿更改——密钥仅适用于注册时所用的 RP ID。</value>
+  </data>
+  <data name="Keys_SelfRegistration" xml:space="preserve">
+    <value>为自己注册</value>
+  </data>
+  <data name="Keys_SelfRegistration_Desc" xml:space="preserve">
+    <value>关闭：密钥始终由另一位授权人员注册（四眼原则）。</value>
+  </data>
+  <data name="Keys_MaxKeys" xml:space="preserve">
+    <value>每人密钥数</value>
+  </data>
+  <data name="Keys_MaxKeys_Desc" xml:space="preserve">
+    <value>每人有效密钥的最大数量。</value>
+  </data>
+  <data name="Keys_MaxFailed" xml:space="preserve">
+    <value>锁定前的失败尝试次数</value>
+  </data>
+  <data name="Keys_MaxFailed_Desc" xml:space="preserve">
+    <value>每个密钥和每人被拒绝的登录次数，达到后将暂时锁定。0 = 从不。</value>
+  </data>
+  <data name="Keys_BlockMinutes" xml:space="preserve">
+    <value>锁定时长（分钟）</value>
+  </data>
+  <data name="Keys_OfflineHours" xml:space="preserve">
+    <value>无域控制器时（小时）</value>
+  </data>
+  <data name="Keys_OfflineHours_Desc" xml:space="preserve">
+    <value>无域控制器时，最近读取的组最多在此时长内有效。0 = 从不离线登录。</value>
+  </data>
+  <data name="Keys_Models" xml:space="preserve">
+    <value>允许的型号</value>
+  </data>
+  <data name="Keys_Models_Desc" xml:space="preserve">
+    <value>允许的密钥型号的 AAGUID，每行一个。为空 = 任意型号。</value>
+  </data>
+  <data name="Keys_Status" xml:space="preserve">
+    <value>RP ID“{1}”有 {0} 个有效密钥。</value>
+  </data>
+  <data name="Keys_MethodOff" xml:space="preserve">
+    <value>此方法已关闭——请在“解锁”下打开“安全密钥”以使用密钥。</value>
+  </data>
+  <data name="Keys_RowActive" xml:space="preserve">
+    <value>{0} 由 {1} 注册 · 上次使用 {2} · 型号 {3}</value>
+  </data>
+  <data name="Keys_NeverUsed" xml:space="preserve">
+    <value>从未</value>
+  </data>
+  <data name="Keys_RowRevoked" xml:space="preserve">
+    <value>{0} 由 {1} 吊销：{2}</value>
+  </data>
+  <data name="Keys_Revoke" xml:space="preserve">
+    <value>吊销…</value>
+  </data>
+  <data name="Keys_Registered_Ok" xml:space="preserve">
+    <value>已为 {1} 注册密钥“{0}”。</value>
+  </data>
+  <data name="Keys_Revoked_Ok" xml:space="preserve">
+    <value>已吊销 {1} 的密钥“{0}”。</value>
+  </data>
+  <data name="Keys_RegisterTitle" xml:space="preserve">
+    <value>注册安全密钥</value>
+  </data>
+  <data name="Keys_Account" xml:space="preserve">
+    <value>人员（Windows 帐户：域\名称、AzureAD\name@contoso.com 或 .\名称）</value>
+  </data>
+  <data name="Keys_Label" xml:space="preserve">
+    <value>密钥名称</value>
+  </data>
+  <data name="Keys_Reason" xml:space="preserve">
+    <value>原因（至少 {0} 个字符）</value>
+  </data>
+  <data name="Keys_RegisterHint" xml:space="preserve">
+    <value>首先由您以授权人员身份登录；然后该人员准备好其密钥——Windows 会要求输入 PIN（或设置 PIN）并触摸密钥。</value>
+  </data>
+  <data name="Keys_RevokeTitle" xml:space="preserve">
+    <value>吊销安全密钥</value>
+  </data>
+  <data name="Keys_RevokeHint" xml:space="preserve">
+    <value>{1} 的密钥“{0}”将无法再解锁或签名。此操作无法撤销。</value>
+  </data>
+  <data name="Keys_RegistrarWhy" xml:space="preserve">
+    <value>为 {0} 注册安全密钥</value>
+  </data>
+  <data name="Keys_RevokeWhy" xml:space="preserve">
+    <value>吊销 {1} 的密钥“{0}”</value>
+  </data>
+  <data name="Keys_StoreLocal" xml:space="preserve">
+    <value>密钥存储在此计算机上。</value>
+  </data>
+  <data name="Keys_StoreDirectory" xml:space="preserve">
+    <value>密钥存储在 Active Directory（{0}）中 · 上次同步 {1}。上次使用时间指此计算机。</value>
+  </data>
+  <data name="Keys_DirectoryLoginTitle" xml:space="preserve">
+    <value>登录 Active Directory</value>
+  </data>
+  <data name="Keys_DirectoryLoginOk" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="Keys_DirectoryUser" xml:space="preserve">
+    <value>您的帐户（域\名称）</value>
+  </data>
+  <data name="Keys_DirectoryPassword" xml:space="preserve">
+    <value>Windows 密码</value>
+  </data>
+  <data name="Keys_DirectoryLoginHint" xml:space="preserve">
+    <value>安全密钥存储在 Active Directory 中。Vitrine 使用您的帐户在其中写入更改。密码仅用于此次更改，不会被保存。</value>
+  </data>
+  <data name="Keys_Store" xml:space="preserve">
+    <value>存储位置</value>
+  </data>
+  <data name="Keys_Store_Desc" xml:space="preserve">
+    <value>已注册密钥的存储位置。Active Directory：密钥注册一次即可在域中所有计算机上使用。重启 Vitrine 服务后生效。</value>
+  </data>
+  <data name="Keys_StoreLocalOption" xml:space="preserve">
+    <value>此计算机</value>
+  </data>
+  <data name="Keys_StoreDirectoryOption" xml:space="preserve">
+    <value>Active Directory（域中所有计算机）</value>
+  </data>
+  <data name="Keys_Container" xml:space="preserve">
+    <value>Active Directory 容器</value>
+  </data>
+  <data name="Keys_Container_Desc" xml:space="preserve">
+    <value>Vitrine 容器的可分辨名称。留空 = 计算机所在域中的 CN=Vitrine,CN=Program Data。</value>
+  </data>
+  <data name="Keys_SyncMinutes" xml:space="preserve">
+    <value>同步间隔（分钟）</value>
+  </data>
+  <data name="Keys_SyncMinutes_Desc" xml:space="preserve">
+    <value>服务从 Active Directory 读取所有密钥的频率。如果 Active Directory 可访问，登录时出示的密钥会被实时检查。</value>
+  </data>
+</root>

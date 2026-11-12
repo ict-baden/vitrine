@@ -1,0 +1,806 @@
+<Window x:Class="Vitrine.UI.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="clr-namespace:Vitrine.UI"
+        Title="{ui:T Settings_Title}" Width="1060" Height="740" MinWidth="880" MinHeight="560"
+        WindowStartupLocation="CenterScreen" FontFamily="{StaticResource UiFont}" Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+        Background="{DynamicResource ApplicationBackgroundBrush}" UseLayoutRounding="True"
+        Icon="pack://application:,,,/Vitrine;component/Assets/vitrine.ico">
+    <Window.Resources>
+        <ui:LinesConverter x:Key="Lines"/>
+        <ui:MaskLinesConverter x:Key="MaskLines"/>
+        <ui:IntDoubleConverter x:Key="IntDouble"/>
+        <ui:EnumBoolConverter x:Key="EnumBool"/>
+        <Style x:Key="Page" TargetType="StackPanel">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="MaxWidth" Value="1000"/>
+        </Style>
+        <Style x:Key="Field" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Width" Value="260"/>
+        </Style>
+        <Style x:Key="NumberField" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ===================== Navigation ===================== -->
+        <DockPanel Margin="12,12,8,12">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="12,8,0,20">
+                <ui:AppIcon Width="34" Height="34"/>
+                <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="Vitrine" Style="{StaticResource BodyStrong}" FontSize="16"/>
+                    <TextBlock Text="{ui:T App_Tagline}" Style="{StaticResource Caption}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Border DockPanel.Dock="Top" Margin="4,0,4,14" CornerRadius="8" Padding="12,10" Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Width="36" Height="36" CornerRadius="18" Background="{DynamicResource AccentFillColorDefaultBrush}">
+                        <TextBlock x:Name="NavInitials" Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}" FontWeight="SemiBold"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock x:Name="NavUser" Style="{StaticResource BodyStrong}" FontSize="13" TextTrimming="CharacterEllipsis"/>
+                        <TextBlock x:Name="NavMachine" Style="{StaticResource Caption}" TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <StackPanel DockPanel.Dock="Bottom">
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE946;" Content="{ui:T Nav_Info}" GroupName="nav" Checked="Nav_Checked" x:Name="NavInfo"/>
+            </StackPanel>
+
+            <StackPanel>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE80F;" Content="{ui:T Nav_Home}" GroupName="nav" Checked="Nav_Checked" x:Name="NavHome" IsChecked="True"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE72E;" Content="{ui:T Nav_Lock}" GroupName="nav" Checked="Nav_Checked" x:Name="NavLock"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE785;" Content="{ui:T Nav_Unlock}" GroupName="nav" Checked="Nav_Checked" x:Name="NavUnlock"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE790;" Content="{ui:T Nav_Look}" GroupName="nav" Checked="Nav_Checked" x:Name="NavLook"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE83D;" Content="{ui:T Nav_Security}" GroupName="nav" Checked="Nav_Checked" x:Name="NavSecurity"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE716;" Content="{ui:T Nav_Roles}" GroupName="nav" Checked="Nav_Checked" x:Name="NavRoles"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE88E;" Content="{ui:T Nav_Keys}" GroupName="nav" Checked="Nav_Checked" x:Name="NavKeys"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE77B;" Content="{ui:T Nav_Entra}" GroupName="nav" Checked="Nav_Checked" x:Name="NavEntra"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE81C;" Content="{ui:T Nav_Audit}" GroupName="nav" Checked="Nav_Checked" x:Name="NavAudit"/>
+                <RadioButton Style="{StaticResource NavItem}" Tag="&#xE943;" Content="{ui:T Nav_Integration}" GroupName="nav" Checked="Nav_Checked" x:Name="NavIntegration"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- ===================== Inhalt ===================== -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="PageTitle" Text="{ui:T Nav_Home}" Style="{StaticResource TitleText}" Margin="36,26,36,6"/>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="36,8,30,28" x:Name="Scroller">
+                <Grid>
+                    <!-- ========== Übersicht ========== -->
+                    <StackPanel x:Name="PageHome" Style="{StaticResource Page}" Visibility="Visible">
+                        <Border CornerRadius="12" Padding="24" Margin="0,8,0,4" BorderThickness="1" BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#335B8CFF" Offset="0"/>
+                                    <GradientStop Color="#1A8B5CF6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Ellipse x:Name="HomeDot" Width="10" Height="10" Fill="{DynamicResource SystemFillColorSuccessBrush}" Margin="0,0,10,0"/>
+                                        <TextBlock x:Name="HomeStatus" Text="{ui:T Home_StatusReady}" Style="{StaticResource SubtitleText}"/>
+                                    </StackPanel>
+                                    <TextBlock x:Name="HomeHint" Style="{StaticResource Body}" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Margin="20,6,0,0"
+                                               Text="{ui:T Home_Hint}"/>
+                                    <TextBlock x:Name="HomeResponsible" Style="{StaticResource Caption}" Margin="20,4,0,0" Visibility="Collapsed"/>
+                                </StackPanel>
+                                <Button Grid.Column="1" Style="{StaticResource AccentButton}" Height="44" Padding="20,0" Click="LockNow_Click" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xE72E;" FontFamily="{StaticResource IconFont}" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                        <TextBlock Text="{ui:T Home_LockNow}" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <UniformGrid Columns="3" Margin="-4,4,-4,0">
+                            <Border Style="{StaticResource Card}" Margin="4">
+                                <StackPanel>
+                                    <TextBlock Text="&#xE765;" Style="{StaticResource Icon}" Foreground="{DynamicResource AccentFillColorDefaultBrush}" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{ui:T Home_Hotkey}" Style="{StaticResource Caption}" Margin="0,10,0,0"/>
+                                    <TextBlock x:Name="FactHotkey" Style="{StaticResource BodyStrong}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource Card}" Margin="4">
+                                <StackPanel>
+                                    <TextBlock Text="&#xE916;" Style="{StaticResource Icon}" Foreground="{DynamicResource AccentFillColorDefaultBrush}" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{ui:T Home_AutoLock}" Style="{StaticResource Caption}" Margin="0,10,0,0"/>
+                                    <TextBlock x:Name="FactIdle" Text="{ui:T Common_Off}" Style="{StaticResource BodyStrong}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource Card}" Margin="4">
+                                <StackPanel>
+                                    <TextBlock Text="&#xE8D7;" Style="{StaticResource Icon}" Foreground="{DynamicResource AccentFillColorDefaultBrush}" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{ui:T Home_UnlockWith}" Style="{StaticResource Caption}" Margin="0,10,0,0"/>
+                                    <TextBlock x:Name="FactMethods" Style="{StaticResource BodyStrong}"/>
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+
+                        <TextBlock Text="{ui:T Home_Notices}" Style="{StaticResource SectionText}" x:Name="NoticeHeader"/>
+                        <StackPanel x:Name="Notices"/>
+                    </StackPanel>
+
+                    <!-- ========== Sperren ========== -->
+                    <StackPanel x:Name="PageLock" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Lock_Triggers}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE765;" Header="{ui:T Home_Hotkey}" PolicyPath="Lock.Hotkey"
+                                        Description="{ui:T Lock_Hotkey_Desc}">
+                            <TextBox x:Name="HotkeyBox" Width="200" IsReadOnly="True" TextAlignment="Center"
+                                     PreviewKeyDown="HotkeyBox_PreviewKeyDown" Cursor="Hand"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE916;" Header="{ui:T Lock_Idle}" PolicyPath="Lock.IdleMinutes"
+                                        Description="{ui:T Lock_Idle_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Lock.IdleMinutes, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7E8;" Header="{ui:T Lock_OnStartup}" PolicyPath="Lock.LockOnStartup"
+                                        Description="{ui:T Lock_OnStartup_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Lock.LockOnStartup}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE72E;" Header="{ui:T Lock_ReplaceWinL}" PolicyPath="Lock.ReplaceWinL"
+                                        Description="{ui:T Lock_ReplaceWinL_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Lock.ReplaceWinL}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard x:Name="AutostartCard" Glyph="&#xE7F8;" Header="{ui:T Lock_Autostart}"
+                                        Description="{ui:T Lock_Autostart_Desc}">
+                            <CheckBox x:Name="AutostartToggle" Style="{StaticResource ToggleSwitch}" Click="Autostart_Click"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard x:Name="ScheduleCard" Glyph="&#xE787;" Header="{ui:T Lock_Schedule}" Tag="Below" PolicyPath="Lock.Schedule">
+                            <TextBox x:Name="ScheduleBox" Style="{StaticResource MultiLineBox}"/>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Lock_During}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7F4;" Header="{ui:T Lock_KeepAwake}" PolicyPath="Lock.KeepAwake"
+                                        Description="{ui:T Lock_KeepAwake_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Lock.KeepAwake}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE962;" Header="{ui:T Lock_BlockMouse}" PolicyPath="Lock.BlockMouseMove"
+                                        Description="{ui:T Lock_BlockMouse_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Lock.BlockMouseMove}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7C4;" Header="{ui:T Lock_Mode}" Tag="Below" PolicyPath="Lock.Mode"
+                                        Description="{ui:T Lock_Mode_Desc}">
+                            <ComboBox x:Name="LockModeCombo" SelectedValuePath="Value" DisplayMemberPath="Label" SelectedValue="{Binding Lock.Mode}" MinWidth="320" HorizontalAlignment="Left"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8B9;" Header="{ui:T Lock_DesktopPreview}" PolicyPath="Lock.DesktopShowPreview"
+                                        Description="{ui:T Lock_DesktopPreview_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Lock.DesktopShowPreview}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE72C;" Header="{ui:T Lock_DesktopPreviewSeconds}" PolicyPath="Lock.DesktopPreviewSeconds"
+                                        Description="{ui:T Lock_DesktopPreviewSeconds_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Lock.DesktopPreviewSeconds, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Entsperren ========== -->
+                    <StackPanel x:Name="PageUnlock" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Unlock_Who}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE716;" Header="{ui:T Unlock_Allowed}" Tag="Below" PolicyPath="Unlock.Allowed"
+                                        Description="{ui:T Unlock_Allowed_Desc}">
+                            <WrapPanel>
+                                <CheckBox Content="{ui:T Unlock_SessionUser}" IsChecked="{Binding Unlock.AllowSessionUser}" Margin="0,4,28,4"/>
+                                <CheckBox Content="{ui:T Unlock_Admins}" IsChecked="{Binding Unlock.AllowAdministrators}" Margin="0,4,28,4"/>
+                                <CheckBox Content="{ui:T Unlock_SomeGroups}" IsChecked="{Binding Unlock.AllowGroups}" Margin="0,4,28,4"/>
+                                <CheckBox Content="{ui:T Unlock_SomeUsers}" IsChecked="{Binding Unlock.AllowUsers}" Margin="0,4,28,4"/>
+                                <CheckBox Content="{ui:T Unlock_Anyone}" IsChecked="{Binding Unlock.AllowAnyone}" Margin="0,4,28,4"/>
+                            </WrapPanel>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE902;" Header="{ui:T Unlock_Groups}" Tag="Below" PolicyPath="Unlock.AllowedGroups"
+                                        Description="{ui:T Unlock_Groups_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" Text="{Binding Unlock.AllowedGroups, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE77B;" Header="{ui:T Unlock_Users}" Tag="Below" PolicyPath="Unlock.AllowedUsers"
+                                        Description="{ui:T Unlock_Users_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" Text="{Binding Unlock.AllowedUsers, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE774;" Header="{ui:T Unlock_Domains}" Tag="Below" PolicyPath="Unlock.AllowedDomains"
+                                        Description="{ui:T Unlock_Domains_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Unlock.AllowedDomains, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Unlock_Methods}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE77B;" Header="{ui:T Nav_Entra}" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_Entra_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodEntra}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8D7;" Header="{ui:T Method_Windows}" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_Windows_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodWindows}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xEB68;" Header="Windows Hello" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_Hello_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodHello}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xEA18;" Header="{ui:T Method_WindowsLogon}" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_WindowsLogon_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodWindowsLogon}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE88E;" Header="{ui:T Method_Fido}" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_Fido_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodFido}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8AC;" Header="{ui:T Unlock_Pin}" PolicyPath="Unlock.Methods"
+                                        Description="{ui:T Unlock_Pin_Desc}">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{ui:T Unlock_PinSet}" Click="SetPin_Click" Margin="0,0,16,0"/>
+                                <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.MethodPin}"/>
+                            </StackPanel>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Unlock_Dialog}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7C9;" Header="{ui:T Unlock_Trigger}" PolicyPath="Unlock.Trigger">
+                            <ComboBox x:Name="TriggerCombo" SelectedValuePath="Value" DisplayMemberPath="Label" SelectedValue="{Binding Unlock.Trigger}" Width="260"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE77B;" Header="{ui:T Unlock_Prefill}" PolicyPath="Unlock.PrefillUserName">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Unlock.PrefillUserName}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE823;" Header="{ui:T Unlock_Timeout}" PolicyPath="Unlock.PromptTimeoutSeconds"
+                                        Description="{ui:T Unlock_Timeout_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Unlock.PromptTimeoutSeconds, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Darstellung ========== -->
+                    <StackPanel x:Name="PageLook" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Look_What}" Style="{StaticResource SectionText}"/>
+                        <UniformGrid Columns="3" Margin="-4,0,-4,4">
+                            <RadioButton Style="{StaticResource ChoiceCard}" Margin="4" GroupName="visual"
+                                         IsChecked="{Binding Appearance.Visual, Converter={StaticResource EnumBool}, ConverterParameter=Transparent}">
+                                <StackPanel>
+                                    <Border Height="120" CornerRadius="6" ClipToBounds="True">
+                                        <Grid>
+                                            <Grid.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Color="#FF2D5BD7" Offset="0"/>
+                                                    <GradientStop Color="#FF7A3FD1" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Grid.Background>
+                                            <Border Background="#E6F3F3F3" CornerRadius="4" Margin="22,16,60,26">
+                                                <StackPanel Margin="8">
+                                                    <Border Height="6" Width="60" Background="#55000000" CornerRadius="3" HorizontalAlignment="Left"/>
+                                                    <Polyline Points="0,30 20,18 40,24 60,8 80,14 100,4 120,12" Stroke="#FF2D5BD7" StrokeThickness="2" Margin="0,10,0,0"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <Rectangle x:Name="PreviewDim" Fill="Black" Opacity="{Binding Appearance.DimPercent, Converter={StaticResource IntDouble}, ConverterParameter=pct}"/>
+                                            <Border CornerRadius="8" Background="#D9161A22" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                                    Margin="0,0,0,8" Padding="8,3">
+                                                <TextBlock Text="{ui:T Look_PreviewLocked}" Foreground="White" FontSize="10"/>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                    <TextBlock Text="{ui:T Look_Transparent}" Style="{StaticResource BodyStrong}" Margin="0,12,0,0"/>
+                                    <TextBlock Text="{ui:T Look_Transparent_Desc}" Style="{StaticResource Caption}"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton Style="{StaticResource ChoiceCard}" Margin="4" GroupName="visual"
+                                         IsChecked="{Binding Appearance.Visual, Converter={StaticResource EnumBool}, ConverterParameter=Blank}">
+                                <StackPanel>
+                                    <Border Height="120" CornerRadius="6">
+                                        <Border.Background>
+                                            <RadialGradientBrush Center="0.5,0.35" GradientOrigin="0.5,0.35" RadiusX="0.9" RadiusY="0.9">
+                                                <GradientStop Color="#FF1B2336" Offset="0"/>
+                                                <GradientStop Color="#FF0B0D12" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock Foreground="White" FontSize="30" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                                            <TextBlock Foreground="#CCFFFFFF" FontSize="10" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <TextBlock Text="{ui:T Look_Blank}" Style="{StaticResource BodyStrong}" Margin="0,12,0,0"/>
+                                    <TextBlock Text="{ui:T Look_Blank_Desc}" Style="{StaticResource Caption}"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton Style="{StaticResource ChoiceCard}" Margin="4" GroupName="visual"
+                                         IsChecked="{Binding Appearance.Visual, Converter={StaticResource EnumBool}, ConverterParameter=Windows}">
+                                <StackPanel>
+                                    <!-- Vorschau: verdeckt, nur ein Programmfenster schaut heraus -->
+                                    <Border Height="120" CornerRadius="6" ClipToBounds="True">
+                                        <Border.Background>
+                                            <RadialGradientBrush Center="0.5,0.35" GradientOrigin="0.5,0.35" RadiusX="0.9" RadiusY="0.9">
+                                                <GradientStop Color="#FF1B2336" Offset="0"/>
+                                                <GradientStop Color="#FF0B0D12" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                        <Border Background="#FFF3F3F3" CornerRadius="4" Margin="22,16,60,26">
+                                            <StackPanel Margin="8">
+                                                <Border Height="6" Width="60" Background="#55000000" CornerRadius="3" HorizontalAlignment="Left"/>
+                                                <Polyline Points="0,30 20,18 40,24 60,8 80,14 100,4 120,12" Stroke="#FF2D5BD7" StrokeThickness="2" Margin="0,10,0,0"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+                                    <TextBlock Text="{ui:T Look_Windows}" Style="{StaticResource BodyStrong}" Margin="0,12,0,0"/>
+                                    <TextBlock Text="{ui:T Look_Windows_Desc}" Style="{StaticResource Caption}"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </UniformGrid>
+
+                        <ui:SettingCard Glyph="&#xE737;" Header="{ui:T Look_Reveal}" Tag="Below" PolicyPath="Appearance.RevealProcesses"
+                                        Description="{ui:T Look_Reveal_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" Text="{Binding Appearance.RevealProcesses, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xF16E;" Header="{ui:T Look_Masks}" Tag="Below" PolicyPath="Appearance.Masks"
+                                        Description="{ui:T Look_Masks_Desc}">
+                            <StackPanel>
+                                <TextBox x:Name="MasksBox" Style="{StaticResource MultiLineBox}" Text="{Binding Appearance.Masks, Converter={StaticResource MaskLines}}"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                    <Button x:Name="DrawMasksButton" Content="{ui:T Look_MasksDraw}" Click="DrawMasks_Click"/>
+                                    <Button Content="{ui:T Look_MasksClear}" Click="ClearMasks_Click" Margin="8,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </ui:SettingCard>
+
+                        <ui:SettingCard Glyph="&#xE706;" Header="{ui:T Look_Dim}" PolicyPath="Appearance.DimPercent"
+                                        Description="{ui:T Look_Dim_Desc}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Value, ElementName=DimSlider, StringFormat={}{0:0} %}" Style="{StaticResource Body}" Width="44"
+                                           TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                <Slider x:Name="DimSlider" Width="220" Minimum="0" Maximum="100" SmallChange="1" LargeChange="10"
+                                        Value="{Binding Appearance.DimPercent, Converter={StaticResource IntDouble}}" ValueChanged="Dim_ValueChanged"/>
+                            </StackPanel>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8BD;" Header="{ui:T Look_Message}" PolicyPath="Appearance.Message"
+                                        Description="{ui:T Look_Message_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="320" Text="{Binding Appearance.Message}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8A1;" Header="{ui:T Look_Pill}" PolicyPath="Appearance.ShowStatusPill">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Appearance.ShowStatusPill}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE823;" Header="{ui:T Look_Clock}" PolicyPath="Appearance.ShowClock">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Appearance.ShowClock}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7C9;" Header="{ui:T Look_HideCursor}" PolicyPath="Appearance.HideCursor">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Appearance.HideCursor}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE790;" Header="{ui:T Look_Accent}" PolicyPath="Appearance.Accent">
+                            <StackPanel Orientation="Horizontal" x:Name="AccentSwatches"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xEB9F;" Header="{ui:T Look_Logo}" PolicyPath="Appearance.LogoPath"
+                                        Description="{ui:T Look_Logo_Desc}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Style="{StaticResource Field}" Text="{Binding Appearance.LogoPath}" Margin="0,0,8,0"/>
+                                <Button Content="{ui:T Common_Browse}" Click="BrowseLogo_Click"/>
+                            </StackPanel>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xF2B7;" Header="{ui:T Look_Language}" Description="{ui:T Look_Language_Desc}" PolicyPath="Appearance.Language">
+                            <ComboBox x:Name="LanguageCombo" SelectedValuePath="Value" DisplayMemberPath="Label" SelectedValue="{Binding Appearance.Language}" MinWidth="200"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE768;" Header="{ui:T Look_Preview}" Description="{ui:T Look_Preview_Desc}">
+                            <Button Content="{ui:T Look_TestLock}" Click="LockNow_Click"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Sicherheit ========== -->
+                    <StackPanel x:Name="PageSecurity" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Sec_Failures}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7BA;" Header="{ui:T Sec_MaxFailed}" PolicyPath="Security.MaxFailedAttempts"
+                                        Description="{ui:T Sec_MaxFailed_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Security.MaxFailedAttempts, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7E8;" Header="{ui:T Sec_Action}" PolicyPath="Security.FailureAction">
+                            <ComboBox x:Name="FailureCombo" SelectedValuePath="Value" DisplayMemberPath="Label" SelectedValue="{Binding Security.FailureAction}" Width="260"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE916;" Header="{ui:T Sec_Delay}" PolicyPath="Security.ProgressiveDelay"
+                                        Description="{ui:T Sec_Delay_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.ProgressiveDelay}"/>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Sec_Protection}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE765;" Header="{ui:T Sec_Sas}" PolicyPath="Security.RestrictCtrlAltDel"
+                                        Description="{ui:T Sec_Sas_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.RestrictCtrlAltDel}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE83D;" Header="{ui:T Sec_Watchdog}" PolicyPath="Security.Watchdog"
+                                        Description="{ui:T Sec_Watchdog_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.Watchdog}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7EF;" Header="{ui:T Sec_SettingsAdmin}" PolicyPath="Security.SettingsAdminOnly">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.SettingsAdminOnly}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7E8;" Header="{ui:T Sec_ExitAdmin}" PolicyPath="Security.ExitRequiresAdmin">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.ExitRequiresAdmin}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE77B;" Header="{ui:T Sec_UserConfig}" PolicyPath="Security.AllowUserConfig"
+                                        Description="{ui:T Sec_UserConfig_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.AllowUserConfig}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE71D;" Header="{ui:T Sec_AuthUi}" Tag="Below" PolicyPath="Security.AuthUiProcesses"
+                                        Description="{ui:T Sec_AuthUi_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" Text="{Binding Security.AuthUiProcesses, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Rollen und Nachvollziehbarkeit (0.5.0) ========== -->
+                    <StackPanel x:Name="PageRoles" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Roles_Section}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7EF;" Header="{ui:T Roles_ConfigAdmins}" Tag="Below" PolicyPath="Roles.ConfigAdmins"
+                                        Description="{ui:T Roles_ConfigAdmins_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Roles.ConfigAdmins, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8D7;" Header="{ui:T Roles_Registrars}" Tag="Below" PolicyPath="Roles.Registrars"
+                                        Description="{ui:T Roles_Registrars_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Roles.Registrars, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE81C;" Header="{ui:T Roles_Auditors}" Tag="Below" PolicyPath="Roles.Auditors"
+                                        Description="{ui:T Roles_Auditors_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Roles.Auditors, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE83D;" Header="{ui:T Roles_AdminsPrivileged}" PolicyPath="Security.LocalAdministratorsArePrivileged"
+                                        Description="{ui:T Roles_AdminsPrivileged_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.LocalAdministratorsArePrivileged}"/>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Roles_EmergencySection}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7BA;" Header="{ui:T Roles_BypassGroups}" Tag="Below" PolicyPath="Unlock.BypassGroups"
+                                        Description="{ui:T Roles_BypassGroups_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Unlock.BypassGroups, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8BD;" Header="{ui:T Roles_BypassMinLength}" PolicyPath="Unlock.BypassReasonMinLength"
+                                        Description="{ui:T Roles_BypassMinLength_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Unlock.BypassReasonMinLength, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+
+                        <TextBlock Text="{ui:T Roles_ReasonsSection}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE7EF;" Header="{ui:T Roles_ReasonAdmin}" PolicyPath="Security.ReasonRequiredForAdminActions"
+                                        Description="{ui:T Roles_ReasonAdmin_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.ReasonRequiredForAdminActions}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE713;" Header="{ui:T Roles_ReasonConfig}" PolicyPath="Security.ReasonRequiredForConfigChanges"
+                                        Description="{ui:T Roles_ReasonConfig_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Security.ReasonRequiredForConfigChanges}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8BD;" Header="{ui:T Roles_ReasonMinLength}" PolicyPath="Security.ReasonMinLength">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Security.ReasonMinLength, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Sicherheitsschlüssel (Verfahren „fido“, docs/security-keys.md) ========== -->
+                    <StackPanel x:Name="PageKeys" Style="{StaticResource Page}">
+                        <Border x:Name="KeysStatusBox" CornerRadius="6" Padding="14,11" Margin="0,0,0,8" Background="{DynamicResource SystemFillColorAttentionBackgroundBrush}">
+                            <TextBlock x:Name="KeysStatusText" Style="{StaticResource Body}" FontSize="13" TextWrapping="Wrap"/>
+                        </Border>
+                        <Grid Margin="0,14,0,8">
+                            <TextBlock Text="{ui:T Keys_Registered}" Style="{StaticResource SectionText}" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button x:Name="KeysRegisterButton" Content="{ui:T Keys_Register}" Style="{StaticResource AccentButton}" Click="RegisterKey_Click" Margin="0,0,8,0"/>
+                                <Button Click="RefreshKeys_Click" ToolTip="{ui:T Common_Refresh}">
+                                    <TextBlock Text="&#xE72C;" Style="{StaticResource Icon}" FontSize="14"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <Border x:Name="KeysResult" CornerRadius="6" Padding="12,9" Margin="0,0,0,8" Visibility="Collapsed">
+                            <TextBlock x:Name="KeysResultText" Style="{StaticResource Body}" FontSize="13" TextWrapping="Wrap"/>
+                        </Border>
+                        <Border Style="{StaticResource Card}" Padding="0">
+                            <ItemsControl x:Name="KeysList">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Padding="16,10">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="&#xE88E;" Style="{StaticResource Icon}" FontSize="14" Opacity="{Binding Opacity}" Margin="0,2,14,0" VerticalAlignment="Top"/>
+                                                <StackPanel Grid.Column="1" Opacity="{Binding Opacity}">
+                                                    <TextBlock Text="{Binding Title}" Style="{StaticResource BodyStrong}" FontSize="13" TextTrimming="CharacterEllipsis"/>
+                                                    <TextBlock Text="{Binding Text}" Style="{StaticResource Caption}" TextWrapping="Wrap"/>
+                                                </StackPanel>
+                                                <Button Grid.Column="2" Content="{Binding RevokeText}" Visibility="{Binding RevokeVisibility}" Tag="{Binding Key}"
+                                                        Click="RevokeKey_Click" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Border>
+
+                        <TextBlock Text="{ui:T Keys_Policy}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE774;" Header="{ui:T Keys_RpId}" PolicyPath="Fido.RpId" Description="{ui:T Keys_RpId_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="220" Text="{Binding Fido.RpId}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE77B;" Header="{ui:T Keys_SelfRegistration}" PolicyPath="Fido.AllowSelfRegistration" Description="{ui:T Keys_SelfRegistration_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Fido.AllowSelfRegistration}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8B7;" Header="{ui:T Keys_MaxKeys}" PolicyPath="Fido.MaxKeysPerPerson" Description="{ui:T Keys_MaxKeys_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Fido.MaxKeysPerPerson, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7BA;" Header="{ui:T Keys_MaxFailed}" PolicyPath="Fido.MaxFailedAttempts" Description="{ui:T Keys_MaxFailed_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Fido.MaxFailedAttempts, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE916;" Header="{ui:T Keys_BlockMinutes}" PolicyPath="Fido.BlockMinutes">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Fido.BlockMinutes, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE823;" Header="{ui:T Keys_OfflineHours}" PolicyPath="Fido.OfflineMaxHours" Description="{ui:T Keys_OfflineHours_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Fido.OfflineMaxHours, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE71D;" Header="{ui:T Keys_Models}" Tag="Below" PolicyPath="Fido.AllowedModels" Description="{ui:T Keys_Models_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Fido.AllowedModels, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE968;" Header="{ui:T Keys_Store}" Tag="Below" PolicyPath="Fido.Store" Description="{ui:T Keys_Store_Desc}">
+                            <ComboBox x:Name="KeysStoreCombo" SelectedValuePath="Value" DisplayMemberPath="Label" SelectedValue="{Binding Fido.Store}" MinWidth="320" HorizontalAlignment="Left"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8B7;" Header="{ui:T Keys_Container}" Tag="Below" PolicyPath="Fido.DirectoryContainer" Description="{ui:T Keys_Container_Desc}">
+                            <TextBox Style="{StaticResource Field}" Text="{Binding Fido.DirectoryContainer}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE895;" Header="{ui:T Keys_SyncMinutes}" PolicyPath="Fido.SyncMinutes" Description="{ui:T Keys_SyncMinutes_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Fido.SyncMinutes, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Entra ID ========== -->
+                    <StackPanel x:Name="PageEntra" Style="{StaticResource Page}">
+                        <Border CornerRadius="8" Padding="16,14" Background="{DynamicResource SystemFillColorAttentionBackgroundBrush}" Margin="0,8,0,4">
+                            <StackPanel>
+                                <TextBlock Text="{ui:T Entra_SetupTitle}" Style="{StaticResource BodyStrong}"/>
+                                <TextBlock Style="{StaticResource Caption}" Margin="0,6,0,0" LineHeight="20" TextWrapping="Wrap">
+                                    <Run Text="{ui:T Entra_Step1}"/><LineBreak/>
+                                    <Run Text="{ui:T Entra_Step2}"/><LineBreak/>
+                                    <Run Text="{ui:T Entra_Step3}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <ui:SettingCard Glyph="&#xE8F4;" Header="{ui:T Entra_Tenant}" PolicyPath="Entra.TenantId"
+                                        Description="{ui:T Entra_Tenant_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="320" Text="{Binding Entra.TenantId}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE943;" Header="{ui:T Entra_Client}" PolicyPath="Entra.ClientId">
+                            <TextBox Style="{StaticResource Field}" Width="320" Text="{Binding Entra.ClientId, UpdateSourceTrigger=PropertyChanged}" TextChanged="ClientId_TextChanged"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE71B;" Header="{ui:T Entra_Redirect}" Description="{ui:T Entra_Redirect_Desc}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="RedirectBox" Style="{StaticResource Field}" Width="320" IsReadOnly="True" Margin="0,0,8,0"/>
+                                <Button Click="CopyRedirect_Click" ToolTip="{ui:T Common_Copy}">
+                                    <TextBlock Text="&#xE8C8;" Style="{StaticResource Icon}" FontSize="14"/>
+                                </Button>
+                            </StackPanel>
+                        </ui:SettingCard>
+                        <ui:SettingCard x:Name="BrokerCard" Glyph="&#xE7EF;" Header="{ui:T Entra_Broker}" PolicyPath="Entra.UseBroker"
+                                        Description="{ui:T Entra_Broker_Desc}">
+                            <CheckBox x:Name="BrokerToggle" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Entra.UseBroker}" Click="Broker_Click"/>
+                        </ui:SettingCard>
+                        <!-- Mit Broker: merkt sich Konten, meldet mit dem Sitzungskonto an (VIT-0191) -->
+                        <Border x:Name="BrokerWarning" Margin="0,0,0,4" CornerRadius="6" Padding="12,9" Visibility="Collapsed"
+                                Background="{DynamicResource SystemFillColorCriticalBackgroundBrush}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xE7BA;" Style="{StaticResource Icon}" FontSize="14" Foreground="{DynamicResource SystemFillColorCriticalBrush}"
+                                           VerticalAlignment="Top" Margin="0,2,10,0"/>
+                                <TextBlock x:Name="BrokerWarningText" Grid.Column="1" TextWrapping="Wrap"/>
+                            </Grid>
+                        </Border>
+                        <ui:SettingCard Glyph="&#xE72C;" Header="{ui:T Entra_Fresh}" PolicyPath="Entra.ForceFreshSignIn"
+                                        Description="{ui:T Entra_Fresh_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Entra.ForceFreshSignIn}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE916;" Header="{ui:T Entra_MaxAge}" PolicyPath="Entra.MaxAuthAgeSeconds"
+                                        Description="{ui:T Entra_MaxAge_Desc}">
+                            <TextBox Style="{StaticResource NumberField}" Text="{Binding Entra.MaxAuthAgeSeconds, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE774;" Header="{ui:T Entra_SignInHosts}" Tag="Below" PolicyPath="Entra.AllowedSignInHosts"
+                                        Description="{ui:T Entra_SignInHosts_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Entra.AllowedSignInHosts, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8F4;" Header="{ui:T Entra_Tenants}" Tag="Below" PolicyPath="Entra.AllowedTenants"
+                                        Description="{ui:T Entra_Tenants_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Entra.AllowedTenants, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8D7;" Header="{ui:T Entra_AuthContext}" PolicyPath="Entra.AuthenticationContext"
+                                        Description="{ui:T Entra_AuthContext_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="80" Text="{Binding Entra.AuthenticationContext}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xEE57;" Header="{ui:T Entra_SignAuthContext}" PolicyPath="Entra.SignatureAuthenticationContext"
+                                        Description="{ui:T Entra_SignAuthContext_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="80" Text="{Binding Entra.SignatureAuthenticationContext}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8A7;" Header="{ui:T Entra_ShareIdToken}" PolicyPath="Entra.ShareIdToken"
+                                        Description="{ui:T Entra_ShareIdToken_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Entra.ShareIdToken}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE72E;" Header="{ui:T Entra_TokenScopes}" Tag="Below" PolicyPath="Entra.AllowedTokenScopes"
+                                        Description="{ui:T Entra_TokenScopes_Desc}">
+                            <TextBox Style="{StaticResource MultiLineBox}" MinHeight="54" Text="{Binding Entra.AllowedTokenScopes, Converter={StaticResource Lines}}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE768;" Header="{ui:T Entra_Test}" Description="{ui:T Entra_Test_Desc}">
+                            <Button Content="{ui:T Entra_TestButton}" Style="{StaticResource AccentButton}" Click="TestEntra_Click"/>
+                        </ui:SettingCard>
+                        <Border x:Name="EntraResult" Style="{StaticResource Card}" Visibility="Collapsed">
+                            <TextBlock x:Name="EntraResultText" Style="{StaticResource Body}" FontFamily="Cascadia Mono, Consolas" FontSize="12"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- ========== Protokoll ========== -->
+                    <StackPanel x:Name="PageAudit" Style="{StaticResource Page}">
+                        <!-- Wer schreibt das Protokoll (#15): Dienst (signiert), Dienst nicht erreichbar, App selbst (nicht Part-11-fähig) -->
+                        <Border x:Name="AuditModeBox" CornerRadius="6" Padding="14,11" Margin="0,0,0,8">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AuditModeGlyph" Style="{StaticResource Icon}" FontSize="16" Margin="0,1,12,0" VerticalAlignment="Top"/>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock x:Name="AuditModeTitle" Style="{StaticResource Body}" FontWeight="SemiBold"/>
+                                    <TextBlock x:Name="AuditModeText" Style="{StaticResource Body}" FontSize="13" TextWrapping="Wrap" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <ui:SettingCard Glyph="&#xE81C;" Header="{ui:T Audit_Enabled}" PolicyPath="Audit.Enabled"
+                                        Description="{ui:T Audit_Enabled_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Audit.Enabled}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8B7;" Header="{ui:T Audit_Folder}" PolicyPath="Audit.Directory"
+                                        Description="{ui:T Audit_Folder_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="320" Text="{Binding Audit.Directory}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8CE;" Header="{ui:T Audit_Network}" PolicyPath="Audit.NetworkDirectory"
+                                        Description="{ui:T Audit_Network_Desc}">
+                            <TextBox Style="{StaticResource Field}" Width="320" Text="{Binding Audit.NetworkDirectory}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7C3;" Header="{ui:T Audit_EventLog}" PolicyPath="Audit.EventLog"
+                                        Description="{ui:T Audit_EventLog_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Audit.EventLog}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE72E;" Header="{ui:T Audit_LockState}" PolicyPath="Audit.LogLockState"
+                                        Description="{ui:T Audit_LockState_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Audit.LogLockState}"/>
+                        </ui:SettingCard>
+
+                        <Grid Margin="0,22,0,8">
+                            <TextBlock Text="{ui:T Audit_Recent}" Style="{StaticResource SectionText}" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Content="{ui:T Audit_Report}" Click="Report_Click" Margin="0,0,8,0" ToolTip="{ui:T Audit_Report_Tip}"/>
+                                <Button Content="{ui:T Audit_Verify}" Click="VerifyLog_Click" Margin="0,0,8,0"/>
+                                <Button Content="{ui:T Audit_OpenFolder}" Click="OpenLogFolder_Click" Margin="0,0,8,0"/>
+                                <Button Click="RefreshLog_Click" ToolTip="{ui:T Common_Refresh}">
+                                    <TextBlock Text="&#xE72C;" Style="{StaticResource Icon}" FontSize="14"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <Border x:Name="VerifyResult" CornerRadius="6" Padding="12,9" Margin="0,0,0,8" Visibility="Collapsed">
+                            <TextBlock x:Name="VerifyText" Style="{StaticResource Body}" FontSize="13"/>
+                        </Border>
+                        <Border Style="{StaticResource Card}" Padding="0">
+                            <ItemsControl x:Name="LogList">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Padding="16,10">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="140"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding Glyph}" Style="{StaticResource Icon}" FontSize="14" Foreground="{Binding Brush}" Margin="0,0,14,0"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Title}" Style="{StaticResource BodyStrong}" FontSize="13"/>
+                                                <TextBlock Grid.Column="2" Text="{Binding Text}" Style="{StaticResource Caption}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Time}" Style="{StaticResource Caption}" Margin="12,0,0,0"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- ========== Integration ========== -->
+                    <StackPanel x:Name="PageIntegration" Style="{StaticResource Page}">
+                        <TextBlock Text="{ui:T Int_Interface}" Style="{StaticResource SectionText}"/>
+                        <ui:SettingCard Glyph="&#xE943;" Header="{ui:T Int_Pipe}" PolicyPath="Integration.PipeEnabled"
+                                        Description="{ui:T Int_Pipe_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Integration.PipeEnabled}"/>
+                        </ui:SettingCard>
+                        <Border Style="{StaticResource Card}">
+                            <StackPanel>
+                                <TextBlock x:Name="PipeNameText" Style="{StaticResource BodyStrong}" FontFamily="Cascadia Mono, Consolas" FontSize="13"/>
+                                <TextBlock Style="{StaticResource Caption}" FontFamily="Cascadia Mono, Consolas" Margin="0,8,0,0" LineHeight="19">
+                                    → {"cmd":"status"}<LineBreak/>
+                                    → {"cmd":"lock"}<LineBreak/>
+                                    → {"cmd":"authenticate","reason":"Release batch 4711","meaning":"Approved","requester":"LIMS"}<LineBreak/>
+                                    ← {"ok":true,"user":"user@contoso.com","method":"entra","time":"…","auditHash":"…"}<LineBreak/>
+                                    → {"cmd":"subscribe"}   <Run Text="{ui:T Int_PipeEvents}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <ui:SettingCard Glyph="&#xE74C;" Header="{ui:T Int_Plugins}" PolicyPath="Integration.LoadPlugins"
+                                        Description="{ui:T Int_Plugins_Desc}">
+                            <CheckBox Style="{StaticResource ToggleSwitch}" IsChecked="{Binding Integration.LoadPlugins}"/>
+                        </ui:SettingCard>
+                        <Border Style="{StaticResource Card}" x:Name="PluginCard">
+                            <TextBlock x:Name="PluginText" Style="{StaticResource Caption}" TextWrapping="Wrap"/>
+                        </Border>
+
+                        <TextBlock Text="{ui:T Int_Scripts}" Style="{StaticResource SectionText}"/>
+                        <TextBlock Style="{StaticResource Caption}" Margin="2,-4,0,10"
+                                   Text="{ui:T Int_Scripts_Desc}"/>
+                        <ui:SettingCard Glyph="&#xE72E;" Header="{ui:T Int_OnLock}" PolicyPath="Scripts.OnLock">
+                            <TextBox Style="{StaticResource Field}" Width="380" Text="{Binding Scripts.OnLock}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE785;" Header="{ui:T Int_OnUnlock}" PolicyPath="Scripts.OnUnlock">
+                            <TextBox Style="{StaticResource Field}" Width="380" Text="{Binding Scripts.OnUnlock}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7BA;" Header="{ui:T Int_OnFailed}" PolicyPath="Scripts.OnFailedAttempt">
+                            <TextBox Style="{StaticResource Field}" Width="380" Text="{Binding Scripts.OnFailedAttempt}"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8BD;" Header="{ui:T Int_OnPrompt}" PolicyPath="Scripts.OnPromptShown">
+                            <TextBox Style="{StaticResource Field}" Width="380" Text="{Binding Scripts.OnPromptShown}"/>
+                        </ui:SettingCard>
+                    </StackPanel>
+
+                    <!-- ========== Info ========== -->
+                    <StackPanel x:Name="PageInfo" Style="{StaticResource Page}">
+                        <Border Style="{StaticResource Card}" Padding="24" Margin="0,8,0,4">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:AppIcon Width="64" Height="64"/>
+                                <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="Vitrine" Style="{StaticResource SubtitleText}"/>
+                                    <TextBlock x:Name="VersionText" Style="{StaticResource Caption}"/>
+                                    <TextBlock Text="{ui:T App_Description}" Style="{StaticResource Caption}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <ui:SettingCard Glyph="&#xE946;" Header="{ui:T Info_About}" Description="{ui:T Info_About_Desc}">
+                            <Button Content="{ui:T Common_Open}" Click="OpenAbout_Click"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE8B7;" Header="{ui:T Info_DeviceConfig}" x:Name="InfoConfigPath">
+                            <Button Content="{ui:T Common_Open}" Click="OpenConfig_Click"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE7EF;" Header="{ui:T Info_Managed}" Description="{ui:T Info_Managed_Desc}">
+                            <Button Content="{ui:T Info_ReloadPolicy}" Click="ReloadPolicy_Click"/>
+                        </ui:SettingCard>
+                        <ui:SettingCard Glyph="&#xE756;" Header="{ui:T Info_CommandLine}" Tag="Below"
+                                        Description="{ui:T Info_CommandLine_Desc}">
+                            <TextBlock/>
+                        </ui:SettingCard>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+
+            <!-- ===================== Fußleiste ===================== -->
+            <Border Grid.Row="2" BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}" BorderThickness="0,1,0,0" Padding="36,12">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock x:Name="FooterIcon" Text="&#xE73E;" Style="{StaticResource Icon}" FontSize="14" Margin="0,0,8,0" Foreground="{DynamicResource TextFillColorSecondaryBrush}"/>
+                        <TextBlock x:Name="FooterText" Text="{ui:T Footer_AllSaved}" Style="{StaticResource Caption}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="DiscardButton" Content="{ui:T Footer_Discard}" Click="Discard_Click" Margin="0,0,8,0" MinWidth="110"/>
+                        <Button x:Name="SaveButton" Content="{ui:T Footer_Save}" Style="{StaticResource AccentButton}" Click="Save_Click" MinWidth="110"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

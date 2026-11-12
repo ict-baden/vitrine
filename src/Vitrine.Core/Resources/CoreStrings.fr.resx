@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Maschinell vorübersetzt – TODO-übersetzen: vor der ersten öffentlichen Version von Muttersprachlern prüfen lassen. Besonders unsichere Einträge tragen zusätzlich den Kommentar „TODO-übersetzen“. -->
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Audit_ChainComplete" xml:space="preserve">
+    <value>Entrées : {0} · chaîne complète</value>
+  </data>
+  <data name="Config_NotAnObject" xml:space="preserve">
+    <value>Le fichier ne contient pas d'objet JSON.</value>
+  </data>
+  <data name="Config_TooLarge" xml:space="preserve">
+    <value>Le fichier dépasse {0} Ko.</value>
+  </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="Error_VIT0001" xml:space="preserve">
+    <value>Impossible de lire {0} : {1}</value>
+  </data>
+  <data name="Error_VIT0002" xml:space="preserve">
+    <value>Impossible de lire la stratégie {0} : {1}</value>
+  </data>
+  <data name="Error_VIT0012" xml:space="preserve">
+    <value>{0} est ignoré : les utilisateurs standard pourraient le modifier ou le remplacer. Enregistrez une fois les paramètres en tant qu'administrateur pour protéger le fichier.</value>
+  </data>
+  <data name="Error_VIT0020" xml:space="preserve">
+    <value>Impossible de lire la ligne {0}.</value>
+  </data>
+  <data name="Error_VIT0021" xml:space="preserve">
+    <value>Ligne {0} (séquence {1}) : chaîne rompue – l'entrée précédente est manquante ou a été modifiée.</value>
+  </data>
+  <data name="Error_VIT0022" xml:space="preserve">
+    <value>Ligne {0} (séquence {1}) : le contenu a été modifié.</value>
+  </data>
+  <data name="Error_VIT0023" xml:space="preserve">
+    <value>Impossible de lire le fichier journal : {0}</value>
+  </data>
+  <data name="Error_VIT0100" xml:space="preserve">
+    <value>Échec de la connexion.</value>
+  </data>
+  <data name="Error_VIT0101" xml:space="preserve">
+    <value>Le nom d'utilisateur ou le mot de passe est incorrect.</value>
+  </data>
+  <data name="Error_VIT0102" xml:space="preserve">
+    <value>Le compte est soumis à des restrictions ou le mot de passe a expiré.</value>
+  </data>
+  <data name="Error_VIT0103" xml:space="preserve">
+    <value>Le compte est désactivé.</value>
+  </data>
+  <data name="Error_VIT0104" xml:space="preserve">
+    <value>Le compte est verrouillé.</value>
+  </data>
+  <data name="Error_VIT0105" xml:space="preserve">
+    <value>Aucun serveur d'ouverture de session n'est disponible.</value>
+  </data>
+  <data name="Error_VIT0106" xml:space="preserve">
+    <value>Ce compte n'est pas autorisé à se connecter sur cet appareil.</value>
+  </data>
+  <data name="Error_VIT0107" xml:space="preserve">
+    <value>Saisissez le mot de passe.</value>
+  </data>
+  <data name="Error_VIT0108" xml:space="preserve">
+    <value>Pour les comptes Microsoft Entra ID, saisissez l'adresse e-mail de connexion (nom@contoso.com) comme nom d'utilisateur.</value>
+  </data>
+  <data name="Error_VIT0109" xml:space="preserve">
+    <value>Windows signale : {0}</value>
+  </data>
+  <data name="Error_VIT0110" xml:space="preserve">
+    <value>Microsoft Entra ID n'est pas configuré (ID d'application manquant).</value>
+  </data>
+  <data name="Error_VIT0111" xml:space="preserve">
+    <value>Connexion annulée.</value>
+  </data>
+  <data name="Error_VIT0112" xml:space="preserve">
+    <value>Microsoft Entra ID : {0}</value>
+  </data>
+  <data name="Error_VIT0113" xml:space="preserve">
+    <value>Ce compte n'appartient à aucun locataire autorisé.</value>
+  </data>
+  <data name="Error_VIT0114" xml:space="preserve">
+    <value>La connexion est trop ancienne. Reconnectez-vous.</value>
+  </data>
+  <data name="Error_VIT0120" xml:space="preserve">
+    <value>Windows Hello n'est pas disponible.</value>
+  </data>
+  <data name="Error_VIT0122" xml:space="preserve">
+    <value>Trop de tentatives.</value>
+  </data>
+  <data name="Error_VIT0123" xml:space="preserve">
+    <value>Windows Hello est occupé.</value>
+  </data>
+  <data name="Error_VIT0124" xml:space="preserve">
+    <value>Windows Hello est désactivé par une stratégie.</value>
+  </data>
+  <data name="Error_VIT0125" xml:space="preserve">
+    <value>Windows Hello n'est pas configuré pour ce compte.</value>
+  </data>
+  <data name="Error_VIT0130" xml:space="preserve">
+    <value>Aucun mot de passe de déverrouillage n'a été défini.</value>
+  </data>
+  <data name="Error_VIT0131" xml:space="preserve">
+    <value>Le mot de passe est incorrect.</value>
+  </data>
+  <data name="Error_VIT0140" xml:space="preserve">
+    <value>{0} ne peut pas déverrouiller ce poste de travail.</value>
+  </data>
+  <data name="Error_VIT0141" xml:space="preserve">
+    <value>Les comptes de ce domaine ne sont pas autorisés à déverrouiller ici.</value>
+  </data>
+  <data name="Error_VIT0142" xml:space="preserve">
+    <value>Seuls les administrateurs peuvent effectuer cette opération.</value>
+  </data>
+  <data name="Error_VIT0143" xml:space="preserve">
+    <value>Cette action nécessite une connexion d'administrateur personnelle.</value>
+  </data>
+  <data name="Error_VIT0144" xml:space="preserve">
+    <value>Une signature nécessite une connexion personnelle.</value>
+  </data>
+  <data name="Error_VIT0145" xml:space="preserve">
+    <value>Veuillez patienter {0} s.</value>
+  </data>
+  <data name="Error_VIT0150" xml:space="preserve">
+    <value>Au moins {0} caractères.</value>
+  </data>
+  <data name="Error_VIT0151" xml:space="preserve">
+    <value>Les deux saisies ne correspondent pas.</value>
+  </data>
+  <data name="Error_VIT0160" xml:space="preserve">
+    <value>Impossible de verrouiller Windows : ni le verrouillage ni la déconnexion de la session n’ont fonctionné.</value>
+  </data>
+  <data name="Error_VIT0161" xml:space="preserve">
+    <value>Impossible de verrouiller Windows ; la session a été déconnectée à la place.</value>
+  </data>
+  <data name="Error_VIT0162" xml:space="preserve">
+    <value>Impossible de désactiver Win+L ; il verrouille toujours Windows.</value>
+  </data>
+  <data name="Error_VIT0163" xml:space="preserve">
+    <value>DisableLockWorkstation est défini par une stratégie ordinateur ; Vitrine ne le modifie pas.</value>
+  </data>
+  <data name="Pin_DisplayName" xml:space="preserve">
+    <value>Mot de passe de déverrouillage</value>
+  </data>
+  <data name="Error_VIT0115" xml:space="preserve">
+    <value>La connexion n'atteint pas le niveau exigé. Connectez-vous avec une méthode exigée par votre organisation (p. ex. une clé d'accès).</value>
+  </data>
+  <data name="Error_VIT0116" xml:space="preserve">
+    <value>Le contexte d'authentification « {0} » n'est pas valide (autorisé : c1 à c99). La connexion est refusée jusqu'à ce que l'administrateur le corrige.</value>
+  </data>
+  <data name="Error_VIT0015" xml:space="preserve">
+    <value>{0} : « {1} » est illisible et est ignoré.</value>
+  </data>
+  <data name="Error_VIT0016" xml:space="preserve">
+    <value>Unlock.Methods ne contient que Microsoft Entra ID, qui ne peut pas être proposé sur l'écran de verrouillage : Microsoft Edge WebView2 Runtime est absent et le répartiteur de comptes Windows n'est pas utilisé. Le déverrouillage se fait à la place avec le mot de passe Windows, et Entra.AuthenticationContext ne s'applique pas au déverrouillage.</value>
+  </data>
+  <data name="Error_VIT0017" xml:space="preserve">
+    <value>{0} : les entrées {1} ne correspondent jamais à une connexion Windows (Windows fournit DOMAINE\nom et des SID de groupe, pas des suffixes UPN ni des ID de groupe Microsoft Entra). L'écran de verrouillage ne propose que des connexions Windows : il se peut que personne ne puisse déverrouiller.</value>
+  </data>
+  <data name="Error_VIT0117" xml:space="preserve">
+    <value>Microsoft Entra ID n'est pas limité à votre organisation. L'administrateur doit saisir l'ID de locataire (GUID) dans Entra.TenantId ou Entra.AllowedTenants – sinon des comptes de n'importe quelle organisation pourraient se connecter.</value>
+  </data>
+  <data name="Audit_Signed" xml:space="preserve">
+    <value>{0} signées par le service (clé {1})</value>
+  </data>
+  <data name="Audit_Unsigned" xml:space="preserve">
+    <value>{0} non signées (écrites sans le service, non conformes Part 11)</value>
+  </data>
+  <data name="Error_VIT0300" xml:space="preserve">
+    <value>Le service de journal n’est pas joignable – les signatures électroniques sont impossibles pour le moment.</value>
+  </data>
+  <data name="Error_VIT0301" xml:space="preserve">
+    <value>Ligne {0} (séquence {1}) : la signature n’est pas valide.</value>
+  </data>
+  <data name="Error_VIT0302" xml:space="preserve">
+    <value>La ligne {0} (séquence {1}) est signée avec une clé inconnue ({2}).</value>
+  </data>
+  <data name="Error_VIT0303" xml:space="preserve">
+    <value>Ligne {0} : la séquence {1} suit {2} – des entrées manquent ou sont dans le désordre.</value>
+  </data>
+  <data name="Error_VIT0304" xml:space="preserve">
+    <value>Le fichier s’arrête à la séquence {0}, mais le service a écrit jusqu’à la séquence {1} pour {2} – la fin a été supprimée ou le fichier remplacé.</value>
+  </data>
+  <data name="Error_VIT0305" xml:space="preserve">
+    <value>L’entrée {0} ne correspond pas à l’ancre conservée par le service – le fichier a été modifié ou remplacé.</value>
+  </data>
+  <data name="Error_VIT0306" xml:space="preserve">
+    <value>Le journal de {0} est manquant (le service a écrit jusqu’à la séquence {1}).</value>
+  </data>
+  <data name="Error_VIT0307" xml:space="preserve">
+    <value>La ligne {0} (séquence {1}) date de {2}, pas du mois du fichier – le fichier a été échangé.</value>
+  </data>
+  <data name="Error_VIT0308" xml:space="preserve">
+    <value>Ligne {0} (séquence {1}) : entrée non signée après des entrées signées – elle n’a pas été écrite par le service.</value>
+  </data>
+  <data name="Error_VIT0309" xml:space="preserve">
+    <value>La première entrée ne prolonge pas le journal de {0} – des entrées manquent entre les deux ou un fichier a été remplacé.</value>
+  </data>
+  <data name="Error_VIT0310" xml:space="preserve">
+    <value>Aucune clé publique pour vérifier les signatures de {0} (audit-keys.json manquant).</value>
+  </data>
+  <data name="Error_VIT0311" xml:space="preserve">
+    <value>Le service n’a pas accepté la connexion Microsoft : {0}</value>
+  </data>
+  <data name="Error_VIT0312" xml:space="preserve">
+    <value>Le service n’a pas pu récupérer les clés de signature de Microsoft – signature refusée.</value>
+  </data>
+  <data name="Error_VIT0313" xml:space="preserve">
+    <value>La confirmation de la connexion a expiré – veuillez signer à nouveau.</value>
+  </data>
+  <data name="Error_VIT0314" xml:space="preserve">
+    <value>Trop de vérifications de connexion en peu de temps – veuillez patienter une minute.</value>
+  </data>
+  <data name="Error_VIT0315" xml:space="preserve">
+    <value>Le service a refusé une entrée de l’application de session : seul le service écrit ce type d’entrées.</value>
+  </data>
+  <data name="Error_VIT0316" xml:space="preserve">
+    <value>La fin du journal ne correspond pas à l’ancre conservée par le service.</value>
+  </data>
+  <data name="Error_VIT0317" xml:space="preserve">
+    <value>La clé du journal n’a pas pu être créée ou chargée : {0}</value>
+  </data>
+  <data name="Error_VIT0318" xml:space="preserve">
+    <value>Des entrées du journal ont été perdues car le service est resté injoignable trop longtemps.</value>
+  </data>
+  <data name="Error_VIT0319" xml:space="preserve">
+    <value>Cette méthode de connexion ne peut pas être utilisée pour les signatures.</value>
+  </data>
+  <data name="Error_VIT0320" xml:space="preserve">
+    <value>La connexion Microsoft ne peut pas servir pour une signature : le jeton d’ID ne contient pas auth_time. L’administrateur doit ajouter la revendication facultative auth_time au jeton d’ID dans l’inscription de l’application.</value>
+  </data>
+  <data name="Error_VIT0321" xml:space="preserve">
+    <value>La connexion Microsoft n’est pas assez récente pour une signature – reconnectez-vous avec votre mot de passe ou votre clé d’accès.</value>
+  </data>
+  <data name="Error_VIT0322" xml:space="preserve">
+    <value>Le service n’a pas pu écrire l’entrée du journal ; Vitrine la conserve et la renvoie.</value>
+  </data>
+  <data name="Error_VIT0323" xml:space="preserve">
+    <value>Les utilisateurs peuvent modifier le dossier du journal défini dans Audit.Directory ; le service écrit dans le dossier par défaut.</value>
+  </data>
+  <data name="Error_VIT0324" xml:space="preserve">
+    <value>La ligne {0} (séquence {1}) est signée avec la clé {2}, mais la clé actuelle est {3} – un changement de clé nécessite une entrée AuditKeyRotated.</value>
+  </data>
+  <data name="Error_VIT0180" xml:space="preserve">
+    <value>La connexion Microsoft ne peut pas servir au déverrouillage : le jeton d’ID ne contient pas auth_time, Vitrine ne peut donc pas distinguer une vraie connexion d’une authentification unique en un clic avec le compte connecté à Windows. L’administrateur doit ajouter la revendication facultative auth_time au jeton d’ID dans l’inscription de l’application.</value>
+  </data>
+  <data name="Error_VIT0181" xml:space="preserve">
+    <value>Windows a réutilisé une connexion Microsoft existante au lieu de demander vos identifiants. Le déverrouillage exige une nouvelle connexion – utilisez la connexion Windows ou reconnectez-vous.</value>
+  </data>
+  <data name="Error_VIT0330" xml:space="preserve">
+    <value>{0} entrées du journal attendent le service et ne figurent pas encore dans le journal signé : {1}</value>
+  </data>
+  <data name="Error_VIT0331" xml:space="preserve">
+    <value>Le service a refusé une connexion : le programme n’est pas Vitrine.exe du dossier du programme.</value>
+  </data>
+  <data name="Error_VIT0332" xml:space="preserve">
+    <value>Le service n’a pas pu déterminer l’utilisateur d’une connexion au journal.</value>
+  </data>
+  <data name="Error_VIT0333" xml:space="preserve">
+    <value>Le service n’a pas pu traiter une connexion au journal.</value>
+  </data>
+  <data name="AuditDelivery_NotReachable" xml:space="preserve">
+    <value>le service est injoignable.</value>
+  </data>
+  <data name="AuditDelivery_AccessDenied" xml:space="preserve">
+    <value>l’accès au canal du journal du service a été refusé.</value>
+  </data>
+  <data name="AuditDelivery_WrongServer" xml:space="preserve">
+    <value>un autre programme utilise le nom du canal du journal du service.</value>
+  </data>
+  <data name="AuditDelivery_ClosedWithoutAnswer" xml:space="preserve">
+    <value>le service a fermé la connexion sans répondre – voir VIT-0331 et VIT-0332 dans le journal des événements Windows.</value>
+  </data>
+  <data name="AuditDelivery_NoAnswer" xml:space="preserve">
+    <value>le service ne confirme pas les entrées.</value>
+  </data>
+  <data name="AuditDelivery_WriteFailed" xml:space="preserve">
+    <value>le service ne peut pas écrire le journal (VIT-0322).</value>
+  </data>
+  <data name="Error_VIT0190" xml:space="preserve">
+    <value>Microsoft Edge WebView2 Runtime n'est pas installé. Vitrine en a besoin pour sa fenêtre de connexion Microsoft ; Microsoft Entra ID n'est donc pas disponible (ni pour le déverrouillage). Installez WebView2 Runtime.</value>
+  </data>
+  <data name="Error_VIT0191" xml:space="preserve">
+    <value>Entra.UseBroker est activé : le répartiteur de comptes Windows mémorise les comptes qui se connectent et peut se connecter sans demander avec le compte Windows de cette session. À n'utiliser que sur les appareils avec un seul utilisateur personnel.</value>
+  </data>
+  <data name="Error_VIT0192" xml:space="preserve">
+    <value>Impossible d'ouvrir la fenêtre de connexion Microsoft : {0}</value>
+  </data>
+  <data name="Error_VIT0193" xml:space="preserve">
+    <value>La page de connexion a tenté d'ouvrir {0}. Seules les pages de connexion Microsoft et les hôtes de Entra.AllowedSignInHosts sont autorisés ; la connexion a été annulée.</value>
+  </data>
+  <data name="Error_VIT0194" xml:space="preserve">
+    <value>La boîte de dialogue de connexion Windows de la tentative précédente est encore ouverte et n'a pas pu être fermée. Fermez-la et réessayez.</value>
+  </data>
+  <data name="Role_ConfigAdmin" xml:space="preserve">
+    <value>Administrateur de configuration</value>
+  </data>
+  <data name="Role_Registrar" xml:space="preserve">
+    <value>Enregistrement des clés de sécurité</value>
+  </data>
+  <data name="Role_Auditor" xml:space="preserve">
+    <value>Auditeur</value>
+  </data>
+  <data name="Error_VIT0430" xml:space="preserve">
+    <value>Personne ne peut modifier les paramètres dans Vitrine : les administrateurs locaux n'ont aucun privilège Vitrine (Security.LocalAdministratorsArePrivileged) et Roles.ConfigAdmins est vide. Les paramètres ne peuvent être modifiés que par stratégie ou fichier de configuration.</value>
+  </data>
+  <data name="Error_VIT0431" xml:space="preserve">
+    <value>Votre compte n'a pas le rôle Vitrine requis ({0}).</value>
+  </data>
+  <data name="Error_VIT0432" xml:space="preserve">
+    <value>{0} n'est pas autorisé à utiliser la connexion d'urgence.</value>
+  </data>
+  <data name="Error_VIT0433" xml:space="preserve">
+    <value>Veuillez saisir un motif d'au moins {0} caractères.</value>
+  </data>
+  <data name="Error_VIT0434" xml:space="preserve">
+    <value>La connexion d'urgence n'est possible qu'avec le mot de passe Windows.</value>
+  </data>
+  <data name="Report_Title" xml:space="preserve">
+    <value>Rapport d'autorisations Vitrine – {0}</value>
+  </data>
+  <data name="Report_Machine" xml:space="preserve">
+    <value>Ordinateur</value>
+  </data>
+  <data name="Report_GeneratedAt" xml:space="preserve">
+    <value>Généré le</value>
+  </data>
+  <data name="Report_GeneratedBy" xml:space="preserve">
+    <value>Généré par</value>
+  </data>
+  <data name="Report_Version" xml:space="preserve">
+    <value>Version de Vitrine</value>
+  </data>
+  <data name="Report_Intro" xml:space="preserve">
+    <value>Ce rapport indique qui peut déverrouiller cet ordinateur, qui peut utiliser la connexion d'urgence et qui détient quel rôle Vitrine, selon la configuration au moment de sa génération. Les membres des groupes sont les membres directs trouvés à ce moment ; les groupes Entra ID sont indiqués par leur ID, car leurs membres sont gérés dans Entra ID.</value>
+  </data>
+  <data name="Report_SectionUnlock" xml:space="preserve">
+    <value>Qui peut déverrouiller</value>
+  </data>
+  <data name="Report_SectionEmergency" xml:space="preserve">
+    <value>Connexion d'urgence</value>
+  </data>
+  <data name="Report_SectionRoles" xml:space="preserve">
+    <value>Rôles</value>
+  </data>
+  <data name="Report_SectionGovernance" xml:space="preserve">
+    <value>Confirmations et motifs</value>
+  </data>
+  <data name="Report_ColSection" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Report_ColSetting" xml:space="preserve">
+    <value>Paramètre</value>
+  </data>
+  <data name="Report_ColLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Report_ColValue" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="Report_ColSource" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Report_ColGroup" xml:space="preserve">
+    <value>Groupe</value>
+  </data>
+  <data name="Report_ColMembers" xml:space="preserve">
+    <value>Membres</value>
+  </data>
+  <data name="Report_SourcePolicy" xml:space="preserve">
+    <value>Stratégie de groupe</value>
+  </data>
+  <data name="Report_SourceConfig" xml:space="preserve">
+    <value>Fichier de configuration ou valeur par défaut</value>
+  </data>
+  <data name="Report_Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="Report_No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Report_None" xml:space="preserve">
+    <value>(aucun)</value>
+  </data>
+  <data name="Report_Nobody" xml:space="preserve">
+    <value>Personne</value>
+  </data>
+  <data name="Report_NotUsed" xml:space="preserve">
+    <value>Non utilisé (non sélectionné dans Unlock.Allowed)</value>
+  </data>
+  <data name="Report_AllDomains" xml:space="preserve">
+    <value>Tous les domaines</value>
+  </data>
+  <data name="Report_Allowed_SessionUser" xml:space="preserve">
+    <value>Utilisateur connecté à la session</value>
+  </data>
+  <data name="Report_Allowed_Administrators" xml:space="preserve">
+    <value>Administrateurs</value>
+  </data>
+  <data name="Report_Allowed_Groups" xml:space="preserve">
+    <value>Membres des groupes indiqués</value>
+  </data>
+  <data name="Report_Allowed_Users" xml:space="preserve">
+    <value>Comptes indiqués</value>
+  </data>
+  <data name="Report_Allowed_AnyAuthenticated" xml:space="preserve">
+    <value>Tout compte valide</value>
+  </data>
+  <data name="Report_UnlockAllowed" xml:space="preserve">
+    <value>Peut déverrouiller</value>
+  </data>
+  <data name="Report_UnlockGroups" xml:space="preserve">
+    <value>Groupes autorisés à déverrouiller</value>
+  </data>
+  <data name="Report_UnlockUsers" xml:space="preserve">
+    <value>Comptes autorisés à déverrouiller</value>
+  </data>
+  <data name="Report_UnlockDomains" xml:space="preserve">
+    <value>Domaines autorisés</value>
+  </data>
+  <data name="Report_Methods" xml:space="preserve">
+    <value>Méthodes de connexion</value>
+  </data>
+  <data name="Report_BypassGroups" xml:space="preserve">
+    <value>Groupes autorisés à la connexion d'urgence (mot de passe Windows avec motif)</value>
+  </data>
+  <data name="Report_BypassOff" xml:space="preserve">
+    <value>La connexion d'urgence est désactivée</value>
+  </data>
+  <data name="Report_BypassMinLength" xml:space="preserve">
+    <value>Longueur minimale du motif</value>
+  </data>
+  <data name="Report_AdminsPrivileged" xml:space="preserve">
+    <value>Les administrateurs locaux détiennent tous les rôles Vitrine</value>
+  </data>
+  <data name="Report_LocalAdmins" xml:space="preserve">
+    <value>Administrateurs locaux</value>
+  </data>
+  <data name="Report_LocalAdminsNote" xml:space="preserve">
+    <value>Membres du groupe local Administrateurs</value>
+  </data>
+  <data name="Report_AuditorsIncludeAdmins" xml:space="preserve">
+    <value>les administrateurs de configuration sont aussi auditeurs</value>
+  </data>
+  <data name="Report_SettingsAdminOnly" xml:space="preserve">
+    <value>Paramètres réservés aux administrateurs de configuration</value>
+  </data>
+  <data name="Report_ExitRequiresAdmin" xml:space="preserve">
+    <value>Quitter nécessite un administrateur de configuration</value>
+  </data>
+  <data name="Report_ReasonAdmin" xml:space="preserve">
+    <value>Motif obligatoire pour les confirmations d'administrateur</value>
+  </data>
+  <data name="Report_ReasonConfig" xml:space="preserve">
+    <value>Motif obligatoire pour les modifications de configuration</value>
+  </data>
+  <data name="Report_ReasonMinLength" xml:space="preserve">
+    <value>Longueur minimale de ces motifs</value>
+  </data>
+  <data name="Report_Kind_Local" xml:space="preserve">
+    <value>groupe local</value>
+  </data>
+  <data name="Report_Kind_Domain" xml:space="preserve">
+    <value>groupe de domaine</value>
+  </data>
+  <data name="Report_Kind_Entra" xml:space="preserve">
+    <value>groupe ou rôle d'application Entra ID</value>
+  </data>
+  <data name="Report_Kind_Unknown" xml:space="preserve">
+    <value>non résoluble sur cet ordinateur</value>
+  </data>
+  <data name="Report_MembersEntra" xml:space="preserve">
+    <value>les membres sont gérés dans Entra ID</value>
+  </data>
+  <data name="Report_MembersUnresolved" xml:space="preserve">
+    <value>les membres n'ont pas pu être déterminés</value>
+  </data>
+  <data name="Report_MembersNone" xml:space="preserve">
+    <value>aucun membre</value>
+  </data>
+  <data name="Report_Approval" xml:space="preserve">
+    <value>Vérification et approbation</value>
+  </data>
+  <data name="Report_ApprovalText" xml:space="preserve">
+    <value>Par leur signature, les personnes ci-dessous confirment que les autorisations de ce rapport ont été vérifiées et sont appropriées.</value>
+  </data>
+  <data name="Report_Role" xml:space="preserve">
+    <value>Rôle</value>
+  </data>
+  <data name="Report_SignName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Report_SignDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Report_Signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="Report_SignPreparedBy" xml:space="preserve">
+    <value>Préparé par</value>
+  </data>
+  <data name="Report_SignReviewedBy" xml:space="preserve">
+    <value>Vérifié par</value>
+  </data>
+  <data name="Report_SignApprovedBy" xml:space="preserve">
+    <value>Approuvé par</value>
+  </data>
+  <data name="Error_VIT0450" xml:space="preserve">
+    <value>Le bureau de verrouillage n’a pas pu être créé ; ce verrouillage utilise des superpositions.</value>
+  </data>
+  <data name="Error_VIT0451" xml:space="preserve">
+    <value>Vitrine n’a pas pu basculer sur le bureau de verrouillage ; ce verrouillage utilise des superpositions.</value>
+  </data>
+  <data name="Error_VIT0452" xml:space="preserve">
+    <value>Un autre bureau est devenu actif pendant le verrouillage et Vitrine n’a pas pu revenir ; Windows est verrouillé.</value>
+  </data>
+  <data name="Error_VIT0453" xml:space="preserve">
+    <value>L’écran de verrouillage n’a pas pu s’afficher sur le bureau de verrouillage ; ce verrouillage utilise des superpositions.</value>
+  </data>
+  <data name="Error_VIT0454" xml:space="preserve">
+    <value>Vitrine n’a pas pu revenir au bureau Windows ; nouvelle tentative en cours.</value>
+  </data>
+  <data name="Error_VIT0455" xml:space="preserve">
+    <value>Un bureau de verrouillage de Vitrine était encore actif ; Vitrine est revenu au bureau Windows.</value>
+  </data>
+  <data name="Error_VIT0456" xml:space="preserve">
+    <value>La boîte de dialogue de déverrouillage n’a pas pu s’afficher sur le bureau de verrouillage ; elle apparaît sur le bureau Windows.</value>
+  </data>
+  <data name="Error_VIT0457" xml:space="preserve">
+    <value>Aucun aperçu du bureau Windows n’est disponible.</value>
+  </data>
+  <data name="Error_VIT0400" xml:space="preserve">
+    <value>Les clés de sécurité ne sont pas disponibles : cette version de Windows n’a pas d’interface WebAuthn (Windows 10 version 1903 ou ultérieure requise).</value>
+  </data>
+  <data name="Error_VIT0401" xml:space="preserve">
+    <value>Aucune clé de sécurité n’est enregistrée pour Vitrine sur cet ordinateur.</value>
+  </data>
+  <data name="Error_VIT0402" xml:space="preserve">
+    <value>Les clés de sécurité nécessitent le service Vitrine, qui les vérifie. Le service n’est pas joignable.</value>
+  </data>
+  <data name="Error_VIT0403" xml:space="preserve">
+    <value>La demande de connexion a expiré ou a déjà été utilisée. Veuillez réessayer.</value>
+  </data>
+  <data name="Error_VIT0404" xml:space="preserve">
+    <value>La réponse de la clé de sécurité n’est pas valide.</value>
+  </data>
+  <data name="Error_VIT0405" xml:space="preserve">
+    <value>Cette clé de sécurité n’est pas enregistrée pour Vitrine.</value>
+  </data>
+  <data name="Error_VIT0406" xml:space="preserve">
+    <value>Cette clé de sécurité a été révoquée.</value>
+  </data>
+  <data name="Error_VIT0407" xml:space="preserve">
+    <value>Ce modèle de clé de sécurité n’est pas autorisé.</value>
+  </data>
+  <data name="Error_VIT0408" xml:space="preserve">
+    <value>La clé de sécurité a été refusée : son compteur de signatures n’a pas augmenté. La clé a peut-être été copiée – contactez votre administrateur.</value>
+  </data>
+  <data name="Error_VIT0409" xml:space="preserve">
+    <value>Trop de tentatives échouées avec cette clé de sécurité. Réessayez dans {0} minutes.</value>
+  </data>
+  <data name="Error_VIT0410" xml:space="preserve">
+    <value>La clé de sécurité n’a pas confirmé le code PIN. Vitrine exige le code PIN de la clé de sécurité.</value>
+  </data>
+  <data name="Error_VIT0411" xml:space="preserve">
+    <value>Le compte de cette clé de sécurité n’est pas utilisable : désactivé, verrouillé, expiré, restreint ou supprimé.</value>
+  </data>
+  <data name="Error_VIT0412" xml:space="preserve">
+    <value>Aucun contrôleur de domaine n’est joignable et les groupes enregistrés de cette personne sont trop anciens. Connectez l’ordinateur au réseau et réessayez.</value>
+  </data>
+  <data name="Error_VIT0413" xml:space="preserve">
+    <value>Le compte est introuvable. Saisissez-le sous la forme DOMAINE\nom, AzureAD\nom@contoso.com ou .\nom.</value>
+  </data>
+  <data name="Error_VIT0414" xml:space="preserve">
+    <value>Vous ne pouvez pas enregistrer une clé de sécurité pour votre propre compte. Une autre personne autorisée doit l’enregistrer.</value>
+  </data>
+  <data name="Error_VIT0415" xml:space="preserve">
+    <value>Cette personne possède déjà le nombre maximal de clés de sécurité actives. Révoquez-en d’abord une.</value>
+  </data>
+  <data name="Error_VIT0416" xml:space="preserve">
+    <value>Vous n’êtes pas autorisé à enregistrer ou révoquer des clés de sécurité.</value>
+  </data>
+  <data name="Error_VIT0417" xml:space="preserve">
+    <value>Saisissez un nom pour la clé et un motif d’au moins {0} caractères.</value>
+  </data>
+  <data name="Error_VIT0418" xml:space="preserve">
+    <value>La réponse d’enregistrement de la clé de sécurité n’est pas valide, ou le type de clé n’est pas pris en charge (ES256 ou RS256 requis).</value>
+  </data>
+  <data name="Error_VIT0419" xml:space="preserve">
+    <value>Cette clé de sécurité est déjà enregistrée pour Vitrine.</value>
+  </data>
+  <data name="Error_VIT0420" xml:space="preserve">
+    <value>La liste des clés de sécurité est ignorée : des utilisateurs standard pourraient la modifier ou la remplacer.</value>
+  </data>
+  <data name="Error_VIT0421" xml:space="preserve">
+    <value>La liste des clés de sécurité n’a pas pu être lue ou écrite.</value>
+  </data>
+  <data name="Error_VIT0422" xml:space="preserve">
+    <value>{0} clés de sécurité ont été enregistrées avec un autre RP ID que Fido.RpId ({1}) et ne peuvent pas être utilisées. Rétablissez Fido.RpId ou réenregistrez les clés.</value>
+  </data>
+  <data name="Error_VIT0423" xml:space="preserve">
+    <value>Security.AuthUiProcesses ne contient pas {0} : la boîte de dialogue de sécurité Windows pour les clés de sécurité ne reçoit aucune saisie pendant le verrouillage.</value>
+  </data>
+  <data name="Error_VIT0424" xml:space="preserve">
+    <value>Aucune des clés de sécurité enregistrées pour Vitrine n’a été trouvée sur cette clé.</value>
+  </data>
+  <data name="Error_VIT0425" xml:space="preserve">
+    <value>La boîte de dialogue de sécurité Windows a signalé une erreur : {0}</value>
+  </data>
+  <data name="Error_VIT0426" xml:space="preserve">
+    <value>L’enregistrement a expiré. Veuillez recommencer.</value>
+  </data>
+  <data name="Error_VIT0470" xml:space="preserve">
+    <value>L’écriture dans Active Directory nécessite votre mot de passe Windows. Saisissez-le et réessayez.</value>
+  </data>
+  <data name="Error_VIT0471" xml:space="preserve">
+    <value>Active Directory est inaccessible. Les clés de sécurité connues sur cet ordinateur sont utilisées.</value>
+  </data>
+  <data name="Error_VIT0472" xml:space="preserve">
+    <value>Active Directory a refusé la modification : mot de passe incorrect, ou votre compte n’a pas le droit d’y modifier des clés de sécurité.</value>
+  </data>
+  <data name="Error_VIT0473" xml:space="preserve">
+    <value>La connexion à Active Directory doit se faire avec le même compte que celui qui a confirmé l’enregistrement.</value>
+  </data>
+  <data name="Error_VIT0474" xml:space="preserve">
+    <value>Les clés de sécurité dans Active Directory ne sont pas configurées : l’ordinateur n’est pas dans un domaine, ou le conteneur Vitrine est absent.</value>
+  </data>
+  <data name="Error_VIT0475" xml:space="preserve">
+    <value>Un objet d’Active Directory n’est pas une clé de sécurité valide pour Vitrine et est ignoré.</value>
+  </data>
+  <data name="Error_VIT0476" xml:space="preserve">
+    <value>Cet ordinateur n’a pas encore lu les clés de sécurité depuis Active Directory.</value>
+  </data>
+  <data name="Report_FidoStore" xml:space="preserve">
+    <value>Stockage des clés de sécurité</value>
+  </data>
+  <data name="Report_FidoStoreLocal" xml:space="preserve">
+    <value>Cet ordinateur uniquement</value>
+  </data>
+  <data name="Report_FidoStoreDirectory" xml:space="preserve">
+    <value>Active Directory ({0}) ; dernière synchronisation : {1}</value>
+  </data>
+  <data name="Report_FidoSyncUnknown" xml:space="preserve">
+    <value>inconnue (service injoignable)</value>
+  </data>
+  <data name="Report_FidoSyncNever" xml:space="preserve">
+    <value>jamais</value>
+  </data>
+  <data name="Error_VIT0427" xml:space="preserve">
+    <value>Seuls les enregistreurs de clés de sécurité, les administrateurs de configuration et les auditeurs peuvent voir la liste des clés de sécurité.</value>
+  </data>
+  <data name="Error_VIT0428" xml:space="preserve">
+    <value>Une clé de sécurité ne peut servir à une signature ou à l’enregistrement de clés que depuis la boîte de dialogue Vitrine ouverte à cet effet.</value>
+  </data>
+</root>

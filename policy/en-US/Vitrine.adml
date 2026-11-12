@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="2.7" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Vitrine</displayName><description>Vitrine</description>
+  <resources>
+    <stringTable>
+      <string id="Cat_Vitrine">Vitrine</string>
+      <string id="SUPPORTED_Vitrine1">Vitrine 0.1 or later</string>
+      <string id="Cat_Lock">Locking</string>
+      <string id="Cat_Unlock">Unlocking</string>
+      <string id="Cat_Appearance">Appearance</string>
+      <string id="Cat_Security">Security</string>
+      <string id="Cat_Audit">Audit</string>
+      <string id="Cat_Entra">Microsoft Entra ID</string>
+      <string id="Cat_Integration">Integration</string>
+      <string id="Cat_Scripts">Scripts</string>
+      <string id="Lock_Hotkey">Lock hotkey</string>
+      <string id="Lock_Hotkey_Help">Keyboard shortcut that locks the workstation, for example Ctrl+Alt+L. While locked, it also opens the unlock dialog. Empty = no shortcut.</string>
+      <string id="Lock_IdleMinutes">Lock after idle (minutes)</string>
+      <string id="Lock_IdleMinutes_Help">Lock after this many minutes without keyboard or mouse input. 0 = off. 0 to 1440.</string>
+      <string id="Lock_LockOnStartup">Lock on startup</string>
+      <string id="Lock_LockOnStartup_Help">If enabled, Vitrine locks as soon as it starts, for example on control-room or measurement PCs. With the Vitrine service this happens right after installing the MSI in every signed-in session.</string>
+      <string id="Lock_KeepAwake">Keep display awake while locked</string>
+      <string id="Lock_KeepAwake_Help">If enabled, the display stays on and Windows does not go to sleep while the workstation is locked, so the running programs stay visible.</string>
+      <string id="Lock_BlockMouseMove">Block mouse movement while locked</string>
+      <string id="Lock_BlockMouseMove_Help">If enabled, the mouse pointer does not move while locked. If disabled, it may move; clicks stay blocked in either case.</string>
+      <string id="Lock_ReplaceWinL">Win+L locks with Vitrine</string>
+      <string id="Lock_ReplaceWinL_Help">If enabled, Win+L locks with Vitrine instead of showing the Windows lock screen, also while the workstation is unlocked. While Vitrine runs, it sets the user policy DisableLockWorkstation (Win+L and Lock on the Ctrl+Alt+Del screen no longer lock Windows) and watches for Win+L with a keyboard hook. When Vitrine exits, the value is removed; after a crash at the next start, by the watchdog or by the service. If a computer policy sets DisableLockWorkstation, Vitrine leaves it unchanged. If disabled or not configured, Win+L shows the Windows lock screen while unlocked and does nothing while Vitrine is locked (with Restrict Ctrl+Alt+Del).</string>
+      <string id="Lock_Schedule">Lock schedule</string>
+      <string id="Lock_Schedule_Help">Fixed times at which Vitrine locks, one entry per line: 18:00 (every day), 07:30@Mon,Tue,Wed or 07:30@Mon-Fri. Days as English or German abbreviations or English names; 18.00 is accepted too. Entries that cannot be read are skipped and shown in the overview of the settings (VIT-0015).</string>
+      <string id="Lock_Mode">Lock mode</string>
+      <string id="Lock_Mode_Help">How Vitrine locks. Overlay (default): covers on top of the Windows desktop; programs stay visible, keyboard and mouse are blocked with hooks. Separate desktop: Vitrine switches to its own desktop (only the signed-in user and SYSTEM have access); windows of other programs cannot receive input there or draw over the lock screen, and the password typed in the unlock dialog cannot be read by keyboard hooks on the Windows desktop. Programs keep running but are not visible (see "Preview of the Windows desktop"). Windows Hello, the Windows sign-in dialog and the Microsoft sign-in window only appear on the Windows desktop: for them Vitrine returns there for the duration of the sign-in, protected by covers and hooks as in overlay mode. If the desktop cannot be created or switched, the lock uses overlays (VIT-0450, VIT-0451). Use overlay mode when a process must stay visible.</string>
+      <string id="Lock_Mode_Overlay">Overlay – programs stay visible</string>
+      <string id="Lock_Mode_Desktop">Separate desktop – programs run hidden</string>
+      <string id="Lock_DesktopShowPreview">Preview of the Windows desktop</string>
+      <string id="Lock_DesktopShowPreview_Help">Only with lock mode "Separate desktop". If enabled or not configured, the lock screen shows a read-only picture of the running programs, put together from their windows and refreshed regularly. It follows the visual mode: nothing with "Blank", only the selected programs with "Only selected programs", covered areas stay covered. Some content (hardware-accelerated video, windows of programs running as administrator) may appear black. If disabled, the lock screen shows no picture.</string>
+      <string id="Lock_DesktopPreviewSeconds">Refresh preview every (seconds)</string>
+      <string id="Lock_DesktopPreviewSeconds_Help">Only with lock mode "Separate desktop" and the preview enabled: seconds between two pictures, 1 to 60 (default 2). 0 = one picture when locking.</string>
+      <string id="Unlock_Allowed">Who may unlock (bit mask)</string>
+      <string id="Unlock_Allowed_Help">Who may unlock, as a sum of: 1 = the signed-in person, 2 = administrators, 4 = members of the allowed groups, 8 = the allowed accounts, 16 = any valid account (optionally limited to the allowed domains). Example: 3 = the signed-in person and administrators (default).</string>
+      <string id="Unlock_AllowedGroups">Allowed groups</string>
+      <string id="Unlock_AllowedGroups_Help">Groups whose members may unlock, one per line: DOMAIN\group, a local group, a SID, an Entra group object ID or an Entra app role (e.g. Vitrine.Unlock). Only used if "Who may unlock" contains 4.</string>
+      <string id="Unlock_AllowedUsers">Allowed accounts</string>
+      <string id="Unlock_AllowedUsers_Help">Accounts that may unlock, one per line: DOMAIN\name, UPN or SID. Only used if "Who may unlock" contains 8.</string>
+      <string id="Unlock_AllowedDomains">Restrict to domains</string>
+      <string id="Unlock_AllowedDomains_Help">Only accounts of these domains may unlock or sign, one per line: NetBIOS domain name or UPN suffix (e.g. contoso.com). Empty = no restriction.</string>
+      <string id="Unlock_Methods">Sign-in methods</string>
+      <string id="Unlock_Methods_Help">Sign-in methods offered in the dialog, in this order, one per line: entra (Microsoft Entra ID), windows (Windows password), hello (Windows Hello), windowslogon (Windows sign-in dialog: password, PIN or smart card of any account), fido (FIDO2 security keys registered for Vitrine, checked by the Vitrine service), pin (shared unlock password) or the ID of a plugin. Builds without the Windows account broker (-p:WamBroker=false) offer Microsoft only for signatures and administrator confirmation, not for unlocking.</string>
+      <string id="Unlock_Trigger_AnyInput">Key or click</string>
+      <string id="Unlock_Trigger_KeyOnly">Key only</string>
+      <string id="Unlock_Trigger_HotkeyOnly">Hotkey only</string>
+      <string id="Unlock_Trigger">Prompt opens on</string>
+      <string id="Unlock_Trigger_Help">What opens the unlock dialog while locked: any key or mouse click, a key only (clicks are ignored), or only the lock hotkey.</string>
+      <string id="Unlock_PrefillUserName">Prefill user name</string>
+      <string id="Unlock_PrefillUserName_Help">If enabled, the dialog fills in the signed-in user's name.</string>
+      <string id="Unlock_PromptTimeoutSeconds">Prompt timeout (seconds)</string>
+      <string id="Unlock_PromptTimeoutSeconds_Help">The unlock dialog closes after this many seconds without input. 5 to 600.</string>
+      <string id="Appearance_Visual_Transparent">Transparent</string>
+      <string id="Appearance_Visual_Blank">Blank</string>
+      <string id="Appearance_Visual">Visual mode</string>
+      <string id="Appearance_Visual_Help">How the locked screen looks: transparent (programs stay visible, optionally dimmed), covered (nothing visible) or only selected programs (everything covered except the programs under "Programs that stay visible").</string>
+      <string id="Appearance_DimPercent">Dim (%)</string>
+      <string id="Appearance_DimPercent_Help">Dimming in transparent mode: 0 = clear, 100 = black.</string>
+      <string id="Appearance_Message">Message</string>
+      <string id="Appearance_Message_Help">Own notice text shown on the locked screen, for example "Measurement running – please do not touch". Empty = the default text with the name of the signed-in person.</string>
+      <string id="Appearance_Accent">Accent colour</string>
+      <string id="Appearance_Accent_Help">Accent colour of the dialog and the notice bar as #RRGGBB. Empty = the Windows accent colour.</string>
+      <string id="Appearance_LogoPath">Logo path</string>
+      <string id="Appearance_LogoPath_Help">PNG or JPG file shown in the unlock dialog above the name. Local path or file share (\\server\share\logo.png) only, no http address.</string>
+      <string id="Appearance_Language">Language of the user interface</string>
+      <string id="Appearance_Language_Help">Sets the language of Vitrine for all users. If not configured, Vitrine follows the Windows language, the device configuration or the choice in the About window. Spanish, French and Chinese are machine translations that have not yet been reviewed.</string>
+      <string id="Appearance_Language_en">English</string>
+      <string id="Appearance_Language_de">Deutsch (German)</string>
+      <string id="Appearance_Language_es">Español (Spanish)</string>
+      <string id="Appearance_Language_fr">Français (French)</string>
+      <string id="Appearance_Language_zh">中文(简体) (Chinese, simplified)</string>
+      <string id="Appearance_HideCursor">Hide cursor</string>
+      <string id="Appearance_HideCursor_Help">If enabled, the mouse pointer is hidden while locked.</string>
+      <string id="Security_MaxFailedAttempts">Max failed attempts</string>
+      <string id="Security_MaxFailedAttempts_Help">After this many failed attempts in a row, the "Action after too many failures" takes effect. 0 = never. 0 to 100.</string>
+      <string id="Security_FailureAction_None">None</string>
+      <string id="Security_FailureAction_LockWorkstation">Lock workstation</string>
+      <string id="Security_FailureAction_LogOff">Log off</string>
+      <string id="Security_FailureAction_Shutdown">Shut down</string>
+      <string id="Security_FailureAction">Action after too many failures</string>
+      <string id="Security_FailureAction_Help">What happens after the maximum number of failed attempts: nothing (only the waiting time grows), lock Windows, sign out or shut down.</string>
+      <string id="Security_ProgressiveDelay">Progressive delay</string>
+      <string id="Security_ProgressiveDelay_Help">If enabled, the waiting time grows from the third failed attempt: 2, 4, 8 … at most 30 seconds. It applies across dialogs and ends only with a successful unlock.</string>
+      <string id="Security_RestrictCtrlAltDel">Restrict Ctrl+Alt+Del</string>
+      <string id="Security_RestrictCtrlAltDel_Help">If enabled, Task Manager, Sign out, Change a password, the power button and Lock are hidden on the Ctrl+Alt+Del screen while locked, and Win+L does nothing (instead of showing the Windows lock screen, which would hide the workstation). The previous values are restored when unlocking. Values set by a policy are never deleted.</string>
+      <string id="Security_SettingsAdminOnly">Settings for admins only</string>
+      <string id="Security_SettingsAdminOnly_Help">If enabled, the settings window opens only after an administrator signs in.</string>
+      <string id="Security_ExitRequiresAdmin">Exit requires admin</string>
+      <string id="Security_ExitRequiresAdmin_Help">If enabled, Vitrine can only be exited after an administrator signs in. With the Vitrine service, an exit confirmed this way lasts until the next sign-in.</string>
+      <string id="Security_Watchdog">Watchdog</string>
+      <string id="Security_Watchdog_Help">If enabled, a watchdog process locks Windows when Vitrine ends or crashes while locked. With the Vitrine service, the service takes over: it disconnects the session and starts Vitrine again locked.</string>
+      <string id="Security_AuthUiProcesses">Auth UI processes</string>
+      <string id="Security_AuthUiProcesses_Help">Programs (file names) whose newly opened windows may receive input during a Microsoft or Windows Hello sign-in while locked, one per line. Vitrine's own Microsoft sign-in window and windows owned by the unlock dialog are always allowed. Default: CredentialUIBroker.exe, Microsoft.AAD.BrokerPlugin.exe, msedgewebview2.exe, AccountsControlHost.exe, CredDialogHost.exe. Do not add a web browser.</string>
+      <string id="Security_AllowUserConfig">Allow per-user config</string>
+      <string id="Security_AllowUserConfig_Help">If enabled, each user's %LocalAppData%\Vitrine\config.json is read – only the sections Appearance and Lock, without covered areas and visible programs. Disabled here switches the user file off even if the device configuration allows it.</string>
+      <string id="Audit_Enabled">Enable audit log</string>
+      <string id="Audit_Enabled_Help">If disabled, Vitrine writes no audit log: no file, no network copy and no event log entries.</string>
+      <string id="Audit_Directory">Log directory</string>
+      <string id="Audit_Directory_Help">Folder of the audit log (hash chain, one file per month). Empty = %ProgramData%\ICT-Baden\Vitrine\Logs. Environment variables are allowed. Users need the right to create and append files there, not to change them.</string>
+      <string id="Audit_NetworkDirectory">Network copy</string>
+      <string id="Audit_NetworkDirectory_Help">Additional copy of every audit entry in this folder, file &lt;COMPUTER&gt;-audit-yyyy-MM.jsonl, for example \\server\audit$\Vitrine. It is written in the background, so a slow share never holds up Vitrine.</string>
+      <string id="Audit_EventLog">Windows event log</string>
+      <string id="Audit_EventLog_Help">If enabled, every audit entry also goes to the Windows Application log, source "ICT-Baden Vitrine".</string>
+      <string id="Audit_LogLockState">Log lock/unlock</string>
+      <string id="Audit_LogLockState_Help">If enabled, locking and unlocking are logged. If disabled, only failed attempts, signatures, changes and errors are logged.</string>
+      <string id="Entra_TenantId">Tenant ID</string>
+      <string id="Entra_TenantId_Help">Directory (tenant) ID of Microsoft Entra ID as a GUID (recommended) or domain. Microsoft sign-in requires a tenant ID (GUID) here or under "Allowed tenants". With the default "organizations" and no allowed tenants, Vitrine refuses every Microsoft sign-in (VIT-0117).</string>
+      <string id="Entra_ClientId">Client ID</string>
+      <string id="Entra_ClientId_Help">Application (client) ID of the app registration for Vitrine. Empty = Microsoft is not offered.</string>
+      <string id="Entra_UseBroker">Use WAM broker</string>
+      <string id="Entra_UseBroker_Help">Use the Windows account broker (WAM) instead of Vitrine's own Microsoft sign-in window. Not configured or disabled (default since 0.4.0): Vitrine signs in in its own window (Microsoft Edge WebView2) that remembers nothing between sign-ins and never signs in with the Windows account of the session; any account can sign in, with FIDO2 security keys, passkeys, password or Authenticator, also on the lock screen. Redirect URI: http://localhost. Needs the WebView2 Runtime (VIT-0190). Enabled: the broker allows Windows Hello for Business and device-based Conditional Access (compliant or hybrid joined device), but it remembers the accounts that signed in and can sign in with the account of the Windows session without asking – use it only on devices with one personal user (warning VIT-0191). Redirect URI: ms-appx-web://microsoft.aad.brokerplugin/&lt;application ID&gt;. Disabling this policy also switches the broker off on devices whose saved configuration still has the old default (true).</string>
+      <string id="Entra_ForceFreshSignIn">Force fresh sign-in</string>
+      <string id="Entra_ForceFreshSignIn_Help">If enabled, every Microsoft sign-in through the Windows account broker asks for a new sign-in (prompt=login). Keep it enabled: otherwise an existing Microsoft session could unlock or sign without any input. Vitrine's own sign-in window (default) always asks for a new sign-in.</string>
+      <string id="Entra_MaxAuthAgeSeconds">Max auth age (s)</string>
+      <string id="Entra_MaxAuthAgeSeconds_Help">Refuse Microsoft sign-ins older than this many seconds (claim auth_time; add it as an optional claim in the app registration). 0 = no check. 0 to 86400.</string>
+      <string id="Entra_AllowedSignInHosts">Allowed sign-in hosts</string>
+      <string id="Entra_AllowedSignInHosts_Help">Further host names that Vitrine's Microsoft sign-in window may open, one per line – for example your federation service (adfs.contoso.com) or identity provider (*.okta.com; *. allows subdomains only). Microsoft's own sign-in pages are always allowed. Every other address is cancelled and the sign-in fails with VIT-0193 naming the host. HTTPS only; entries with a scheme, path or port are ignored. Add only sign-in pages you trust: while Vitrine is locked, the page can be used by anyone at the device.</string>
+      <string id="Entra_AllowedTenants">Allowed tenants</string>
+      <string id="Entra_AllowedTenants_Help">Further tenant IDs (GUIDs) whose accounts are accepted, one per line, in addition to the configured tenant. Entries that are not GUIDs are ignored.</string>
+      <string id="Integration_PipeEnabled">Local pipe API</string>
+      <string id="Integration_PipeEnabled_Help">Local interface for line-of-business applications (named pipe \\.\pipe\ICT-Baden.Vitrine.&lt;session&gt;). If disabled, only lock and settings are accepted; status, sign-in, signature and event stream are refused.</string>
+      <string id="Integration_LoadPlugins">Load plugins</string>
+      <string id="Integration_LoadPlugins_Help">If enabled, sign-in plugins (Plugins\*.dll next to Vitrine.exe) are loaded – only if a sign-in method needs one, and only from a folder that standard users cannot change. Plugins are fully trusted.</string>
+      <string id="Scripts_OnLock">Script on lock</string>
+      <string id="Scripts_OnLock_Help">Command that runs when the workstation is locked (cmd.exe from the system folder). Environment variables VITRINE_EVENT, VITRINE_TIME and VITRINE_TRIGGER describe the event.</string>
+      <string id="Scripts_OnUnlock">Script on unlock</string>
+      <string id="Scripts_OnUnlock_Help">Command that runs after unlocking. Environment variables VITRINE_USER and VITRINE_METHOD name the account and the sign-in method.</string>
+      <string id="Scripts_OnFailedAttempt">Script on failed attempt</string>
+      <string id="Scripts_OnFailedAttempt_Help">Command that runs after a failed attempt. Environment variables VITRINE_USER, VITRINE_METHOD, VITRINE_ATTEMPT and VITRINE_CODE describe it.</string>
+      <string id="Appearance_Visual_Windows">Only selected programs</string>
+      <string id="Appearance_Masks">Covered areas</string>
+      <string id="Appearance_Masks_Help">Areas of the screen that stay covered while the workstation is locked (transparent mode and "only selected programs"), for example a field with patient data.
+
+One entry per area: monitor:x,y,width,height in percent of the monitor. Monitor 1 is the main monitor, then from left to right; * means every monitor. Example: 1:0,0,30,100 covers the left third of monitor 1. Entries that cannot be read are skipped and shown in the overview of the settings (VIT-0015).</string>
+      <string id="Appearance_RevealProcesses">Programs that stay visible</string>
+      <string id="Appearance_RevealProcesses_Help">For the visual mode "Only selected programs": everything is covered except the windows of these programs (program file name, e.g. Chromeleon.exe). Windows of other programs lying on top of them stay covered.</string>
+      <string id="Entra_AuthenticationContext">Authentication context</string>
+      <string id="Entra_AuthenticationContext_Help">Conditional Access authentication context (c1 to c99) that Vitrine requests at every Microsoft Entra ID sign-in. Combined with a Conditional Access policy that targets this context, Microsoft Entra ID can require a specific authentication strength, for example passkeys (FIDO2). Empty = none. Any other value makes Vitrine refuse the Microsoft sign-in (VIT-0116) instead of signing in without it.</string>
+      <string id="Entra_SignatureAuthenticationContext">Authentication context for signatures</string>
+      <string id="Entra_SignatureAuthenticationContext_Help">Like "Authentication context", but only for electronic signatures requested through the local interface. Takes precedence there. Empty = the general context applies.</string>
+      <string id="Entra_ShareIdToken">Pass ID token to applications</string>
+      <string id="Entra_ShareIdToken_Help">If enabled, applications that request a sign-in or signature through the local interface receive the ID token of the Microsoft Entra ID sign-in and can verify it themselves. The token is never written to the audit log.</string>
+      <string id="Entra_AllowedTokenScopes">Access tokens for applications</string>
+      <string id="Entra_AllowedTokenScopes_Help">Permissions (scopes) for which applications may request an access token through the local interface, one per line, e.g. api://lims/Signature.Write. A request may only name scopes of one resource. Not configured or empty = no access tokens.</string>
+      <!-- Rollen und Nachvollziehbarkeit (0.5.0) -->
+      <string id="Cat_Roles">Roles and governance</string>
+      <string id="Roles_ConfigAdmins">Configuration administrators</string>
+      <string id="Roles_ConfigAdmins_Help">Groups whose members may open and change the settings and exit Vitrine, one per line: DOMAIN\group, a local group (also with Entra members), a SID or an Entra group object ID. Not configured or empty: administrators only. Local administrators keep this role as long as "Local administrators hold all roles" is not disabled.</string>
+      <string id="Roles_Registrars">Security key registrars</string>
+      <string id="Roles_Registrars_Help">Groups whose members may register and revoke security keys, one per line (same syntax as the configuration administrators). Not configured or empty: administrators only.</string>
+      <string id="Roles_Auditors">Auditors</string>
+      <string id="Roles_Auditors_Help">Groups whose members may view and export the audit log and the authorization report but cannot change settings, one per line. Configuration administrators are always auditors too.</string>
+      <string id="Security_LocalAdministratorsArePrivileged">Local administrators hold all roles</string>
+      <string id="Security_LocalAdministratorsArePrivileged_Help">If enabled or not configured, members of the local Administrators group have all Vitrine roles (settings, exit, security key registration, emergency sign-in) as before. If disabled, they only have the roles of the role groups they are in. Trade-off: an administrator can still stop the service or edit the configuration file – this separates duties within Vitrine, not on the computer. If disabled and no configuration administrator group is set, settings can only be changed through policy or the configuration file (VIT-0430).</string>
+      <string id="Unlock_BypassGroups">Emergency sign-in groups</string>
+      <string id="Unlock_BypassGroups_Help">Groups whose members may unlock with their Windows password even if the unlock rules do not allow them, one per line. They must enter a reason; the unlock is recorded as UnlockBypass with the reason and always as a warning in the Windows event log. Not configured or empty: no emergency sign-in.</string>
+      <string id="Unlock_BypassReasonMinLength">Minimum length of the emergency reason</string>
+      <string id="Unlock_BypassReasonMinLength_Help">Minimum number of characters of the reason for an emergency sign-in. 1 to 500, default 10.</string>
+      <string id="Security_ReasonRequiredForAdminActions">Reason for administrator confirmations</string>
+      <string id="Security_ReasonRequiredForAdminActions_Help">If enabled, confirming as administrator (opening the settings, exiting Vitrine) requires a reason, which is recorded in the audit log. Default: disabled.</string>
+      <string id="Security_ReasonRequiredForConfigChanges">Reason for configuration changes</string>
+      <string id="Security_ReasonRequiredForConfigChanges_Help">If enabled, saving the settings requires a reason. The ConfigChanged entry records the reason together with the changed values (old and new; secrets hidden). Default: disabled.</string>
+      <string id="Security_ReasonMinLength">Minimum length of reasons</string>
+      <string id="Security_ReasonMinLength_Help">Minimum number of characters of reasons for administrator confirmations and configuration changes. 1 to 500, default 10.</string>
+      <!-- Sicherheitsschlüssel -->
+      <string id="Cat_Fido">Security keys</string>
+      <string id="Fido_RpId">RP ID</string>
+      <string id="Fido_RpId_Help">Identifier (WebAuthn relying party ID) for which security keys are registered and checked. Default: vitrine – deliberately not a DNS name, so no website can use it. Do not change it after the first registration: keys only work with the RP ID they were registered with (otherwise VIT-0422). Read by the Vitrine service.</string>
+      <string id="Fido_AllowSelfRegistration">Allow registering a key for oneself</string>
+      <string id="Fido_AllowSelfRegistration_Help">Enabled: an authorized person may also register a security key for their own Windows account. Disabled or not configured (default): keys are always registered by another authorized person (VIT-0414).</string>
+      <string id="Fido_AllowedModels">Allowed key models</string>
+      <string id="Fido_AllowedModels_Help">AAGUIDs of the security key models that may be registered and used, one per line (e.g. cb69481e-8ff7-4039-93ec-0a2729a154a8). Empty or not configured: every model. The AAGUID is reported by the key; Vitrine does not check the manufacturer certificate chain. A key of another model is refused (VIT-0407), also if it was registered before.</string>
+      <string id="Fido_MaxKeysPerPerson">Keys per person</string>
+      <string id="Fido_MaxKeysPerPerson_Help">Maximum number of active security keys per person (default 2). Revoked keys do not count. 1 to 20.</string>
+      <string id="Fido_MaxFailedAttempts">Failed attempts until blocked</string>
+      <string id="Fido_MaxFailedAttempts_Help">After this many refused sign-ins with a security key (invalid answer, missing PIN, revoked key …), the key and its person are blocked for the time set in "Block time" (VIT-0409). Counted per key and per person in the Vitrine service; restarting the service resets the counters. Default 5, 0 = never block.</string>
+      <string id="Fido_BlockMinutes">Block time (minutes)</string>
+      <string id="Fido_BlockMinutes_Help">How long a security key and its person stay blocked after too many failed attempts. Default 5, 1 to 1440.</string>
+      <string id="Fido_OfflineMaxHours">Without domain controller (hours)</string>
+      <string id="Fido_OfflineMaxHours_Help">If no domain controller is reachable, the group memberships the service read last for a person are used for at most this many hours; older ones are refused (VIT-0412). Default 24, 0 = never sign in with a security key without a domain controller. Does not apply to local accounts (always read live).</string>
+      <string id="Fido_Store">Security key store</string>
+      <string id="Fido_Store_Help">Where the registered security keys are kept. This computer (default): a protected file of the Vitrine service (fido-credentials.json); a key works only on the computer where it was registered. Active Directory: one object per key in the container CN=SecurityKeys (see "Active Directory container"); a key registered once works on every computer of the domain. The service reads the keys as the computer account and keeps a local copy for use without a domain controller; registering and revoking writes with the account of the registrar (Windows password). The signature counter stays on each computer, so copied keys are detected per computer. Prepare the container with deploy/Initialize-VitrineDirectory.ps1. Read when the Vitrine service starts.</string>
+      <string id="Fido_Store_Local">This computer</string>
+      <string id="Fido_Store_ActiveDirectory">Active Directory</string>
+      <string id="Fido_DirectoryContainer">Active Directory container</string>
+      <string id="Fido_DirectoryContainer_Help">Distinguished name of the Vitrine container in Active Directory, for example CN=Vitrine,CN=Program Data,DC=contoso,DC=com. The keys are stored in CN=SecurityKeys below it. Not configured or empty: CN=Vitrine,CN=Program Data in the domain of the computer. Only used with the store "Active Directory".</string>
+      <string id="Fido_SyncMinutes">Synchronization with Active Directory (minutes)</string>
+      <string id="Fido_SyncMinutes_Help">How often the Vitrine service reads all security keys from Active Directory into its local copy. Default 15. Independently of this, a key presented at sign-in is read live while Active Directory is reachable (a revocation applies at once), and a key the computer does not know yet is looked up directly. Only used with the store "Active Directory".</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Lock_Hotkey"><textBox refId="Lock_Hotkey_v"><label>Lock hotkey</label></textBox></presentation>
+      <presentation id="Lock_IdleMinutes"><decimalTextBox refId="Lock_IdleMinutes_v">Lock after idle (minutes)</decimalTextBox></presentation>
+      <presentation id="Lock_Schedule"><multiTextBox refId="Lock_Schedule_v">Lock schedule</multiTextBox></presentation>
+      <presentation id="Lock_Mode"><dropdownList refId="Lock_Mode_v">Lock mode</dropdownList></presentation>
+      <presentation id="Lock_DesktopPreviewSeconds"><decimalTextBox refId="Lock_DesktopPreviewSeconds_v">Refresh preview every (seconds)</decimalTextBox></presentation>
+      <presentation id="Unlock_Allowed"><decimalTextBox refId="Unlock_Allowed_v">Who may unlock (bit mask)</decimalTextBox></presentation>
+      <presentation id="Unlock_AllowedGroups"><multiTextBox refId="Unlock_AllowedGroups_v">Allowed groups</multiTextBox></presentation>
+      <presentation id="Unlock_AllowedUsers"><multiTextBox refId="Unlock_AllowedUsers_v">Allowed accounts</multiTextBox></presentation>
+      <presentation id="Unlock_AllowedDomains"><multiTextBox refId="Unlock_AllowedDomains_v">Restrict to domains</multiTextBox></presentation>
+      <presentation id="Unlock_Methods"><multiTextBox refId="Unlock_Methods_v">Sign-in methods</multiTextBox></presentation>
+      <presentation id="Unlock_Trigger"><dropdownList refId="Unlock_Trigger_v">Prompt opens on</dropdownList></presentation>
+      <presentation id="Unlock_PromptTimeoutSeconds"><decimalTextBox refId="Unlock_PromptTimeoutSeconds_v">Prompt timeout (seconds)</decimalTextBox></presentation>
+      <presentation id="Appearance_Visual"><dropdownList refId="Appearance_Visual_v">Visual mode</dropdownList></presentation>
+      <presentation id="Appearance_DimPercent"><decimalTextBox refId="Appearance_DimPercent_v">Dim (%)</decimalTextBox></presentation>
+      <presentation id="Appearance_Message"><textBox refId="Appearance_Message_v"><label>Message</label></textBox></presentation>
+      <presentation id="Appearance_Accent"><textBox refId="Appearance_Accent_v"><label>Accent colour</label></textBox></presentation>
+      <presentation id="Appearance_Language"><dropdownList refId="Appearance_Language_v">Language</dropdownList></presentation>
+      <presentation id="Appearance_LogoPath"><textBox refId="Appearance_LogoPath_v"><label>Logo path</label></textBox></presentation>
+      <presentation id="Security_MaxFailedAttempts"><decimalTextBox refId="Security_MaxFailedAttempts_v">Max failed attempts</decimalTextBox></presentation>
+      <presentation id="Security_FailureAction"><dropdownList refId="Security_FailureAction_v">Action after too many failures</dropdownList></presentation>
+      <presentation id="Security_AuthUiProcesses"><multiTextBox refId="Security_AuthUiProcesses_v">Auth UI processes</multiTextBox></presentation>
+      <presentation id="Audit_Directory"><textBox refId="Audit_Directory_v"><label>Log directory</label></textBox></presentation>
+      <presentation id="Audit_NetworkDirectory"><textBox refId="Audit_NetworkDirectory_v"><label>Network copy</label></textBox></presentation>
+      <presentation id="Entra_TenantId"><textBox refId="Entra_TenantId_v"><label>Tenant ID</label></textBox></presentation>
+      <presentation id="Entra_ClientId"><textBox refId="Entra_ClientId_v"><label>Client ID</label></textBox></presentation>
+      <presentation id="Entra_MaxAuthAgeSeconds"><decimalTextBox refId="Entra_MaxAuthAgeSeconds_v">Max auth age (s)</decimalTextBox></presentation>
+      <presentation id="Entra_AllowedSignInHosts"><multiTextBox refId="Entra_AllowedSignInHosts_v">Allowed sign-in hosts</multiTextBox></presentation>
+      <presentation id="Entra_AllowedTenants"><multiTextBox refId="Entra_AllowedTenants_v">Allowed tenants</multiTextBox></presentation>
+      <presentation id="Scripts_OnLock"><textBox refId="Scripts_OnLock_v"><label>Script on lock</label></textBox></presentation>
+      <presentation id="Scripts_OnUnlock"><textBox refId="Scripts_OnUnlock_v"><label>Script on unlock</label></textBox></presentation>
+      <presentation id="Scripts_OnFailedAttempt"><textBox refId="Scripts_OnFailedAttempt_v"><label>Script on failed attempt</label></textBox></presentation>
+      <presentation id="Appearance_Masks"><multiTextBox refId="Appearance_Masks_v">Covered areas</multiTextBox></presentation>
+      <presentation id="Appearance_RevealProcesses"><multiTextBox refId="Appearance_RevealProcesses_v">Programs that stay visible</multiTextBox></presentation>
+      <presentation id="Entra_AllowedTokenScopes"><multiTextBox refId="Entra_AllowedTokenScopes_v">Access tokens for applications</multiTextBox></presentation>
+      <presentation id="Entra_AuthenticationContext"><textBox refId="Entra_AuthenticationContext_v"><label>Authentication context</label></textBox></presentation>
+      <presentation id="Entra_SignatureAuthenticationContext"><textBox refId="Entra_SignatureAuthenticationContext_v"><label>Authentication context for signatures</label></textBox></presentation>
+      <!-- Rollen und Nachvollziehbarkeit (0.5.0) -->
+      <presentation id="Roles_ConfigAdmins"><multiTextBox refId="Roles_ConfigAdmins_v">Configuration administrators</multiTextBox></presentation>
+      <presentation id="Roles_Registrars"><multiTextBox refId="Roles_Registrars_v">Security key registrars</multiTextBox></presentation>
+      <presentation id="Roles_Auditors"><multiTextBox refId="Roles_Auditors_v">Auditors</multiTextBox></presentation>
+      <presentation id="Unlock_BypassGroups"><multiTextBox refId="Unlock_BypassGroups_v">Emergency sign-in groups</multiTextBox></presentation>
+      <presentation id="Unlock_BypassReasonMinLength"><decimalTextBox refId="Unlock_BypassReasonMinLength_v" defaultValue="10">Minimum length of the emergency reason</decimalTextBox></presentation>
+      <presentation id="Security_ReasonMinLength"><decimalTextBox refId="Security_ReasonMinLength_v" defaultValue="10">Minimum length of reasons</decimalTextBox></presentation>
+      <presentation id="Fido_RpId"><textBox refId="Fido_RpId_v"><label>RP ID</label></textBox></presentation>
+      <presentation id="Fido_AllowedModels"><multiTextBox refId="Fido_AllowedModels_v">Allowed key models</multiTextBox></presentation>
+      <presentation id="Fido_MaxKeysPerPerson"><decimalTextBox refId="Fido_MaxKeysPerPerson_v">Keys per person</decimalTextBox></presentation>
+      <presentation id="Fido_MaxFailedAttempts"><decimalTextBox refId="Fido_MaxFailedAttempts_v">Failed attempts until blocked</decimalTextBox></presentation>
+      <presentation id="Fido_BlockMinutes"><decimalTextBox refId="Fido_BlockMinutes_v">Block time (minutes)</decimalTextBox></presentation>
+      <presentation id="Fido_OfflineMaxHours"><decimalTextBox refId="Fido_OfflineMaxHours_v">Without domain controller (hours)</decimalTextBox></presentation>
+      <presentation id="Fido_Store"><dropdownList refId="Fido_Store_v">Store</dropdownList></presentation>
+      <presentation id="Fido_DirectoryContainer"><textBox refId="Fido_DirectoryContainer_v"><label>Container (DN)</label></textBox></presentation>
+      <presentation id="Fido_SyncMinutes"><decimalTextBox refId="Fido_SyncMinutes_v">Minutes</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

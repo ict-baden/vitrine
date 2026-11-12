@@ -1,0 +1,11 @@
+bin/
+obj/
+publish/
+*.user
+.vs/
+.DS_Store
+TestResults/
+node_modules/
+# Ausgabe der Publish- und Paketschritte aus build.yml, falls lokal nachgestellt
+/out/
+/dist/

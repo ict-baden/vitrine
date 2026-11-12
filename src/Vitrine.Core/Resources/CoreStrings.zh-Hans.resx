@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Maschinell vorübersetzt – TODO-übersetzen: vor der ersten öffentlichen Version von Muttersprachlern prüfen lassen. Besonders unsichere Einträge tragen zusätzlich den Kommentar „TODO-übersetzen“. -->
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Audit_ChainComplete" xml:space="preserve">
+    <value>条目：{0} · 哈希链完整</value>
+  </data>
+  <data name="Config_NotAnObject" xml:space="preserve">
+    <value>该文件不包含 JSON 对象。</value>
+  </data>
+  <data name="Config_TooLarge" xml:space="preserve">
+    <value>该文件大于 {0} KB。</value>
+  </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>{0}（{1}）</value>
+  </data>
+  <data name="Error_VIT0001" xml:space="preserve">
+    <value>无法读取 {0}：{1}</value>
+  </data>
+  <data name="Error_VIT0002" xml:space="preserve">
+    <value>无法读取策略 {0}：{1}</value>
+  </data>
+  <data name="Error_VIT0012" xml:space="preserve">
+    <value>已忽略 {0}：标准用户可以更改或替换该文件。请以管理员身份保存一次设置以保护该文件。</value>
+  </data>
+  <data name="Error_VIT0020" xml:space="preserve">
+    <value>无法读取第 {0} 行。</value>
+  </data>
+  <data name="Error_VIT0021" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）：哈希链已中断，前一个条目缺失或已被更改。</value>
+  </data>
+  <data name="Error_VIT0022" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）：内容已被更改。</value>
+  </data>
+  <data name="Error_VIT0023" xml:space="preserve">
+    <value>无法读取日志文件：{0}</value>
+  </data>
+  <data name="Error_VIT0100" xml:space="preserve">
+    <value>登录失败。</value>
+  </data>
+  <data name="Error_VIT0101" xml:space="preserve">
+    <value>用户名或密码不正确。</value>
+  </data>
+  <data name="Error_VIT0102" xml:space="preserve">
+    <value>该帐户受到限制或密码已过期。</value>
+  </data>
+  <data name="Error_VIT0103" xml:space="preserve">
+    <value>该帐户已被禁用。</value>
+  </data>
+  <data name="Error_VIT0104" xml:space="preserve">
+    <value>该帐户已被锁定。</value>
+  </data>
+  <data name="Error_VIT0105" xml:space="preserve">
+    <value>没有可用的登录服务器。</value>
+  </data>
+  <data name="Error_VIT0106" xml:space="preserve">
+    <value>不允许此帐户在此设备上登录。</value>
+  </data>
+  <data name="Error_VIT0107" xml:space="preserve">
+    <value>请输入密码。</value>
+  </data>
+  <data name="Error_VIT0108" xml:space="preserve">
+    <value>对于 Microsoft Entra ID 帐户，请输入登录电子邮件地址（name@contoso.com）作为用户名。</value>
+  </data>
+  <data name="Error_VIT0109" xml:space="preserve">
+    <value>Windows 报告：{0}</value>
+  </data>
+  <data name="Error_VIT0110" xml:space="preserve">
+    <value>未设置 Microsoft Entra ID（缺少应用程序 ID）。</value>
+  </data>
+  <data name="Error_VIT0111" xml:space="preserve">
+    <value>登录已取消。</value>
+  </data>
+  <data name="Error_VIT0112" xml:space="preserve">
+    <value>Microsoft Entra ID：{0}</value>
+  </data>
+  <data name="Error_VIT0113" xml:space="preserve">
+    <value>此帐户不属于允许的租户。</value>
+  </data>
+  <data name="Error_VIT0114" xml:space="preserve">
+    <value>登录已超过允许的时长。请重新登录。</value>
+  </data>
+  <data name="Error_VIT0120" xml:space="preserve">
+    <value>Windows Hello 不可用。</value>
+  </data>
+  <data name="Error_VIT0122" xml:space="preserve">
+    <value>尝试次数过多。</value>
+  </data>
+  <data name="Error_VIT0123" xml:space="preserve">
+    <value>Windows Hello 正忙。</value>
+  </data>
+  <data name="Error_VIT0124" xml:space="preserve">
+    <value>Windows Hello 已被策略关闭。</value>
+  </data>
+  <data name="Error_VIT0125" xml:space="preserve">
+    <value>尚未为此帐户设置 Windows Hello。</value>
+  </data>
+  <data name="Error_VIT0130" xml:space="preserve">
+    <value>尚未设置解锁密码。</value>
+  </data>
+  <data name="Error_VIT0131" xml:space="preserve">
+    <value>密码不正确。</value>
+  </data>
+  <data name="Error_VIT0140" xml:space="preserve">
+    <value>{0} 无权解锁此工作站。</value>
+  </data>
+  <data name="Error_VIT0141" xml:space="preserve">
+    <value>此域的帐户无权在此解锁。</value>
+  </data>
+  <data name="Error_VIT0142" xml:space="preserve">
+    <value>只有管理员才能执行此操作。</value>
+  </data>
+  <data name="Error_VIT0143" xml:space="preserve">
+    <value>此操作需要管理员使用个人帐户登录。</value>
+  </data>
+  <data name="Error_VIT0144" xml:space="preserve">
+    <value>签名需要使用个人帐户登录。</value>
+  </data>
+  <data name="Error_VIT0145" xml:space="preserve">
+    <value>请等待 {0} 秒。</value>
+  </data>
+  <data name="Error_VIT0150" xml:space="preserve">
+    <value>至少 {0} 个字符。</value>
+  </data>
+  <data name="Error_VIT0151" xml:space="preserve">
+    <value>两次输入的内容不一致。</value>
+  </data>
+  <data name="Error_VIT0160" xml:space="preserve">
+    <value>无法锁定 Windows：锁定和断开会话均未成功。</value>
+  </data>
+  <data name="Error_VIT0161" xml:space="preserve">
+    <value>无法锁定 Windows；已改为断开会话。</value>
+  </data>
+  <data name="Error_VIT0162" xml:space="preserve">
+    <value>无法关闭 Win+L；它仍会锁定 Windows。</value>
+  </data>
+  <data name="Error_VIT0163" xml:space="preserve">
+    <value>DisableLockWorkstation 由计算机策略设置；Vitrine 不会更改它。</value>
+  </data>
+  <data name="Pin_DisplayName" xml:space="preserve">
+    <value>解锁密码</value>
+  </data>
+  <data name="Error_VIT0115" xml:space="preserve">
+    <value>登录未达到要求的强度。请使用贵组织要求的方式登录（例如通行密钥）。</value>
+  </data>
+  <data name="Error_VIT0116" xml:space="preserve">
+    <value>身份验证上下文“{0}”无效（允许 c1 到 c99）。在管理员更正之前，登录将被拒绝。</value>
+  </data>
+  <data name="Error_VIT0015" xml:space="preserve">
+    <value>{0}：无法读取“{1}”，已忽略。</value>
+  </data>
+  <data name="Error_VIT0016" xml:space="preserve">
+    <value>Unlock.Methods 仅包含 Microsoft Entra ID，但锁屏上无法提供：缺少 Microsoft Edge WebView2 Runtime，且未使用 Windows 帐户代理。将改用 Windows 密码解锁，Entra.AuthenticationContext 不适用于解锁。</value>
+  </data>
+  <data name="Error_VIT0017" xml:space="preserve">
+    <value>{0}：条目 {1} 永远不会与 Windows 登录匹配（Windows 提供的是 域\名称 和组 SID，而不是 UPN 后缀或 Microsoft Entra 组 ID）。锁屏上只提供 Windows 登录，因此可能没有人能够解锁。</value>
+  </data>
+  <data name="Error_VIT0117" xml:space="preserve">
+    <value>Microsoft Entra ID 未限制为你的组织。管理员必须在 Entra.TenantId 或 Entra.AllowedTenants 中输入租户 ID (GUID)，否则任何组织的帐户都可以登录。</value>
+  </data>
+  <data name="Audit_Signed" xml:space="preserve">
+    <value>{0} 条由服务签名（密钥 {1}）</value>
+  </data>
+  <data name="Audit_Unsigned" xml:space="preserve">
+    <value>{0} 条未签名（未经服务写入，不符合 Part 11）</value>
+  </data>
+  <data name="Error_VIT0300" xml:space="preserve">
+    <value>无法连接审计服务——目前无法进行电子签名。</value>
+  </data>
+  <data name="Error_VIT0301" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）：签名无效。</value>
+  </data>
+  <data name="Error_VIT0302" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）使用未知密钥签名（{2}）。</value>
+  </data>
+  <data name="Error_VIT0303" xml:space="preserve">
+    <value>第 {0} 行：序号 {1} 紧随 {2}——条目缺失或顺序错误。</value>
+  </data>
+  <data name="Error_VIT0304" xml:space="preserve">
+    <value>文件在序号 {0} 处结束，但服务为 {2} 记录到序号 {1}——末尾被删除或文件被替换。</value>
+  </data>
+  <data name="Error_VIT0305" xml:space="preserve">
+    <value>条目 {0} 与服务保存的锚点不符——文件已被修改或替换。</value>
+  </data>
+  <data name="Error_VIT0306" xml:space="preserve">
+    <value>缺少 {0} 的审计日志（服务记录到序号 {1}）。</value>
+  </data>
+  <data name="Error_VIT0307" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）来自 {2}，而非文件所属月份——文件已被调换。</value>
+  </data>
+  <data name="Error_VIT0308" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）：已签名条目之后出现未签名条目——并非由服务写入。</value>
+  </data>
+  <data name="Error_VIT0309" xml:space="preserve">
+    <value>第一个条目未衔接 {0} 的审计日志——中间缺少条目或文件被替换。</value>
+  </data>
+  <data name="Error_VIT0310" xml:space="preserve">
+    <value>没有用于验证 {0} 签名的公钥（缺少 audit-keys.json）。</value>
+  </data>
+  <data name="Error_VIT0311" xml:space="preserve">
+    <value>服务未接受 Microsoft 登录：{0}</value>
+  </data>
+  <data name="Error_VIT0312" xml:space="preserve">
+    <value>服务无法获取 Microsoft 的签名密钥——签名被拒绝。</value>
+  </data>
+  <data name="Error_VIT0313" xml:space="preserve">
+    <value>登录确认已过期——请重新签名。</value>
+  </data>
+  <data name="Error_VIT0314" xml:space="preserve">
+    <value>短时间内登录检查过多——请等待一分钟。</value>
+  </data>
+  <data name="Error_VIT0315" xml:space="preserve">
+    <value>服务拒绝了会话应用的条目：此类条目只能由服务写入。</value>
+  </data>
+  <data name="Error_VIT0316" xml:space="preserve">
+    <value>审计日志的末尾与服务保存的锚点不符。</value>
+  </data>
+  <data name="Error_VIT0317" xml:space="preserve">
+    <value>无法创建或加载审计日志密钥：{0}</value>
+  </data>
+  <data name="Error_VIT0318" xml:space="preserve">
+    <value>由于服务长时间无法连接，部分审计条目已丢失。</value>
+  </data>
+  <data name="Error_VIT0319" xml:space="preserve">
+    <value>此登录方式不能用于签名。</value>
+  </data>
+  <data name="Error_VIT0320" xml:space="preserve">
+    <value>Microsoft 登录不能用于签名：ID 令牌中没有 auth_time。管理员必须在应用注册中为 ID 令牌添加可选声明 auth_time。</value>
+  </data>
+  <data name="Error_VIT0321" xml:space="preserve">
+    <value>Microsoft 登录对签名而言不够新——请使用密码或通行密钥重新登录。</value>
+  </data>
+  <data name="Error_VIT0322" xml:space="preserve">
+    <value>服务无法写入审计条目；Vitrine 会保留并重新发送。</value>
+  </data>
+  <data name="Error_VIT0323" xml:space="preserve">
+    <value>用户可以修改 Audit.Directory 中设置的日志文件夹；服务改为写入默认文件夹。</value>
+  </data>
+  <data name="Error_VIT0324" xml:space="preserve">
+    <value>第 {0} 行（序号 {1}）使用密钥 {2} 签名，但当前密钥为 {3}——更换密钥需要 AuditKeyRotated 条目。</value>
+  </data>
+  <data name="Error_VIT0180" xml:space="preserve">
+    <value>Microsoft 登录不能用于解锁：ID 令牌中没有 auth_time，因此 Vitrine 无法区分真正的登录与使用已登录 Windows 的帐户进行的一键单一登录。管理员必须在应用注册中为 ID 令牌添加可选声明 auth_time。</value>
+  </data>
+  <data name="Error_VIT0181" xml:space="preserve">
+    <value>Windows 重用了现有的 Microsoft 登录，而没有要求输入你的凭据。解锁需要重新登录 – 请使用 Windows 登录或重新登录。</value>
+  </data>
+  <data name="Error_VIT0330" xml:space="preserve">
+    <value>{0} 条审计条目正在等待服务，尚未写入已签名的审计日志：{1}</value>
+  </data>
+  <data name="Error_VIT0331" xml:space="preserve">
+    <value>服务拒绝了一个连接：该程序不是程序文件夹中的 Vitrine.exe。</value>
+  </data>
+  <data name="Error_VIT0332" xml:space="preserve">
+    <value>服务无法确定审计日志连接的用户。</value>
+  </data>
+  <data name="Error_VIT0333" xml:space="preserve">
+    <value>服务无法处理审计日志连接。</value>
+  </data>
+  <data name="AuditDelivery_NotReachable" xml:space="preserve">
+    <value>无法访问服务。</value>
+  </data>
+  <data name="AuditDelivery_AccessDenied" xml:space="preserve">
+    <value>访问服务的审计管道被拒绝。</value>
+  </data>
+  <data name="AuditDelivery_WrongServer" xml:space="preserve">
+    <value>另一个程序使用了服务审计管道的名称。</value>
+  </data>
+  <data name="AuditDelivery_ClosedWithoutAnswer" xml:space="preserve">
+    <value>服务未答复即关闭了连接——请查看 Windows 事件日志中的 VIT-0331 和 VIT-0332。</value>
+  </data>
+  <data name="AuditDelivery_NoAnswer" xml:space="preserve">
+    <value>服务未确认这些条目。</value>
+  </data>
+  <data name="AuditDelivery_WriteFailed" xml:space="preserve">
+    <value>服务无法写入审计日志（VIT-0322）。</value>
+  </data>
+  <data name="Error_VIT0190" xml:space="preserve">
+    <value>未安装 Microsoft Edge WebView2 Runtime。Vitrine 的 Microsoft 登录窗口需要它，因此 Microsoft Entra ID 不可用（也不能用于解锁）。请安装 WebView2 Runtime。</value>
+  </data>
+  <data name="Error_VIT0191" xml:space="preserve">
+    <value>Entra.UseBroker 已开启：Windows 帐户代理会记住登录过的帐户，并可在不询问的情况下使用此会话的 Windows 帐户登录。仅在只有一个个人用户的设备上使用。</value>
+  </data>
+  <data name="Error_VIT0192" xml:space="preserve">
+    <value>无法打开 Microsoft 登录窗口：{0}</value>
+  </data>
+  <data name="Error_VIT0193" xml:space="preserve">
+    <value>登录页面尝试打开 {0}。仅允许 Microsoft 登录页面和 Entra.AllowedSignInHosts 中的主机，登录已取消。</value>
+  </data>
+  <data name="Error_VIT0194" xml:space="preserve">
+    <value>上一次尝试的 Windows 登录对话框仍处于打开状态，无法关闭。请将其关闭后重试。</value>
+  </data>
+  <data name="Role_ConfigAdmin" xml:space="preserve">
+    <value>配置管理员</value>
+  </data>
+  <data name="Role_Registrar" xml:space="preserve">
+    <value>安全密钥登记员</value>
+  </data>
+  <data name="Role_Auditor" xml:space="preserve">
+    <value>审核员</value>
+  </data>
+  <data name="Error_VIT0430" xml:space="preserve">
+    <value>无人可以在 Vitrine 中更改设置：本地管理员没有 Vitrine 权限 (Security.LocalAdministratorsArePrivileged)，且 Roles.ConfigAdmins 为空。只能通过策略或配置文件更改设置。</value>
+  </data>
+  <data name="Error_VIT0431" xml:space="preserve">
+    <value>您的帐户没有所需的 Vitrine 角色 ({0})。</value>
+  </data>
+  <data name="Error_VIT0432" xml:space="preserve">
+    <value>{0} 不能使用紧急登录。</value>
+  </data>
+  <data name="Error_VIT0433" xml:space="preserve">
+    <value>请输入至少 {0} 个字符的原因。</value>
+  </data>
+  <data name="Error_VIT0434" xml:space="preserve">
+    <value>紧急登录只能使用 Windows 密码。</value>
+  </data>
+  <data name="Report_Title" xml:space="preserve">
+    <value>Vitrine 授权报告 – {0}</value>
+  </data>
+  <data name="Report_Machine" xml:space="preserve">
+    <value>计算机</value>
+  </data>
+  <data name="Report_GeneratedAt" xml:space="preserve">
+    <value>生成时间</value>
+  </data>
+  <data name="Report_GeneratedBy" xml:space="preserve">
+    <value>生成者</value>
+  </data>
+  <data name="Report_Version" xml:space="preserve">
+    <value>Vitrine 版本</value>
+  </data>
+  <data name="Report_Intro" xml:space="preserve">
+    <value>本报告列出生成时的配置：谁可以解锁此计算机、谁可以使用紧急登录以及谁拥有哪个 Vitrine 角色。组成员为当时找到的直接成员；Entra ID 组以 ID 列出，因为其成员在 Entra ID 中管理。</value>
+  </data>
+  <data name="Report_SectionUnlock" xml:space="preserve">
+    <value>谁可以解锁</value>
+  </data>
+  <data name="Report_SectionEmergency" xml:space="preserve">
+    <value>紧急登录</value>
+  </data>
+  <data name="Report_SectionRoles" xml:space="preserve">
+    <value>角色</value>
+  </data>
+  <data name="Report_SectionGovernance" xml:space="preserve">
+    <value>确认与原因</value>
+  </data>
+  <data name="Report_ColSection" xml:space="preserve">
+    <value>部分</value>
+  </data>
+  <data name="Report_ColSetting" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Report_ColLabel" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="Report_ColValue" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="Report_ColSource" xml:space="preserve">
+    <value>来源</value>
+  </data>
+  <data name="Report_ColGroup" xml:space="preserve">
+    <value>组</value>
+  </data>
+  <data name="Report_ColMembers" xml:space="preserve">
+    <value>成员</value>
+  </data>
+  <data name="Report_SourcePolicy" xml:space="preserve">
+    <value>组策略</value>
+  </data>
+  <data name="Report_SourceConfig" xml:space="preserve">
+    <value>配置文件或默认值</value>
+  </data>
+  <data name="Report_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Report_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Report_None" xml:space="preserve">
+    <value>（无）</value>
+  </data>
+  <data name="Report_Nobody" xml:space="preserve">
+    <value>无人</value>
+  </data>
+  <data name="Report_NotUsed" xml:space="preserve">
+    <value>未使用（未在 Unlock.Allowed 中选择）</value>
+  </data>
+  <data name="Report_AllDomains" xml:space="preserve">
+    <value>所有域</value>
+  </data>
+  <data name="Report_Allowed_SessionUser" xml:space="preserve">
+    <value>会话的登录用户</value>
+  </data>
+  <data name="Report_Allowed_Administrators" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="Report_Allowed_Groups" xml:space="preserve">
+    <value>所列组的成员</value>
+  </data>
+  <data name="Report_Allowed_Users" xml:space="preserve">
+    <value>所列帐户</value>
+  </data>
+  <data name="Report_Allowed_AnyAuthenticated" xml:space="preserve">
+    <value>任何有效帐户</value>
+  </data>
+  <data name="Report_UnlockAllowed" xml:space="preserve">
+    <value>可以解锁</value>
+  </data>
+  <data name="Report_UnlockGroups" xml:space="preserve">
+    <value>允许解锁的组</value>
+  </data>
+  <data name="Report_UnlockUsers" xml:space="preserve">
+    <value>允许解锁的帐户</value>
+  </data>
+  <data name="Report_UnlockDomains" xml:space="preserve">
+    <value>允许的域</value>
+  </data>
+  <data name="Report_Methods" xml:space="preserve">
+    <value>登录方式</value>
+  </data>
+  <data name="Report_BypassGroups" xml:space="preserve">
+    <value>可使用紧急登录的组（Windows 密码并填写原因）</value>
+  </data>
+  <data name="Report_BypassOff" xml:space="preserve">
+    <value>紧急登录已关闭</value>
+  </data>
+  <data name="Report_BypassMinLength" xml:space="preserve">
+    <value>原因的最小长度</value>
+  </data>
+  <data name="Report_AdminsPrivileged" xml:space="preserve">
+    <value>本地管理员拥有所有 Vitrine 角色</value>
+  </data>
+  <data name="Report_LocalAdmins" xml:space="preserve">
+    <value>本地管理员</value>
+  </data>
+  <data name="Report_LocalAdminsNote" xml:space="preserve">
+    <value>本地 Administrators 组的成员</value>
+  </data>
+  <data name="Report_AuditorsIncludeAdmins" xml:space="preserve">
+    <value>配置管理员也是审核员</value>
+  </data>
+  <data name="Report_SettingsAdminOnly" xml:space="preserve">
+    <value>设置仅限配置管理员</value>
+  </data>
+  <data name="Report_ExitRequiresAdmin" xml:space="preserve">
+    <value>退出需要配置管理员</value>
+  </data>
+  <data name="Report_ReasonAdmin" xml:space="preserve">
+    <value>管理员确认时需要原因</value>
+  </data>
+  <data name="Report_ReasonConfig" xml:space="preserve">
+    <value>更改配置时需要原因</value>
+  </data>
+  <data name="Report_ReasonMinLength" xml:space="preserve">
+    <value>这些原因的最小长度</value>
+  </data>
+  <data name="Report_Kind_Local" xml:space="preserve">
+    <value>本地组</value>
+  </data>
+  <data name="Report_Kind_Domain" xml:space="preserve">
+    <value>域组</value>
+  </data>
+  <data name="Report_Kind_Entra" xml:space="preserve">
+    <value>Entra ID 组或应用角色</value>
+  </data>
+  <data name="Report_Kind_Unknown" xml:space="preserve">
+    <value>无法在此计算机上解析</value>
+  </data>
+  <data name="Report_MembersEntra" xml:space="preserve">
+    <value>成员在 Entra ID 中管理</value>
+  </data>
+  <data name="Report_MembersUnresolved" xml:space="preserve">
+    <value>无法确定成员</value>
+  </data>
+  <data name="Report_MembersNone" xml:space="preserve">
+    <value>没有成员</value>
+  </data>
+  <data name="Report_Approval" xml:space="preserve">
+    <value>审核与批准</value>
+  </data>
+  <data name="Report_ApprovalText" xml:space="preserve">
+    <value>以下人员签字确认本报告所列授权已经审核且适当。</value>
+  </data>
+  <data name="Report_Role" xml:space="preserve">
+    <value>角色</value>
+  </data>
+  <data name="Report_SignName" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="Report_SignDate" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Report_Signature" xml:space="preserve">
+    <value>签名</value>
+  </data>
+  <data name="Report_SignPreparedBy" xml:space="preserve">
+    <value>编制</value>
+  </data>
+  <data name="Report_SignReviewedBy" xml:space="preserve">
+    <value>审核</value>
+  </data>
+  <data name="Report_SignApprovedBy" xml:space="preserve">
+    <value>批准</value>
+  </data>
+  <data name="Error_VIT0450" xml:space="preserve">
+    <value>无法创建锁定桌面；本次锁定使用覆盖层。</value>
+  </data>
+  <data name="Error_VIT0451" xml:space="preserve">
+    <value>Vitrine 无法切换到锁定桌面；本次锁定使用覆盖层。</value>
+  </data>
+  <data name="Error_VIT0452" xml:space="preserve">
+    <value>锁定期间另一个桌面被激活，Vitrine 无法切换回来；正在锁定 Windows。</value>
+  </data>
+  <data name="Error_VIT0453" xml:space="preserve">
+    <value>无法在锁定桌面上显示锁定屏幕；本次锁定使用覆盖层。</value>
+  </data>
+  <data name="Error_VIT0454" xml:space="preserve">
+    <value>Vitrine 无法切换回 Windows 桌面；将继续尝试。</value>
+  </data>
+  <data name="Error_VIT0455" xml:space="preserve">
+    <value>Vitrine 的锁定桌面仍处于活动状态；Vitrine 已切换回 Windows 桌面。</value>
+  </data>
+  <data name="Error_VIT0456" xml:space="preserve">
+    <value>无法在锁定桌面上显示解锁对话框；它将显示在 Windows 桌面上。</value>
+  </data>
+  <data name="Error_VIT0457" xml:space="preserve">
+    <value>无法提供 Windows 桌面预览。</value>
+  </data>
+  <data name="Error_VIT0400" xml:space="preserve">
+    <value>安全密钥不可用：此 Windows 版本没有 WebAuthn 接口（需要 Windows 10 1903 或更高版本）。</value>
+  </data>
+  <data name="Error_VIT0401" xml:space="preserve">
+    <value>此计算机上没有为 Vitrine 注册的安全密钥。</value>
+  </data>
+  <data name="Error_VIT0402" xml:space="preserve">
+    <value>安全密钥需要由 Vitrine 服务进行验证。无法连接该服务。</value>
+  </data>
+  <data name="Error_VIT0403" xml:space="preserve">
+    <value>登录请求已过期或已被使用。请重试。</value>
+  </data>
+  <data name="Error_VIT0404" xml:space="preserve">
+    <value>安全密钥的响应无效。</value>
+  </data>
+  <data name="Error_VIT0405" xml:space="preserve">
+    <value>此安全密钥未为 Vitrine 注册。</value>
+  </data>
+  <data name="Error_VIT0406" xml:space="preserve">
+    <value>此安全密钥已被吊销。</value>
+  </data>
+  <data name="Error_VIT0407" xml:space="preserve">
+    <value>不允许使用此型号的安全密钥。</value>
+  </data>
+  <data name="Error_VIT0408" xml:space="preserve">
+    <value>安全密钥被拒绝：其签名计数器没有增加。该密钥可能已被复制，请联系管理员。</value>
+  </data>
+  <data name="Error_VIT0409" xml:space="preserve">
+    <value>使用此安全密钥的失败尝试次数过多。请在 {0} 分钟后重试。</value>
+  </data>
+  <data name="Error_VIT0410" xml:space="preserve">
+    <value>安全密钥未确认 PIN。Vitrine 需要安全密钥的 PIN。</value>
+  </data>
+  <data name="Error_VIT0411" xml:space="preserve">
+    <value>此安全密钥的帐户无法使用：已禁用、已锁定、已过期、受限或已不存在。</value>
+  </data>
+  <data name="Error_VIT0412" xml:space="preserve">
+    <value>无法连接域控制器，且此人已保存的组成员身份过旧。请将计算机连接到网络后重试。</value>
+  </data>
+  <data name="Error_VIT0413" xml:space="preserve">
+    <value>找不到该帐户。请按 域\名称、AzureAD\name@contoso.com 或 .\名称 的格式输入。</value>
+  </data>
+  <data name="Error_VIT0414" xml:space="preserve">
+    <value>不能为自己的帐户注册安全密钥。必须由另一位有权限的人员注册。</value>
+  </data>
+  <data name="Error_VIT0415" xml:space="preserve">
+    <value>此人的有效安全密钥已达到上限。请先吊销一个。</value>
+  </data>
+  <data name="Error_VIT0416" xml:space="preserve">
+    <value>您无权注册或吊销安全密钥。</value>
+  </data>
+  <data name="Error_VIT0417" xml:space="preserve">
+    <value>请输入密钥名称和至少 {0} 个字符的原因。</value>
+  </data>
+  <data name="Error_VIT0418" xml:space="preserve">
+    <value>安全密钥的注册响应无效，或不支持该密钥类型（需要 ES256 或 RS256）。</value>
+  </data>
+  <data name="Error_VIT0419" xml:space="preserve">
+    <value>此安全密钥已为 Vitrine 注册。</value>
+  </data>
+  <data name="Error_VIT0420" xml:space="preserve">
+    <value>已忽略安全密钥列表：标准用户可以更改或替换它。</value>
+  </data>
+  <data name="Error_VIT0421" xml:space="preserve">
+    <value>无法读取或写入安全密钥列表。</value>
+  </data>
+  <data name="Error_VIT0422" xml:space="preserve">
+    <value>有 {0} 个安全密钥使用与 Fido.RpId（{1}）不同的 RP ID 注册，无法使用。请改回 Fido.RpId 或重新注册这些密钥。</value>
+  </data>
+  <data name="Error_VIT0423" xml:space="preserve">
+    <value>Security.AuthUiProcesses 不包含 {0}：锁定期间，用于安全密钥的 Windows 安全对话框无法接收输入。</value>
+  </data>
+  <data name="Error_VIT0424" xml:space="preserve">
+    <value>在此密钥上未找到任何为 Vitrine 注册的安全密钥。</value>
+  </data>
+  <data name="Error_VIT0425" xml:space="preserve">
+    <value>Windows 安全对话框报告了错误：{0}</value>
+  </data>
+  <data name="Error_VIT0426" xml:space="preserve">
+    <value>注册已过期。请重新开始。</value>
+  </data>
+  <data name="Error_VIT0470" xml:space="preserve">
+    <value>写入 Active Directory 需要您的 Windows 密码。请输入后重试。</value>
+  </data>
+  <data name="Error_VIT0471" xml:space="preserve">
+    <value>无法访问 Active Directory。将使用此计算机上已知的安全密钥。</value>
+  </data>
+  <data name="Error_VIT0472" xml:space="preserve">
+    <value>Active Directory 拒绝了更改：密码错误，或您的帐户无权在其中更改安全密钥。</value>
+  </data>
+  <data name="Error_VIT0473" xml:space="preserve">
+    <value>登录 Active Directory 必须使用确认注册的同一帐户。</value>
+  </data>
+  <data name="Error_VIT0474" xml:space="preserve">
+    <value>Active Directory 中的安全密钥尚未设置：此计算机不在域中，或缺少 Vitrine 容器。</value>
+  </data>
+  <data name="Error_VIT0475" xml:space="preserve">
+    <value>Active Directory 中的某个对象不是有效的 Vitrine 安全密钥，已被忽略。</value>
+  </data>
+  <data name="Error_VIT0476" xml:space="preserve">
+    <value>此计算机尚未从 Active Directory 读取安全密钥。</value>
+  </data>
+  <data name="Report_FidoStore" xml:space="preserve">
+    <value>安全密钥存储</value>
+  </data>
+  <data name="Report_FidoStoreLocal" xml:space="preserve">
+    <value>仅此计算机</value>
+  </data>
+  <data name="Report_FidoStoreDirectory" xml:space="preserve">
+    <value>Active Directory（{0}）；上次同步：{1}</value>
+  </data>
+  <data name="Report_FidoSyncUnknown" xml:space="preserve">
+    <value>未知（无法访问服务）</value>
+  </data>
+  <data name="Report_FidoSyncNever" xml:space="preserve">
+    <value>从未</value>
+  </data>
+  <data name="Error_VIT0427" xml:space="preserve">
+    <value>只有安全密钥注册人员、配置管理员和审核员才能查看安全密钥列表。</value>
+  </data>
+  <data name="Error_VIT0428" xml:space="preserve">
+    <value>只能在为此打开的 Vitrine 对话框中使用安全密钥进行签名或注册密钥。</value>
+  </data>
+</root>

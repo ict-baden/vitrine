@@ -1,0 +1,32 @@
+<Project Sdk="WixToolset.Sdk/5.0.2">
+  <!--
+    MSI für Vitrine. Erwartet die veröffentlichten Programmdateien in $(PublishDir):
+      dotnet publish src/Vitrine/Vitrine.csproj -c Release -r win-x64 -p:PublishSingleFile=true -p:SelfContained=true -o publish
+      dotnet build installer/Vitrine.Installer.wixproj -c Release -p:ProductVersion=0.1.0
+    Manufacturer kommt aus $(Company) in Directory.Build.props (eine Stelle für die Firmierung).
+  -->
+  <PropertyGroup>
+    <OutputName>Vitrine</OutputName>
+    <OutputType>Package</OutputType>
+    <InstallerPlatform>x64</InstallerPlatform>
+    <ProductVersion Condition="'$(ProductVersion)' == ''">0.1.0</ProductVersion>
+    <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\publish\</PublishDir>
+    <!-- Nur in 0.x: alte Builds 1.0.0.x ersetzen, obwohl ihre Nummer höher ist (siehe Package.wxs) -->
+    <PreOne Condition="$([System.Version]::Parse('$(ProductVersion)').Major) == 0">yes</PreOne>
+    <PreOne Condition="'$(PreOne)' == ''">no</PreOne>
+    <DefineConstants>PreOne=$(PreOne);ProductVersion=$(ProductVersion);PublishDir=$(PublishDir);AssetsDir=$(MSBuildThisFileDirectory)..\src\Vitrine\Assets;Manufacturer=$(Company)</DefineConstants>
+    <!-- MSI vorerst Deutsch (richtlinien/13, „Was einsprachig bleibt“) -->
+    <Cultures>de-DE</Cultures>
+    <!-- ICE38/43/57 schlagen bei Startmenü-Verknüpfungen in perMachine-Paketen fälschlich an (ALLUSERS=1 → Startmenü aller Benutzer).
+         ICE61 warnt vor AllowSameVersionUpgrades, das ist hier gewollt (siehe Package.wxs).
+         ICE60 bemängelt native DLLs ohne Sprache in der Versionsinfo.
+         ICE40 warnt vor REINSTALLMODE in der Property-Tabelle – gewollt (dmus, siehe Package.wxs). -->
+    <SuppressIces>ICE38;ICE40;ICE43;ICE57;ICE60;ICE61</SuppressIces>
+    <!-- ICE-Prüfungen laufen auch in der CI (seit 2026-10-20; vorher dort abgeschaltet). Abschalten nur von Hand für
+         Rechner ohne Windows Installer-Dienst: -p:SuppressValidation=true -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Util.wixext" Version="5.0.2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Logik ohne Oberfläche und ohne Windows-Aufrufe (richtlinien/01 und 02): Konfiguration, Richtlinien-Schichten,
+         Protokoll mit Hash-Kette, Entsperr-Regeln, Entra-Prüfungen, Strg+Alt+Entf-Rücksicherung, Schnittstellen-Protokoll,
+         Sprachen. Was Windows braucht (Registry, Ereignisprotokoll, Hooks), kommt über Schnittstellen aus der App. -->
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Vitrine.Core</RootNamespace>
+    <Description>Platform-neutral logic of Vitrine.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vitrine.Abstractions\Vitrine.Abstractions.csproj" />
+  </ItemGroup>
+
+  <!-- Sicherheitsschlüssel (FIDO2, Verfahren „fido“): CBOR für Attestierung, Authenticator-Daten und COSE-Schlüssel.
+       Paket von Microsoft (nuspec <license type="expression">MIT</license>), für net10.0 ohne weitere Abhängigkeiten;
+       steht in THIRD-PARTY-NOTICES.txt. Gleiche Versionsreihe wie System.ServiceProcess.ServiceController. -->
+  <ItemGroup>
+    <PackageReference Include="System.Formats.Cbor" Version="10.0.15" />
+  </ItemGroup>
+
+  <!-- Lizenztexte eingebettet: die einzelne Exe zum Herunterladen hat keine Dateien daneben (richtlinien/06) -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\LICENSE" LogicalName="LICENSE" WithCulture="false" />
+    <EmbeddedResource Include="..\..\THIRD-PARTY-NOTICES.txt" LogicalName="THIRD-PARTY-NOTICES.txt" WithCulture="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Vitrine.Tests" />
+  </ItemGroup>
+</Project>

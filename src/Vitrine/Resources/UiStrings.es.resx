@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Maschinell vorübersetzt – TODO-übersetzen: vor der ersten öffentlichen Version von Muttersprachlern prüfen lassen. Besonders unsichere Einträge tragen zusätzlich den Kommentar „TODO-übersetzen“. -->
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="About_Impressum" xml:space="preserve">
+    <value>Aviso legal (Impressum)</value>
+  </data>
+  <data name="About_Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="About_LanguageDefault" xml:space="preserve">
+    <value>Predeterminado ({0})</value>
+  </data>
+  <data name="About_LanguageManaged" xml:space="preserve">
+    <value>Establecido por su organización mediante una directiva.</value>
+  </data>
+  <data name="About_Language_Desc" xml:space="preserve">
+    <value>Su elección personal para este equipo. El español, el francés y el chino son traducciones automáticas y aún no se han revisado.</value>
+  </data>
+  <data name="About_Licence" xml:space="preserve">
+    <value>Licencia</value>
+  </data>
+  <data name="About_LicenceText" xml:space="preserve">
+    <value>{0} · software libre y de código abierto bajo la licencia MIT</value>
+  </data>
+  <data name="About_NoData" xml:space="preserve">
+    <value>Este software no envía datos a ICT-Baden.</value>
+  </data>
+  <data name="About_NoData_Desc" xml:space="preserve">
+    <value>Los inicios de sesión con Microsoft Entra ID van directamente a Microsoft. Detalles en «Datos y privacidad».</value>
+  </data>
+  <data name="About_Notices" xml:space="preserve">
+    <value>Licencias de terceros</value>
+  </data>
+  <data name="About_Notices_Desc" xml:space="preserve">
+    <value>Microsoft Authentication Library (MSAL), proyección de Windows SDK, .NET y WPF.</value>
+  </data>
+  <data name="About_Privacy" xml:space="preserve">
+    <value>Datos y privacidad</value>
+  </data>
+  <data name="About_Publisher" xml:space="preserve">
+    <value>Una herramienta de {0}</value>
+  </data>
+  <data name="About_ShowLicence" xml:space="preserve">
+    <value>Mostrar licencia</value>
+  </data>
+  <data name="About_ShowNotices" xml:space="preserve">
+    <value>Mostrar</value>
+  </data>
+  <data name="About_Source" xml:space="preserve">
+    <value>Código fuente</value>
+  </data>
+  <data name="About_Support" xml:space="preserve">
+    <value>Ayuda y soporte técnico</value>
+  </data>
+  <data name="About_Support_Desc" xml:space="preserve">
+    <value>Gratuito a través de GitHub; garantizado con un contrato de soporte.</value>
+  </data>
+  <data name="About_TextMissing" xml:space="preserve">
+    <value>El texto no se incluye en este paquete. En línea: {0}</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>Acerca de Vitrine</value>
+  </data>
+  <data name="About_Version" xml:space="preserve">
+    <value>Versión {0} · compilación {1} · .NET {2}</value>
+  </data>
+  <data name="About_Website" xml:space="preserve">
+    <value>Sitio web</value>
+  </data>
+  <data name="Admin_EventSourceRegistered" xml:space="preserve">
+    <value>Origen de eventos «{0}» registrado.</value>
+  </data>
+  <data name="Admin_Exit" xml:space="preserve">
+    <value>Salir de Vitrine</value>
+  </data>
+  <data name="Admin_OpenSettings" xml:space="preserve">
+    <value>Abrir la configuración</value>
+  </data>
+  <data name="App_Description" xml:space="preserve">
+    <value>Bloqueo de pantalla transparente para Windows</value>
+  </data>
+  <data name="App_Tagline" xml:space="preserve">
+    <value>Se mira, pero no se toca.</value>
+  </data>
+  <data name="Audit_Enabled" xml:space="preserve">
+    <value>Escribir el registro de auditoría</value>
+  </data>
+  <data name="Audit_Enabled_Desc" xml:space="preserve">
+    <value>Detecta manipulaciones: cada entrada contiene el SHA-256 de la anterior.</value>
+  </data>
+  <data name="Audit_EventLog" xml:space="preserve">
+    <value>Registro de eventos de Windows</value>
+  </data>
+  <data name="Audit_EventLog_Desc" xml:space="preserve">
+    <value>Registro de aplicación, origen «ICT-Baden Vitrine». El origen lo crea el programa de instalación o «Vitrine.exe --register-eventlog».</value>
+  </data>
+  <data name="Audit_Folder" xml:space="preserve">
+    <value>Carpeta</value>
+  </data>
+  <data name="Audit_Folder_Desc" xml:space="preserve">
+    <value>Vacío = %ProgramData%\ICT-Baden\Vitrine\Logs</value>
+  </data>
+  <data name="Audit_LockState" xml:space="preserve">
+    <value>Registrar bloqueos y desbloqueos</value>
+  </data>
+  <data name="Audit_LockState_Desc" xml:space="preserve">
+    <value>Desactivado: solo intentos fallidos, firmas y cambios.</value>
+  </data>
+  <data name="Audit_Network" xml:space="preserve">
+    <value>Copia en un recurso compartido de red</value>
+  </data>
+  <data name="Audit_Network_Desc" xml:space="preserve">
+    <value>p. ej., \\server\audit$\Vitrine – cada línea también se anexa allí.</value>
+  </data>
+  <data name="Audit_NoLog" xml:space="preserve">
+    <value>Todavía no hay registro de auditoría.</value>
+  </data>
+  <data name="Audit_OpenFolder" xml:space="preserve">
+    <value>Abrir carpeta</value>
+  </data>
+  <data name="Audit_Recent" xml:space="preserve">
+    <value>Últimas entradas</value>
+  </data>
+  <data name="Audit_Verify" xml:space="preserve">
+    <value>Comprobar cadena</value>
+  </data>
+  <data name="Common_Browse" xml:space="preserve">
+    <value>Examinar…</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="Common_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Common_ManagedByPolicy" xml:space="preserve">
+    <value>Establecido por su organización mediante una directiva</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Common_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>sí</value>
+  </data>
+  <data name="Entra_Broker" xml:space="preserve">
+    <value>Usar el agente de cuentas de Windows (WAM)</value>
+  </data>
+  <data name="Entra_Broker_Desc" xml:space="preserve">
+    <value>Desactivado (recomendado): Vitrine inicia sesión en su propia ventana, que no recuerda nada: llave de seguridad (FIDO2), clave de acceso, contraseña o Authenticator, cualquier cuenta, también en la pantalla de bloqueo. Activado: Windows Hello for Business y Acceso condicional basado en dispositivos, pero el agente recuerda las cuentas e inicia sesión con la cuenta de la sesión de Windows; solo para dispositivos con un único usuario personal.</value>
+  </data>
+  <data name="Entra_Client" xml:space="preserve">
+    <value>Id. de aplicación (cliente)</value>
+  </data>
+  <data name="Entra_Fresh" xml:space="preserve">
+    <value>Iniciar sesión siempre de nuevo</value>
+  </data>
+  <data name="Entra_Fresh_Desc" xml:space="preserve">
+    <value>Sin esta opción, una sesión de Microsoft existente podría desbloquear sin ninguna entrada.</value>
+  </data>
+  <data name="Entra_MaxAge" xml:space="preserve">
+    <value>Antigüedad máxima del inicio de sesión (segundos)</value>
+  </data>
+  <data name="Entra_MaxAge_Desc" xml:space="preserve">
+    <value>Comprueba auth_time si Microsoft lo proporciona. 0 = sin comprobación.</value>
+  </data>
+  <data name="Entra_Redirect" xml:space="preserve">
+    <value>URI de redirección</value>
+  </data>
+  <data name="Entra_RedirectPlaceholder" xml:space="preserve">
+    <value>&lt;Id. de aplicación&gt;</value>
+  </data>
+  <data name="Entra_Redirect_Desc" xml:space="preserve">
+    <value>Escríbalo en el registro de aplicación, en «Aplicaciones móviles y de escritorio».</value>
+  </data>
+  <data name="Entra_SetupTitle" xml:space="preserve">
+    <value>Configuración en 3 pasos</value>
+  </data>
+  <data name="Entra_Step1" xml:space="preserve">
+    <value>1. En el Centro de administración de Microsoft Entra, cree un registro de aplicación («Vitrine», solo este directorio).</value>
+  </data>
+  <data name="Entra_Step2" xml:space="preserve">
+    <value>2. Agregue la plataforma «Aplicaciones móviles y de escritorio», escriba el URI de redirección que aparece abajo y active «Permitir flujos de clientes públicos».</value>
+  </data>
+  <data name="Entra_Step3" xml:space="preserve">
+    <value>3. Escriba aquí el Id. de aplicación y el Id. de directorio. Opcionalmente, cree los roles de aplicación «Vitrine.Admin» / «Vitrine.Unlock».</value>
+  </data>
+  <data name="Entra_Tenant" xml:space="preserve">
+    <value>Id. de directorio (inquilino)</value>
+  </data>
+  <data name="Entra_Tenant_Desc" xml:space="preserve">
+    <value>GUID o dominio, p. ej., contoso.onmicrosoft.com.</value>
+  </data>
+  <data name="Entra_Tenants" xml:space="preserve">
+    <value>Otros inquilinos permitidos</value>
+  </data>
+  <data name="Entra_Tenants_Desc" xml:space="preserve">
+    <value>Solo es necesario con «organizations» o varios inquilinos. Un Id. de inquilino por línea.</value>
+  </data>
+  <data name="Entra_Test" xml:space="preserve">
+    <value>Probar la conexión</value>
+  </data>
+  <data name="Entra_TestAdmin" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="Entra_TestAdminYes" xml:space="preserve">
+    <value>sí (rol de aplicación Vitrine.Admin o Administrador global)</value>
+  </data>
+  <data name="Entra_TestButton" xml:space="preserve">
+    <value>Probar inicio de sesión</value>
+  </data>
+  <data name="Entra_TestGroups" xml:space="preserve">
+    <value>Grupos/roles</value>
+  </data>
+  <data name="Entra_TestMayUnlock" xml:space="preserve">
+    <value>Puede desbloquear</value>
+  </data>
+  <data name="Entra_TestNoGroups" xml:space="preserve">
+    <value>– (notificación de grupos no configurada)</value>
+  </data>
+  <data name="Entra_TestObjectId" xml:space="preserve">
+    <value>Id. de objeto</value>
+  </data>
+  <data name="Entra_TestRunning" xml:space="preserve">
+    <value>Iniciando sesión…</value>
+  </data>
+  <data name="Entra_TestSessionUser" xml:space="preserve">
+    <value>Usuario de la sesión</value>
+  </data>
+  <data name="Entra_TestSignedIn" xml:space="preserve">
+    <value>Sesión iniciada como</value>
+  </data>
+  <data name="Entra_TestTenant" xml:space="preserve">
+    <value>Inquilino</value>
+  </data>
+  <data name="Entra_Test_Desc" xml:space="preserve">
+    <value>Inicia sesión con los valores actuales (también los no guardados) y muestra lo que ve Vitrine.</value>
+  </data>
+  <data name="Error_VIT0003" xml:space="preserve">
+    <value>No se pudo cargar el complemento {0}: {1}</value>
+  </data>
+  <data name="Error_VIT0004" xml:space="preserve">
+    <value>Complemento {0}: el Id. «{1}» ya está en uso.</value>
+  </data>
+  <data name="Error_VIT0005" xml:space="preserve">
+    <value>Otro programa ya usa {0}.</value>
+  </data>
+  <data name="Error_VIT0006" xml:space="preserve">
+    <value>Error al guardar: {0}</value>
+  </data>
+  <data name="Error_VIT0007" xml:space="preserve">
+    <value>Guardado cancelado; se requieren derechos de administrador.</value>
+  </data>
+  <data name="Error_VIT0008" xml:space="preserve">
+    <value>El archivo de configuración no es válido: {0}</value>
+  </data>
+  <data name="Error_VIT0009" xml:space="preserve">
+    <value>Error en la acción: {0}</value>
+  </data>
+  <data name="Error_VIT0010" xml:space="preserve">
+    <value>Error inesperado: {0}</value>
+  </data>
+  <data name="Error_VIT0011" xml:space="preserve">
+    <value>No se pudo guardar el idioma: {0}</value>
+  </data>
+  <data name="Error_VIT0013" xml:space="preserve">
+    <value>No se carga el complemento {0}: los usuarios estándar pueden modificar la carpeta «Plugins». Instale Vitrine con el paquete MSI.</value>
+  </data>
+  <data name="Error_VIT0014" xml:space="preserve">
+    <value>No se aplicó la configuración: se modificó después de que el administrador la aprobara.</value>
+  </data>
+  <data name="Error_VIT0210" xml:space="preserve">
+    <value>Otro programa ya usa el nombre de la interfaz local, por lo que Vitrine no ofrece la interfaz.</value>
+  </data>
+  <data name="Event_AppStarted" xml:space="preserve">
+    <value>Iniciado</value>
+  </data>
+  <data name="Event_AppStopped" xml:space="preserve">
+    <value>Finalizado</value>
+  </data>
+  <data name="Event_ConfigChanged" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="Event_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Event_FailureActionTriggered" xml:space="preserve">
+    <value>Acción ejecutada</value>
+  </data>
+  <data name="Event_Locked" xml:space="preserve">
+    <value>Bloqueado</value>
+  </data>
+  <data name="Event_PromptClosed" xml:space="preserve">
+    <value>Cuadro de diálogo cerrado</value>
+  </data>
+  <data name="Event_PromptShown" xml:space="preserve">
+    <value>Cuadro de diálogo</value>
+  </data>
+  <data name="Event_SignatureFailed" xml:space="preserve">
+    <value>Firma fallida</value>
+  </data>
+  <data name="Event_SignatureGranted" xml:space="preserve">
+    <value>Firmado</value>
+  </data>
+  <data name="Event_UnlockDenied" xml:space="preserve">
+    <value>Denegado</value>
+  </data>
+  <data name="Event_UnlockFailed" xml:space="preserve">
+    <value>Intento fallido</value>
+  </data>
+  <data name="Event_Unlocked" xml:space="preserve">
+    <value>Desbloqueado</value>
+  </data>
+  <data name="Footer_AllSaved" xml:space="preserve">
+    <value>Todos los cambios guardados</value>
+  </data>
+  <data name="Footer_Discard" xml:space="preserve">
+    <value>Descartar</value>
+  </data>
+  <data name="Footer_NotSavedYet" xml:space="preserve">
+    <value>Aún no se ha guardado; se aplican los valores predeterminados.</value>
+  </data>
+  <data name="Footer_RedirectCopied" xml:space="preserve">
+    <value>URI de redirección copiado</value>
+  </data>
+  <data name="Footer_Reloaded" xml:space="preserve">
+    <value>Recargado – configuración establecida por directiva: {0}</value>
+  </data>
+  <data name="Footer_Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Footer_Saved" xml:space="preserve">
+    <value>Guardado</value>
+  </data>
+  <data name="Footer_Unsaved" xml:space="preserve">
+    <value>Cambios sin guardar</value>
+  </data>
+  <data name="Home_AfterMinutes" xml:space="preserve">
+    <value>Tras {0} min</value>
+  </data>
+  <data name="Home_AutoLock" xml:space="preserve">
+    <value>Bloquear automáticamente</value>
+  </data>
+  <data name="Home_Hint" xml:space="preserve">
+    <value>Los programas siguen visibles, pero nadie puede intervenir.</value>
+  </data>
+  <data name="Home_Hotkey" xml:space="preserve">
+    <value>Atajo de teclado</value>
+  </data>
+  <data name="Home_LastUnlocked" xml:space="preserve">
+    <value>Último desbloqueo por {0}.</value>
+  </data>
+  <data name="Home_LockNow" xml:space="preserve">
+    <value>Bloquear ahora</value>
+  </data>
+  <data name="Home_Notices" xml:space="preserve">
+    <value>Avisos</value>
+  </data>
+  <data name="Home_StatusReady" xml:space="preserve">
+    <value>Listo – sin bloquear</value>
+  </data>
+  <data name="Home_UnlockWith" xml:space="preserve">
+    <value>Desbloquear con</value>
+  </data>
+  <data name="Info_About" xml:space="preserve">
+    <value>Licencias, aviso legal y privacidad</value>
+  </data>
+  <data name="Info_About_Desc" xml:space="preserve">
+    <value>Versión, licencia, licencias de terceros, vínculos al aviso legal, la privacidad y el soporte técnico.</value>
+  </data>
+  <data name="Info_CommandLine" xml:space="preserve">
+    <value>Línea de comandos</value>
+  </data>
+  <data name="Info_CommandLine_Desc" xml:space="preserve">
+    <value>Vitrine.exe [--lock | --settings | --verify-log archivo | --register-eventlog] · renombrado a .scr: protector de pantalla</value>
+  </data>
+  <data name="Info_DeviceConfig" xml:space="preserve">
+    <value>Configuración del dispositivo</value>
+  </data>
+  <data name="Info_Managed" xml:space="preserve">
+    <value>Administrar de forma centralizada</value>
+  </data>
+  <data name="Info_Managed_Desc" xml:space="preserve">
+    <value>La plantilla ADMX para directiva de grupo e Intune está en la carpeta «policy». Las directivas siempre tienen prioridad.</value>
+  </data>
+  <data name="Info_ReloadPolicy" xml:space="preserve">
+    <value>Volver a cargar directivas</value>
+  </data>
+  <data name="Info_Version" xml:space="preserve">
+    <value>Versión {0}</value>
+  </data>
+  <data name="Int_Interface" xml:space="preserve">
+    <value>Interfaz para aplicaciones de línea de negocio</value>
+  </data>
+  <data name="Int_NoPlugins" xml:space="preserve">
+    <value>No hay complementos cargados. Carpeta: {0}</value>
+  </data>
+  <data name="Int_OnFailed" xml:space="preserve">
+    <value>En un intento fallido</value>
+  </data>
+  <data name="Int_OnLock" xml:space="preserve">
+    <value>Al bloquear</value>
+  </data>
+  <data name="Int_OnPrompt" xml:space="preserve">
+    <value>Cuando aparece el cuadro de diálogo</value>
+  </data>
+  <data name="Int_OnUnlock" xml:space="preserve">
+    <value>Al desbloquear</value>
+  </data>
+  <data name="Int_Pipe" xml:space="preserve">
+    <value>Interfaz local (canalización con nombre)</value>
+  </data>
+  <data name="Int_PipeEvents" xml:space="preserve">
+    <value>(eventos como líneas JSON)</value>
+  </data>
+  <data name="Int_Pipe_Desc" xml:space="preserve">
+    <value>El software LIMS, MES o de instrumentos puede consultar el estado, bloquear y solicitar firmas electrónicas.</value>
+  </data>
+  <data name="Int_Plugins" xml:space="preserve">
+    <value>Cargar complementos de inicio de sesión</value>
+  </data>
+  <data name="Int_Plugins_Desc" xml:space="preserve">
+    <value>DLL con IAuthProvider de la carpeta «Plugins» junto a Vitrine.exe, p. ej., un adaptador para su gestión de usuarios GxP.</value>
+  </data>
+  <data name="Int_Scripts" xml:space="preserve">
+    <value>Scripts</value>
+  </data>
+  <data name="Int_Scripts_Desc" xml:space="preserve">
+    <value>Los comandos se ejecutan de forma invisible mediante cmd.exe. Variables: %VITRINE_EVENT%, %VITRINE_TRIGGER%, %VITRINE_USER%, %VITRINE_METHOD%, %VITRINE_CODE%, %VITRINE_TIME%.</value>
+  </data>
+  <data name="Key_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="Key_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="Key_Shift" xml:space="preserve">
+    <value>Mayús</value>
+  </data>
+  <data name="Key_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="Lock_Autostart" xml:space="preserve">
+    <value>Iniciar con Windows</value>
+  </data>
+  <data name="Lock_Autostart_Desc" xml:space="preserve">
+    <value>Vitrine se inicia en el área de notificación después de iniciar sesión. Se establece por usuario.</value>
+  </data>
+  <data name="Lock_BlockMouse" xml:space="preserve">
+    <value>Inmovilizar el puntero del mouse</value>
+  </data>
+  <data name="Lock_BlockMouse_Desc" xml:space="preserve">
+    <value>Desactivado: el puntero puede moverse (p. ej., para señalar algo); los clics siguen bloqueados.</value>
+  </data>
+  <data name="Lock_During" xml:space="preserve">
+    <value>Mientras está bloqueado</value>
+  </data>
+  <data name="Lock_Hotkey" xml:space="preserve">
+    <value>Atajo de teclado</value>
+  </data>
+  <data name="Lock_HotkeyNeedsModifier" xml:space="preserve">
+    <value>Use Ctrl, Alt o Win</value>
+  </data>
+  <data name="Lock_Hotkey_Desc" xml:space="preserve">
+    <value>Haga clic en el campo y pulse la combinación que desee. Supr la borra.</value>
+  </data>
+  <data name="Lock_Idle" xml:space="preserve">
+    <value>Bloquear en inactividad</value>
+  </data>
+  <data name="Lock_Idle_Desc" xml:space="preserve">
+    <value>Minutos sin actividad de teclado o mouse. 0 = desactivado.</value>
+  </data>
+  <data name="Lock_KeepAwake" xml:space="preserve">
+    <value>Mantener la pantalla encendida</value>
+  </data>
+  <data name="Lock_KeepAwake_Desc" xml:space="preserve">
+    <value>Impide el protector de pantalla y la suspensión mientras está bloqueado.</value>
+  </data>
+  <data name="Lock_OnStartup" xml:space="preserve">
+    <value>Bloquear inmediatamente al iniciar</value>
+  </data>
+  <data name="Lock_OnStartup_Desc" xml:space="preserve">
+    <value>Para salas de control y equipos de medición que, tras el arranque, solo se observan.</value>
+  </data>
+  <data name="Lock_ReplaceWinL" xml:space="preserve">
+    <value>Win + L bloquea con Vitrine</value>
+  </data>
+  <data name="Lock_ReplaceWinL_Desc" xml:space="preserve">
+    <value>En lugar de la pantalla de bloqueo de Windows, también cuando está desbloqueado. Mientras Vitrine se ejecuta, Bloquear no aparece en la pantalla Ctrl + Alt + Supr.</value>
+  </data>
+  <data name="Lock_Schedule" xml:space="preserve">
+    <value>Programación</value>
+  </data>
+  <data name="Lock_Schedule_Desc" xml:space="preserve">
+    <value>Bloquear a horas fijas. Una entrada por línea: 18:00  o  07:30@{0}</value>
+  </data>
+  <data name="Lock_Triggers" xml:space="preserve">
+    <value>Desencadenadores</value>
+  </data>
+  <data name="Look_Accent" xml:space="preserve">
+    <value>Color de énfasis</value>
+  </data>
+  <data name="Look_AccentWindows" xml:space="preserve">
+    <value>Color de énfasis de Windows</value>
+  </data>
+  <data name="Look_Blank" xml:space="preserve">
+    <value>Cubierta</value>
+  </data>
+  <data name="Look_Blank_Desc" xml:space="preserve">
+    <value>La pantalla se cubre, para datos confidenciales. Los programas siguen ejecutándose.</value>
+  </data>
+  <data name="Look_Clock" xml:space="preserve">
+    <value>Reloj en la pantalla cubierta</value>
+  </data>
+  <data name="Look_Dim" xml:space="preserve">
+    <value>Atenuar</value>
+  </data>
+  <data name="Look_Dim_Desc" xml:space="preserve">
+    <value>0 % = totalmente nítido, 100 % = negro. Se aplica a «Transparente».</value>
+  </data>
+  <data name="Look_HideCursor" xml:space="preserve">
+    <value>Ocultar el puntero del mouse</value>
+  </data>
+  <data name="Look_Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Look_LanguageSystem" xml:space="preserve">
+    <value>Idioma de Windows</value>
+  </data>
+  <data name="Look_Language_Desc" xml:space="preserve">
+    <value>Valor predeterminado para este dispositivo. Cada usuario puede elegir su propio idioma en la ventana Acerca de, salvo que lo establezca una directiva.</value>
+  </data>
+  <data name="Look_Logo" xml:space="preserve">
+    <value>Logotipo de la empresa en el cuadro de diálogo</value>
+  </data>
+  <data name="Look_LogoFilter" xml:space="preserve">
+    <value>Imágenes (*.png;*.jpg)|*.png;*.jpg;*.jpeg</value>
+  </data>
+  <data name="Look_Logo_Desc" xml:space="preserve">
+    <value>PNG o JPG, se muestra encima del nombre.</value>
+  </data>
+  <data name="Look_Message" xml:space="preserve">
+    <value>Texto de aviso</value>
+  </data>
+  <data name="Look_Message_Desc" xml:space="preserve">
+    <value>Se muestra en la barra inferior, p. ej., «Medición en curso – no tocar».</value>
+  </data>
+  <data name="Look_Pill" xml:space="preserve">
+    <value>Mostrar barra de aviso</value>
+  </data>
+  <data name="Look_Preview" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="Look_PreviewLocked" xml:space="preserve">
+    <value>🔒 Bloqueado</value>
+  </data>
+  <data name="Look_Preview_Desc" xml:space="preserve">
+    <value>Bloquea durante un momento; desbloquee como de costumbre.</value>
+  </data>
+  <data name="Look_TestLock" xml:space="preserve">
+    <value>Probar el bloqueo</value>
+  </data>
+  <data name="Look_Transparent" xml:space="preserve">
+    <value>Transparente</value>
+  </data>
+  <data name="Look_Transparent_Desc" xml:space="preserve">
+    <value>Los programas siguen visibles: ideal para observar mediciones y procesos.</value>
+  </data>
+  <data name="Look_What" xml:space="preserve">
+    <value>¿Qué se ve mientras está bloqueado?</value>
+  </data>
+  <data name="Method_PinShort" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="Method_Windows" xml:space="preserve">
+    <value>Contraseña de Windows</value>
+  </data>
+  <data name="Method_WindowsShort" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Nav_Audit" xml:space="preserve">
+    <value>Registro de auditoría</value>
+  </data>
+  <data name="Nav_Entra" xml:space="preserve">
+    <value>Microsoft Entra ID</value>
+  </data>
+  <data name="Nav_Home" xml:space="preserve">
+    <value>Información general</value>
+  </data>
+  <data name="Nav_Info" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="Nav_Integration" xml:space="preserve">
+    <value>Integración y scripts</value>
+  </data>
+  <data name="Nav_Lock" xml:space="preserve">
+    <value>Bloqueo</value>
+  </data>
+  <data name="Nav_Look" xml:space="preserve">
+    <value>Apariencia</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>Seguridad</value>
+  </data>
+  <data name="Nav_Unlock" xml:space="preserve">
+    <value>Desbloqueo</value>
+  </data>
+  <data name="Notice_ConfigErrorTitle" xml:space="preserve">
+    <value>La configuración contiene errores</value>
+  </data>
+  <data name="Notice_EntraText" xml:space="preserve">
+    <value>Sin un Id. de aplicación, el inicio de sesión de Microsoft se oculta en el cuadro de diálogo.</value>
+  </data>
+  <data name="Notice_EntraTitle" xml:space="preserve">
+    <value>Entra ID aún no está configurado</value>
+  </data>
+  <data name="Notice_HotkeyTitle" xml:space="preserve">
+    <value>Atajo de teclado no disponible</value>
+  </data>
+  <data name="Notice_LegacyConfigText" xml:space="preserve">
+    <value>Leída de {0}. Al guardar, se mueve a {1}.</value>
+  </data>
+  <data name="Notice_LegacyConfigTitle" xml:space="preserve">
+    <value>La configuración sigue en la carpeta antigua</value>
+  </data>
+  <data name="Notice_LegacyPolicyText" xml:space="preserve">
+    <value>Los valores aún proceden de SOFTWARE\Policies\Vitrine. Importe la nueva plantilla ADMX; escribe en SOFTWARE\Policies\ICT-Baden\Vitrine.</value>
+  </data>
+  <data name="Notice_LegacyPolicyTitle" xml:space="preserve">
+    <value>Se usa la ruta de directiva antigua</value>
+  </data>
+  <data name="Notice_ManagedText" xml:space="preserve">
+    <value>Configuración de directiva de grupo o Intune: {0}</value>
+  </data>
+  <data name="Notice_ManagedTitle" xml:space="preserve">
+    <value>Administrado parcialmente de forma centralizada</value>
+  </data>
+  <data name="Notice_PinText" xml:space="preserve">
+    <value>Los desbloqueos con ella no se pueden atribuir a una persona.</value>
+  </data>
+  <data name="Notice_PinTitle" xml:space="preserve">
+    <value>Contraseña de desbloqueo compartida activa</value>
+  </data>
+  <data name="Notice_PluginTitle" xml:space="preserve">
+    <value>Complemento no cargado</value>
+  </data>
+  <data name="Overlay_DateFormat" xml:space="preserve">
+    <value>dddd, d 'de' MMMM</value>
+  </data>
+  <data name="Overlay_Hint" xml:space="preserve">
+    <value>Desde {0} · {1}</value>
+  </data>
+  <data name="Overlay_HintWithMessage" xml:space="preserve">
+    <value>Bloqueado por {0} desde {1} · {2}</value>
+  </data>
+  <data name="Overlay_HowAny" xml:space="preserve">
+    <value>Pulse una tecla o haga clic para desbloquear</value>
+  </data>
+  <data name="Overlay_HowHotkey" xml:space="preserve">
+    <value>{0} para desbloquear</value>
+  </data>
+  <data name="Overlay_HowKey" xml:space="preserve">
+    <value>Pulse una tecla para desbloquear</value>
+  </data>
+  <data name="Overlay_Title" xml:space="preserve">
+    <value>Bloqueado · {0}</value>
+  </data>
+  <data name="Pin_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Pin_Label" xml:space="preserve">
+    <value>Nueva contraseña (dos veces)</value>
+  </data>
+  <data name="Pin_Remove" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="Pin_Title" xml:space="preserve">
+    <value>Establecer contraseña de desbloqueo</value>
+  </data>
+  <data name="Prompt_AdminHeading" xml:space="preserve">
+    <value>Se requiere un administrador</value>
+  </data>
+  <data name="Prompt_AttemptsLeft" xml:space="preserve">
+    <value>Intentos restantes: {0}.</value>
+  </data>
+  <data name="Prompt_Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Prompt_ContinueWith" xml:space="preserve">
+    <value>Continuar con {0}</value>
+  </data>
+  <data name="Prompt_ExternalEntra" xml:space="preserve">
+    <value>El inicio de sesión de Microsoft se abre en una ventana aparte. Llave de seguridad, clave de acceso, contraseña o Authenticator, según la directiva de su empresa. No se recuerda nada.</value>
+  </data>
+  <data name="Prompt_ExternalHello" xml:space="preserve">
+    <value>Rostro, huella digital o PIN de Windows Hello. Solo para la persona que ha iniciado sesión en este equipo.</value>
+  </data>
+  <data name="Prompt_ExternalOther" xml:space="preserve">
+    <value>Continuar con {0}.</value>
+  </data>
+  <data name="Prompt_Footer" xml:space="preserve">
+    <value>Los inicios de sesión se anotan en el registro de auditoría.</value>
+  </data>
+  <data name="Prompt_LockedSince" xml:space="preserve">
+    <value>Bloqueado desde {0} · {1}</value>
+  </data>
+  <data name="Prompt_Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Prompt_ReasonUnlock" xml:space="preserve">
+    <value>Desbloquear el equipo</value>
+  </data>
+  <data name="Prompt_RequestedBy" xml:space="preserve">
+    <value>Solicitado por {0}</value>
+  </data>
+  <data name="Prompt_RequestedByProcess" xml:space="preserve">
+    <value>Solicitado por {0} · {1}</value>
+  </data>
+  <data name="Prompt_Sign" xml:space="preserve">
+    <value>Firmar</value>
+  </data>
+  <data name="Prompt_SignFooter" xml:space="preserve">
+    <value>Su firma se registra con el nombre, la hora y el significado.</value>
+  </data>
+  <data name="Prompt_SignIntro" xml:space="preserve">
+    <value>Está firmando electrónicamente</value>
+  </data>
+  <data name="Prompt_SignMeaning" xml:space="preserve">
+    <value>Significado: {0}</value>
+  </data>
+  <data name="Prompt_TitleAdmin" xml:space="preserve">
+    <value>Vitrine – Administrador</value>
+  </data>
+  <data name="Prompt_TitleSignature" xml:space="preserve">
+    <value>Vitrine – Firma electrónica</value>
+  </data>
+  <data name="Prompt_TitleUnlock" xml:space="preserve">
+    <value>Vitrine – Desbloquear</value>
+  </data>
+  <data name="Prompt_Unlock" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="Prompt_UserName" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="Sec_Action" xml:space="preserve">
+    <value>Acción tras demasiados intentos fallidos</value>
+  </data>
+  <data name="Sec_ActionLock" xml:space="preserve">
+    <value>Bloquear Windows</value>
+  </data>
+  <data name="Sec_ActionLogOff" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="Sec_ActionNone" xml:space="preserve">
+    <value>No hacer nada</value>
+  </data>
+  <data name="Sec_ActionShutdown" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="Sec_AuthUi" xml:space="preserve">
+    <value>Ventanas de inicio de sesión durante el inicio de sesión externo</value>
+  </data>
+  <data name="Sec_AuthUi_Desc" xml:space="preserve">
+    <value>Solo estos procesos reciben entradas mientras la ventana de Microsoft o de Hello está abierta.</value>
+  </data>
+  <data name="Sec_Delay" xml:space="preserve">
+    <value>Aumentar el tiempo de espera</value>
+  </data>
+  <data name="Sec_Delay_Desc" xml:space="preserve">
+    <value>A partir del 3.er intento fallido, el tiempo de espera aumenta: 2 s, 4 s, 8 s… hasta 30 s.</value>
+  </data>
+  <data name="Sec_ExitAdmin" xml:space="preserve">
+    <value>Cierre solo por administradores</value>
+  </data>
+  <data name="Sec_Failures" xml:space="preserve">
+    <value>Intentos fallidos</value>
+  </data>
+  <data name="Sec_MaxFailed" xml:space="preserve">
+    <value>Máximo de intentos fallidos</value>
+  </data>
+  <data name="Sec_MaxFailed_Desc" xml:space="preserve">
+    <value>Después se aplica la acción elegida. 0 = ilimitado.</value>
+  </data>
+  <data name="Sec_Protection" xml:space="preserve">
+    <value>Protección</value>
+  </data>
+  <data name="Sec_Sas" xml:space="preserve">
+    <value>Restringir Ctrl + Alt + Supr</value>
+  </data>
+  <data name="Sec_Sas_Desc" xml:space="preserve">
+    <value>Mientras está bloqueado, oculta allí Administrador de tareas, Cerrar sesión, Cambiar una contraseña y Bloquear; Win + L no hace nada.</value>
+  </data>
+  <data name="Sec_SettingsAdmin" xml:space="preserve">
+    <value>Configuración solo para administradores</value>
+  </data>
+  <data name="Sec_UserConfig" xml:space="preserve">
+    <value>Configuración propia por usuario</value>
+  </data>
+  <data name="Sec_UserConfig_Desc" xml:space="preserve">
+    <value>Permite %LocalAppData%\Vitrine\config.json además de la configuración del dispositivo.</value>
+  </data>
+  <data name="Sec_Watchdog" xml:space="preserve">
+    <value>Supervisión</value>
+  </data>
+  <data name="Sec_Watchdog_Desc" xml:space="preserve">
+    <value>Si Vitrine se cierra o falla mientras la pantalla está bloqueada, Windows se bloquea inmediatamente.</value>
+  </data>
+  <data name="Settings_Title" xml:space="preserve">
+    <value>Vitrine – Configuración</value>
+  </data>
+  <data name="Shots_DemoUser" xml:space="preserve">
+    <value>Operador de laboratorio</value>
+  </data>
+  <data name="Shots_SignMeaning" xml:space="preserve">
+    <value>Revisado y aprobado</value>
+  </data>
+  <data name="Shots_SignReason" xml:space="preserve">
+    <value>Liberación del lote 4711</value>
+  </data>
+  <data name="Status_Locked" xml:space="preserve">
+    <value>Bloqueado</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="Tray_About" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Salir de Vitrine</value>
+  </data>
+  <data name="Tray_HotkeyHint" xml:space="preserve">
+    <value>{0} bloquea la pantalla y la mantiene visible.</value>
+  </data>
+  <data name="Tray_HotkeyTaken" xml:space="preserve">
+    <value>Atajo de teclado en uso</value>
+  </data>
+  <data name="Tray_IdleHint" xml:space="preserve">
+    <value>Automáticamente tras {0} min.</value>
+  </data>
+  <data name="Tray_LockBlank" xml:space="preserve">
+    <value>Bloquear con pantalla cubierta</value>
+  </data>
+  <data name="Tray_LockNow" xml:space="preserve">
+    <value>Bloquear ahora, transparente</value>
+  </data>
+  <data name="Tray_LockedSince" xml:space="preserve">
+    <value>Desde {0}</value>
+  </data>
+  <data name="Tray_Log" xml:space="preserve">
+    <value>Registro de auditoría</value>
+  </data>
+  <data name="Tray_MenuAbout" xml:space="preserve">
+    <value>Acerca de Vitrine</value>
+  </data>
+  <data name="Tray_MenuExit" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Tray_MenuLock" xml:space="preserve">
+    <value>Bloquear ahora</value>
+  </data>
+  <data name="Tray_MenuSettings" xml:space="preserve">
+    <value>Configuración…</value>
+  </data>
+  <data name="Tray_RunningText" xml:space="preserve">
+    <value>{0} bloquea la pantalla y la mantiene visible.</value>
+  </data>
+  <data name="Tray_RunningTitle" xml:space="preserve">
+    <value>Vitrine se está ejecutando</value>
+  </data>
+  <data name="Tray_Settings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="Tray_Tooltip" xml:space="preserve">
+    <value>Vitrine – bloqueo de pantalla</value>
+  </data>
+  <data name="Tray_TooltipLocked" xml:space="preserve">
+    <value>Vitrine – bloqueado</value>
+  </data>
+  <data name="Tray_TooltipReady" xml:space="preserve">
+    <value>Vitrine – listo</value>
+  </data>
+  <data name="Unlock_Admins" xml:space="preserve">
+    <value>Administradores</value>
+  </data>
+  <data name="Unlock_Allowed" xml:space="preserve">
+    <value>Personas autorizadas</value>
+  </data>
+  <data name="Unlock_Allowed_Desc" xml:space="preserve">
+    <value>Selección múltiple. Puede desbloquear cualquiera que cumpla una de las condiciones.</value>
+  </data>
+  <data name="Unlock_Anyone" xml:space="preserve">
+    <value>Cualquier cuenta válida</value>
+  </data>
+  <data name="Unlock_Dialog" xml:space="preserve">
+    <value>Cuadro de diálogo</value>
+  </data>
+  <data name="Unlock_Domains" xml:space="preserve">
+    <value>Solo estos dominios</value>
+  </data>
+  <data name="Unlock_Domains_Desc" xml:space="preserve">
+    <value>Opcional. Uno por línea, p. ej., CONTOSO o contoso.com. Vacío = sin restricción.</value>
+  </data>
+  <data name="Unlock_Entra_Desc" xml:space="preserve">
+    <value>Cuenta profesional con MFA, Authenticator, clave de acceso, Windows Hello for Business y Acceso condicional.</value>
+  </data>
+  <data name="Unlock_Groups" xml:space="preserve">
+    <value>Grupos</value>
+  </data>
+  <data name="Unlock_Groups_Desc" xml:space="preserve">
+    <value>Uno por línea: DOMINIO\grupo, grupo local, SID, Id. de grupo de Entra o rol de aplicación (p. ej., Vitrine.Unlock).</value>
+  </data>
+  <data name="Unlock_Hello_Desc" xml:space="preserve">
+    <value>Rostro, huella digital o PIN, solo para la persona que ha iniciado sesión.</value>
+  </data>
+  <data name="Unlock_Methods" xml:space="preserve">
+    <value>Métodos de inicio de sesión</value>
+  </data>
+  <data name="Unlock_Pin" xml:space="preserve">
+    <value>Contraseña de desbloqueo propia</value>
+  </data>
+  <data name="Unlock_PinSet" xml:space="preserve">
+    <value>Establecer…</value>
+  </data>
+  <data name="Unlock_Pin_Desc" xml:space="preserve">
+    <value>Contraseña compartida sin vínculo a una persona. No se recomienda en entornos GxP.</value>
+  </data>
+  <data name="Unlock_Prefill" xml:space="preserve">
+    <value>Rellenar previamente el nombre de usuario</value>
+  </data>
+  <data name="Unlock_SessionUser" xml:space="preserve">
+    <value>Persona que ha iniciado sesión</value>
+  </data>
+  <data name="Unlock_SomeGroups" xml:space="preserve">
+    <value>Grupos específicos</value>
+  </data>
+  <data name="Unlock_SomeUsers" xml:space="preserve">
+    <value>Cuentas específicas</value>
+  </data>
+  <data name="Unlock_Timeout" xml:space="preserve">
+    <value>El cuadro de diálogo se cierra tras</value>
+  </data>
+  <data name="Unlock_Timeout_Desc" xml:space="preserve">
+    <value>Segundos sin entrada; después, todo vuelve a quedar bloqueado.</value>
+  </data>
+  <data name="Unlock_Trigger" xml:space="preserve">
+    <value>El cuadro de diálogo se abre con</value>
+  </data>
+  <data name="Unlock_TriggerAny" xml:space="preserve">
+    <value>Tecla o clic del mouse</value>
+  </data>
+  <data name="Unlock_TriggerHotkey" xml:space="preserve">
+    <value>Solo atajo de teclado</value>
+  </data>
+  <data name="Unlock_TriggerKey" xml:space="preserve">
+    <value>Solo tecla</value>
+  </data>
+  <data name="Unlock_Users" xml:space="preserve">
+    <value>Cuentas</value>
+  </data>
+  <data name="Unlock_Users_Desc" xml:space="preserve">
+    <value>Una por línea: DOMINIO\nombre, nombre@contoso.com o SID.</value>
+  </data>
+  <data name="Unlock_Who" xml:space="preserve">
+    <value>¿Quién puede desbloquear?</value>
+  </data>
+  <data name="Unlock_Windows_Desc" xml:space="preserve">
+    <value>Cuenta local, de Active Directory o de Entra en un dispositivo unido a Entra.</value>
+  </data>
+  <data name="VerifyLog_BrokenTitle" xml:space="preserve">
+    <value>¡Registro de auditoría modificado!</value>
+  </data>
+  <data name="VerifyLog_OkTitle" xml:space="preserve">
+    <value>Registro de auditoría intacto</value>
+  </data>
+  <data name="Look_Windows" xml:space="preserve">
+    <value>Solo programas seleccionados</value>
+  </data>
+  <data name="Look_Windows_Desc" xml:space="preserve">
+    <value>Todo queda cubierto salvo las ventanas de los programas indicados abajo. Siguen visibles aunque se muevan.</value>
+  </data>
+  <data name="Look_Reveal" xml:space="preserve">
+    <value>Programas que siguen visibles</value>
+  </data>
+  <data name="Look_Reveal_Desc" xml:space="preserve">
+    <value>Para «Solo programas seleccionados»: un archivo de programa por línea, p. ej., Chromeleon.exe. Las ventanas que queden encima de ellas siguen cubiertas.</value>
+  </data>
+  <data name="Look_Masks" xml:space="preserve">
+    <value>Zonas cubiertas</value>
+  </data>
+  <data name="Look_Masks_Desc" xml:space="preserve">
+    <value>Zonas que permanecen cubiertas mientras la pantalla está bloqueada, p. ej., un campo con datos de pacientes. Una línea por zona: monitor:x,y,ancho,alto en porcentaje (* = todos los monitores).</value>
+  </data>
+  <data name="Look_MasksDraw" xml:space="preserve">
+    <value>Dibujar zonas…</value>
+  </data>
+  <data name="Look_MasksClear" xml:space="preserve">
+    <value>Quitar todas</value>
+  </data>
+  <data name="MaskEditor_Title" xml:space="preserve">
+    <value>Zonas cubiertas</value>
+  </data>
+  <data name="MaskEditor_Monitor" xml:space="preserve">
+    <value>Monitor {0}</value>
+  </data>
+  <data name="MaskEditor_Hint" xml:space="preserve">
+    <value>Arrastre para cubrir una zona. Haga clic con el botón derecho en una zona para quitarla.</value>
+  </data>
+  <data name="MaskEditor_Done" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="MaskEditor_Remove" xml:space="preserve">
+    <value>Clic con el botón derecho para quitar</value>
+  </data>
+  <data name="Entra_AuthContext" xml:space="preserve">
+    <value>Contexto de autenticación</value>
+  </data>
+  <data name="Entra_AuthContext_Desc" xml:space="preserve">
+    <value>Se solicita en cada inicio de sesión, p. ej., c1. Con una directiva de acceso condicional para este contexto, Microsoft Entra ID puede exigir una clave de acceso o una llave de seguridad FIDO2. Vacío = ninguno.</value>
+  </data>
+  <data name="Entra_SignAuthContext" xml:space="preserve">
+    <value>Contexto de autenticación para firmas</value>
+  </data>
+  <data name="Entra_SignAuthContext_Desc" xml:space="preserve">
+    <value>Solo para firmas electrónicas, p. ej., c2 para un inicio de sesión resistente al phishing. Vacío = igual que arriba.</value>
+  </data>
+  <data name="Entra_ShareIdToken" xml:space="preserve">
+    <value>Pasar el token de identificador a las aplicaciones</value>
+  </data>
+  <data name="Entra_ShareIdToken_Desc" xml:space="preserve">
+    <value>Las aplicaciones que solicitan un inicio de sesión o una firma a través de la interfaz local reciben el token de identificador y pueden verificarlo ellas mismas con Microsoft. Nunca se escribe en el registro de auditoría.</value>
+  </data>
+  <data name="Entra_TokenScopes" xml:space="preserve">
+    <value>Tokens de acceso para aplicaciones</value>
+  </data>
+  <data name="Entra_TokenScopes_Desc" xml:space="preserve">
+    <value>Permisos (ámbitos) para los que las aplicaciones pueden solicitar un token de acceso a través de la interfaz local, uno por línea, p. ej., api://lims/Signature.Write. Vacío = sin tokens de acceso.</value>
+  </data>
+  <data name="Lock_Autostart_Service" xml:space="preserve">
+    <value>El servicio de Vitrine inicia Vitrine en cada sesión y lo supervisa. No hace falta un inicio por usuario.</value>
+  </data>
+  <data name="Entra_Broker_NotIncluded" xml:space="preserve">
+    <value>No incluido en esta compilación (compilada sin el agente de cuentas de Windows). Vitrine inicia sesión en su propia ventana de inicio de sesión.</value>
+  </data>
+  <data name="Event_ServiceStarted" xml:space="preserve">
+    <value>Servicio iniciado</value>
+  </data>
+  <data name="Event_ServiceStopped" xml:space="preserve">
+    <value>Servicio detenido</value>
+  </data>
+  <data name="Event_AgentLost" xml:space="preserve">
+    <value>Vitrine finalizó inesperadamente</value>
+  </data>
+  <data name="Event_AgentStopped" xml:space="preserve">
+    <value>Vitrine no se reinicia</value>
+  </data>
+  <data name="Event_AgentStartFailed" xml:space="preserve">
+    <value>Error al iniciar</value>
+  </data>
+  <data name="Event_SessionDisconnected" xml:space="preserve">
+    <value>Sesión desconectada</value>
+  </data>
+  <data name="Event_AgentConnected" xml:space="preserve">
+    <value>Vitrine conectado al servicio</value>
+  </data>
+  <data name="Audit_LockedFor" xml:space="preserve">
+    <value>Bloqueado durante {0}</value>
+  </data>
+  <data name="Shutdown_Reason" xml:space="preserve">
+    <value>Vitrine: demasiados intentos de inicio de sesión fallidos</value>
+  </data>
+  <data name="Event_SessionEndRefused" xml:space="preserve">
+    <value>Cierre de sesión o reinicio rechazado durante el bloqueo</value>
+  </data>
+  <data name="Lock_ShutdownBlockReason" xml:space="preserve">
+    <value>El puesto de trabajo está bloqueado con Vitrine.</value>
+  </data>
+  <data name="Language_MachineTranslated" xml:space="preserve">
+    <value>{0} (traducción automática)</value>
+  </data>
+  <data name="Audit_ModeServiceTitle" xml:space="preserve">
+    <value>Escrito y firmado por el servicio</value>
+  </data>
+  <data name="Audit_ModeServiceText" xml:space="preserve">
+    <value>El servicio ICT-Baden Vitrine escribe el registro y firma cada entrada; los usuarios solo pueden leer la carpeta del registro. Comprueba él mismo el inicio de sesión de las firmas electrónicas (contraseña de Windows, Microsoft Entra ID). Huella de la clave: {0}</value>
+  </data>
+  <data name="Audit_ModeOfflineTitle" xml:space="preserve">
+    <value>Servicio no disponible</value>
+  </data>
+  <data name="Audit_ModeOfflineText" xml:space="preserve">
+    <value>Las entradas se guardan en memoria y se envían cuando el servicio vuelva ({0} en espera). Hasta entonces no se pueden realizar firmas electrónicas (VIT-0300).</value>
+  </data>
+  <data name="Audit_ModeLocalTitle" xml:space="preserve">
+    <value>No apto para Part 11</value>
+  </data>
+  <data name="Audit_ModeLocalText" xml:space="preserve">
+    <value>Vitrine escribe el registro por sí mismo, sin el servicio (Vitrine.exe individual o instalación con SERVICE=0). Las entradas no están firmadas: quien pueda escribir en la carpeta del registro puede añadir o modificar entradas sin que se note. Para un registro protegido, instale el MSI con el servicio.</value>
+  </data>
+  <data name="AuditKey_Fingerprint" xml:space="preserve">
+    <value>Clave del registro en este equipo (huella SHA-256):
+{0}</value>
+  </data>
+  <data name="AuditKey_Exported" xml:space="preserve">
+    <value>Clave pública del registro exportada a {0}.
+Huella (SHA-256):
+{1}</value>
+  </data>
+  <data name="AuditKey_Rotated" xml:space="preserve">
+    <value>Se creó una nueva clave del registro; el cambio consta en el registro, firmado con la clave anterior.
+Nueva huella (SHA-256): {0}</value>
+  </data>
+  <data name="Event_AuditFormatSwitched" xml:space="preserve">
+    <value>Registro escrito y firmado ahora por el servicio</value>
+  </data>
+  <data name="Event_AuditKeyRotated" xml:space="preserve">
+    <value>Clave del registro cambiada</value>
+  </data>
+  <data name="Event_AuditLocalMode" xml:space="preserve">
+    <value>Registro escrito sin el servicio (no apto para Part 11)</value>
+  </data>
+  <data name="Method_WindowsLogon" xml:space="preserve">
+    <value>Inicio de sesión de Windows</value>
+  </data>
+  <data name="Method_WindowsLogonShort" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Prompt_ExternalWindowsLogon" xml:space="preserve">
+    <value>Windows abre su cuadro de diálogo de inicio de sesión. Inicie sesión con su cuenta: contraseña, PIN o tarjeta inteligente.</value>
+  </data>
+  <data name="Prompt_WindowsLogonMessage" xml:space="preserve">
+    <value>Inicie sesión con su propia cuenta.</value>
+  </data>
+  <data name="Unlock_WindowsLogon_Desc" xml:space="preserve">
+    <value>Cuadro de diálogo de seguridad de Windows: contraseña, PIN o tarjeta inteligente (sin llaves de seguridad FIDO2: para ellas, Microsoft), para cualquier cuenta que Windows acepte, también personas que nunca han iniciado sesión aquí.</value>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>Iniciar sesión con Microsoft</value>
+  </data>
+  <data name="SignIn_Hint" xml:space="preserve">
+    <value>Ventana de inicio de sesión de Vitrine. No se guarda nada en este dispositivo: todo se elimina después de iniciar sesión.</value>
+  </data>
+  <data name="SignIn_Loading" xml:space="preserve">
+    <value>Cargando el inicio de sesión de Microsoft …</value>
+  </data>
+  <data name="Entra_SignInHosts" xml:space="preserve">
+    <value>Hosts de inicio de sesión permitidos</value>
+  </data>
+  <data name="Entra_SignInHosts_Desc" xml:space="preserve">
+    <value>Otras páginas de inicio de sesión para la ventana de inicio de sesión de Microsoft, p. ej. su servicio de federación (adfs.contoso.com, *.okta.com). Uno por línea. Las páginas de inicio de sesión de Microsoft siempre están permitidas.</value>
+  </data>
+  <data name="Nav_Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Roles_Section" xml:space="preserve">
+    <value>Quién puede hacer qué en Vitrine</value>
+  </data>
+  <data name="Roles_ConfigAdmins" xml:space="preserve">
+    <value>Administradores de configuración</value>
+  </data>
+  <data name="Roles_ConfigAdmins_Desc" xml:space="preserve">
+    <value>Pueden abrir y cambiar la configuración y salir de Vitrine. Un grupo por línea (como los grupos de desbloqueo). Vacío = solo administradores.</value>
+  </data>
+  <data name="Roles_Registrars" xml:space="preserve">
+    <value>Registro de llaves de seguridad</value>
+  </data>
+  <data name="Roles_Registrars_Desc" xml:space="preserve">
+    <value>Pueden registrar y revocar llaves de seguridad de otras personas. Vacío = solo administradores.</value>
+  </data>
+  <data name="Roles_Auditors" xml:space="preserve">
+    <value>Auditores</value>
+  </data>
+  <data name="Roles_Auditors_Desc" xml:space="preserve">
+    <value>Pueden ver y exportar el registro de auditoría y el informe de autorizaciones, pero no pueden cambiar nada. Los administradores de configuración siempre son también auditores.</value>
+  </data>
+  <data name="Roles_AdminsPrivileged" xml:space="preserve">
+    <value>Los administradores locales tienen todos los roles</value>
+  </data>
+  <data name="Roles_AdminsPrivileged_Desc" xml:space="preserve">
+    <value>Desactivado: los miembros del grupo local Administradores no tienen derechos en Vitrine (configuración, salir, registro de llaves, inicio de sesión de emergencia) salvo que estén en un grupo de rol. Un administrador puede seguir deteniendo el servicio o editando el archivo de configuración: esto separa funciones en Vitrine, no en el equipo.</value>
+  </data>
+  <data name="Roles_EmergencySection" xml:space="preserve">
+    <value>Inicio de sesión de emergencia</value>
+  </data>
+  <data name="Roles_BypassGroups" xml:space="preserve">
+    <value>Grupos con inicio de sesión de emergencia</value>
+  </data>
+  <data name="Roles_BypassGroups_Desc" xml:space="preserve">
+    <value>Los miembros pueden desbloquear con su contraseña de Windows aunque las reglas de desbloqueo no lo permitan, solo con un motivo, que se registra en el registro de auditoría y como advertencia en el registro de eventos de Windows. Vacío = sin inicio de sesión de emergencia.</value>
+  </data>
+  <data name="Roles_BypassMinLength" xml:space="preserve">
+    <value>Longitud mínima del motivo de emergencia</value>
+  </data>
+  <data name="Roles_BypassMinLength_Desc" xml:space="preserve">
+    <value>Caracteres, al menos 1.</value>
+  </data>
+  <data name="Roles_ReasonsSection" xml:space="preserve">
+    <value>Motivos</value>
+  </data>
+  <data name="Roles_ReasonAdmin" xml:space="preserve">
+    <value>Motivo en las confirmaciones de administrador</value>
+  </data>
+  <data name="Roles_ReasonAdmin_Desc" xml:space="preserve">
+    <value>Abrir la configuración o salir tras una confirmación requiere un motivo, que se registra en el registro de auditoría.</value>
+  </data>
+  <data name="Roles_ReasonConfig" xml:space="preserve">
+    <value>Motivo para cambios de configuración</value>
+  </data>
+  <data name="Roles_ReasonConfig_Desc" xml:space="preserve">
+    <value>Guardar la configuración requiere un motivo. El registro de auditoría siempre indica qué valores cambiaron (anterior → nuevo, secretos ocultos).</value>
+  </data>
+  <data name="Roles_ReasonMinLength" xml:space="preserve">
+    <value>Longitud mínima de estos motivos</value>
+  </data>
+  <data name="Prompt_Emergency" xml:space="preserve">
+    <value>Inicio de sesión de emergencia</value>
+  </data>
+  <data name="Prompt_EmergencyBack" xml:space="preserve">
+    <value>Volver al inicio de sesión normal</value>
+  </data>
+  <data name="Prompt_EmergencyNote" xml:space="preserve">
+    <value>Inicio de sesión de emergencia con su contraseña de Windows. Su motivo se registra y se notifica.</value>
+  </data>
+  <data name="Prompt_EmergencyUnlock" xml:space="preserve">
+    <value>Desbloquear (emergencia)</value>
+  </data>
+  <data name="Prompt_ReasonLabel" xml:space="preserve">
+    <value>Motivo (al menos {0} caracteres)</value>
+  </data>
+  <data name="Responsible_Since" xml:space="preserve">
+    <value>Responsable: {0} desde {1}</value>
+  </data>
+  <data name="Audit_Report" xml:space="preserve">
+    <value>Informe de autorizaciones</value>
+  </data>
+  <data name="Audit_Report_Tip" xml:space="preserve">
+    <value>Quién puede desbloquear, usar el inicio de sesión de emergencia y qué rol tiene, en HTML para aprobación y en CSV</value>
+  </data>
+  <data name="Audit_ReportFilter" xml:space="preserve">
+    <value>Informe HTML y CSV (*.html)|*.html|Solo CSV (*.csv)|*.csv</value>
+  </data>
+  <data name="Report_Written" xml:space="preserve">
+    <value>Informe de autorizaciones escrito: {0}</value>
+  </data>
+  <data name="Error_VIT0435" xml:space="preserve">
+    <value>No se pudo escribir el informe de autorizaciones: {0}</value>
+  </data>
+  <data name="Reason_Title" xml:space="preserve">
+    <value>Motivo del cambio</value>
+  </data>
+  <data name="Reason_Intro" xml:space="preserve">
+    <value>Cambiarán {0} valor(es). Los cambios y su motivo se registran en el registro de auditoría.</value>
+  </data>
+  <data name="Reason_Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Event_UnlockBypass" xml:space="preserve">
+    <value>Desbloqueo de emergencia</value>
+  </data>
+  <data name="Event_ResponsibilityChanged" xml:space="preserve">
+    <value>Cambio de responsable</value>
+  </data>
+  <data name="Settings_AuditOnly" xml:space="preserve">
+    <value>Solo lectura: acceso de auditor</value>
+  </data>
+  <data name="Lock_Mode" xml:space="preserve">
+    <value>Modo de bloqueo</value>
+  </data>
+  <data name="Lock_Mode_Desc" xml:space="preserve">
+    <value>Superposición: los programas siguen visibles detrás del bloqueo. Escritorio propio: Vitrine cambia a su propio escritorio; otras ventanas no reciben entradas ni se dibujan encima, y los programas siguen ejecutándose ocultos. Windows Hello y el inicio de sesión de Microsoft vuelven brevemente al escritorio de Windows.</value>
+  </data>
+  <data name="Lock_ModeOverlay" xml:space="preserve">
+    <value>Superposición: los programas siguen visibles</value>
+  </data>
+  <data name="Lock_ModeDesktop" xml:space="preserve">
+    <value>Escritorio propio: los programas se ejecutan ocultos</value>
+  </data>
+  <data name="Lock_DesktopPreview" xml:space="preserve">
+    <value>Vista previa del escritorio de Windows</value>
+  </data>
+  <data name="Lock_DesktopPreview_Desc" xml:space="preserve">
+    <value>Con escritorio propio: muestra una imagen de los programas en ejecución (solo lectura, se actualiza periódicamente). Sigue el modo de visualización: nada si está cubierto, solo los programas seleccionados; las áreas ocultas siguen ocultas.</value>
+  </data>
+  <data name="Lock_DesktopPreviewSeconds" xml:space="preserve">
+    <value>Actualizar la vista previa cada (segundos)</value>
+  </data>
+  <data name="Lock_DesktopPreviewSeconds_Desc" xml:space="preserve">
+    <value>De 1 a 60; 0 = una imagen al bloquear.</value>
+  </data>
+  <data name="Desktop_PreviewAt" xml:space="preserve">
+    <value>Vista previa · {0}</value>
+  </data>
+  <data name="Desktop_NoPreview" xml:space="preserve">
+    <value>Los programas siguen ejecutándose en el escritorio de Windows</value>
+  </data>
+  <data name="Method_Fido" xml:space="preserve">
+    <value>Llave de seguridad</value>
+  </data>
+  <data name="Method_FidoShort" xml:space="preserve">
+    <value>Llave</value>
+  </data>
+  <data name="Prompt_ExternalFido" xml:space="preserve">
+    <value>Windows le pedirá la llave de seguridad registrada para Vitrine: insértela o acérquela al lector, escriba su PIN y tóquela.</value>
+  </data>
+  <data name="Prompt_RegistrarHeading" xml:space="preserve">
+    <value>Se necesita una persona autorizada</value>
+  </data>
+  <data name="Unlock_Fido_Desc" xml:space="preserve">
+    <value>Llaves de seguridad FIDO2 registradas para Vitrine (página Llaves de seguridad), comprobadas por el servicio de Vitrine: sin aplicación de Entra, también sin conexión, el escritorio sigue visible. El PIN de la llave siempre es obligatorio.</value>
+  </data>
+  <data name="Nav_Keys" xml:space="preserve">
+    <value>Llaves de seguridad</value>
+  </data>
+  <data name="Keys_Registered" xml:space="preserve">
+    <value>Llaves registradas</value>
+  </data>
+  <data name="Keys_Register" xml:space="preserve">
+    <value>Registrar llave…</value>
+  </data>
+  <data name="Keys_Policy" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
+  <data name="Keys_RpId" xml:space="preserve">
+    <value>RP ID</value>
+  </data>
+  <data name="Keys_RpId_Desc" xml:space="preserve">
+    <value>Identificador para el que se registran las llaves. No lo cambie después del primer registro: las llaves solo funcionan con el RP ID con el que se registraron.</value>
+  </data>
+  <data name="Keys_SelfRegistration" xml:space="preserve">
+    <value>Registrar para uno mismo</value>
+  </data>
+  <data name="Keys_SelfRegistration_Desc" xml:space="preserve">
+    <value>Desactivado: una llave siempre la registra otra persona autorizada (principio de los cuatro ojos).</value>
+  </data>
+  <data name="Keys_MaxKeys" xml:space="preserve">
+    <value>Llaves por persona</value>
+  </data>
+  <data name="Keys_MaxKeys_Desc" xml:space="preserve">
+    <value>Número máximo de llaves activas por persona.</value>
+  </data>
+  <data name="Keys_MaxFailed" xml:space="preserve">
+    <value>Intentos fallidos hasta el bloqueo</value>
+  </data>
+  <data name="Keys_MaxFailed_Desc" xml:space="preserve">
+    <value>Inicios de sesión rechazados por llave y por persona antes de un bloqueo temporal. 0 = nunca.</value>
+  </data>
+  <data name="Keys_BlockMinutes" xml:space="preserve">
+    <value>Bloqueo (minutos)</value>
+  </data>
+  <data name="Keys_OfflineHours" xml:space="preserve">
+    <value>Sin controlador de dominio (horas)</value>
+  </data>
+  <data name="Keys_OfflineHours_Desc" xml:space="preserve">
+    <value>Sin controlador de dominio, los últimos grupos leídos se usan como máximo durante este tiempo. 0 = nunca iniciar sesión sin conexión.</value>
+  </data>
+  <data name="Keys_Models" xml:space="preserve">
+    <value>Modelos permitidos</value>
+  </data>
+  <data name="Keys_Models_Desc" xml:space="preserve">
+    <value>AAGUID de los modelos de llave permitidos, uno por línea. Vacío = cualquier modelo.</value>
+  </data>
+  <data name="Keys_Status" xml:space="preserve">
+    <value>{0} llaves activas para el RP ID "{1}".</value>
+  </data>
+  <data name="Keys_MethodOff" xml:space="preserve">
+    <value>El método está desactivado: active Llave de seguridad en Desbloqueo para usar las llaves.</value>
+  </data>
+  <data name="Keys_RowActive" xml:space="preserve">
+    <value>Registrada {0} por {1} · último uso {2} · modelo {3}</value>
+  </data>
+  <data name="Keys_NeverUsed" xml:space="preserve">
+    <value>nunca</value>
+  </data>
+  <data name="Keys_RowRevoked" xml:space="preserve">
+    <value>Revocada {0} por {1}: {2}</value>
+  </data>
+  <data name="Keys_Revoke" xml:space="preserve">
+    <value>Revocar…</value>
+  </data>
+  <data name="Keys_Registered_Ok" xml:space="preserve">
+    <value>Llave "{0}" registrada para {1}.</value>
+  </data>
+  <data name="Keys_Revoked_Ok" xml:space="preserve">
+    <value>Llave "{0}" de {1} revocada.</value>
+  </data>
+  <data name="Keys_RegisterTitle" xml:space="preserve">
+    <value>Registrar llave de seguridad</value>
+  </data>
+  <data name="Keys_Account" xml:space="preserve">
+    <value>Persona (cuenta de Windows: DOMINIO\nombre, AzureAD\nombre@contoso.com o .\nombre)</value>
+  </data>
+  <data name="Keys_Label" xml:space="preserve">
+    <value>Nombre de la llave</value>
+  </data>
+  <data name="Keys_Reason" xml:space="preserve">
+    <value>Motivo (al menos {0} caracteres)</value>
+  </data>
+  <data name="Keys_RegisterHint" xml:space="preserve">
+    <value>Primero inicie sesión como persona autorizada; después la persona tiene su llave preparada: Windows pide su PIN (o que se defina uno) y un toque.</value>
+  </data>
+  <data name="Keys_RevokeTitle" xml:space="preserve">
+    <value>Revocar llave de seguridad</value>
+  </data>
+  <data name="Keys_RevokeHint" xml:space="preserve">
+    <value>La llave "{0}" de {1} dejará de desbloquear y firmar. No se puede deshacer.</value>
+  </data>
+  <data name="Keys_RegistrarWhy" xml:space="preserve">
+    <value>Registrar una llave de seguridad para {0}</value>
+  </data>
+  <data name="Keys_RevokeWhy" xml:space="preserve">
+    <value>Revocar la llave "{0}" de {1}</value>
+  </data>
+  <data name="Keys_StoreLocal" xml:space="preserve">
+    <value>Las llaves se guardan en este equipo.</value>
+  </data>
+  <data name="Keys_StoreDirectory" xml:space="preserve">
+    <value>Las llaves se guardan en Active Directory ({0}) · última sincronización {1}. El último uso se refiere a este equipo.</value>
+  </data>
+  <data name="Keys_DirectoryLoginTitle" xml:space="preserve">
+    <value>Iniciar sesión en Active Directory</value>
+  </data>
+  <data name="Keys_DirectoryLoginOk" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="Keys_DirectoryUser" xml:space="preserve">
+    <value>Su cuenta (DOMINIO\nombre)</value>
+  </data>
+  <data name="Keys_DirectoryPassword" xml:space="preserve">
+    <value>Contraseña de Windows</value>
+  </data>
+  <data name="Keys_DirectoryLoginHint" xml:space="preserve">
+    <value>Las llaves de seguridad se guardan en Active Directory. Vitrine escribe allí el cambio con su cuenta. La contraseña solo se usa para este cambio y no se guarda.</value>
+  </data>
+  <data name="Keys_Store" xml:space="preserve">
+    <value>Almacén</value>
+  </data>
+  <data name="Keys_Store_Desc" xml:space="preserve">
+    <value>Dónde se guardan las llaves registradas. Active Directory: una llave registrada una vez funciona en todos los equipos del dominio. Se aplica tras reiniciar el servicio de Vitrine.</value>
+  </data>
+  <data name="Keys_StoreLocalOption" xml:space="preserve">
+    <value>Este equipo</value>
+  </data>
+  <data name="Keys_StoreDirectoryOption" xml:space="preserve">
+    <value>Active Directory (todos los equipos del dominio)</value>
+  </data>
+  <data name="Keys_Container" xml:space="preserve">
+    <value>Contenedor de Active Directory</value>
+  </data>
+  <data name="Keys_Container_Desc" xml:space="preserve">
+    <value>Nombre distintivo del contenedor de Vitrine. Vacío = CN=Vitrine,CN=Program Data en el dominio del equipo.</value>
+  </data>
+  <data name="Keys_SyncMinutes" xml:space="preserve">
+    <value>Sincronización (minutos)</value>
+  </data>
+  <data name="Keys_SyncMinutes_Desc" xml:space="preserve">
+    <value>Con qué frecuencia el servicio lee todas las llaves de Active Directory. Una llave presentada se comprueba en el momento si Active Directory está disponible.</value>
+  </data>
+</root>

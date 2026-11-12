@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- net10.0: plattformneutrale Tests (Vitrine.Core), laufen auch unter Linux und macOS.
+         net10.0-windows10.0.19041.0: zusätzlich die Tests der App (Windows/**), nur unter Windows ausgeführt.
+         Tests sperren nie den Rechner, installieren keine Hooks und schreiben nicht in die Registry. -->
+    <TargetFrameworks>net10.0;net10.0-windows10.0.19041.0</TargetFrameworks>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>Vitrine.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Nur für Tests, nicht ausgeliefert: Microsoft.NET.Test.Sdk (MIT), xunit und xunit.runner.visualstudio (Apache-2.0),
+       dieselben Versionen wie Zutritt und Riegel -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <!-- WPF lässt System.IO aus den impliziten usings weg -->
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Vitrine.Core\Vitrine.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows10.0.19041.0'">
+    <ProjectReference Include="..\..\src\Vitrine\Vitrine.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0-windows10.0.19041.0'">
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <Compile Remove="Windows\**" />
+  </ItemGroup>
+</Project>

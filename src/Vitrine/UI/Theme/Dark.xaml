@@ -1,0 +1,11 @@
+<!-- Ergänzt Fluent.Dark.xaml um die wenigen Vitrine-eigenen Farben -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Entsperr-Dialog und Flyout liegen über beliebigem Inhalt: fast deckend, damit lesbar -->
+    <SolidColorBrush x:Key="CardBg" Color="#F0202024"/>
+    <SolidColorBrush x:Key="FlyoutBg" Color="#F22C2C2C"/>
+    <!-- Eigener Kippschalter (Stil „ToggleSwitch“ in Controls.xaml) -->
+    <SolidColorBrush x:Key="ControlOff" Color="#00000000"/>
+    <SolidColorBrush x:Key="ControlOffStroke" Color="#9AFFFFFF"/>
+    <SolidColorBrush x:Key="Knob" Color="#D0FFFFFF"/>
+</ResourceDictionary>

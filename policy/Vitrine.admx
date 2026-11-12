@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="2.7" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces><target prefix="vitrine" namespace="ICTBaden.Policies.Vitrine" /><using prefix="windows" namespace="Microsoft.Policies.Windows" /></policyNamespaces>
+  <resources minRequiredRevision="2.0" />
+  <supportedOn><definitions><definition name="SUPPORTED_Vitrine1" displayName="$(string.SUPPORTED_Vitrine1)" /></definitions></supportedOn>
+  <categories>
+    <category name="Vitrine" displayName="$(string.Cat_Vitrine)" />
+    <category name="Cat_Lock" displayName="$(string.Cat_Lock)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Unlock" displayName="$(string.Cat_Unlock)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Appearance" displayName="$(string.Cat_Appearance)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Security" displayName="$(string.Cat_Security)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Audit" displayName="$(string.Cat_Audit)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Entra" displayName="$(string.Cat_Entra)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Integration" displayName="$(string.Cat_Integration)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Scripts" displayName="$(string.Cat_Scripts)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Roles" displayName="$(string.Cat_Roles)"><parentCategory ref="Vitrine" /></category>
+    <category name="Cat_Fido" displayName="$(string.Cat_Fido)"><parentCategory ref="Vitrine" /></category>
+  </categories>
+  <policies>
+    <policy name="Lock_Hotkey" class="Both" displayName="$(string.Lock_Hotkey)" explainText="$(string.Lock_Hotkey_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" presentation="$(presentation.Lock_Hotkey)">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Lock_Hotkey_v" valueName="Hotkey" />
+      </elements>
+    </policy>
+    <policy name="Lock_IdleMinutes" class="Both" displayName="$(string.Lock_IdleMinutes)" explainText="$(string.Lock_IdleMinutes_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" presentation="$(presentation.Lock_IdleMinutes)">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Lock_IdleMinutes_v" valueName="IdleMinutes" minValue="0" maxValue="1440" />
+      </elements>
+    </policy>
+    <policy name="Lock_LockOnStartup" class="Both" displayName="$(string.Lock_LockOnStartup)" explainText="$(string.Lock_LockOnStartup_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" valueName="LockOnStartup">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Lock_KeepAwake" class="Both" displayName="$(string.Lock_KeepAwake)" explainText="$(string.Lock_KeepAwake_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" valueName="KeepAwake">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Lock_BlockMouseMove" class="Both" displayName="$(string.Lock_BlockMouseMove)" explainText="$(string.Lock_BlockMouseMove_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" valueName="BlockMouseMove">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Lock_ReplaceWinL" class="Both" displayName="$(string.Lock_ReplaceWinL)" explainText="$(string.Lock_ReplaceWinL_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" valueName="ReplaceWinL">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Lock_Schedule" class="Both" displayName="$(string.Lock_Schedule)" explainText="$(string.Lock_Schedule_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" presentation="$(presentation.Lock_Schedule)">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Lock_Schedule_v" valueName="Schedule" />
+      </elements>
+    </policy>
+    <policy name="Lock_Mode" class="Both" displayName="$(string.Lock_Mode)" explainText="$(string.Lock_Mode_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" presentation="$(presentation.Lock_Mode)">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Lock_Mode_v" valueName="Mode">
+          <item displayName="$(string.Lock_Mode_Overlay)"><value><string>Overlay</string></value></item>
+          <item displayName="$(string.Lock_Mode_Desktop)"><value><string>Desktop</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Lock_DesktopShowPreview" class="Both" displayName="$(string.Lock_DesktopShowPreview)" explainText="$(string.Lock_DesktopShowPreview_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" valueName="DesktopShowPreview">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Lock_DesktopPreviewSeconds" class="Both" displayName="$(string.Lock_DesktopPreviewSeconds)" explainText="$(string.Lock_DesktopPreviewSeconds_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Lock" presentation="$(presentation.Lock_DesktopPreviewSeconds)">
+      <parentCategory ref="Cat_Lock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Lock_DesktopPreviewSeconds_v" valueName="DesktopPreviewSeconds" minValue="0" maxValue="60" />
+      </elements>
+    </policy>
+    <policy name="Unlock_Allowed" class="Both" displayName="$(string.Unlock_Allowed)" explainText="$(string.Unlock_Allowed_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_Allowed)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Unlock_Allowed_v" valueName="Allowed" minValue="0" maxValue="31" />
+      </elements>
+    </policy>
+    <policy name="Unlock_AllowedGroups" class="Both" displayName="$(string.Unlock_AllowedGroups)" explainText="$(string.Unlock_AllowedGroups_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_AllowedGroups)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Unlock_AllowedGroups_v" valueName="AllowedGroups" />
+      </elements>
+    </policy>
+    <policy name="Unlock_AllowedUsers" class="Both" displayName="$(string.Unlock_AllowedUsers)" explainText="$(string.Unlock_AllowedUsers_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_AllowedUsers)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Unlock_AllowedUsers_v" valueName="AllowedUsers" />
+      </elements>
+    </policy>
+    <policy name="Unlock_AllowedDomains" class="Both" displayName="$(string.Unlock_AllowedDomains)" explainText="$(string.Unlock_AllowedDomains_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_AllowedDomains)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Unlock_AllowedDomains_v" valueName="AllowedDomains" />
+      </elements>
+    </policy>
+    <policy name="Unlock_Methods" class="Both" displayName="$(string.Unlock_Methods)" explainText="$(string.Unlock_Methods_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_Methods)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Unlock_Methods_v" valueName="Methods" />
+      </elements>
+    </policy>
+    <policy name="Unlock_Trigger" class="Both" displayName="$(string.Unlock_Trigger)" explainText="$(string.Unlock_Trigger_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_Trigger)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Unlock_Trigger_v" valueName="Trigger">
+          <item displayName="$(string.Unlock_Trigger_AnyInput)"><value><string>AnyInput</string></value></item>
+          <item displayName="$(string.Unlock_Trigger_KeyOnly)"><value><string>KeyOnly</string></value></item>
+          <item displayName="$(string.Unlock_Trigger_HotkeyOnly)"><value><string>HotkeyOnly</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Unlock_PrefillUserName" class="Both" displayName="$(string.Unlock_PrefillUserName)" explainText="$(string.Unlock_PrefillUserName_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" valueName="PrefillUserName">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Unlock_PromptTimeoutSeconds" class="Both" displayName="$(string.Unlock_PromptTimeoutSeconds)" explainText="$(string.Unlock_PromptTimeoutSeconds_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_PromptTimeoutSeconds)">
+      <parentCategory ref="Cat_Unlock" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Unlock_PromptTimeoutSeconds_v" valueName="PromptTimeoutSeconds" minValue="5" maxValue="600" />
+      </elements>
+    </policy>
+    <policy name="Appearance_Visual" class="Both" displayName="$(string.Appearance_Visual)" explainText="$(string.Appearance_Visual_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_Visual)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Appearance_Visual_v" valueName="Visual">
+          <item displayName="$(string.Appearance_Visual_Transparent)"><value><string>Transparent</string></value></item>
+          <item displayName="$(string.Appearance_Visual_Blank)"><value><string>Blank</string></value></item>
+          <item displayName="$(string.Appearance_Visual_Windows)"><value><string>Windows</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Appearance_Masks" class="Both" displayName="$(string.Appearance_Masks)" explainText="$(string.Appearance_Masks_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_Masks)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Appearance_Masks_v" valueName="Masks" />
+      </elements>
+    </policy>
+    <policy name="Appearance_RevealProcesses" class="Both" displayName="$(string.Appearance_RevealProcesses)" explainText="$(string.Appearance_RevealProcesses_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_RevealProcesses)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Appearance_RevealProcesses_v" valueName="RevealProcesses" />
+      </elements>
+    </policy>
+    <policy name="Appearance_DimPercent" class="Both" displayName="$(string.Appearance_DimPercent)" explainText="$(string.Appearance_DimPercent_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_DimPercent)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Appearance_DimPercent_v" valueName="DimPercent" minValue="0" maxValue="100" />
+      </elements>
+    </policy>
+    <policy name="Appearance_Message" class="Both" displayName="$(string.Appearance_Message)" explainText="$(string.Appearance_Message_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_Message)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Appearance_Message_v" valueName="Message" />
+      </elements>
+    </policy>
+    <policy name="Appearance_Accent" class="Both" displayName="$(string.Appearance_Accent)" explainText="$(string.Appearance_Accent_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_Accent)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Appearance_Accent_v" valueName="Accent" />
+      </elements>
+    </policy>
+    <policy name="Appearance_LogoPath" class="Both" displayName="$(string.Appearance_LogoPath)" explainText="$(string.Appearance_LogoPath_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_LogoPath)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Appearance_LogoPath_v" valueName="LogoPath" />
+      </elements>
+    </policy>
+    <policy name="Appearance_Language" class="Both" displayName="$(string.Appearance_Language)" explainText="$(string.Appearance_Language_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" presentation="$(presentation.Appearance_Language)">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Appearance_Language_v" valueName="Language">
+          <item displayName="$(string.Appearance_Language_en)"><value><string>en</string></value></item>
+          <item displayName="$(string.Appearance_Language_de)"><value><string>de</string></value></item>
+          <item displayName="$(string.Appearance_Language_es)"><value><string>es</string></value></item>
+          <item displayName="$(string.Appearance_Language_fr)"><value><string>fr</string></value></item>
+          <item displayName="$(string.Appearance_Language_zh)"><value><string>zh-Hans</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Appearance_HideCursor" class="Both" displayName="$(string.Appearance_HideCursor)" explainText="$(string.Appearance_HideCursor_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Appearance" valueName="HideCursor">
+      <parentCategory ref="Cat_Appearance" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_MaxFailedAttempts" class="Both" displayName="$(string.Security_MaxFailedAttempts)" explainText="$(string.Security_MaxFailedAttempts_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" presentation="$(presentation.Security_MaxFailedAttempts)">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Security_MaxFailedAttempts_v" valueName="MaxFailedAttempts" minValue="0" maxValue="100" />
+      </elements>
+    </policy>
+    <policy name="Security_FailureAction" class="Both" displayName="$(string.Security_FailureAction)" explainText="$(string.Security_FailureAction_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" presentation="$(presentation.Security_FailureAction)">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Security_FailureAction_v" valueName="FailureAction">
+          <item displayName="$(string.Security_FailureAction_None)"><value><string>None</string></value></item>
+          <item displayName="$(string.Security_FailureAction_LockWorkstation)"><value><string>LockWorkstation</string></value></item>
+          <item displayName="$(string.Security_FailureAction_LogOff)"><value><string>LogOff</string></value></item>
+          <item displayName="$(string.Security_FailureAction_Shutdown)"><value><string>Shutdown</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Security_ProgressiveDelay" class="Both" displayName="$(string.Security_ProgressiveDelay)" explainText="$(string.Security_ProgressiveDelay_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="ProgressiveDelay">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_RestrictCtrlAltDel" class="Both" displayName="$(string.Security_RestrictCtrlAltDel)" explainText="$(string.Security_RestrictCtrlAltDel_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="RestrictCtrlAltDel">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_SettingsAdminOnly" class="Both" displayName="$(string.Security_SettingsAdminOnly)" explainText="$(string.Security_SettingsAdminOnly_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="SettingsAdminOnly">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_ExitRequiresAdmin" class="Both" displayName="$(string.Security_ExitRequiresAdmin)" explainText="$(string.Security_ExitRequiresAdmin_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="ExitRequiresAdmin">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_Watchdog" class="Both" displayName="$(string.Security_Watchdog)" explainText="$(string.Security_Watchdog_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="Watchdog">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_AuthUiProcesses" class="Both" displayName="$(string.Security_AuthUiProcesses)" explainText="$(string.Security_AuthUiProcesses_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" presentation="$(presentation.Security_AuthUiProcesses)">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Security_AuthUiProcesses_v" valueName="AuthUiProcesses" />
+      </elements>
+    </policy>
+    <policy name="Security_AllowUserConfig" class="Both" displayName="$(string.Security_AllowUserConfig)" explainText="$(string.Security_AllowUserConfig_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="AllowUserConfig">
+      <parentCategory ref="Cat_Security" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Audit_Enabled" class="Both" displayName="$(string.Audit_Enabled)" explainText="$(string.Audit_Enabled_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Audit" valueName="Enabled">
+      <parentCategory ref="Cat_Audit" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Audit_Directory" class="Both" displayName="$(string.Audit_Directory)" explainText="$(string.Audit_Directory_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Audit" presentation="$(presentation.Audit_Directory)">
+      <parentCategory ref="Cat_Audit" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Audit_Directory_v" valueName="Directory" />
+      </elements>
+    </policy>
+    <policy name="Audit_NetworkDirectory" class="Both" displayName="$(string.Audit_NetworkDirectory)" explainText="$(string.Audit_NetworkDirectory_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Audit" presentation="$(presentation.Audit_NetworkDirectory)">
+      <parentCategory ref="Cat_Audit" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Audit_NetworkDirectory_v" valueName="NetworkDirectory" />
+      </elements>
+    </policy>
+    <policy name="Audit_EventLog" class="Both" displayName="$(string.Audit_EventLog)" explainText="$(string.Audit_EventLog_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Audit" valueName="EventLog">
+      <parentCategory ref="Cat_Audit" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Audit_LogLockState" class="Both" displayName="$(string.Audit_LogLockState)" explainText="$(string.Audit_LogLockState_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Audit" valueName="LogLockState">
+      <parentCategory ref="Cat_Audit" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Entra_TenantId" class="Both" displayName="$(string.Entra_TenantId)" explainText="$(string.Entra_TenantId_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_TenantId)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Entra_TenantId_v" valueName="TenantId" />
+      </elements>
+    </policy>
+    <policy name="Entra_ClientId" class="Both" displayName="$(string.Entra_ClientId)" explainText="$(string.Entra_ClientId_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_ClientId)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Entra_ClientId_v" valueName="ClientId" />
+      </elements>
+    </policy>
+    <policy name="Entra_UseBroker" class="Both" displayName="$(string.Entra_UseBroker)" explainText="$(string.Entra_UseBroker_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" valueName="UseBroker">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Entra_ForceFreshSignIn" class="Both" displayName="$(string.Entra_ForceFreshSignIn)" explainText="$(string.Entra_ForceFreshSignIn_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" valueName="ForceFreshSignIn">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Entra_MaxAuthAgeSeconds" class="Both" displayName="$(string.Entra_MaxAuthAgeSeconds)" explainText="$(string.Entra_MaxAuthAgeSeconds_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_MaxAuthAgeSeconds)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Entra_MaxAuthAgeSeconds_v" valueName="MaxAuthAgeSeconds" minValue="0" maxValue="86400" />
+      </elements>
+    </policy>
+    <policy name="Entra_AllowedTenants" class="Both" displayName="$(string.Entra_AllowedTenants)" explainText="$(string.Entra_AllowedTenants_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_AllowedTenants)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Entra_AllowedTenants_v" valueName="AllowedTenants" />
+      </elements>
+    </policy>
+    <policy name="Entra_AllowedSignInHosts" class="Both" displayName="$(string.Entra_AllowedSignInHosts)" explainText="$(string.Entra_AllowedSignInHosts_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_AllowedSignInHosts)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Entra_AllowedSignInHosts_v" valueName="AllowedSignInHosts" />
+      </elements>
+    </policy>
+    <policy name="Entra_AuthenticationContext" class="Both" displayName="$(string.Entra_AuthenticationContext)" explainText="$(string.Entra_AuthenticationContext_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_AuthenticationContext)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Entra_AuthenticationContext_v" valueName="AuthenticationContext" />
+      </elements>
+    </policy>
+    <policy name="Entra_SignatureAuthenticationContext" class="Both" displayName="$(string.Entra_SignatureAuthenticationContext)" explainText="$(string.Entra_SignatureAuthenticationContext_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_SignatureAuthenticationContext)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Entra_SignatureAuthenticationContext_v" valueName="SignatureAuthenticationContext" />
+      </elements>
+    </policy>
+    <policy name="Entra_ShareIdToken" class="Both" displayName="$(string.Entra_ShareIdToken)" explainText="$(string.Entra_ShareIdToken_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" valueName="ShareIdToken">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Entra_AllowedTokenScopes" class="Both" displayName="$(string.Entra_AllowedTokenScopes)" explainText="$(string.Entra_AllowedTokenScopes_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Entra" presentation="$(presentation.Entra_AllowedTokenScopes)">
+      <parentCategory ref="Cat_Entra" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Entra_AllowedTokenScopes_v" valueName="AllowedTokenScopes" />
+      </elements>
+    </policy>
+    <policy name="Integration_PipeEnabled" class="Both" displayName="$(string.Integration_PipeEnabled)" explainText="$(string.Integration_PipeEnabled_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Integration" valueName="PipeEnabled">
+      <parentCategory ref="Cat_Integration" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Integration_LoadPlugins" class="Both" displayName="$(string.Integration_LoadPlugins)" explainText="$(string.Integration_LoadPlugins_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Integration" valueName="LoadPlugins">
+      <parentCategory ref="Cat_Integration" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Scripts_OnLock" class="Both" displayName="$(string.Scripts_OnLock)" explainText="$(string.Scripts_OnLock_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Scripts" presentation="$(presentation.Scripts_OnLock)">
+      <parentCategory ref="Cat_Scripts" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Scripts_OnLock_v" valueName="OnLock" />
+      </elements>
+    </policy>
+    <policy name="Scripts_OnUnlock" class="Both" displayName="$(string.Scripts_OnUnlock)" explainText="$(string.Scripts_OnUnlock_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Scripts" presentation="$(presentation.Scripts_OnUnlock)">
+      <parentCategory ref="Cat_Scripts" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Scripts_OnUnlock_v" valueName="OnUnlock" />
+      </elements>
+    </policy>
+    <policy name="Scripts_OnFailedAttempt" class="Both" displayName="$(string.Scripts_OnFailedAttempt)" explainText="$(string.Scripts_OnFailedAttempt_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Scripts" presentation="$(presentation.Scripts_OnFailedAttempt)">
+      <parentCategory ref="Cat_Scripts" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Scripts_OnFailedAttempt_v" valueName="OnFailedAttempt" />
+      </elements>
+    </policy>
+    <!-- Rollen und Nachvollziehbarkeit (0.5.0) -->
+    <policy name="Roles_ConfigAdmins" class="Both" displayName="$(string.Roles_ConfigAdmins)" explainText="$(string.Roles_ConfigAdmins_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Roles" presentation="$(presentation.Roles_ConfigAdmins)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Roles_ConfigAdmins_v" valueName="ConfigAdmins" />
+      </elements>
+    </policy>
+    <policy name="Roles_Registrars" class="Both" displayName="$(string.Roles_Registrars)" explainText="$(string.Roles_Registrars_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Roles" presentation="$(presentation.Roles_Registrars)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Roles_Registrars_v" valueName="Registrars" />
+      </elements>
+    </policy>
+    <policy name="Roles_Auditors" class="Both" displayName="$(string.Roles_Auditors)" explainText="$(string.Roles_Auditors_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Roles" presentation="$(presentation.Roles_Auditors)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Roles_Auditors_v" valueName="Auditors" />
+      </elements>
+    </policy>
+    <policy name="Security_LocalAdministratorsArePrivileged" class="Both" displayName="$(string.Security_LocalAdministratorsArePrivileged)" explainText="$(string.Security_LocalAdministratorsArePrivileged_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="LocalAdministratorsArePrivileged">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Unlock_BypassGroups" class="Both" displayName="$(string.Unlock_BypassGroups)" explainText="$(string.Unlock_BypassGroups_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_BypassGroups)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Unlock_BypassGroups_v" valueName="BypassGroups" />
+      </elements>
+    </policy>
+    <policy name="Unlock_BypassReasonMinLength" class="Both" displayName="$(string.Unlock_BypassReasonMinLength)" explainText="$(string.Unlock_BypassReasonMinLength_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Unlock" presentation="$(presentation.Unlock_BypassReasonMinLength)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Unlock_BypassReasonMinLength_v" valueName="BypassReasonMinLength" minValue="1" maxValue="500" />
+      </elements>
+    </policy>
+    <policy name="Security_ReasonRequiredForAdminActions" class="Both" displayName="$(string.Security_ReasonRequiredForAdminActions)" explainText="$(string.Security_ReasonRequiredForAdminActions_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="ReasonRequiredForAdminActions">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_ReasonRequiredForConfigChanges" class="Both" displayName="$(string.Security_ReasonRequiredForConfigChanges)" explainText="$(string.Security_ReasonRequiredForConfigChanges_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" valueName="ReasonRequiredForConfigChanges">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Security_ReasonMinLength" class="Both" displayName="$(string.Security_ReasonMinLength)" explainText="$(string.Security_ReasonMinLength_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Security" presentation="$(presentation.Security_ReasonMinLength)">
+      <parentCategory ref="Cat_Roles" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Security_ReasonMinLength_v" valueName="ReasonMinLength" minValue="1" maxValue="500" />
+      </elements>
+    </policy>
+    <!-- Sicherheitsschlüssel (Verfahren „fido“, docs/security-keys.md) -->
+    <policy name="Fido_RpId" class="Both" displayName="$(string.Fido_RpId)" explainText="$(string.Fido_RpId_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_RpId)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Fido_RpId_v" valueName="RpId" />
+      </elements>
+    </policy>
+    <policy name="Fido_AllowSelfRegistration" class="Both" displayName="$(string.Fido_AllowSelfRegistration)" explainText="$(string.Fido_AllowSelfRegistration_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" valueName="AllowSelfRegistration">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Fido_AllowedModels" class="Both" displayName="$(string.Fido_AllowedModels)" explainText="$(string.Fido_AllowedModels_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_AllowedModels)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <multiText id="Fido_AllowedModels_v" valueName="AllowedModels" />
+      </elements>
+    </policy>
+    <policy name="Fido_MaxKeysPerPerson" class="Both" displayName="$(string.Fido_MaxKeysPerPerson)" explainText="$(string.Fido_MaxKeysPerPerson_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_MaxKeysPerPerson)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Fido_MaxKeysPerPerson_v" valueName="MaxKeysPerPerson" minValue="1" maxValue="20" />
+      </elements>
+    </policy>
+    <policy name="Fido_MaxFailedAttempts" class="Both" displayName="$(string.Fido_MaxFailedAttempts)" explainText="$(string.Fido_MaxFailedAttempts_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_MaxFailedAttempts)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Fido_MaxFailedAttempts_v" valueName="MaxFailedAttempts" minValue="0" maxValue="100" />
+      </elements>
+    </policy>
+    <policy name="Fido_BlockMinutes" class="Both" displayName="$(string.Fido_BlockMinutes)" explainText="$(string.Fido_BlockMinutes_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_BlockMinutes)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Fido_BlockMinutes_v" valueName="BlockMinutes" minValue="1" maxValue="1440" />
+      </elements>
+    </policy>
+    <policy name="Fido_OfflineMaxHours" class="Both" displayName="$(string.Fido_OfflineMaxHours)" explainText="$(string.Fido_OfflineMaxHours_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_OfflineMaxHours)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Fido_OfflineMaxHours_v" valueName="OfflineMaxHours" minValue="0" maxValue="720" />
+      </elements>
+    </policy>
+    <policy name="Fido_Store" class="Machine" displayName="$(string.Fido_Store)" explainText="$(string.Fido_Store_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_Store)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <enum id="Fido_Store_v" valueName="Store">
+          <item displayName="$(string.Fido_Store_Local)"><value><string>Local</string></value></item>
+          <item displayName="$(string.Fido_Store_ActiveDirectory)"><value><string>ActiveDirectory</string></value></item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="Fido_DirectoryContainer" class="Machine" displayName="$(string.Fido_DirectoryContainer)" explainText="$(string.Fido_DirectoryContainer_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_DirectoryContainer)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <text id="Fido_DirectoryContainer_v" valueName="DirectoryContainer" />
+      </elements>
+    </policy>
+    <policy name="Fido_SyncMinutes" class="Machine" displayName="$(string.Fido_SyncMinutes)" explainText="$(string.Fido_SyncMinutes_Help)" key="SOFTWARE\Policies\ICT-Baden\Vitrine\Fido" presentation="$(presentation.Fido_SyncMinutes)">
+      <parentCategory ref="Cat_Fido" /><supportedOn ref="SUPPORTED_Vitrine1" />
+      <elements>
+        <decimal id="Fido_SyncMinutes_v" valueName="SyncMinutes" minValue="1" maxValue="1440" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

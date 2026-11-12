@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- Mit Windows-SDK-Version: Windows Hello (UserConsentVerifier) ist eine WinRT-API (richtlinien/02, Ausnahme).
+         Damit liegt Microsoft.Windows.SDK.NET.dll in jedem Paket; sie steht in THIRD-PARTY-NOTICES.txt. -->
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Vitrine</RootNamespace>
+    <AssemblyName>Vitrine</AssemblyName>
+    <!-- Eigenes Main: Dienst und Wächter starten ohne WPF (Program.cs) -->
+    <StartupObject>Vitrine.Program</StartupObject>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\vitrine.ico</ApplicationIcon>
+    <!-- 0.x: noch nicht in echter Umgebung getestet (richtlinien/04). CI-Builds hängen -ci.<Lauf> an. -->
+    <Version>0.5.1</Version>
+    <Description>Transparent screen lock for Windows</Description>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- DPI-Einstellungen stehen bewusst im Manifest (WPF), die WinForms-Warnung passt hier nicht -->
+    <NoWarn>$(NoWarn);WFAC010;WFO0003</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WinForms nur für das Infobereich-Symbol; keine globalen Usings, sonst kollidieren Namen mit WPF -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+  <!-- Windows-Kontobroker (WAM): Microsoft im Entsperr-Dialog, Windows Hello for Business, FIDO2 über den
+       Windows-Sicherheitsdialog, gerätebasierter bedingter Zugriff. Er braucht msalruntime.dll aus dem NuGet-Paket
+       Microsoft.Identity.Client.NativeInterop. Standard: mit Broker; -p:WamBroker=false baut ohne (Anmeldung dann über
+       den System-Browser, am Sperrbildschirm ohne Microsoft, docs/entra-id.md). -->
+  <PropertyGroup>
+    <WamBroker Condition="'$(WamBroker)' == ''">true</WamBroker>
+    <DefineConstants Condition="'$(WamBroker)' == 'true'">$(DefineConstants);WAM_BROKER</DefineConstants>
+  </PropertyGroup>
+
+  <!-- MSAL fest auf 4.84.1: Microsoft.Identity.Client.Broker ab 4.84.2 zieht NativeInterop 0.20.6 nach, und ab 0.20.6
+       steht msalruntime.dll unter den Microsoft Software License Terms, die die Weitergabe verbieten (Abschnitt 3 e).
+       Nicht ohne Lizenzprüfung anheben; die CI prüft Version, Lizenz und Prüfsumme (check-broker-licence.ps1).
+       https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/6118 -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Client" Version="[4.84.1]" />
+    <!-- Windows-Dienst „ICT-Baden Vitrine“ (Vitrine.exe mit Schalter service): ServiceBase mit Sitzungsereignissen -->
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.13" />
+    <!-- Eigenes Anmeldefenster für Microsoft (Standard seit 2026-10-27, statt WAM): WebView2-Steuerelement mit Profil nur
+         für den einen Versuch. Lizenz aus dem Paket (nuspec <license type="file">LICENSE.txt</license>): BSD-artig
+         (Weitergabe als Binärdatei mit Copyright-Hinweis erlaubt), auch für WebView2Loader.dll; Text in
+         THIRD-PARTY-NOTICES.txt. Die WebView2-Laufzeit selbst gehört zu Windows und wird nicht mitgeliefert. -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4258.31" />
+    <!-- Sicherheitsschlüssel im Active Directory (Fido.Store = ActiveDirectory): LDAP mit Negotiate, Signieren und
+         Verschlüsseln. Microsoft, Lizenzausdruck MIT (nuspec); Eintrag in THIRD-PARTY-NOTICES.txt. -->
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.13" />
+  </ItemGroup>
+  <!-- WebView2Loader.dll wie msalruntime.dll nur über die Laufzeit-Assets des Pakets (neben Vitrine.exe, in der Einzeldatei
+       eingebettet), nicht zusätzlich als Kopie unter runtimes\<arch>\native für alle drei Architekturen. Die XML-Doku der
+       WebView2-Assemblys (über Reference eingebunden) gehört nicht ins Paket. -->
+  <PropertyGroup>
+    <WebView2NeverCopyLoaderDllToOutputDirectory>true</WebView2NeverCopyLoaderDllToOutputDirectory>
+    <AllowedReferenceRelatedFileExtensions>.pdb;.pri</AllowedReferenceRelatedFileExtensions>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(WamBroker)' == 'true'">
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="[4.84.1]" />
+    <!-- Ausdrücklich festgelegt: Broker 4.84.1 verlangt nur „mindestens 0.20.4“. 0.20.4 ist die letzte Version unter
+         MIT-Lizenz (nuspec <license type="expression">MIT</license>); ab 0.20.6 gelten Lizenzbedingungen, die keine
+         Weitergabe erlauben. Nie ohne Lizenzprüfung ändern. -->
+    <PackageReference Include="Microsoft.Identity.Client.NativeInterop" Version="[0.20.4]" />
+  </ItemGroup>
+
+  <!-- ReadyToRun (Issue #18): Veröffentlichte Builds (dotnet publish -r win-x64, CI, MSI, ZIP, Einzeldatei) bringen
+       vorübersetzten Code mit, statt beim Start alles per JIT zu übersetzen. Braucht eine Runtime-ID, deshalb nur mit -r;
+       dotnet build/run bleiben unverändert. Nicht „composite“: Das wäre bei self-contained der Standard und übersetzte die
+       ganze .NET-Laufzeit neu in eine Datei (Exe 179 → 243 MB), ohne messbar schneller zu starten. Die WinRT-Projektion des
+       Windows SDK braucht nur Windows Hello; vorübersetzt wäre sie 25 → 55 MB groß, also bleibt sie IL. -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <PublishReadyToRun Condition="'$(PublishReadyToRun)' == ''">true</PublishReadyToRun>
+    <PublishReadyToRunComposite Condition="'$(PublishReadyToRunComposite)' == ''">false</PublishReadyToRunComposite>
+  </PropertyGroup>
+  <ItemGroup>
+    <PublishReadyToRunExclude Include="Microsoft.Windows.SDK.NET.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vitrine.Abstractions\Vitrine.Abstractions.csproj" />
+    <ProjectReference Include="..\Vitrine.Core\Vitrine.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\vitrine.ico" />
+    <Resource Include="Assets\vitrine.png" />
+  </ItemGroup>
+
+  <!-- Lizenztexte neben die Exe (ZIP, MSI); eingebettet sind sie in Vitrine.Core (Info-Fenster der einzelnen Exe).
+       ADMX/ADML für Gruppenrichtlinien und Intune liegen im Ordner policy\ daneben. -->
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Link="LICENSE" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\..\THIRD-PARTY-NOTICES.txt" Link="THIRD-PARTY-NOTICES.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\..\policy\**\*.adm?" Link="policy\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Vitrine.Tests" />
+  </ItemGroup>
+</Project>

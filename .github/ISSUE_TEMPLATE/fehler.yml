@@ -1,0 +1,57 @@
+name: Fehler melden / Bug report
+description: Etwas funktioniert nicht wie beschrieben. / Something does not work as documented.
+labels: [fehler]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke! Bitte keine Passwörter, Mandanten- oder Client-IDs, internen Hostnamen, Kontonamen oder Protokollzeilen mit Personennamen einfügen – dieses Issue ist öffentlich. Sicherheitslücken bitte vertraulich melden (siehe SECURITY.md).
+        Thanks! Please do not paste passwords, tenant or client IDs, internal host names, account names or audit lines with personal names – this issue is public. Report security issues privately (see SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Aus dem Info-Fenster (Infobereich › Info). / From the About window (tray › About).
+      placeholder: 0.1.0-ci.12
+    validations:
+      required: true
+  - type: dropdown
+    id: variante
+    attributes:
+      label: Variante / Package
+      options: [MSI, Einzeldatei / single exe, ZIP (framework), aus dem Quellcode / from source]
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Betriebssystem / OS
+      description: Edition und Build, Domäne/Entra-Beitritt, lokale Sitzung oder Remotedesktop. / Edition and build, domain/Entra join, local or Remote Desktop session.
+      placeholder: Windows 11 Enterprise 24H2, Entra-joined, local session
+  - type: dropdown
+    id: verfahren
+    attributes:
+      label: Anmeldeverfahren / Sign-in method
+      multiple: true
+      options: [Microsoft Entra ID, Windows-Kennwort / Windows password, Windows Hello, Entsperr-Kennwort / unlock password, Plugin, nicht betroffen / not relevant]
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Schritte zum Nachstellen / Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Erwartet und tatsächlich / Expected and actual
+      description: Mit Fehlercode (VIT-…), falls angezeigt. / Including the error code (VIT-…) if one is shown.
+    validations:
+      required: true
+  - type: textarea
+    id: protokoll
+    attributes:
+      label: Protokollzeilen (anonymisiert) / Audit lines (anonymised)
+      render: text

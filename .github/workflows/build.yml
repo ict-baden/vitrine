@@ -1,0 +1,578 @@
+# Nach der Vorlage aus ict-baden/richtlinien (vorlagen/.github/workflows/build.yml), Windows-Desktop-App mit MSI, wie Zutritt.
+# Ablauf: „portable“ testet den plattformneutralen Teil (Vitrine.Core) unter Linux (richtlinien/02) → „windows“ baut, testet,
+# signiert und packt → „msi-test“ installiert, aktualisiert und deinstalliert die MSI auf einem frischen Runner
+# (.github/scripts/msi-test.ps1) → erst dann veröffentlicht „release“ (Tag oder 'latest'). Eine MSI, die den Test nicht
+# besteht, erreicht so kein Release und keinen der festen Links auf 'latest'.
+# Die Pakete gehen über den Actions-Cache des Repos von Job zu Job, nicht über Artefakte: Deren Speicher teilen sich alle Repos
+# der Organisation, ist er voll, darf das kein Release verhindern. Fehlt der Cache, scheitern Test und Release sichtbar –
+# lieber kein Release als ein ungeprüftes. Jedes Release enthält eine Stückliste (SBOM, richtlinien/06), Prüfsummen
+# (richtlinien/05) und bei öffentlichen Repos einen Herkunftsnachweis.
+# Wie viel gebaut wird, entscheidet „gate“ (Richtlinie 04, „Wann die CI baut“): Pushs und PRs nur „portable“; „windows“,
+# „msi-test“ und „release“ nachts (nur wenn main neu ist), bei Tags, von Hand, mit [voll] in der Commit-Nachricht und bei
+# PRs mit Label voll-bauen oder Änderungen außerhalb von Vitrine.Core (FULL_PATHS). Reine Doku startet nichts.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*'] # Pfadfilter gelten für Tags nicht, ein Tag baut immer
+    paths-ignore: ['**.md', 'docs/**', 'LICENSE', '.github/ISSUE_TEMPLATE/**']
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+    paths-ignore: ['**.md', 'docs/**', 'LICENSE', '.github/ISSUE_TEMPLATE/**']
+  schedule:
+    - cron: '43 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Läufe auf demselben Branch nacheinander, damit sich die 'latest'-Releases nicht überholen.
+# In PRs bricht ein neuer Push den alten Lauf ab.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  APP: "Vitrine"
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  # Signieren nur, wenn die Organisation Artifact Signing eingerichtet hat (siehe richtlinien/05-signieren.md)
+  # und nicht bei Pull Requests (dort gibt es kein OIDC-Token mit den nötigen Rechten).
+  SIGN: ${{ vars.SIGNING_ACCOUNT != '' && github.event_name != 'pull_request' }}
+
+jobs:
+  # Entscheidet, wie viel dieser Lauf baut. run=false: nichts zu tun (Nachtlauf ohne neue Commits).
+  # full=true: Windows, Pakete, Signieren, Releases. Sonst nur der Linux-Teil (bei Apps mit plattformneutralem Kern).
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      run: ${{ steps.gate.outputs.run }}
+      full: ${{ steps.gate.outputs.full }}
+    steps:
+      - name: Umfang bestimmen
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          MSG: ${{ github.event.head_commit.message }}
+          LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+          PR: ${{ github.event.pull_request.number }}
+          # Geänderte Dateien, bei denen ein PR die volle Matrix braucht. Je Repo anpassen.
+          # Vitrine: Unter Linux läuft nur Vitrine.Core (mit Abstractions). App, Dienst, Plugin-Beispiel, Installer,
+          # Pakete und Windows-Tests prüft nur der volle Build, ebenso Projektdateien (Pakete, Lizenzen), Solution,
+          # Build-Einstellungen und Werkzeuge.
+          FULL_PATHS: '^(\.github/|\.config/|src/Vitrine/|src/Vitrine\.Abstractions/|samples/|installer/|deploy/|policy/|tests/Vitrine\.Tests/Windows/|.*\.csproj$|[^/]*\.sln$|Directory\.Build\.[^/]*$|global\.json$|THIRD-PARTY-NOTICES\.txt$)'
+          # Reine Doku, wie paths-ignore oben
+          DOC_PATHS: '(\.md$|^docs/|^LICENSE$|^\.github/ISSUE_TEMPLATE/)'
+        run: |
+          set -euo pipefail
+          run=true; full=false
+          case "$EVENT" in
+            workflow_dispatch) full=true ;;
+            push)
+              # Bei mehreren Commits in einem Push zählt die Nachricht des letzten
+              if [ "$GITHUB_REF_TYPE" = tag ] || [[ "$MSG" == *"[voll]"* ]]; then full=true; fi ;;
+            pull_request)
+              files=$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls/$PR/files" --jq '.[].filename')
+              if [[ ",$LABELS," == *",voll-bauen,"* ]] || grep -qE "$FULL_PATHS" <<< "$files"; then full=true; fi ;;
+            schedule)
+              # Der Tag 'latest' steht auf dem Commit des letzten vollen Builds von main
+              built=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/latest" --jq .object.sha 2>/dev/null || true)
+              if [ "$built" = "$GITHUB_SHA" ]; then
+                run=false
+              else
+                # Scheitert der Vergleich (kein 'latest', Verlauf umgeschrieben), wird voll gebaut
+                changed=$(gh api "repos/$GITHUB_REPOSITORY/compare/$built...$GITHUB_SHA" --jq '.files[].filename' 2>/dev/null || echo '?')
+                if [ -n "$built" ] && ! grep -qvE "$DOC_PATHS" <<< "$changed"; then run=false; else full=true; fi # sonst nur Doku
+              fi ;;
+          esac
+          echo "Ereignis: $EVENT  run=$run  full=$full"
+          { echo "run=$run"; echo "full=$full"; } >> "$GITHUB_OUTPUT"
+
+  portable:
+    name: Tests (Linux, plattformneutral)
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: PowerShell-Syntax (alle Workflow-Schritte und Skripte)
+        # Auch Schritte, die nur bei Tags laufen – dort brach der Release zweimal an einem ParserError ab
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 .github/scripts/ps-syntax.py > "$RUNNER_TEMP/ps-blocks.json"
+          pwsh -NoProfile -File .github/scripts/ps-syntax.ps1 -Blocks "$RUNNER_TEMP/ps-blocks.json"
+
+      - name: Build
+        run: dotnet build tests/Vitrine.Tests -c Release -f net10.0
+
+      - name: Tests
+        # Vitrine.Core: Konfiguration, Richtlinien, Protokoll, Entsperr-Regeln, Entra-Prüfungen, Strg+Alt+Entf-Sicherung,
+        # Schnittstelle, Sprachdateien. Die App selbst testet der Job „windows“.
+        run: dotnet test tests/Vitrine.Tests -c Release -f net10.0 --no-build --logger "trx;LogFileName=tests-linux.trx" --results-directory TestResults --blame-hang-timeout 5m
+
+      - name: Testergebnisse
+        if: always()
+        continue-on-error: true # nur zur Fehlersuche
+        uses: actions/upload-artifact@v7
+        with:
+          name: Testergebnisse-linux
+          path: TestResults/*.trx
+          if-no-files-found: ignore
+          retention-days: 7
+
+  windows:
+    # Erst bauen, wenn der plattformneutrale Teil auch unter Linux grün ist; nur beim vollen Build
+    needs: [gate, portable]
+    if: needs.gate.outputs.full == 'true'
+    runs-on: windows-latest
+    # Ein hängender Test soll nicht sechs Stunden lang den nächsten Lauf aufhalten
+    timeout-minutes: 75
+    permissions:
+      contents: read
+      id-token: write # Anmeldung bei Azure Artifact Signing (OIDC) und Herkunftsnachweis
+      attestations: write # Herkunftsnachweis
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      file: ${{ steps.version.outputs.file }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: Version bestimmen
+        id: version
+        shell: pwsh
+        run: |
+          # Tag v1.2.3 -> 1.2.3, sonst Version aus der csproj mit Build-Nummer
+          if ($env:GITHUB_REF_TYPE -eq 'tag') {
+            $v = $env:GITHUB_REF_NAME -replace '^v', ''
+          } else {
+            $base = ([xml](Get-Content "src/$env:APP/$env:APP.csproj")).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
+            $v = "$base-ci.$env:GITHUB_RUN_NUMBER"
+          }
+          # MSI kennt nur Zahlen. CI-Builds: Version + Lauf-Nummer als 4. Stelle (z. B. 0.1.0.12).
+          # Windows Installer vergleicht nur drei Stellen, deshalb ersetzen sich CI-Builds gegenseitig
+          # (AllowSameVersionUpgrades), und ein Release v0.1.1 ist immer neuer als jeder 0.1.0-CI-Build.
+          $core = $v -replace '[-+].*$', ''
+          $msi = if ($env:GITHUB_REF_TYPE -eq 'tag') { $core } else { "$core.$env:GITHUB_RUN_NUMBER" }
+          # Dateiversion der Exe immer mit Lauf-Nummer, auch bei Tags (x.y.z.<Lauf>). Mit x.y.z.0 war die Exe des
+          # Tag-Releases älter als die eines CI-Builds derselben Basisversion (x.y.z.<Lauf>): Windows Installer kopierte
+          # sie beim Update nicht, RemoveExistingProducts entfernte die alte – danach fehlte Vitrine.exe (Tag-Lauf
+          # v0.1.0, 2026-10-21). Die Lauf-Nummer steigt in diesem Workflow immer, das Release ist also neuer.
+          $file = "$core.$env:GITHUB_RUN_NUMBER"
+          # Dateinamen: Releases aus einem Tag mit Version, sonst fest, damit die Links auf 'latest' dauerhaft gelten
+          $suffix = if ($env:GITHUB_REF_TYPE -eq 'tag') { "-$v" } else { '' }
+          "version=$v" >> $env:GITHUB_OUTPUT
+          "msi=$msi" >> $env:GITHUB_OUTPUT
+          "file=$file" >> $env:GITHUB_OUTPUT
+          "suffix=$suffix" >> $env:GITHUB_OUTPUT
+          Write-Host "Version: $v  MSI: $msi  Signieren: $env:SIGN"
+
+      - name: Restore
+        run: dotnet restore "${{ env.APP }}.sln"
+
+      - name: Build (gesamte Solution inkl. Beispiel-Plugin)
+        run: dotnet build "${{ env.APP }}.sln" -c Release --no-restore
+
+      - name: Tests
+        # Beide Zielplattformen: Vitrine.Core und die App (Tastenkürzel). Kein Test sperrt den Runner oder schreibt in die Registry.
+        # --blame-hang-timeout: Hängt ein Test, bricht der Lauf nach 5 Minuten ab und nennt ihn
+        run: dotnet test "${{ env.APP }}.sln" -c Release --no-build --logger "trx;LogFilePrefix=tests" --results-directory TestResults --blame-hang-timeout 5m
+
+      - name: Testergebnisse
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: Testergebnisse-windows
+          path: TestResults/*.trx
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Publish
+        shell: pwsh
+        run: |
+          $v = '${{ steps.version.outputs.version }}'
+          $common = @("src/$env:APP/$env:APP.csproj", '-c', 'Release', '-r', 'win-x64', '-p:PublishSingleFile=true', "-p:Version=$v",
+                      '-p:FileVersion=${{ steps.version.outputs.file }}', '-p:DebugType=none')
+          # Benötigt .NET 10 Desktop Runtime auf dem Zielgerät
+          dotnet publish @common --self-contained false -o out/framework
+          if ($LASTEXITCODE -ne 0) { throw "Publish (framework) fehlgeschlagen ($LASTEXITCODE)" }
+          # Ohne Runtime-Abhängigkeit, Grundlage für die MSI
+          dotnet publish @common --self-contained true -o out/self-contained
+          if ($LASTEXITCODE -ne 0) { throw "Publish (self-contained) fehlgeschlagen ($LASTEXITCODE)" }
+          # Eine einzige Exe zum Direkt-Download: Runtime und native DLLs (WPF) eingebettet. Ohne Kompression (Issue #18):
+          # komprimiert entpackt jeder Prozess die Laufzeit in den Speicher – App 108 statt 26 MB, Wächter 44 statt 8 MB
+          # (Private Bytes), Start bis zum Infobereich 780 statt 570 ms; dafür ist die Exe 182 statt 76 MB groß.
+          # ReadyToRun kommt für alle Varianten aus Vitrine.csproj (bei Publish mit -r).
+          dotnet publish @common --self-contained true -p:IncludeNativeLibrariesForSelfExtract=true -o out/standalone
+          if ($LASTEXITCODE -ne 0) { throw "Publish (Einzeldatei) fehlgeschlagen ($LASTEXITCODE)" }
+
+      - name: Screenshots (alle Sprachen, zur Prüfung)
+        # Zeichnet die Fenster der echten App hell und dunkel (richtlinien/08). Englisch ist die Vorlage für docs/assets/screenshots,
+        # die anderen Sprachen dienen der Prüfung von Übersetzung und Layout. Zugleich der einzige Start der echten WPF-App
+        # vor dem Paketieren: Scheitert er, scheitert der Lauf (seit 2026-10-20; vorher blieb er grün).
+        shell: pwsh
+        run: |
+          # Ein Prozess pro Sprache und Farbschema (so wie die App startet)
+          $failed = 0
+          foreach ($lang in 'en', 'de', 'es', 'fr', 'zh-Hans') {
+            foreach ($theme in 'light', 'dark') {
+              $env:VITRINE_LANGUAGE = $lang
+              $p = Start-Process -FilePath out/framework/Vitrine.exe -ArgumentList '--screenshots', "$PWD/out/screenshots", '--theme', $theme -PassThru -Wait
+              if ($p.ExitCode -ne 0) { $failed++; Write-Host "::warning::Screenshots $lang/$theme fehlgeschlagen ($($p.ExitCode))" }
+            }
+          }
+          # Fehler schreibt der Screenshot-Modus nach error.txt (WinExe ohne Konsole)
+          Get-ChildItem out/screenshots -Recurse -Filter error.txt | ForEach-Object { Get-Content $_.FullName }
+          if ($failed -gt 0) { throw "$failed Screenshot-Läufe fehlgeschlagen" }
+          Get-ChildItem out/screenshots -Recurse -File | Measure-Object | ForEach-Object { "$($_.Count) Bilder" }
+
+      - name: Screenshots als Artefakt
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: Screenshots
+          path: out/screenshots
+          if-no-files-found: ignore
+          retention-days: 7
+
+      # ---- Signieren der Programmdateien (vor dem Packen, damit ZIP und MSI signierte Dateien enthalten) ----
+      - name: Bei Azure anmelden
+        if: env.SIGN == 'true'
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Exe signieren (framework)
+        if: env.SIGN == 'true'
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.SIGNING_ACCOUNT }}
+          certificate-profile-name: ${{ vars.SIGNING_PROFILE }}
+          files-folder: ${{ github.workspace }}\out\framework
+          files-folder-filter: exe
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
+
+      - name: Exe signieren (self-contained, für die MSI)
+        if: env.SIGN == 'true'
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.SIGNING_ACCOUNT }}
+          certificate-profile-name: ${{ vars.SIGNING_PROFILE }}
+          files-folder: ${{ github.workspace }}\out\self-contained
+          files-folder-filter: exe
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
+
+      - name: Exe signieren (Einzeldatei)
+        if: env.SIGN == 'true'
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.SIGNING_ACCOUNT }}
+          certificate-profile-name: ${{ vars.SIGNING_PROFILE }}
+          files-folder: ${{ github.workspace }}\out\standalone
+          files-folder-filter: exe
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
+
+      - name: Pakete schnüren
+        shell: pwsh
+        run: |
+          # Lizenztexte gehören neben die Exe, ins ZIP und in die MSI (richtlinien/06) – die csproj kopiert sie beim Publish
+          foreach ($dir in 'out/framework', 'out/self-contained') {
+            foreach ($file in 'LICENSE', 'THIRD-PARTY-NOTICES.txt', 'policy/Vitrine.admx') {
+              if (-not (Test-Path "$dir/$file")) { throw "$dir/$file fehlt: src/$env:APP/$env:APP.csproj muss $file in den Publish-Ordner kopieren." }
+            }
+          }
+          New-Item -ItemType Directory -Force dist | Out-Null
+          # ZIP: Programmdateien, README, ADMX (policy\) und deploy\install.ps1 (installiert ohne MSI)
+          Copy-Item README.md out/framework/
+          Copy-Item -Recurse deploy out/framework/
+          Compress-Archive -Path out/framework/* -DestinationPath "dist/$env:APP${{ steps.version.outputs.suffix }}-win-x64-framework.zip"
+          Copy-Item "out/standalone/$env:APP.exe" "dist/$env:APP${{ steps.version.outputs.suffix }}.exe"
+
+      - name: MSI bauen
+        shell: pwsh
+        run: |
+          # Self-contained: läuft ohne installierte .NET-Runtime. Mit ICE-Prüfung (Windows Installer-Dienst des Runners).
+          dotnet build "installer/$env:APP.Installer.wixproj" -c Release "-p:PublishDir=$PWD/out/self-contained/" -p:ProductVersion=${{ steps.version.outputs.msi }}
+          if ($LASTEXITCODE -ne 0) { throw "MSI-Build fehlgeschlagen ($LASTEXITCODE)" }
+          Copy-Item "installer/bin/Release/$env:APP.msi" "dist/$env:APP${{ steps.version.outputs.suffix }}-x64.msi"
+          # Zweiter Build derselben Version (neuer ProductCode) nur für den Update-Test unten, wird nicht veröffentlicht
+          dotnet build "installer/$env:APP.Installer.wixproj" -c Release "-p:PublishDir=$PWD/out/self-contained/" -p:ProductVersion=${{ steps.version.outputs.msi }} `
+            "-p:OutputPath=$PWD/out/msi-upgrade/" "-p:IntermediateOutputPath=$PWD/out/msi-upgrade-obj/"
+          if ($LASTEXITCODE -ne 0) { throw "MSI-Build (Update-Test) fehlgeschlagen ($LASTEXITCODE)" }
+          # Dritter Build mit höherer Dateiversion der Exe (wie die alten 1.0.0.x-Builds oder ein späterer CI-Build), nur
+          # für den Test „Update überschreibt auch eine neuere Exe“ – wird nicht veröffentlicht
+          dotnet publish "src/$env:APP/$env:APP.csproj" -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true `
+            -p:Version=${{ steps.version.outputs.version }} -p:FileVersion=1.0.0.0 -p:DebugType=none -o out/self-contained-highver
+          if ($LASTEXITCODE -ne 0) { throw "Publish (Update-Test, höhere Dateiversion) fehlgeschlagen ($LASTEXITCODE)" }
+          dotnet build "installer/$env:APP.Installer.wixproj" -c Release "-p:PublishDir=$PWD/out/self-contained-highver/" -p:ProductVersion=${{ steps.version.outputs.msi }} `
+            "-p:OutputPath=$PWD/out/msi-highver/" "-p:IntermediateOutputPath=$PWD/out/msi-highver-obj/"
+          if ($LASTEXITCODE -ne 0) { throw "MSI-Build (Update-Test, höhere Dateiversion) fehlgeschlagen ($LASTEXITCODE)" }
+
+      - name: Windows-Kontobroker prüfen (Version, Lizenz, Prüfsumme)
+        shell: pwsh
+        run: |
+          # msalruntime.dll muss in ZIP, Einzeldatei und MSI liegen – und zwar genau die aus NativeInterop 0.20.4, der
+          # letzten Version unter MIT. Ab 0.20.6 verbieten Microsofts Lizenzbedingungen die Weitergabe (Abschnitt 3 e,
+          # https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/6118). Scheitert, wenn eine
+          # andere Version aufgelöst ist, die nuspec nicht MIT nennt oder eine Prüfsumme abweicht.
+          $s = '${{ steps.version.outputs.suffix }}'
+          ./.github/scripts/check-broker-licence.ps1 -AssetsJson "src/$env:APP/obj/project.assets.json" `
+            -Directory out/framework, out/self-contained -Zip "dist/$env:APP$s-win-x64-framework.zip" `
+            -SingleFile "dist/$env:APP$s.exe" -Msi "dist/$env:APP$s-x64.msi"
+
+      - name: MSI signieren
+        if: env.SIGN == 'true'
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.SIGNING_ACCOUNT }}
+          certificate-profile-name: ${{ vars.SIGNING_PROFILE }}
+          files-folder: ${{ github.workspace }}\dist
+          files-folder-filter: msi
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
+
+      - name: Stückliste (SBOM)
+        shell: pwsh
+        run: |
+          # CycloneDX-Stückliste der ausgelieferten Pakete und Runtime-Pakete (richtlinien/06). Die WiX-Custom-Action
+          # der MSI steht in THIRD-PARTY-NOTICES.txt.
+          dotnet tool restore
+          if ($LASTEXITCODE -ne 0) { throw "dotnet tool restore fehlgeschlagen ($LASTEXITCODE)" }
+          $file = "dist/$env:APP${{ steps.version.outputs.suffix }}-sbom.cdx.json"
+          $sbom = @("src/$env:APP/$env:APP.csproj", '--recursive', '--exclude-dev', '--output', 'dist',
+                    '--filename', (Split-Path $file -Leaf), '--output-format', 'Json',
+                    '--set-name', $env:APP, '--set-version', '${{ steps.version.outputs.version }}')
+          dotnet dotnet-CycloneDX @sbom
+          if ($LASTEXITCODE -ne 0) { throw "SBOM fehlgeschlagen ($LASTEXITCODE)" }
+          # Nur was die Pakete wirklich enthalten: deps.json des letzten Publish (Einzeldatei, self-contained)
+          $deps = @(Get-ChildItem "src/$env:APP/obj/Release/*/win-x64/$env:APP.deps.json")
+          if ($deps.Count -ne 1) { throw "deps.json des Publish nicht eindeutig gefunden ($($deps.Count))" }
+          ./.github/scripts/sbom-shipped.ps1 -Sbom $file -DepsJson $deps[0].FullName
+
+      - name: Prüfsummen
+        shell: pwsh
+        run: |
+          # Nach dem Signieren, sonst stimmen die Summen nicht. Zeilenenden LF: mit CRLF scheitert `sha256sum -c` unter Linux.
+          $sums = Get-ChildItem dist -File | Where-Object Name -ne 'SHA256SUMS.txt' | Sort-Object Name | ForEach-Object {
+            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)"
+          }
+          [IO.File]::WriteAllText("$PWD/dist/SHA256SUMS.txt", ($sums -join "`n") + "`n", [Text.Encoding]::ASCII)
+          Get-Content dist/SHA256SUMS.txt
+
+      - name: Herkunftsnachweis
+        # Nur für öffentliche Repos; für private bräuchte es GitHub Enterprise (richtlinien/05). Lief noch nie (Repo privat):
+        # Scheitert er beim ersten öffentlichen Lauf, darf das „latest“ nicht aufhalten – Warnung prüfen und nachziehen.
+        if: github.event_name != 'pull_request' && !github.event.repository.private
+        continue-on-error: true
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: 'dist/*'
+
+      - name: Pakete an Installationstest und Release übergeben
+        # Actions-Cache des Repos (eigener Speicher, nicht der geteilte Artefaktspeicher). Schlüssel je Lauf und Versuch;
+        # beim erneuten Start nur der gescheiterten Jobs finden msi-test und release über restore-keys den letzten Versuch.
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            dist
+            out/msi-upgrade/*.msi
+            out/msi-highver/*.msi
+          key: pakete-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Dateien als Artefakt
+        # Zum Ausprobieren eines Pull Requests. Installationstest und Release nehmen die Pakete aus dem Cache, deshalb
+        # darf das Hochladen scheitern (voller Artefaktspeicher).
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.APP }}-${{ steps.version.outputs.version }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
+
+  msi-test:
+    # Installiert die MSI still auf einem frischen Windows-Runner, aktualisiert sie (mit Dienst, mit SERVICE=0 und von der
+    # zuletzt veröffentlichten MSI), prüft, dass sich Vitrine beim Dienst meldet, startet die installierte Exe und
+    # deinstalliert alles wieder, mit Prüfung auf Reste (.github/scripts/msi-test.ps1). Sperrt nie.
+    # Eigener Job: Der Test ändert den Rechner (Dienst, Programme, Registry); zwei frühere Läufe im Bau-Job blieben ohne
+    # Ausgabe stehen. Die Releases warten auf ihn (Job „release“).
+    name: MSI-Installationstest (Windows)
+    needs: [gate, windows]
+    if: needs.gate.outputs.full == 'true'
+    runs-on: windows-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read # auch: zuletzt veröffentlichte MSI laden
+      statuses: write # Zwischenstand als Commit-Status, auch falls der Runner unterwegs ausfällt
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Pakete aus dem Bau-Job
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            dist
+            out/msi-upgrade/*.msi
+            out/msi-highver/*.msi
+          key: pakete-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: pakete-${{ github.run_id }}-
+          fail-on-cache-miss: true
+
+      - name: Zuletzt veröffentlichte MSI (für den Update-Test)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release download latest -R $env:GITHUB_REPOSITORY -p "$env:APP-x64.msi" -D prev
+          if ($LASTEXITCODE -ne 0) { Write-Host "::warning::Keine veröffentlichte MSI geladen – Update vom Vorgänger wird nicht geprüft"; exit 0 }
+
+      - name: MSI installieren, aktualisieren, deinstallieren
+        timeout-minutes: 20
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATUS_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          $first = @(Get-ChildItem dist -Filter '*-x64.msi')[0].FullName
+          $second = @(Get-ChildItem out/msi-upgrade -Filter "$env:APP.msi")[0].FullName
+          $higher = @(Get-ChildItem out/msi-highver -Filter "$env:APP.msi")[0].FullName
+          $previous = @(Get-ChildItem prev -Filter '*.msi' -ErrorAction SilentlyContinue)
+          $extra = if ($previous.Count -gt 0) { @{ PreviousMsi = $previous[0].FullName } } else { @{} }
+          ./.github/scripts/msi-test.ps1 -Msi $first -SecondMsi $second -LogDir out/msi-logs -ExpectedFileVersion '${{ needs.windows.outputs.file }}' -HigherFileVersionMsi $higher @extra
+
+      - name: MSI-Protokolle als Artefakt
+        if: failure() || cancelled()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: MSI-Protokolle
+          path: out/msi-logs
+          if-no-files-found: ignore
+          retention-days: 7
+
+  release:
+    # Veröffentlicht nur, was Bau und Installationstest bestanden haben. Bei Pull Requests läuft der Job auch – er holt
+    # die Pakete und prüft die Prüfsummen, veröffentlicht aber nichts (so ist die Übergabe vor dem Merge getestet).
+    name: Release (nur Tag v* und main)
+    needs: [gate, windows, msi-test]
+    if: needs.gate.outputs.full == 'true'
+    runs-on: windows-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write # für die Releases
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Geprüfte Pakete
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            dist
+            out/msi-upgrade/*.msi
+            out/msi-highver/*.msi
+          key: pakete-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: pakete-${{ github.run_id }}-
+          fail-on-cache-miss: true
+
+      - name: Prüfsummen kontrollieren
+        shell: pwsh
+        run: |
+          # Genau die Dateien, die gebaut, signiert und getestet wurden
+          $lines = Get-Content dist/SHA256SUMS.txt | Where-Object { $_ }
+          $listed = @()
+          foreach ($line in $lines) {
+            $hash, $name = $line -split '  ', 2
+            $listed += $name
+            $actual = (Get-FileHash "dist/$name" -Algorithm SHA256).Hash.ToLower()
+            if ($actual -ne $hash) { throw "Prüfsumme von $name stimmt nicht" }
+          }
+          $extra = @(Get-ChildItem dist -File | Where-Object { $_.Name -ne 'SHA256SUMS.txt' -and $_.Name -notin $listed })
+          if ($extra.Count -gt 0) { throw "Nicht in SHA256SUMS.txt: $($extra.Name -join ', ')" }
+          Get-ChildItem dist -File | Format-Table Name, Length -AutoSize | Out-String | Write-Host
+
+      - name: Release-Notizen prüfen
+        # Auch bei Pull Requests: Das Skript muss laufen; der Abschnitt der csproj-Version fehlt auf main erst nach dem
+        # Anheben – dann nur Warnung, beim Tag ist er Pflicht (Schritt unten)
+        if: github.ref_type != 'tag'
+        shell: pwsh
+        run: |
+          $v = ([xml](Get-Content "src/$env:APP/$env:APP.csproj")).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
+          try { ./.github/scripts/release-notes.ps1 -Version $v -Out release-notes.md; Get-Content release-notes.md | Select-Object -First 5 }
+          catch { Write-Host "::warning::$($_.Exception.Message)" }
+
+      - name: Release erstellen (nur bei Tag v*)
+        if: github.ref_type == 'tag' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          # v1.0.0-rc1 und ähnliche: Vorabversion, nicht „Latest“
+          # @(...) um das if: ein einzelnes Element käme sonst als String zurück, und @latest zerlegte ihn in Zeichen
+          $pre = @(if ($env:GITHUB_REF_NAME -match '-') { '--prerelease' })
+          $latest = @(if ($pre.Count -eq 0) { '--latest' })
+          # Notizen aus dem CHANGELOG (nicht aus den Commit-Titeln); fehlt der Abschnitt, gibt es kein Release
+          ./.github/scripts/release-notes.ps1 -Version ($env:GITHUB_REF_NAME -replace '^v', '') -Out release-notes.md
+          gh release create $env:GITHUB_REF_NAME (Get-ChildItem dist/*).FullName --title "$env:APP $env:GITHUB_REF_NAME" --notes-file release-notes.md @pre @latest
+          if ($LASTEXITCODE -ne 0) { throw "Release ließ sich nicht anlegen ($LASTEXITCODE)" }
+          # Das rollierende „latest“ (Build von main) ist ab jetzt Vorabversion; „Latest“ trägt das Tag-Release
+          # (release-latest.ps1 hält es beim nächsten main-Lauf so)
+          if ($pre.Count -eq 0) {
+            gh release view latest -R $env:GITHUB_REPOSITORY --json tagName 2>$null | Out-Null
+            if ($LASTEXITCODE -eq 0) {
+              gh release edit latest -R $env:GITHUB_REPOSITORY --prerelease --latest=false
+              if ($LASTEXITCODE -ne 0) { throw "'latest' ließ sich nicht als Vorabversion markieren ($LASTEXITCODE)" }
+            }
+            $global:LASTEXITCODE = 0
+          }
+
+      - name: "Release 'latest' aktualisieren (main)"
+        # Voller Build von main: nachts, von Hand oder Push mit [voll]. Das Skript setzt auch den Tag 'latest' auf
+        # diesen Commit, daran misst gate im Nachtlauf, ob main neu ist.
+        if: needs.gate.outputs.full == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.windows.outputs.version }}
+        shell: pwsh
+        run: |
+          # Rollierendes Release: immer der neueste main-Stand, unter festen Links (Einzelheiten im Skript)
+          $base = "https://github.com/$env:GITHUB_REPOSITORY/releases/download/latest"
+          $built = (Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm')
+          $signed = if ($env:SIGN -eq 'true') { 'signiert' } else { 'noch nicht signiert' }
+          $notes = "Automatischer Build von main ($($env:GITHUB_SHA.Substring(0,7))), Version $env:VERSION, gebaut $built UTC, $signed, Installationstest bestanden.`n`n" +
+                   "Die Links bleiben gleich und zeigen immer auf den neuesten Build:`n`n" +
+                   "- **[$env:APP-x64.msi]($base/$env:APP-x64.msi)**: Installer für alle Benutzer (Intune/GPO) mit Dienst, der Vitrine in jeder Sitzung startet und überwacht (ohne Dienst: SERVICE=0)`n" +
+                   "- **[$env:APP.exe]($base/$env:APP.exe)**: eine Datei, läuft ohne Installation und ohne .NET-Runtime`n" +
+                   "- **[$env:APP-win-x64-framework.zip]($base/$env:APP-win-x64-framework.zip)**: kleine Variante mit deploy\install.ps1 und ADMX, braucht die .NET 10 Desktop Runtime`n" +
+                   "- [SHA256SUMS.txt]($base/SHA256SUMS.txt): Prüfsummen`n" +
+                   "- [$env:APP-sbom.cdx.json]($base/$env:APP-sbom.cdx.json): Stückliste der Bestandteile (CycloneDX)"
+          ./.github/scripts/release-latest.ps1 -Notes $notes -Title "Latest Build (main) – $env:VERSION"

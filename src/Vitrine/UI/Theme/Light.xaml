@@ -1,0 +1,9 @@
+<!-- Ergänzt Fluent.Light.xaml um die wenigen Vitrine-eigenen Farben -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="CardBg" Color="#F5FBFBFB"/>
+    <SolidColorBrush x:Key="FlyoutBg" Color="#F7F9F9F9"/>
+    <SolidColorBrush x:Key="ControlOff" Color="#06000000"/>
+    <SolidColorBrush x:Key="ControlOffStroke" Color="#72000000"/>
+    <SolidColorBrush x:Key="Knob" Color="#9E000000"/>
+</ResourceDictionary>

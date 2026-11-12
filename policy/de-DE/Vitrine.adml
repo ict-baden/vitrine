@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="2.7" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Vitrine</displayName><description>Vitrine</description>
+  <resources>
+    <stringTable>
+      <string id="Cat_Vitrine">Vitrine</string>
+      <string id="SUPPORTED_Vitrine1">Vitrine 0.1 oder neuer</string>
+      <string id="Cat_Lock">Sperren</string>
+      <string id="Cat_Unlock">Entsperren</string>
+      <string id="Cat_Appearance">Darstellung</string>
+      <string id="Cat_Security">Sicherheit</string>
+      <string id="Cat_Audit">Protokoll</string>
+      <string id="Cat_Entra">Microsoft Entra ID</string>
+      <string id="Cat_Integration">Integration</string>
+      <string id="Cat_Scripts">Skripte</string>
+      <string id="Lock_Hotkey">Tastenkürzel zum Sperren</string>
+      <string id="Lock_Hotkey_Help">Tastenkürzel, das den Arbeitsplatz sperrt, z. B. Ctrl+Alt+L. Während der Sperre öffnet es auch den Entsperr-Dialog. Leer = kein Tastenkürzel.</string>
+      <string id="Lock_IdleMinutes">Bei Leerlauf sperren (Minuten)</string>
+      <string id="Lock_IdleMinutes_Help">Nach so vielen Minuten ohne Tastatur- oder Mauseingabe sperren. 0 = aus. 0 bis 1440.</string>
+      <string id="Lock_LockOnStartup">Beim Start sofort sperren</string>
+      <string id="Lock_LockOnStartup_Help">Wenn aktiviert, sperrt Vitrine sofort beim Start, z. B. für Leitstand- oder Mess-PCs. Mit dem Vitrine-Dienst geschieht das gleich nach der Installation der MSI in jeder angemeldeten Sitzung.</string>
+      <string id="Lock_KeepAwake">Bildschirm während der Sperre wach halten</string>
+      <string id="Lock_KeepAwake_Help">Wenn aktiviert, bleibt der Bildschirm an und Windows geht während der Sperre nicht in den Energiesparmodus – die laufenden Programme bleiben sichtbar.</string>
+      <string id="Lock_BlockMouseMove">Mauszeiger während der Sperre festhalten</string>
+      <string id="Lock_BlockMouseMove_Help">Wenn aktiviert, bewegt sich der Mauszeiger während der Sperre nicht. Wenn deaktiviert, darf er sich bewegen; Klicks bleiben in beiden Fällen gesperrt.</string>
+      <string id="Lock_ReplaceWinL">Win+L sperrt mit Vitrine</string>
+      <string id="Lock_ReplaceWinL_Help">Wenn aktiviert, sperrt Win+L mit Vitrine statt mit dem Windows-Sperrbildschirm, auch im entsperrten Zustand. Solange Vitrine läuft, setzt es die Benutzerrichtlinie DisableLockWorkstation (Win+L und „Sperren“ im Strg+Alt+Entf-Bildschirm sperren Windows nicht mehr) und erkennt Win+L mit einem Tastatur-Hook. Beim Beenden wird der Wert entfernt, nach einem Absturz beim nächsten Start, durch den Wächter oder durch den Dienst. Setzt eine Computerrichtlinie DisableLockWorkstation, ändert Vitrine den Wert nicht. Wenn deaktiviert oder nicht konfiguriert, zeigt Win+L im entsperrten Zustand den Windows-Sperrbildschirm und tut während der Vitrine-Sperre nichts (mit „Strg+Alt+Entf einschränken“).</string>
+      <string id="Lock_Schedule">Zeitplan</string>
+      <string id="Lock_Schedule_Help">Feste Zeiten, zu denen Vitrine sperrt, ein Eintrag pro Zeile: 18:00 (jeden Tag), 07:30@Mo,Di,Mi oder 07:30@Mo-Fr. Tage als deutsche oder englische Kürzel oder englische Namen; 18.00 geht auch. Nicht lesbare Einträge werden übergangen und in der Übersicht der Einstellungen gemeldet (VIT-0015).</string>
+      <string id="Lock_Mode">Art der Sperre</string>
+      <string id="Lock_Mode_Help">Wie Vitrine sperrt. Abdeckung (Standard): Abdeckungen über dem Windows-Desktop; Programme bleiben sichtbar, Tastatur und Maus sperren Hooks. Eigener Desktop: Vitrine wechselt auf einen eigenen Desktop (Zugriff nur für den angemeldeten Benutzer und SYSTEM); Fenster anderer Programme bekommen dort keine Eingaben und zeichnen nicht über den Sperrbildschirm, und das im Entsperr-Dialog eingegebene Kennwort können Tastatur-Hooks auf dem Windows-Desktop nicht mitlesen. Programme laufen weiter, sind aber nicht sichtbar (siehe „Vorschau des Windows-Desktops“). Windows Hello, der Windows-Anmeldedialog und das Microsoft-Anmeldefenster erscheinen nur auf dem Windows-Desktop: Für sie kehrt Vitrine für die Dauer der Anmeldung dorthin zurück, geschützt durch Abdeckungen und Hooks wie bei „Abdeckung“. Lässt sich der Desktop nicht anlegen oder nicht wechseln, sperrt Vitrine mit Abdeckungen (VIT-0450, VIT-0451). „Abdeckung“ wählen, wenn ein Prozess sichtbar bleiben muss.</string>
+      <string id="Lock_Mode_Overlay">Abdeckung – Programme bleiben sichtbar</string>
+      <string id="Lock_Mode_Desktop">Eigener Desktop – Programme laufen unsichtbar weiter</string>
+      <string id="Lock_DesktopShowPreview">Vorschau des Windows-Desktops</string>
+      <string id="Lock_DesktopShowPreview_Help">Nur mit der Art der Sperre „Eigener Desktop“. Wenn aktiviert oder nicht konfiguriert, zeigt der Sperrbildschirm ein Bild der laufenden Programme (nur ansehen), zusammengesetzt aus ihren Fenstern und regelmäßig erneuert. Es folgt der Darstellung: nichts bei „Verdeckt“, nur die freigegebenen Programme bei „Nur freigegebene Programme“, verdeckte Bereiche bleiben verdeckt. Manche Inhalte (hardwarebeschleunigtes Video, Fenster von Programmen mit Administratorrechten) erscheinen eventuell schwarz. Wenn deaktiviert, zeigt der Sperrbildschirm kein Bild.</string>
+      <string id="Lock_DesktopPreviewSeconds">Vorschau erneuern alle (Sekunden)</string>
+      <string id="Lock_DesktopPreviewSeconds_Help">Nur mit „Eigener Desktop“ und eingeschalteter Vorschau: Sekunden zwischen zwei Bildern, 1 bis 60 (Standard 2). 0 = ein Bild beim Sperren.</string>
+      <string id="Unlock_Allowed">Wer darf entsperren (Bitmaske)</string>
+      <string id="Unlock_Allowed_Help">Wer entsperren darf, als Summe aus: 1 = angemeldete Person, 2 = Administratoren, 4 = Mitglieder der zugelassenen Gruppen, 8 = zugelassene Konten, 16 = jedes gültige Konto (ggf. auf die zugelassenen Domänen beschränkt). Beispiel: 3 = angemeldete Person und Administratoren (Standard).</string>
+      <string id="Unlock_AllowedGroups">Berechtigte Gruppen</string>
+      <string id="Unlock_AllowedGroups_Help">Gruppen, deren Mitglieder entsperren dürfen, eine pro Zeile: DOMÄNE\Gruppe, lokale Gruppe, SID, Objekt-ID einer Entra-Gruppe oder Entra-App-Rolle (z. B. Vitrine.Unlock). Gilt nur, wenn „Wer darf entsperren“ die 4 enthält.</string>
+      <string id="Unlock_AllowedUsers">Berechtigte Konten</string>
+      <string id="Unlock_AllowedUsers_Help">Konten, die entsperren dürfen, eines pro Zeile: DOMÄNE\name, UPN oder SID. Gilt nur, wenn „Wer darf entsperren“ die 8 enthält.</string>
+      <string id="Unlock_AllowedDomains">Nur diese Domänen</string>
+      <string id="Unlock_AllowedDomains_Help">Nur Konten dieser Domänen dürfen entsperren oder signieren, eine pro Zeile: NetBIOS-Domäne oder UPN-Suffix (z. B. contoso.com). Leer = keine Einschränkung.</string>
+      <string id="Unlock_Methods">Anmeldeverfahren</string>
+      <string id="Unlock_Methods_Help">Anmeldeverfahren im Dialog, in dieser Reihenfolge, eines pro Zeile: entra (Microsoft Entra ID), windows (Windows-Kennwort), hello (Windows Hello), windowslogon (Windows-Anmeldedialog: Kennwort, PIN oder Smartcard beliebiger Konten), fido (für Vitrine registrierte FIDO2-Sicherheitsschlüssel, geprüft vom Vitrine-Dienst), pin (gemeinsames Entsperr-Kennwort) oder die ID eines Plugins. Builds ohne Windows-Kontobroker (-p:WamBroker=false) bieten Microsoft nur für Signaturen und Administrator-Bestätigung an, nicht zum Entsperren.</string>
+      <string id="Unlock_Trigger_AnyInput">Taste oder Mausklick</string>
+      <string id="Unlock_Trigger_KeyOnly">Nur Tastendruck</string>
+      <string id="Unlock_Trigger_HotkeyOnly">Nur Tastenkürzel</string>
+      <string id="Unlock_Trigger">Dialog öffnet sich bei</string>
+      <string id="Unlock_Trigger_Help">Was während der Sperre den Entsperr-Dialog öffnet: jede Taste oder ein Mausklick, nur eine Taste (Klicks werden ignoriert) oder nur das Sperr-Tastenkürzel.</string>
+      <string id="Unlock_PrefillUserName">Benutzername vorausfüllen</string>
+      <string id="Unlock_PrefillUserName_Help">Wenn aktiviert, trägt der Dialog den Namen der angemeldeten Person schon ein.</string>
+      <string id="Unlock_PromptTimeoutSeconds">Dialog schließt nach (Sekunden)</string>
+      <string id="Unlock_PromptTimeoutSeconds_Help">Der Entsperr-Dialog schließt sich nach so vielen Sekunden ohne Eingabe. 5 bis 600.</string>
+      <string id="Appearance_Visual_Transparent">Durchsichtig</string>
+      <string id="Appearance_Visual_Blank">Verdeckt</string>
+      <string id="Appearance_Visual">Darstellung</string>
+      <string id="Appearance_Visual_Help">Wie der gesperrte Bildschirm aussieht: durchsichtig (Programme bleiben sichtbar, auf Wunsch abgedunkelt), verdeckt (nichts sichtbar) oder nur ausgewählte Programme (alles verdeckt außer den Programmen unter „Programme, die sichtbar bleiben“).</string>
+      <string id="Appearance_DimPercent">Abdunkeln (%)</string>
+      <string id="Appearance_DimPercent_Help">Abdunkeln im durchsichtigen Modus: 0 = klar, 100 = schwarz.</string>
+      <string id="Appearance_Message">Hinweistext</string>
+      <string id="Appearance_Message_Help">Eigener Hinweistext auf dem gesperrten Bildschirm, z. B. „Messung läuft – bitte nicht berühren“. Leer = Standardtext mit dem Namen der angemeldeten Person.</string>
+      <string id="Appearance_Accent">Akzentfarbe</string>
+      <string id="Appearance_Accent_Help">Akzentfarbe von Dialog und Hinweisleiste als #RRGGBB. Leer = Akzentfarbe von Windows.</string>
+      <string id="Appearance_LogoPath">Firmenlogo (Pfad)</string>
+      <string id="Appearance_LogoPath_Help">PNG- oder JPG-Datei, die im Entsperr-Dialog über dem Namen erscheint. Nur lokaler Pfad oder Freigabe (\\server\freigabe\logo.png), keine http-Adresse.</string>
+      <string id="Appearance_Language">Sprache der Oberfläche</string>
+      <string id="Appearance_Language_Help">Legt die Sprache von Vitrine für alle Benutzer fest. Nicht konfiguriert: Vitrine folgt der Sprache von Windows, der Gerätekonfiguration oder der Wahl im Info-Fenster. Spanisch, Französisch und Chinesisch sind maschinell übersetzt und noch nicht geprüft.</string>
+      <string id="Appearance_Language_en">English (Englisch)</string>
+      <string id="Appearance_Language_de">Deutsch</string>
+      <string id="Appearance_Language_es">Español (Spanisch)</string>
+      <string id="Appearance_Language_fr">Français (Französisch)</string>
+      <string id="Appearance_Language_zh">中文(简体) (Chinesisch, vereinfacht)</string>
+      <string id="Appearance_HideCursor">Mauszeiger ausblenden</string>
+      <string id="Appearance_HideCursor_Help">Wenn aktiviert, ist der Mauszeiger während der Sperre ausgeblendet.</string>
+      <string id="Security_MaxFailedAttempts">Maximale Fehlversuche</string>
+      <string id="Security_MaxFailedAttempts_Help">Nach so vielen Fehlversuchen in Folge greift die „Maßnahme nach zu vielen Fehlversuchen“. 0 = nie. 0 bis 100.</string>
+      <string id="Security_FailureAction_None">Nichts</string>
+      <string id="Security_FailureAction_LockWorkstation">Windows sperren</string>
+      <string id="Security_FailureAction_LogOff">Abmelden</string>
+      <string id="Security_FailureAction_Shutdown">Herunterfahren</string>
+      <string id="Security_FailureAction">Aktion nach zu vielen Fehlversuchen</string>
+      <string id="Security_FailureAction_Help">Was nach der höchsten Zahl an Fehlversuchen geschieht: nichts (nur die Wartezeit wächst), Windows sperren, abmelden oder herunterfahren.</string>
+      <string id="Security_ProgressiveDelay">Wartezeit nach Fehlversuchen verlängern</string>
+      <string id="Security_ProgressiveDelay_Help">Wenn aktiviert, wächst die Wartezeit ab dem dritten Fehlversuch: 2, 4, 8 … höchstens 30 Sekunden. Sie gilt über Dialoge hinweg und endet erst mit einem erfolgreichen Entsperren.</string>
+      <string id="Security_RestrictCtrlAltDel">Strg+Alt+Entf einschränken</string>
+      <string id="Security_RestrictCtrlAltDel_Help">Wenn aktiviert, sind Task-Manager, Abmelden, Kennwort ändern, der Ein/Aus-Schalter und Sperren im Strg+Alt+Entf-Bildschirm während der Sperre ausgeblendet, und Win+L tut nichts (statt den Windows-Sperrbildschirm zu zeigen, der den Arbeitsplatz verdeckt). Die vorherigen Werte werden beim Entsperren zurückgesetzt. Von einer Richtlinie gesetzte Werte werden nie gelöscht.</string>
+      <string id="Security_SettingsAdminOnly">Einstellungen nur für Administratoren</string>
+      <string id="Security_SettingsAdminOnly_Help">Wenn aktiviert, öffnen sich die Einstellungen nur nach Anmeldung eines Administrators.</string>
+      <string id="Security_ExitRequiresAdmin">Beenden nur durch Administratoren</string>
+      <string id="Security_ExitRequiresAdmin_Help">Wenn aktiviert, lässt sich Vitrine nur nach Anmeldung eines Administrators beenden. Mit dem Vitrine-Dienst gilt ein so bestätigtes Beenden bis zur nächsten Anmeldung.</string>
+      <string id="Security_Watchdog">Wächterprozess</string>
+      <string id="Security_Watchdog_Help">Wenn aktiviert, sperrt ein Wächterprozess Windows, wenn Vitrine während der Sperre beendet wird oder abstürzt. Mit dem Vitrine-Dienst übernimmt der Dienst: Er trennt die Sitzung und startet Vitrine gesperrt neu.</string>
+      <string id="Security_AuthUiProcesses">Prozesse externer Anmeldefenster</string>
+      <string id="Security_AuthUiProcesses_Help">Programme (Dateinamen), deren neu geöffnete Fenster während einer Microsoft- oder Windows-Hello-Anmeldung unter der Sperre Eingaben erhalten dürfen, eines pro Zeile. Das eigene Microsoft-Anmeldefenster von Vitrine und Fenster, die dem Entsperr-Dialog gehören, dürfen immer. Standard: CredentialUIBroker.exe, Microsoft.AAD.BrokerPlugin.exe, msedgewebview2.exe, AccountsControlHost.exe, CredDialogHost.exe. Keinen Webbrowser eintragen.</string>
+      <string id="Security_AllowUserConfig">Benutzerkonfiguration erlauben</string>
+      <string id="Security_AllowUserConfig_Help">Wenn aktiviert, wird %LocalAppData%\Vitrine\config.json jedes Benutzers gelesen – nur die Abschnitte Appearance und Lock, ohne verdeckte Bereiche und sichtbare Programme. Hier deaktiviert, gilt die Benutzerdatei nicht, auch wenn die Gerätekonfiguration sie erlaubt.</string>
+      <string id="Audit_Enabled">Protokoll schreiben</string>
+      <string id="Audit_Enabled_Help">Wenn deaktiviert, schreibt Vitrine kein Protokoll: keine Datei, keine Netzkopie und keine Einträge im Ereignisprotokoll.</string>
+      <string id="Audit_Directory">Protokollordner</string>
+      <string id="Audit_Directory_Help">Ordner des Protokolls (Hash-Kette, eine Datei pro Monat). Leer = %ProgramData%\ICT-Baden\Vitrine\Logs. Umgebungsvariablen sind erlaubt. Benutzer brauchen dort das Recht, Dateien anzulegen und anzuhängen, nicht sie zu ändern.</string>
+      <string id="Audit_NetworkDirectory">Kopie auf Netzlaufwerk</string>
+      <string id="Audit_NetworkDirectory_Help">Zusätzliche Kopie jedes Protokolleintrags in diesem Ordner, Datei &lt;COMPUTER&gt;-audit-yyyy-MM.jsonl, z. B. \\server\audit$\Vitrine. Sie wird im Hintergrund geschrieben; eine langsame Freigabe hält Vitrine nie auf.</string>
+      <string id="Audit_EventLog">Windows-Ereignisprotokoll</string>
+      <string id="Audit_EventLog_Help">Wenn aktiviert, geht jeder Protokolleintrag auch ins Windows-Anwendungsprotokoll, Quelle „ICT-Baden Vitrine“.</string>
+      <string id="Audit_LogLockState">Sperren/Entsperren mitschreiben</string>
+      <string id="Audit_LogLockState_Help">Wenn aktiviert, werden Sperren und Entsperren protokolliert. Wenn deaktiviert, nur Fehlversuche, Signaturen, Änderungen und Fehler.</string>
+      <string id="Entra_TenantId">Mandanten-ID</string>
+      <string id="Entra_TenantId_Help">Verzeichnis-ID (Mandant) von Microsoft Entra ID als GUID (empfohlen) oder Domäne. Die Microsoft-Anmeldung verlangt eine Mandanten-ID (GUID) hier oder unter „Weitere Mandanten“. Mit dem Standard „organizations“ und ohne weitere Mandanten lehnt Vitrine jede Microsoft-Anmeldung ab (VIT-0117).</string>
+      <string id="Entra_ClientId">Anwendungs-ID</string>
+      <string id="Entra_ClientId_Help">Anwendungs-ID (Client) der App-Registrierung für Vitrine. Leer = Microsoft wird nicht angeboten.</string>
+      <string id="Entra_UseBroker">Windows-Kontobroker (WAM)</string>
+      <string id="Entra_UseBroker_Help">Windows-Kontobroker (WAM) statt des eigenen Microsoft-Anmeldefensters von Vitrine verwenden. Nicht konfiguriert oder deaktiviert (Standard seit 0.4.0): Vitrine meldet im eigenen Fenster an (Microsoft Edge WebView2), das sich zwischen den Anmeldungen nichts merkt und nie mit dem Windows-Konto der Sitzung anmeldet; jedes Konto kann sich anmelden, mit FIDO2-Sicherheitsschlüssel, Passkey, Kennwort oder Authenticator, auch am Sperrbildschirm. Umleitungs-URI: http://localhost. Braucht die WebView2 Runtime (VIT-0190). Aktiviert: Der Broker ermöglicht Windows Hello for Business und gerätebasierten bedingten Zugriff (konformes oder hybrid eingebundenes Gerät), merkt sich aber die Konten, die sich angemeldet haben, und kann ohne Nachfrage mit dem Konto der Windows-Sitzung anmelden – nur auf Geräten mit einem persönlichen Benutzer verwenden (Warnung VIT-0191). Umleitungs-URI: ms-appx-web://microsoft.aad.brokerplugin/&lt;Anwendungs-ID&gt;. Deaktivieren schaltet den Broker auch auf Geräten aus, deren gespeicherte Konfiguration noch den alten Standard (true) enthält.</string>
+      <string id="Entra_ForceFreshSignIn">Immer neu anmelden</string>
+      <string id="Entra_ForceFreshSignIn_Help">Wenn aktiviert, verlangt jede Microsoft-Anmeldung über den Windows-Kontobroker eine neue Anmeldung (prompt=login). Eingeschaltet lassen: Sonst könnte eine bestehende Microsoft-Sitzung ohne Eingabe entsperren oder signieren. Das eigene Anmeldefenster von Vitrine (Standard) verlangt immer eine neue Anmeldung.</string>
+      <string id="Entra_MaxAuthAgeSeconds">Maximales Alter der Anmeldung (s)</string>
+      <string id="Entra_MaxAuthAgeSeconds_Help">Microsoft-Anmeldungen ablehnen, die älter als so viele Sekunden sind (Claim auth_time; in der App-Registrierung als optionalen Claim hinzufügen). 0 = keine Prüfung. 0 bis 86400.</string>
+      <string id="Entra_AllowedSignInHosts">Weitere Anmelde-Hosts</string>
+      <string id="Entra_AllowedSignInHosts_Help">Weitere Hostnamen, die das Microsoft-Anmeldefenster von Vitrine öffnen darf, einer pro Zeile – z. B. der eigene Verbund-Anmeldedienst (adfs.contoso.com) oder Identitätsanbieter (*.okta.com; *. erlaubt nur Unterdomänen). Die Anmeldeseiten von Microsoft sind immer erlaubt. Jede andere Adresse wird abgebrochen, die Anmeldung scheitert mit VIT-0193 und nennt den Host. Nur HTTPS; Einträge mit Schema, Pfad oder Port werden ignoriert. Nur vertrauenswürdige Anmeldeseiten eintragen: Während der Sperre kann jede Person am Gerät die Seite bedienen.</string>
+      <string id="Entra_AllowedTenants">Weitere Mandanten</string>
+      <string id="Entra_AllowedTenants_Help">Weitere Mandanten-IDs (GUIDs), deren Konten angenommen werden, eine pro Zeile, zusätzlich zum eingestellten Mandanten. Einträge, die keine GUID sind, werden ignoriert.</string>
+      <string id="Integration_PipeEnabled">Lokale Schnittstelle</string>
+      <string id="Integration_PipeEnabled_Help">Lokale Schnittstelle für Fachanwendungen (Named Pipe \\.\pipe\ICT-Baden.Vitrine.&lt;Sitzung&gt;). Wenn deaktiviert, werden nur Sperren und Einstellungen angenommen; Status, Anmeldung, Signatur und Ereignisse werden abgelehnt.</string>
+      <string id="Integration_LoadPlugins">Plugins laden</string>
+      <string id="Integration_LoadPlugins_Help">Wenn aktiviert, werden Anmelde-Plugins (Plugins\*.dll neben Vitrine.exe) geladen – nur wenn ein Anmeldeverfahren eines braucht, und nur aus einem Ordner, den normale Benutzer nicht ändern können. Plugins sind voll vertrauenswürdig.</string>
+      <string id="Scripts_OnLock">Skript beim Sperren</string>
+      <string id="Scripts_OnLock_Help">Befehl, der beim Sperren läuft (cmd.exe aus dem Systemordner). Die Umgebungsvariablen VITRINE_EVENT, VITRINE_TIME und VITRINE_TRIGGER beschreiben das Ereignis.</string>
+      <string id="Scripts_OnUnlock">Skript beim Entsperren</string>
+      <string id="Scripts_OnUnlock_Help">Befehl, der nach dem Entsperren läuft. Die Umgebungsvariablen VITRINE_USER und VITRINE_METHOD nennen Konto und Anmeldeverfahren.</string>
+      <string id="Scripts_OnFailedAttempt">Skript bei Fehlversuch</string>
+      <string id="Scripts_OnFailedAttempt_Help">Befehl, der nach einem Fehlversuch läuft. Die Umgebungsvariablen VITRINE_USER, VITRINE_METHOD, VITRINE_ATTEMPT und VITRINE_CODE beschreiben ihn.</string>
+      <string id="Appearance_Visual_Windows">Nur ausgewählte Programme</string>
+      <string id="Appearance_Masks">Verdeckte Bereiche</string>
+      <string id="Appearance_Masks_Help">Bildschirmbereiche, die während der Sperre verdeckt bleiben (durchsichtig und „Nur ausgewählte Programme“), z. B. ein Feld mit Patientendaten.
+
+Ein Eintrag pro Bereich: Monitor:X,Y,Breite,Höhe in Prozent des Monitors. Monitor 1 ist der Hauptmonitor, dann von links nach rechts; * steht für jeden Monitor. Beispiel: 1:0,0,30,100 verdeckt das linke Drittel von Monitor 1. Nicht lesbare Einträge werden übergangen und in der Übersicht der Einstellungen gemeldet (VIT-0015).</string>
+      <string id="Appearance_RevealProcesses">Programme, die sichtbar bleiben</string>
+      <string id="Appearance_RevealProcesses_Help">Für die Darstellung „Nur ausgewählte Programme“: Alles ist verdeckt außer den Fenstern dieser Programme (Programmdatei, z. B. Chromeleon.exe). Fenster anderer Programme, die darüber liegen, bleiben verdeckt.</string>
+      <string id="Entra_AuthenticationContext">Authentifizierungskontext</string>
+      <string id="Entra_AuthenticationContext_Help">Authentifizierungskontext für bedingten Zugriff (c1 bis c99), den Vitrine bei jeder Anmeldung mit Microsoft Entra ID anfordert. Mit einer Richtlinie für bedingten Zugriff zu diesem Kontext kann Microsoft Entra ID eine bestimmte Authentifizierungsstärke verlangen, z. B. Passkeys (FIDO2). Leer = keiner. Jeder andere Wert lässt Vitrine die Microsoft-Anmeldung ablehnen (VIT-0116), statt ohne ihn anzumelden.</string>
+      <string id="Entra_SignatureAuthenticationContext">Authentifizierungskontext für Signaturen</string>
+      <string id="Entra_SignatureAuthenticationContext_Help">Wie „Authentifizierungskontext“, aber nur für elektronische Signaturen über die lokale Schnittstelle; hat dort Vorrang. Leer = der allgemeine Kontext gilt.</string>
+      <string id="Entra_ShareIdToken">ID-Token an Anwendungen weitergeben</string>
+      <string id="Entra_ShareIdToken_Help">Wenn aktiviert, erhalten Anwendungen, die über die lokale Schnittstelle eine Anmeldung oder Signatur anfordern, das ID-Token der Anmeldung mit Microsoft Entra ID und können es selbst prüfen. Das Token steht nie im Protokoll.</string>
+      <string id="Entra_AllowedTokenScopes">Zugriffstoken für Anwendungen</string>
+      <string id="Entra_AllowedTokenScopes_Help">Berechtigungen (Scopes), für die Anwendungen über die lokale Schnittstelle ein Zugriffstoken anfordern dürfen, eine pro Zeile, z. B. api://lims/Signature.Write. Eine Anfrage darf nur Scopes einer Ressource nennen. Nicht konfiguriert oder leer = keine Zugriffstoken.</string>
+      <!-- Rollen und Nachvollziehbarkeit (0.5.0) -->
+      <string id="Cat_Roles">Rollen und Nachvollziehbarkeit</string>
+      <string id="Roles_ConfigAdmins">Einstellungs-Administratoren</string>
+      <string id="Roles_ConfigAdmins_Help">Gruppen, deren Mitglieder die Einstellungen öffnen und ändern und Vitrine beenden dürfen, eine pro Zeile: DOMÄNE\Gruppe, eine lokale Gruppe (auch mit Entra-Mitgliedern), eine SID oder eine Entra-Gruppen-Objekt-ID. Nicht konfiguriert oder leer: nur Administratoren. Lokale Administratoren behalten die Rolle, solange „Lokale Administratoren haben alle Rollen“ nicht deaktiviert ist.</string>
+      <string id="Roles_Registrars">Registrierung von Sicherheitsschlüsseln</string>
+      <string id="Roles_Registrars_Help">Gruppen, deren Mitglieder Sicherheitsschlüssel registrieren und widerrufen dürfen, eine pro Zeile (Schreibweise wie bei den Einstellungs-Administratoren). Nicht konfiguriert oder leer: nur Administratoren.</string>
+      <string id="Roles_Auditors">Prüfer</string>
+      <string id="Roles_Auditors_Help">Gruppen, deren Mitglieder das Protokoll und den Berechtigungsbericht ansehen und exportieren, aber keine Einstellungen ändern dürfen, eine pro Zeile. Einstellungs-Administratoren sind immer auch Prüfer.</string>
+      <string id="Security_LocalAdministratorsArePrivileged">Lokale Administratoren haben alle Rollen</string>
+      <string id="Security_LocalAdministratorsArePrivileged_Help">Wenn aktiviert oder nicht konfiguriert, haben Mitglieder der lokalen Administratoren alle Vitrine-Rollen (Einstellungen, Beenden, Sicherheitsschlüssel registrieren, Notfall-Anmeldung) wie bisher. Wenn deaktiviert, haben sie nur die Rollen der Rollengruppen, in denen sie stehen. Abwägung: Ein Administrator kann trotzdem den Dienst beenden oder die Konfigurationsdatei ändern – das trennt Aufgaben in Vitrine, nicht auf dem Rechner. Deaktiviert und ohne Gruppe für Einstellungs-Administratoren lassen sich die Einstellungen nur noch über Richtlinie oder Konfigurationsdatei ändern (VIT-0430).</string>
+      <string id="Unlock_BypassGroups">Gruppen mit Notfall-Anmeldung</string>
+      <string id="Unlock_BypassGroups_Help">Gruppen, deren Mitglieder mit ihrem Windows-Kennwort entsperren dürfen, auch wenn die Entsperr-Regeln sie nicht zulassen, eine pro Zeile. Sie müssen eine Begründung eingeben; das Entsperren steht als UnlockBypass mit Begründung im Protokoll und immer als Warnung im Windows-Ereignisprotokoll. Nicht konfiguriert oder leer: keine Notfall-Anmeldung.</string>
+      <string id="Unlock_BypassReasonMinLength">Mindestlänge der Notfall-Begründung</string>
+      <string id="Unlock_BypassReasonMinLength_Help">Mindestzahl der Zeichen der Begründung einer Notfall-Anmeldung. 1 bis 500, Standard 10.</string>
+      <string id="Security_ReasonRequiredForAdminActions">Begründung bei Administrator-Bestätigungen</string>
+      <string id="Security_ReasonRequiredForAdminActions_Help">Wenn aktiviert, verlangt eine Bestätigung als Administrator (Einstellungen öffnen, Vitrine beenden) eine Begründung, die ins Protokoll kommt. Standard: deaktiviert.</string>
+      <string id="Security_ReasonRequiredForConfigChanges">Begründung beim Ändern der Einstellungen</string>
+      <string id="Security_ReasonRequiredForConfigChanges_Help">Wenn aktiviert, verlangt das Speichern der Einstellungen eine Begründung. Der Eintrag ConfigChanged enthält die Begründung und die geänderten Werte (alt und neu; Geheimnisse verborgen). Standard: deaktiviert.</string>
+      <string id="Security_ReasonMinLength">Mindestlänge der Begründungen</string>
+      <string id="Security_ReasonMinLength_Help">Mindestzahl der Zeichen von Begründungen bei Administrator-Bestätigungen und Änderungen der Einstellungen. 1 bis 500, Standard 10.</string>
+      <!-- Sicherheitsschlüssel -->
+      <string id="Cat_Fido">Sicherheitsschlüssel</string>
+      <string id="Fido_RpId">RP ID</string>
+      <string id="Fido_RpId_Help">Kennung (WebAuthn-RP-ID), für die Sicherheitsschlüssel registriert und geprüft werden. Standard: vitrine – bewusst kein DNS-Name, damit keine Webseite sie benutzen kann. Nach der ersten Registrierung nicht mehr ändern: Schlüssel gelten nur mit der RP ID, mit der sie registriert wurden (sonst VIT-0422). Liest der Vitrine-Dienst.</string>
+      <string id="Fido_AllowSelfRegistration">Schlüssel für sich selbst registrieren</string>
+      <string id="Fido_AllowSelfRegistration_Help">Aktiviert: Eine berechtigte Person darf auch für ihr eigenes Windows-Konto einen Sicherheitsschlüssel registrieren. Deaktiviert oder nicht konfiguriert (Standard): Schlüssel registriert immer eine andere berechtigte Person (VIT-0414).</string>
+      <string id="Fido_AllowedModels">Zugelassene Schlüsselmodelle</string>
+      <string id="Fido_AllowedModels_Help">AAGUIDs der Modelle von Sicherheitsschlüsseln, die registriert und benutzt werden dürfen, eine je Zeile (z. B. cb69481e-8ff7-4039-93ec-0a2729a154a8). Leer oder nicht konfiguriert: jedes Modell. Die AAGUID meldet der Schlüssel; die Zertifikatskette des Herstellers prüft Vitrine nicht. Ein Schlüssel eines anderen Modells wird abgelehnt (VIT-0407), auch wenn er vorher registriert wurde.</string>
+      <string id="Fido_MaxKeysPerPerson">Schlüssel je Person</string>
+      <string id="Fido_MaxKeysPerPerson_Help">Höchstzahl aktiver Sicherheitsschlüssel je Person (Standard 2). Widerrufene Schlüssel zählen nicht. 1 bis 20.</string>
+      <string id="Fido_MaxFailedAttempts">Fehlversuche bis zur Sperre</string>
+      <string id="Fido_MaxFailedAttempts_Help">Nach so vielen abgelehnten Anmeldungen mit einem Sicherheitsschlüssel (ungültige Antwort, fehlende PIN, widerrufener Schlüssel …) werden der Schlüssel und seine Person für die unter „Sperrzeit“ eingestellte Zeit gesperrt (VIT-0409). Gezählt je Schlüssel und je Person im Vitrine-Dienst; ein Neustart des Dienstes setzt die Zähler zurück. Standard 5, 0 = nie sperren.</string>
+      <string id="Fido_BlockMinutes">Sperrzeit (Minuten)</string>
+      <string id="Fido_BlockMinutes_Help">So lange bleiben ein Sicherheitsschlüssel und seine Person nach zu vielen Fehlversuchen gesperrt. Standard 5, 1 bis 1440.</string>
+      <string id="Fido_OfflineMaxHours">Ohne Domänencontroller (Stunden)</string>
+      <string id="Fido_OfflineMaxHours_Help">Ist kein Domänencontroller erreichbar, gelten die zuletzt vom Dienst gelesenen Gruppen einer Person höchstens so viele Stunden; ältere werden abgelehnt (VIT-0412). Standard 24, 0 = ohne Domänencontroller nie mit Sicherheitsschlüssel anmelden. Gilt nicht für lokale Konten (immer aktuell gelesen).</string>
+      <string id="Fido_Store">Ablage der Sicherheitsschlüssel</string>
+      <string id="Fido_Store_Help">Wo die registrierten Sicherheitsschlüssel liegen. Dieser Computer (Standard): geschützte Datei des Vitrine-Dienstes (fido-credentials.json); ein Schlüssel gilt nur auf dem Computer, auf dem er registriert wurde. Active Directory: ein Objekt je Schlüssel im Container CN=SecurityKeys (siehe „Container im Active Directory“); ein einmal registrierter Schlüssel gilt auf allen Computern der Domäne. Der Dienst liest die Schlüssel als Computerkonto und hält eine lokale Kopie für die Anmeldung ohne Domänencontroller; Registrieren und Widerrufen schreibt mit dem Konto der registrierenden Person (Windows-Kennwort). Der Signaturzähler bleibt auf jedem Computer, kopierte Schlüssel werden daher je Computer erkannt. Container mit deploy/Initialize-VitrineDirectory.ps1 vorbereiten. Wird beim Start des Vitrine-Dienstes gelesen.</string>
+      <string id="Fido_Store_Local">Dieser Computer</string>
+      <string id="Fido_Store_ActiveDirectory">Active Directory</string>
+      <string id="Fido_DirectoryContainer">Container im Active Directory</string>
+      <string id="Fido_DirectoryContainer_Help">Distinguished Name des Vitrine-Containers im Active Directory, z. B. CN=Vitrine,CN=Program Data,DC=contoso,DC=com. Die Schlüssel liegen in CN=SecurityKeys darunter. Nicht konfiguriert oder leer: CN=Vitrine,CN=Program Data in der Domäne des Computers. Nur bei der Ablage „Active Directory“.</string>
+      <string id="Fido_SyncMinutes">Abgleich mit dem Active Directory (Minuten)</string>
+      <string id="Fido_SyncMinutes_Help">Wie oft der Vitrine-Dienst alle Sicherheitsschlüssel aus dem Active Directory in seine lokale Kopie liest. Standard 15. Unabhängig davon wird ein bei der Anmeldung vorgelegter Schlüssel bei erreichbarem Active Directory frisch gelesen (ein Widerruf gilt sofort), und ein dem Computer noch unbekannter Schlüssel wird gezielt gesucht. Nur bei der Ablage „Active Directory“.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Lock_Hotkey"><textBox refId="Lock_Hotkey_v"><label>Tastenkürzel zum Sperren</label></textBox></presentation>
+      <presentation id="Lock_IdleMinutes"><decimalTextBox refId="Lock_IdleMinutes_v">Bei Leerlauf sperren (Minuten)</decimalTextBox></presentation>
+      <presentation id="Lock_Schedule"><multiTextBox refId="Lock_Schedule_v">Zeitplan</multiTextBox></presentation>
+      <presentation id="Lock_Mode"><dropdownList refId="Lock_Mode_v">Art der Sperre</dropdownList></presentation>
+      <presentation id="Lock_DesktopPreviewSeconds"><decimalTextBox refId="Lock_DesktopPreviewSeconds_v">Vorschau erneuern alle (Sekunden)</decimalTextBox></presentation>
+      <presentation id="Unlock_Allowed"><decimalTextBox refId="Unlock_Allowed_v">Wer darf entsperren (Bitmaske)</decimalTextBox></presentation>
+      <presentation id="Unlock_AllowedGroups"><multiTextBox refId="Unlock_AllowedGroups_v">Berechtigte Gruppen</multiTextBox></presentation>
+      <presentation id="Unlock_AllowedUsers"><multiTextBox refId="Unlock_AllowedUsers_v">Berechtigte Konten</multiTextBox></presentation>
+      <presentation id="Unlock_AllowedDomains"><multiTextBox refId="Unlock_AllowedDomains_v">Nur diese Domänen</multiTextBox></presentation>
+      <presentation id="Unlock_Methods"><multiTextBox refId="Unlock_Methods_v">Anmeldeverfahren</multiTextBox></presentation>
+      <presentation id="Unlock_Trigger"><dropdownList refId="Unlock_Trigger_v">Dialog öffnet sich bei</dropdownList></presentation>
+      <presentation id="Unlock_PromptTimeoutSeconds"><decimalTextBox refId="Unlock_PromptTimeoutSeconds_v">Dialog schließt nach (Sekunden)</decimalTextBox></presentation>
+      <presentation id="Appearance_Visual"><dropdownList refId="Appearance_Visual_v">Darstellung</dropdownList></presentation>
+      <presentation id="Appearance_DimPercent"><decimalTextBox refId="Appearance_DimPercent_v">Abdunkeln (%)</decimalTextBox></presentation>
+      <presentation id="Appearance_Message"><textBox refId="Appearance_Message_v"><label>Hinweistext</label></textBox></presentation>
+      <presentation id="Appearance_Accent"><textBox refId="Appearance_Accent_v"><label>Akzentfarbe</label></textBox></presentation>
+      <presentation id="Appearance_Language"><dropdownList refId="Appearance_Language_v">Sprache</dropdownList></presentation>
+      <presentation id="Appearance_LogoPath"><textBox refId="Appearance_LogoPath_v"><label>Firmenlogo (Pfad)</label></textBox></presentation>
+      <presentation id="Security_MaxFailedAttempts"><decimalTextBox refId="Security_MaxFailedAttempts_v">Maximale Fehlversuche</decimalTextBox></presentation>
+      <presentation id="Security_FailureAction"><dropdownList refId="Security_FailureAction_v">Aktion nach zu vielen Fehlversuchen</dropdownList></presentation>
+      <presentation id="Security_AuthUiProcesses"><multiTextBox refId="Security_AuthUiProcesses_v">Prozesse externer Anmeldefenster</multiTextBox></presentation>
+      <presentation id="Audit_Directory"><textBox refId="Audit_Directory_v"><label>Protokollordner</label></textBox></presentation>
+      <presentation id="Audit_NetworkDirectory"><textBox refId="Audit_NetworkDirectory_v"><label>Kopie auf Netzlaufwerk</label></textBox></presentation>
+      <presentation id="Entra_TenantId"><textBox refId="Entra_TenantId_v"><label>Mandanten-ID</label></textBox></presentation>
+      <presentation id="Entra_ClientId"><textBox refId="Entra_ClientId_v"><label>Anwendungs-ID</label></textBox></presentation>
+      <presentation id="Entra_MaxAuthAgeSeconds"><decimalTextBox refId="Entra_MaxAuthAgeSeconds_v">Maximales Alter der Anmeldung (s)</decimalTextBox></presentation>
+      <presentation id="Entra_AllowedSignInHosts"><multiTextBox refId="Entra_AllowedSignInHosts_v">Weitere Anmelde-Hosts</multiTextBox></presentation>
+      <presentation id="Entra_AllowedTenants"><multiTextBox refId="Entra_AllowedTenants_v">Weitere Mandanten</multiTextBox></presentation>
+      <presentation id="Scripts_OnLock"><textBox refId="Scripts_OnLock_v"><label>Skript beim Sperren</label></textBox></presentation>
+      <presentation id="Scripts_OnUnlock"><textBox refId="Scripts_OnUnlock_v"><label>Skript beim Entsperren</label></textBox></presentation>
+      <presentation id="Scripts_OnFailedAttempt"><textBox refId="Scripts_OnFailedAttempt_v"><label>Skript bei Fehlversuch</label></textBox></presentation>
+      <presentation id="Appearance_Masks"><multiTextBox refId="Appearance_Masks_v">Verdeckte Bereiche</multiTextBox></presentation>
+      <presentation id="Appearance_RevealProcesses"><multiTextBox refId="Appearance_RevealProcesses_v">Programme, die sichtbar bleiben</multiTextBox></presentation>
+      <presentation id="Entra_AllowedTokenScopes"><multiTextBox refId="Entra_AllowedTokenScopes_v">Zugriffstoken für Anwendungen</multiTextBox></presentation>
+      <presentation id="Entra_AuthenticationContext"><textBox refId="Entra_AuthenticationContext_v"><label>Authentifizierungskontext</label></textBox></presentation>
+      <presentation id="Entra_SignatureAuthenticationContext"><textBox refId="Entra_SignatureAuthenticationContext_v"><label>Authentifizierungskontext für Signaturen</label></textBox></presentation>
+      <!-- Rollen und Nachvollziehbarkeit (0.5.0) -->
+      <presentation id="Roles_ConfigAdmins"><multiTextBox refId="Roles_ConfigAdmins_v">Einstellungs-Administratoren</multiTextBox></presentation>
+      <presentation id="Roles_Registrars"><multiTextBox refId="Roles_Registrars_v">Registrierung von Sicherheitsschlüsseln</multiTextBox></presentation>
+      <presentation id="Roles_Auditors"><multiTextBox refId="Roles_Auditors_v">Prüfer</multiTextBox></presentation>
+      <presentation id="Unlock_BypassGroups"><multiTextBox refId="Unlock_BypassGroups_v">Gruppen mit Notfall-Anmeldung</multiTextBox></presentation>
+      <presentation id="Unlock_BypassReasonMinLength"><decimalTextBox refId="Unlock_BypassReasonMinLength_v" defaultValue="10">Mindestlänge der Notfall-Begründung</decimalTextBox></presentation>
+      <presentation id="Security_ReasonMinLength"><decimalTextBox refId="Security_ReasonMinLength_v" defaultValue="10">Mindestlänge der Begründungen</decimalTextBox></presentation>
+      <presentation id="Fido_RpId"><textBox refId="Fido_RpId_v"><label>RP ID</label></textBox></presentation>
+      <presentation id="Fido_AllowedModels"><multiTextBox refId="Fido_AllowedModels_v">Zugelassene Schlüsselmodelle</multiTextBox></presentation>
+      <presentation id="Fido_MaxKeysPerPerson"><decimalTextBox refId="Fido_MaxKeysPerPerson_v">Schlüssel je Person</decimalTextBox></presentation>
+      <presentation id="Fido_MaxFailedAttempts"><decimalTextBox refId="Fido_MaxFailedAttempts_v">Fehlversuche bis zur Sperre</decimalTextBox></presentation>
+      <presentation id="Fido_BlockMinutes"><decimalTextBox refId="Fido_BlockMinutes_v">Sperrzeit (Minuten)</decimalTextBox></presentation>
+      <presentation id="Fido_OfflineMaxHours"><decimalTextBox refId="Fido_OfflineMaxHours_v">Ohne Domänencontroller (Stunden)</decimalTextBox></presentation>
+      <presentation id="Fido_Store"><dropdownList refId="Fido_Store_v">Ablage</dropdownList></presentation>
+      <presentation id="Fido_DirectoryContainer"><textBox refId="Fido_DirectoryContainer_v"><label>Container (DN)</label></textBox></presentation>
+      <presentation id="Fido_SyncMinutes"><decimalTextBox refId="Fido_SyncMinutes_v">Minuten</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
