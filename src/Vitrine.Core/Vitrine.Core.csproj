@@ -16,7 +16,7 @@
        Paket von Microsoft (nuspec <license type="expression">MIT</license>), für net10.0 ohne weitere Abhängigkeiten;
        steht in THIRD-PARTY-NOTICES.txt. Gleiche Versionsreihe wie System.ServiceProcess.ServiceController. -->
   <ItemGroup>
-    <PackageReference Include="System.Formats.Cbor" Version="10.0.15" />
+    <PackageReference Include="System.Formats.Cbor" Version="11.0.0" />
   </ItemGroup>
 
   <!-- Lizenztexte eingebettet: die einzelne Exe zum Herunterladen hat keine Dateien daneben (richtlinien/06) -->
