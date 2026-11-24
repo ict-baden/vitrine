@@ -137,7 +137,7 @@
 
 One entry per area: monitor:x,y,width,height in percent of the monitor. Monitor 1 is the main monitor, then from left to right; * means every monitor. Example: 1:0,0,30,100 covers the left third of monitor 1. Entries that cannot be read are skipped and shown in the overview of the settings (VIT-0015).</string>
       <string id="Appearance_RevealProcesses">Programs that stay visible</string>
-      <string id="Appearance_RevealProcesses_Help">For the visual mode "Only selected programs": everything is covered except the windows of these programs (program file name, e.g. Chromeleon.exe). Windows of other programs lying on top of them stay covered.</string>
+      <string id="Appearance_RevealProcesses_Help">For the visual mode "Only selected programs": everything is covered except the windows of these programs (program file name, e.g. mes.exe). Windows of other programs lying on top of them stay covered.</string>
       <string id="Entra_AuthenticationContext">Authentication context</string>
       <string id="Entra_AuthenticationContext_Help">Conditional Access authentication context (c1 to c99) that Vitrine requests at every Microsoft Entra ID sign-in. Combined with a Conditional Access policy that targets this context, Microsoft Entra ID can require a specific authentication strength, for example passkeys (FIDO2). Empty = none. Any other value makes Vitrine refuse the Microsoft sign-in (VIT-0116) instead of signing in without it.</string>
       <string id="Entra_SignatureAuthenticationContext">Authentication context for signatures</string>

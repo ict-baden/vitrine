@@ -27,6 +27,6 @@ Wir veröffentlichen behobene Schwachstellen als GitHub Security Advisory und ne
 
 ## Unterstützte Versionen / Supported versions
 
-Sicherheitsupdates gibt es für die jeweils **neueste veröffentlichte Version**. Kunden mit Supportvertrag erhalten Sicherheitsinformationen vorab.
+Sicherheitsupdates gibt es für die **neueste veröffentlichte Version**; Kunden mit Supportvertrag zusätzlich für die vorherige Hauptversion bis zwölf Monate nach Erscheinen der Nachfolgerin. Kunden mit Supportvertrag erhalten Sicherheitsinformationen vorab.
 
-Security fixes are provided for the **latest released version**.
+Security fixes are provided for the **latest released version**; customers with a support contract also receive them for the previous major version until twelve months after its successor appears.

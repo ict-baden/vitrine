@@ -7,9 +7,10 @@
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
 
-    <!-- Firmierung: einzige Stelle für Assembly-Angaben, Info-Fenster und MSI-Manufacturer (installer/*.wixproj liest
-         $(Company)). ⚠ offen (richtlinien OFFEN.md „Firmierung“): wird „ICT-Baden GmbH“, sobald entschieden – dann hier
-         und in LICENSE ändern (ein Test prüft, dass beide übereinstimmen). -->
+    <!-- Herausgeber im Programm: einzige Stelle für Assembly-Angaben, Info-Fenster und MSI-Manufacturer
+         (installer/*.wixproj liest $(Company)). Nicht nebenbei ändern: PipeServer.IsVitrine vergleicht den Firmennamen
+         in der Versionsinfo der Exe mit diesem Wert. Die rechtliche Firmierung „ICT Baden GmbH“ steht in LICENSE
+         (ein Test hält beides fest). -->
     <Company>ICT-Baden</Company>
     <Product>Vitrine</Product>
     <Copyright>© 2026 $(Company)</Copyright>

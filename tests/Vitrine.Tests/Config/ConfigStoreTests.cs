@@ -233,11 +233,11 @@ public sealed class ConfigStoreTests : IDisposable
     {
         var store = Load(new FakePolicy("HKLM",
             ("Appearance", "Masks", new[] { "1:0,0,30,100", "kaputt", "*:70,0,30,12" }),
-            ("Appearance", "RevealProcesses", new[] { "Chromeleon.exe", "mes.exe" }),
+            ("Appearance", "RevealProcesses", new[] { "mes.exe", "lims.exe" }),
             ("Appearance", "Visual", "Windows")));
         var look = store.Current.Appearance;
         Assert.Equal(["1:0,0,30,100", "*:70,0,30,12"], look.Masks.Select(m => m.Format()));
-        Assert.Equal(["Chromeleon.exe", "mes.exe"], look.RevealProcesses);
+        Assert.Equal(["mes.exe", "lims.exe"], look.RevealProcesses);
         Assert.Equal(LockVisual.Windows, look.Visual);
         Assert.True(store.IsManaged("Appearance.Masks"));
     }

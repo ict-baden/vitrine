@@ -1002,7 +1002,7 @@
     <value>Programmes qui restent visibles</value>
   </data>
   <data name="Look_Reveal_Desc" xml:space="preserve">
-    <value>Pour « Uniquement les programmes sélectionnés » : un fichier programme par ligne, par ex. Chromeleon.exe. Les fenêtres placées au-dessus restent masquées.</value>
+    <value>Pour « Uniquement les programmes sélectionnés » : un fichier programme par ligne, par ex. mes.exe. Les fenêtres placées au-dessus restent masquées.</value>
   </data>
   <data name="Look_Masks" xml:space="preserve">
     <value>Zones masquées</value>

@@ -28,7 +28,7 @@
   for laboratories, production lines and control rooms where a process must be watched but not touched.
 </p>
 
-Vitrine is an open-source alternative for organisations that use commercial transparent screen locks. It adds sign-in with **Microsoft Entra ID**, **electronic signatures** for line-of-business applications, a **tamper-evident audit log** written and signed by a Windows service, and central management through **Group Policy or Intune**.
+Vitrine is an open-source alternative for organisations that use commercial transparent screen locks. It offers sign-in with **Microsoft Entra ID**, **electronic signatures** for line-of-business applications, a **tamper-evident audit log** written and signed by a Windows service, and central management through **Group Policy or Intune**.
 
 > [!NOTE]
 > **Deutsch:** Vitrine ist eine durchsichtige Bildschirmsperre für Windows: Entsperren mit eigenem FIDO2-Schlüssel, Windows Hello oder Kennwort, elektronische Signaturen mit Microsoft Entra ID. Tastatur und Maus sind gesperrt, alle Programme bleiben sichtbar und laufen weiter – für Labore, Produktion und Leitstände. Dazu elektronische Signaturen für Fachanwendungen, ein manipulationserkennendes Protokoll und Verwaltung per Gruppenrichtlinie oder Intune. Download: [aktuelle Version](https://github.com/ict-baden/vitrine/releases/latest) (MSI oder Einzeldatei). Die Oberfläche gibt es auf Deutsch, Englisch, Spanisch, Französisch und Chinesisch (Spanisch, Französisch und Chinesisch maschinell übersetzt); diese Dokumentation ist englisch.
@@ -98,8 +98,8 @@ Vitrine is an open-source alternative for organisations that use commercial tran
     <td width="50%" valign="top"><b>Who may unlock?</b><br>The signed-in person, administrators, groups (also Entra app roles), single accounts, or any valid account – combinable and restrictable to domains</td>
   </tr>
   <tr>
-    <td valign="top"><b>Watchdog</b><br>If Vitrine is ended or crashes while locked, a watchdog process locks Windows</td>
-    <td valign="top"><b>Ctrl + Alt + Del restricted</b><br>Task Manager, Sign out and Change a password are hidden while locked</td>
+    <td valign="top"><b>Service and watchdog</b><br>If Vitrine ends or hangs while locked, the service disconnects the session and restarts Vitrine locked; without the service a watchdog locks Windows</td>
+    <td valign="top"><b>Ctrl + Alt + Del restricted</b><br>Task Manager, Sign out, Change a password, the power button and Lock are hidden while locked</td>
   </tr>
   <tr>
     <td valign="top"><b>Managed centrally</b><br>ADMX/ADML (English and German) with 76 policies for Group Policy and Intune; values set by policy are locked in the settings</td>
@@ -144,7 +144,7 @@ Vitrine is an open-source alternative for organisations that use commercial tran
 | [SHA256SUMS.txt](https://github.com/ict-baden/vitrine/releases/download/latest/SHA256SUMS.txt) | Checksums of all files. |
 
 > [!IMPORTANT]
-> **Not code-signed yet.** Until code signing is set up for ICT-Baden, Windows SmartScreen warns when you start `Vitrine.exe` or the MSI. Check the download against `SHA256SUMS.txt` first: [Installation › Verifying the download](docs/installation.md#verifying-the-download).
+> **Not code-signed yet.** Until code signing is set up for ICT Baden, Windows SmartScreen warns when you start `Vitrine.exe` or the MSI. Check the download against `SHA256SUMS.txt` first: [Installation › Verifying the download](docs/installation.md#verifying-the-download).
 
 **② Start and lock** – After the MSI install, the service starts Vitrine at once in every signed-in session (with `SERVICE=0`: at the next sign-in, or now from the Start menu). Press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> or click the tray icon. Without further setup, the unlock dialog offers the Windows password and, where set up, Windows Hello. For Microsoft Entra ID (unlocking, e-signatures and administrator confirmation), register an app in Entra ID: **[Entra ID setup →](docs/entra-id.md)**
 
@@ -215,8 +215,8 @@ Everything else: **[Limitations →](docs/limitations.md)**
 ---
 
 <sub>
-Vitrine is free and open source software by <b>ICT-Baden</b>. &nbsp;·&nbsp;
-This software sends no data to ICT-Baden. &nbsp;·&nbsp;
+Vitrine is free and open source software by <b>ICT Baden</b>. &nbsp;·&nbsp;
+This software sends no data to ICT Baden. &nbsp;·&nbsp;
 Licence: <a href="LICENSE">MIT</a> &nbsp;·&nbsp;
 Third-party licences: <a href="THIRD-PARTY-NOTICES.txt">THIRD-PARTY-NOTICES.txt</a> &nbsp;·&nbsp;
 Support: free via GitHub, guaranteed with a <a href="SUPPORT.md">support contract</a> &nbsp;·&nbsp;

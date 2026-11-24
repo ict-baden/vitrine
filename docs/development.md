@@ -91,7 +91,7 @@ The publish output contains `Vitrine.exe`, `msalruntime.dll` (not in the single 
 | `release` | `windows-latest`, after `windows` **and** `msi-test` | checks `SHA256SUMS.txt` against the packages and publishes the release; for pull requests it stops after the check |
 
 Windows minutes are expensive, so pushes and pull requests build only `portable`; `windows`, `msi-test` and `release`
-run only in a full build (ICT-Baden guideline 04, "Wann die CI baut"). Changes to documentation only (`**.md`,
+run only in a full build (ICT Baden guideline 04, "Wann die CI baut"). Changes to documentation only (`**.md`,
 `docs/**`, `LICENSE`, issue templates) start nothing.
 
 | Trigger | Builds | Version | Files | Result |

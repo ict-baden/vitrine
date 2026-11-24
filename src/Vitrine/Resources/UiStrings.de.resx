@@ -1001,7 +1001,7 @@
     <value>Programme, die sichtbar bleiben</value>
   </data>
   <data name="Look_Reveal_Desc" xml:space="preserve">
-    <value>Für „Nur ausgewählte Programme“: eine Programmdatei pro Zeile, z. B. Chromeleon.exe. Fenster, die darüber liegen, bleiben verdeckt.</value>
+    <value>Für „Nur ausgewählte Programme“: eine Programmdatei pro Zeile, z. B. mes.exe. Fenster, die darüber liegen, bleiben verdeckt.</value>
   </data>
   <data name="Look_Masks" xml:space="preserve">
     <value>Verdeckte Bereiche</value>

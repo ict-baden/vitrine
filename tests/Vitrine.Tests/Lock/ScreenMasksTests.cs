@@ -117,14 +117,14 @@ public sealed class ScreenMasksTests
     }
 
     [Theory]
-    [InlineData(@"C:\Program Files\Lab\Chromeleon.exe", true)]
-    [InlineData("chromeleon.EXE", true)]
-    [InlineData("Chromeleon", true)]
+    [InlineData(@"C:\Program Files\Lab\mes.exe", true)]
+    [InlineData("mes.EXE", true)]
+    [InlineData("Mes", true)]
     [InlineData("outlook.exe", false)]
     [InlineData(null, false)]
     [InlineData("", false)]
     public void Programm_erkennen(string? image, bool expected) =>
-        Assert.Equal(expected, ScreenMasks.IsRevealed(image, ["Chromeleon.exe", " ", "mes"]));
+        Assert.Equal(expected, ScreenMasks.IsRevealed(image, ["mes.exe", " ", "lims"]));
 
     [Fact]
     public void Rechteck_abziehen()

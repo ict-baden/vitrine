@@ -1001,7 +1001,7 @@
     <value>Programs that stay visible</value>
   </data>
   <data name="Look_Reveal_Desc" xml:space="preserve">
-    <value>For “Only selected programs”: one program file per line, e.g. Chromeleon.exe. Windows lying on top of them stay covered.</value>
+    <value>For “Only selected programs”: one program file per line, e.g. mes.exe. Windows lying on top of them stay covered.</value>
   </data>
   <data name="Look_Masks" xml:space="preserve">
     <value>Covered areas</value>

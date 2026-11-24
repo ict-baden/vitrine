@@ -305,7 +305,7 @@ Other sign-in methods instead of the interface? See [Plugins](plugins.md).
 ## Change in 0.1.0: new pipe name
 
 Builds before 0.1.0 used `\\.\pipe\Vitrine-<session>`. Since 0.1.0 the name is `\\.\pipe\ICT-Baden.Vitrine.<session>`
-(naming guideline of ICT-Baden). **Clients built for the old name cannot connect any more** and must be updated. Error
+(naming guideline of ICT Baden). **Clients built for the old name cannot connect any more** and must be updated. Error
 responses now carry a `code`, and their texts are English (previously German).
 
 ---

@@ -4,6 +4,13 @@ Alle wichtigen Änderungen an Vitrine. Format nach [Keep a Changelog](https://ke
 
 ## [Unveröffentlicht]
 
+### Geändert
+- **Beispiel für „Nur ausgewählte Programme“:** Hilfetext in den Einstellungen (alle fünf Sprachen), Erklärtext der Richtlinie „Programme, die sichtbar bleiben“ (ADML, Englisch und Deutsch) und Dokumentation nennen als Beispiel `mes.exe` statt des Namens eines fremden Produkts. Am Verhalten ändert sich nichts; die beiden Bildschirmfotos der Einstellungsseite „Darstellung“ (`docs/assets/screenshots/settings-look-*.png`) zeigen den alten Text, bis sie neu erzeugt werden.
+- **Firmierung:** `LICENSE` nennt „ICT Baden GmbH“; README, [SUPPORT.md](SUPPORT.md) und der Fließtext der Dokumentation schreiben „ICT Baden“ ohne Bindestrich. Technische Kennungen bleiben unverändert (Dienst „ICT-Baden Vitrine“, Ordner, Registry, Pipes), ebenso der Herausgeber im Programm (Info-Fenster, Versionsinfo, MSI-Hersteller).
+- **Unterstützte Versionen** ([SECURITY.md](SECURITY.md)): Sicherheitsupdates für die neueste veröffentlichte Version; Kunden mit Supportvertrag zusätzlich für die vorherige Hauptversion bis zwölf Monate nach Erscheinen der Nachfolgerin – wie auf [ict-baden.de/sicherheit](https://ict-baden.de/sicherheit/).
+- **README:** Die Einleitung sagt „It offers …“ statt „It adds …“; die Kurzübersicht beschreibt den Stand mit Dienst (Dienst trennt die Sitzung und startet Vitrine gesperrt neu, ohne Dienst der Wächter) und nennt alle im Strg+Alt+Entf-Bildschirm ausgeblendeten Einträge.
+- **[Grenzen](docs/limitations.md):** Die Liste der offenen Punkte nennt nur noch, was offen ist (Codesignatur, externer Penetrationstest); die erledigten Repository-Einstellungen sind gestrichen.
+
 ## [0.5.1] – 2026-11-12
 
 Am Programm ändert sich gegenüber 0.5.0 nur eine aktualisierte Bibliothek (siehe „Sicherheit“). Die Dokumentation führt Vitrine nicht mehr als Vorabversion; die Grenzen – noch nicht signiert, noch nicht auf echten Geräten durchgetestet – gelten unverändert. Die Versionsnummer steigt auf 0.5.1, damit Installationen früherer 0.5.0-Builds sauber aktualisiert werden.

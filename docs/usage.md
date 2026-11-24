@@ -95,7 +95,7 @@ and *Programs that stay visible*):
   monitor (`monitor:x,y,width,height`, `*` = every monitor), so they stay in place when the resolution changes. Monitor 1
   is the main monitor, then from left to right. Areas apply in the transparent mode and with *Only selected programs*.
 - **Only selected programs** (`Appearance.Visual = Windows`): everything is covered except the windows of the programs
-  in `Appearance.RevealProcesses` (program file name, e.g. `Chromeleon.exe`). The visible part follows the window when
+  in `Appearance.RevealProcesses` (program file name, e.g. `mes.exe`). The visible part follows the window when
   it is moved or resized (checked about three times per second). A window of another program lying on top of it stays
   covered, and so do the taskbar and minimised windows.
 

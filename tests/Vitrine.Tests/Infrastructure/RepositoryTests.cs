@@ -18,13 +18,16 @@ public sealed class RepositoryTests
     }
 
     [Fact]
-    public void Firmierung_steht_an_einer_Stelle_und_LICENSE_stimmt_ueberein()
+    public void Herausgeber_steht_an_einer_Stelle_und_LICENSE_nennt_die_Firmierung()
     {
         var props = XDocument.Load(Path.Combine(RepoPaths.Root, "Directory.Build.props"));
-        var company = props.Descendants("Company").Single().Value;
+        // Herausgeber im Programm (Versionsinfo der Exe, Info-Fenster, MSI-Hersteller). PipeServer.IsVitrine vergleicht
+        // den Firmennamen der Datei damit – deshalb nur mit einem Release und CHANGELOG-Eintrag ändern.
+        Assert.Equal("ICT-Baden", props.Descendants("Company").Single().Value);
+        // Rechtliche Firmierung in der Lizenz
         var license = File.ReadAllText(Path.Combine(RepoPaths.Root, "LICENSE"));
         Assert.StartsWith("MIT License", license);
-        Assert.Contains($"Copyright (c) 2026 {company}\n", license.Replace("\r\n", "\n"));
+        Assert.Contains("Copyright (c) 2026 ICT Baden GmbH\n", license.Replace("\r\n", "\n"));
         // MSI und App lesen die Firmierung aus Directory.Build.props
         Assert.Contains("Manufacturer=\"$(Manufacturer)\"", File.ReadAllText(Path.Combine(RepoPaths.Root, "installer/Package.wxs")));
         Assert.Contains("Manufacturer=$(Company)", File.ReadAllText(Path.Combine(RepoPaths.Root, "installer/Vitrine.Installer.wixproj")));

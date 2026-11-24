@@ -11,7 +11,7 @@ What Vitrine stores where, which personal data is in it, which connections are m
 
 ## In short
 
-- **Vitrine sends no data to ICT-Baden.** No telemetry, no crash reports, no usage statistics, no update check. The
+- **Vitrine sends no data to ICT Baden.** No telemetry, no crash reports, no usage statistics, no update check. The
   About window says so: "This software sends no data to ICT-Baden."
 - **Microsoft Entra ID sign-ins go to Microsoft.** When someone chooses *Continue with Microsoft* (or *Test sign-in*),
   MSAL shows Microsoft's sign-in page in Vitrine's own sign-in window (Microsoft Edge WebView2), which talks to
@@ -24,7 +24,7 @@ What Vitrine stores where, which personal data is in it, which connections are m
   ([details](#data-passed-to-local-applications)).
 - **The audit log contains personal data:** who locked and unlocked when, who failed to sign in, who signed what.
 - **The operator is responsible for the data** – the organisation that runs Vitrine is the controller in the sense of
-  the GDPR. ICT-Baden processes none of it through the software.
+  the GDPR. ICT Baden processes none of it through the software.
 - **Vitrine never deletes audit logs.** Retention is up to the operator.
 
 ## Files on the computer
@@ -123,7 +123,7 @@ disappears while locked, disconnects that session (Windows sign-in screen). It o
 
 ## Network connections
 
-**Vitrine itself** opens no connection to ICT-Baden or any other service of its own. There is no telemetry, no crash
+**Vitrine itself** opens no connection to ICT Baden or any other service of its own. There is no telemetry, no crash
 reporting and no update check. All other connections come from features you set up:
 
 | Connection | When | To where |
@@ -203,10 +203,10 @@ false` leaves out the `Locked` entries; unlocks, failed attempts and signatures 
 ## Who is responsible
 
 The operator – the organisation that installs and configures Vitrine – is the controller of the data in configuration
-files, audit logs, event log entries and network copies; ICT-Baden receives none of it through the software. When
-ICT-Baden processes such data on the operator's behalf, for example audit logs sent in for support, this needs a data
+files, audit logs, event log entries and network copies; ICT Baden receives none of it through the software. When
+ICT Baden processes such data on the operator's behalf, for example audit logs sent in for support, this needs a data
 processing agreement as part of the support contract. Free support on GitHub is public: do not attach audit logs or
-real names ([SUPPORT.md](../SUPPORT.md)). Security issues: [SECURITY.md](../SECURITY.md). Privacy notice of ICT-Baden for
+real names ([SUPPORT.md](../SUPPORT.md)). Security issues: [SECURITY.md](../SECURITY.md). Privacy notice of ICT Baden for
 Vitrine: [ict-baden.de/datenschutz/vitrine](https://ict-baden.de/datenschutz/vitrine/) · legal notice:
 [ict-baden.de/impressum](https://ict-baden.de/impressum/).
 

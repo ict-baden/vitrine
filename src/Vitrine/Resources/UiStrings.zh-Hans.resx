@@ -1002,7 +1002,7 @@
     <value>保持可见的程序</value>
   </data>
   <data name="Look_Reveal_Desc" xml:space="preserve">
-    <value>用于“仅显示所选程序”：每行一个程序文件，例如 Chromeleon.exe。位于其上方的窗口仍被遮盖。</value>
+    <value>用于“仅显示所选程序”：每行一个程序文件，例如 mes.exe。位于其上方的窗口仍被遮盖。</value>
   </data>
   <data name="Look_Masks" xml:space="preserve">
     <value>遮盖区域</value>

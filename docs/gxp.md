@@ -12,7 +12,7 @@ an audit trail and electronic signatures with a meaning. It does **not** make a 
 ## What Vitrine is not
 
 > [!CAUTION]
-> Vitrine is **not a validated product**, and ICT-Baden makes **no claim** that using it meets 21 CFR Part 11, EU GMP
+> Vitrine is **not a validated product**, and ICT Baden makes **no claim** that using it meets 21 CFR Part 11, EU GMP
 > Annex 11 or any other regulation. Validation (computerised system validation, IQ/OQ/PQ), the risk assessment and the
 > procedures around it are the responsibility of the operator. Version 0.5.1 has not yet been tested on real devices
 > with real tenants ([Limitations](limitations.md)). Code and log format are kept simple so that a validation is
