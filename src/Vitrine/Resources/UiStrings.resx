@@ -26,7 +26,7 @@
     <value>{0} · free and open source software under the MIT licence</value>
   </data>
   <data name="About_NoData" xml:space="preserve">
-    <value>This software sends no data to ICT-Baden.</value>
+    <value>This software sends no data to ICT Baden.</value>
   </data>
   <data name="About_NoData_Desc" xml:space="preserve">
     <value>Microsoft Entra ID sign-ins go directly to Microsoft. Details in “Data and privacy”.</value>

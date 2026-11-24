@@ -321,15 +321,15 @@ Where the settings are stored and how layers and policies combine: [Settings](se
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/about-dark.png">
-        <img alt="About Vitrine: version and build, “A tool by ICT-Baden”, Licence with Show licence, Third-party licences with Show, “This software sends no data to ICT-Baden.” with Data and privacy, Language, Help & support with the links Source code, Website, Legal notice (Impressum) and Data and privacy." src="assets/screenshots/about-light.png" width="448">
+        <img alt="About Vitrine: version and build, “A tool by ICT Baden GmbH”, Licence with Show licence, Third-party licences with Show, “This software sends no data to ICT Baden.” with Data and privacy, Language, Help & support with the links Source code, Website, Legal notice (Impressum) and Data and privacy." src="assets/screenshots/about-light.png" width="448">
       </picture>
     </td>
     <td width="50%" valign="top">
       The window <b>About Vitrine</b> is open to every user, without administrator rights: tray menu <i>About Vitrine</i>, flyout tile <i>About</i>, or Settings › About › <i>Open</i>. It shows:<br><br>
       • version, build (commit) and .NET version<br>
-      • © ICT-Baden, <i>Licence</i> (MIT) with <i>Show licence</i><br>
+      • © ICT Baden GmbH, <i>Licence</i> (MIT) with <i>Show licence</i><br>
       • <i>Third-party licences</i> with <i>Show</i><br>
-      • <i>This software sends no data to ICT-Baden.</i> with <i>Data and privacy</i><br>
+      • <i>This software sends no data to ICT Baden.</i> with <i>Data and privacy</i><br>
       • <i>Language</i><br>
       • <i>Help & support</i>, <i>Source code</i>, <i>Website</i>, <i>Legal notice (Impressum)</i>, <i>Data and privacy</i> – they open in the default browser
     </td>

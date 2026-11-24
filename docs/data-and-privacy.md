@@ -12,7 +12,7 @@ What Vitrine stores where, which personal data is in it, which connections are m
 ## In short
 
 - **Vitrine sends no data to ICT Baden.** No telemetry, no crash reports, no usage statistics, no update check. The
-  About window says so: "This software sends no data to ICT-Baden."
+  About window says so: "This software sends no data to ICT Baden."
 - **Microsoft Entra ID sign-ins go to Microsoft.** When someone chooses *Continue with Microsoft* (or *Test sign-in*),
   MSAL shows Microsoft's sign-in page in Vitrine's own sign-in window (Microsoft Edge WebView2), which talks to
   Microsoft's sign-in service; with `Entra.UseBroker = true` the Windows account broker does this instead. The sign-in

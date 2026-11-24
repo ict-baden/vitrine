@@ -27,7 +27,7 @@
     <value>{0} · logiciel libre et open source sous licence MIT</value>
   </data>
   <data name="About_NoData" xml:space="preserve">
-    <value>Ce logiciel n'envoie aucune donnée à ICT-Baden.</value>
+    <value>Ce logiciel n'envoie aucune donnée à ICT Baden.</value>
   </data>
   <data name="About_NoData_Desc" xml:space="preserve">
     <value>Les connexions Microsoft Entra ID sont transmises directement à Microsoft. Détails dans « Données et confidentialité ».</value>

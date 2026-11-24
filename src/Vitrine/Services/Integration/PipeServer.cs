@@ -256,7 +256,7 @@ public sealed class PipeServer : IDisposable
         {
             if (string.Equals(Path.GetFullPath(serverPath), Path.GetFullPath(self), StringComparison.OrdinalIgnoreCase)) return true;
             var info = System.Diagnostics.FileVersionInfo.GetVersionInfo(serverPath);
-            return info.ProductName == Core.About.AppInfo.Name && info.CompanyName == Core.About.AppInfo.Publisher;
+            return info.ProductName == Core.About.AppInfo.Name && Core.About.AppInfo.IsOwnPublisher(info.CompanyName);
         }
         catch (Exception ex) when (ex is IOException or ArgumentException or UnauthorizedAccessException) { return false; }
     }

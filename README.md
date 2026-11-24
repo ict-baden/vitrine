@@ -123,7 +123,7 @@ Vitrine is an open-source alternative for organisations that use commercial tran
     <td width="50%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/assets/screenshots/about-dark.png">
-        <img alt="About Vitrine: version and build, licence, third-party licences, “This software sends no data to ICT-Baden.”, language choice and links." src="docs/assets/screenshots/about-light.png" width="448">
+        <img alt="About Vitrine: version and build, licence, third-party licences, “This software sends no data to ICT Baden.”, language choice and links." src="docs/assets/screenshots/about-light.png" width="448">
       </picture>
       <br><sub><b>About Vitrine</b> – for every user, without administrator rights: version, licences, language, links</sub>
     </td>

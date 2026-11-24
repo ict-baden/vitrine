@@ -27,7 +27,7 @@
     <value>{0} · 基于 MIT 许可证的自由开源软件</value>
   </data>
   <data name="About_NoData" xml:space="preserve">
-    <value>此软件不会向 ICT-Baden 发送任何数据。</value>
+    <value>此软件不会向 ICT Baden 发送任何数据。</value>
   </data>
   <data name="About_NoData_Desc" xml:space="preserve">
     <value>Microsoft Entra ID 登录直接发送至 Microsoft。详细信息请参阅“数据和隐私”。</value>

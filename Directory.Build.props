@@ -1,5 +1,5 @@
 <Project>
-  <!-- Gemeinsame Einstellungen für alle Projekte im Repo (Vorlage aus ict-baden/richtlinien) -->
+  <!-- Gemeinsame Einstellungen für alle Projekte im Repo -->
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -7,14 +7,13 @@
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
 
-    <!-- Herausgeber im Programm: einzige Stelle für Assembly-Angaben, Info-Fenster und MSI-Manufacturer
-         (installer/*.wixproj liest $(Company)). Nicht nebenbei ändern: PipeServer.IsVitrine vergleicht den Firmennamen
-         in der Versionsinfo der Exe mit diesem Wert. Die rechtliche Firmierung „ICT Baden GmbH“ steht in LICENSE
-         (ein Test hält beides fest). -->
-    <Company>ICT-Baden</Company>
+    <!-- Firmierung: einzige Stelle für Assembly-Angaben, Info-Fenster und MSI-Manufacturer (installer/*.wixproj liest
+         $(Company)); dieselbe Angabe steht in LICENSE (ein Test prüft, dass beide übereinstimmen). Technische
+         Kennungen (Dienst, Ordner, Registry, Pipes) hängen nicht daran, sondern an AppPaths.Vendor. -->
+    <Company>ICT Baden GmbH</Company>
     <Product>Vitrine</Product>
     <Copyright>© 2026 $(Company)</Copyright>
-    <!-- *Strings.resx ist Englisch und Rückfallsprache, siehe richtlinien/13 -->
+    <!-- *Strings.resx ist Englisch und Rückfallsprache -->
     <NeutralLanguage>en</NeutralLanguage>
     <!-- Nur unsere fünf Sprachen mitliefern (eigene und fremde Pakete) -->
     <SatelliteResourceLanguages>en;de;es;fr;zh-Hans</SatelliteResourceLanguages>

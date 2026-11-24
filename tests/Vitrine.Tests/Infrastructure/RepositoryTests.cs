@@ -18,21 +18,30 @@ public sealed class RepositoryTests
     }
 
     [Fact]
-    public void Herausgeber_steht_an_einer_Stelle_und_LICENSE_nennt_die_Firmierung()
+    public void Firmierung_steht_an_einer_Stelle_und_LICENSE_stimmt_ueberein()
     {
         var props = XDocument.Load(Path.Combine(RepoPaths.Root, "Directory.Build.props"));
-        // Herausgeber im Programm (Versionsinfo der Exe, Info-Fenster, MSI-Hersteller). PipeServer.IsVitrine vergleicht
-        // den Firmennamen der Datei damit – deshalb nur mit einem Release und CHANGELOG-Eintrag ändern.
-        Assert.Equal("ICT-Baden", props.Descendants("Company").Single().Value);
-        // Rechtliche Firmierung in der Lizenz
+        var company = props.Descendants("Company").Single().Value;
+        Assert.Equal("ICT Baden GmbH", company);
+        Assert.Equal(company, AppInfo.Publisher);
         var license = File.ReadAllText(Path.Combine(RepoPaths.Root, "LICENSE"));
         Assert.StartsWith("MIT License", license);
-        Assert.Contains("Copyright (c) 2026 ICT Baden GmbH\n", license.Replace("\r\n", "\n"));
+        Assert.Contains($"Copyright (c) 2026 {company}\n", license.Replace("\r\n", "\n"));
         // MSI und App lesen die Firmierung aus Directory.Build.props
         Assert.Contains("Manufacturer=\"$(Manufacturer)\"", File.ReadAllText(Path.Combine(RepoPaths.Root, "installer/Package.wxs")));
         Assert.Contains("Manufacturer=$(Company)", File.ReadAllText(Path.Combine(RepoPaths.Root, "installer/Vitrine.Installer.wixproj")));
         Assert.DoesNotContain("<Company>", File.ReadAllText(Path.Combine(RepoPaths.Root, "src/Vitrine/Vitrine.csproj")));
     }
+
+    [Theory]
+    [InlineData("ICT Baden GmbH", true)]
+    [InlineData("ICT-Baden", true)] // Versionsinfo der Builds bis 0.5.1
+    [InlineData("ICT Baden", false)]
+    [InlineData("Contoso", false)]
+    [InlineData("", false)]
+    [InlineData(null, false)]
+    public void Herausgeber_erkennt_auch_Builds_mit_der_frueheren_Angabe(string? company, bool expected) =>
+        Assert.Equal(expected, AppInfo.IsOwnPublisher(company));
 
     [Fact]
     public void Bilder_aus_README_und_Doku_gibt_es()
