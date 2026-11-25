@@ -29,7 +29,10 @@ public static class AppInfo
     /// </summary>
     public const string WebsiteUrl = "https://ict-baden.de/produkte/vitrine/";
 
-    private const string FallbackPublisher = "ICT-Baden";
+    private const string FallbackPublisher = "ICT Baden GmbH";
+
+    /// <summary>Herausgeber in der Versionsinfo früherer Builds (bis 0.5.1), siehe <see cref="IsOwnPublisher"/>.</summary>
+    private const string LegacyPublisher = "ICT-Baden";
 
     private static readonly Assembly Self = typeof(AppInfo).Assembly;
 
@@ -46,7 +49,14 @@ public static class AppInfo
     public static string Publisher { get; } =
         Self.GetCustomAttribute<AssemblyCompanyAttribute>()?.Company is { Length: > 0 } company && company != Name ? company : FallbackPublisher;
 
-    /// <summary>„© 2026 ICT-Baden“ (AssemblyCopyright).</summary>
+    /// <summary>
+    /// Ist der Firmenname aus der Versionsinfo einer Datei unserer? Gilt für die heutige Angabe und für die früherer
+    /// Builds – sonst erkennte Vitrine nach dem Wechsel der Firmierung eine ältere Kopie (z. B. als .scr) nicht mehr.
+    /// </summary>
+    public static bool IsOwnPublisher(string? company) =>
+        company is { Length: > 0 } && (company == Publisher || company == LegacyPublisher);
+
+    /// <summary>„© 2026 ICT Baden GmbH“ (AssemblyCopyright).</summary>
     public static string Copyright { get; } =
         Self.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright is { Length: > 0 } copyright ? copyright : $"© 2026 {Publisher}";
 

@@ -233,7 +233,6 @@ Still open (see [THIRD-PARTY-NOTICES.txt](../THIRD-PARTY-NOTICES.txt)):
 - **`msalruntime.dll`** (NuGet `Microsoft.Identity.Client.NativeInterop`, needed for the Windows account broker) ships in version **0.20.4, the last one under the MIT licence**; from 0.20.6 on, Microsoft's licence terms do not permit redistribution. Vitrine therefore stays on MSAL.NET 4.84.1 until Microsoft answers [the question about the licence change](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/6118); fixes in newer MSAL or MSAL runtime versions do not reach Vitrine meanwhile (none of the MSAL.NET fixes up to 4.91.1 applies to how Vitrine uses MSAL; the runtime's changes are not published). The CI checks version, licence and checksum ([Entra ID](entra-id.md#windows-account-broker-wam-and-microsoft-licence-terms)). The runtime is closed source; what it sends was checked statically only ([Data and privacy](data-and-privacy.md#what-the-msal-runtime-sends)).
 - **`WebView2Loader.dll`** and the WebView2 SDK assemblies (NuGet `Microsoft.Web.WebView2` 1.0.4258.31) ship for the sign-in window under the package's BSD-style licence (checked from the package; the CI checks version, licence text and checksum).
 - **`Microsoft.Windows.SDK.NET.dll`** (Windows SDK licence) ships because Windows Hello uses a WinRT API – a documented exception to the company guideline.
-- The product name **Vitrine** and the description of Vitrine as an alternative to other transparent screen locks need a trademark check.
 
 ## Test status
 
@@ -312,6 +311,5 @@ releases wait for that test. That is still not a test on a real device. **Open, 
 - Functional test on real devices: clean Windows 10 1809 and Windows 11, standard user, update and uninstall while
   locked, sleep and hibernate, RDP and fast user switching – checklist in [Installation](installation.md#tested-so-far--still-to-test-on-real-devices).
 - Review of Spanish, French and Chinese by native speakers (all three are machine pre-translated).
-- Legal: trademark check of the name, company name. `msalruntime.dll` ships in the MIT version 0.20.4; newer versions only after a licence check.
-- Code signing account, repository settings for the public release (description, topics, Dependabot, secret scanning,
-  private vulnerability reporting, labels), external penetration test.
+- Legal: `msalruntime.dll` ships in the MIT version 0.20.4; newer versions only after a licence check.
+- Code signing and an external penetration test.

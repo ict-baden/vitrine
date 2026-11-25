@@ -138,7 +138,7 @@ Column **Policy** = name in the English ADMX template (category as the section).
 | `Appearance.HideCursor` | boolean | `false` | Hide cursor | Hide the mouse pointer while locked |
 | `Appearance.ShowClock` | boolean | `true` | – | *Clock on the covered screen* |
 | `Appearance.Masks` | list | empty | Covered areas | Areas covered while locked: `monitor:x,y,width,height` in percent, `*` = every monitor (e.g. `1:0,0,30,100`). [Usage](usage.md#covered-areas-and-selected-programs) |
-| `Appearance.RevealProcesses` | list | empty | Programs that stay visible | Program files (e.g. `Chromeleon.exe`) whose windows stay visible with `Visual = Windows` |
+| `Appearance.RevealProcesses` | list | empty | Programs that stay visible | Program files (e.g. `mes.exe`) whose windows stay visible with `Visual = Windows` |
 | `Appearance.Language` | text | empty | Language of the user interface | `en`, `de`, `es`, `fr`, `zh-Hans`; empty = Windows language. See [Language](#language) |
 
 ### Security – category *Security*

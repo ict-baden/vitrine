@@ -12,7 +12,7 @@ namespace Vitrine.UI;
 
 /// <summary>
 /// Info-Fenster (richtlinien/07): Version und Build, Copyright und Lizenz, Drittanbieter-Lizenzen, „Diese Software sendet
-/// keine Daten an ICT-Baden.“, Links zu Webseite, Impressum, Datenschutz, Quellcode, Hilfe &amp; Support. Für jeden
+/// keine Daten an ICT Baden.“, Links zu Webseite, Impressum, Datenschutz, Quellcode, Hilfe &amp; Support. Für jeden
 /// Benutzer ohne Adminrechte erreichbar (Infobereich); hier wählt jeder auch seine Sprache (richtlinien/13 Punkt 8).
 /// </summary>
 public partial class AboutWindow : Window, IThemedWindow

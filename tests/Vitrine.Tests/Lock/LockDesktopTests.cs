@@ -494,7 +494,7 @@ public sealed class DesktopPreviewTests
         Assert.Equal(PreviewContent.None, DesktopPreview.ContentFor(DesktopMode(), new AppearanceSettings { Visual = LockVisual.Blank }));
         Assert.Equal(PreviewContent.None, DesktopPreview.ContentFor(DesktopMode(), new AppearanceSettings { Visual = LockVisual.Windows }));
         Assert.Equal(PreviewContent.RevealedWindows, DesktopPreview.ContentFor(DesktopMode(),
-            new AppearanceSettings { Visual = LockVisual.Windows, RevealProcesses = ["Chromeleon.exe"] }));
+            new AppearanceSettings { Visual = LockVisual.Windows, RevealProcesses = ["mes.exe"] }));
     }
 
     [Fact]

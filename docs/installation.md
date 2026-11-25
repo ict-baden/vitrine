@@ -7,7 +7,7 @@ Which file to download, how to check it, how to roll it out, and what changes wh
 **Contents:** [Requirements](#requirements) · [Downloads](#downloads) · [Verifying the download](#verifying-the-download) · [MSI installer](#msi-installer) · [Script installation](#script-installation-installps1) · [Folder permissions](#folder-permissions) · [Deploying with Intune or Group Policy](#deploying-with-intune-or-group-policy) · [ADMX templates](#admx-templates-for-group-policy-and-intune) · [Single exe](#single-exe-without-installation) · [Autostart](#autostart) · [Upgrading from earlier builds](#upgrading-from-earlier-builds-100-and-older) · [Pitfalls](#pitfalls-for-administrators) · [Test checklist](#tested-so-far--still-to-test-on-real-devices)
 
 > [!IMPORTANT]
-> **Not code-signed yet, not yet tested on real devices.** Vitrine 0.5.1 is built and unit-tested in GitHub Actions (the Windows build nightly when `main` changed), but it has not been tested end to end on real devices yet – see the [checklist](#tested-so-far--still-to-test-on-real-devices). Program and MSI are signed as soon as code signing is set up for ICT-Baden; until then Windows SmartScreen warns when you start them. Check the files against `SHA256SUMS.txt` – see [Verifying the download](#verifying-the-download).
+> **Not code-signed yet, not yet tested on real devices.** Vitrine 0.5.1 is built and unit-tested in GitHub Actions (the Windows build nightly when `main` changed), but it has not been tested end to end on real devices yet – see the [checklist](#tested-so-far--still-to-test-on-real-devices). Program and MSI are signed as soon as code signing is set up for ICT Baden; until then Windows SmartScreen warns when you start them. Check the files against `SHA256SUMS.txt` – see [Verifying the download](#verifying-the-download).
 
 ## Requirements
 
@@ -295,7 +295,7 @@ With `SERVICE=0` (MSI) or `-NoService` (script), MSI and script set up the autos
 
 ## Upgrading from earlier builds (1.0.0 and older)
 
-Builds up to October 2026 carried the version **1.0.0** (CI builds `1.0.0-ci.N`), were published under a different repository and stored everything under the name *Vitrine* without a vendor prefix. Version 0.1.0 is the first build under ICT-Baden. It moved paths and identifiers to the ICT-Baden naming scheme and set the version back to 0.x because it has not been tested on real devices yet. Most old locations are still **read**, so a device keeps working – but some changes need action.
+Builds up to October 2026 carried the version **1.0.0** (CI builds `1.0.0-ci.N`), were published under a different repository and stored everything under the name *Vitrine* without a vendor prefix. Version 0.1.0 is the first build under ICT Baden. It moved paths and identifiers to the ICT Baden naming scheme and set the version back to 0.x because it has not been tested on real devices yet. Most old locations are still **read**, so a device keeps working – but some changes need action.
 
 | Area | Before (≤ 1.0.0) | Now (0.1.0) | What Vitrine does | What you need to do |
 |---|---|---|---|---|

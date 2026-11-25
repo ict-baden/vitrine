@@ -27,7 +27,7 @@
     <value>{0} · software libre y de código abierto bajo la licencia MIT</value>
   </data>
   <data name="About_NoData" xml:space="preserve">
-    <value>Este software no envía datos a ICT-Baden.</value>
+    <value>Este software no envía datos a ICT Baden.</value>
   </data>
   <data name="About_NoData_Desc" xml:space="preserve">
     <value>Los inicios de sesión con Microsoft Entra ID van directamente a Microsoft. Detalles en «Datos y privacidad».</value>
@@ -1002,7 +1002,7 @@
     <value>Programas que siguen visibles</value>
   </data>
   <data name="Look_Reveal_Desc" xml:space="preserve">
-    <value>Para «Solo programas seleccionados»: un archivo de programa por línea, p. ej., Chromeleon.exe. Las ventanas que queden encima de ellas siguen cubiertas.</value>
+    <value>Para «Solo programas seleccionados»: un archivo de programa por línea, p. ej., mes.exe. Las ventanas que queden encima de ellas siguen cubiertas.</value>
   </data>
   <data name="Look_Masks" xml:space="preserve">
     <value>Zonas cubiertas</value>

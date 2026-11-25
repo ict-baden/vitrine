@@ -35,7 +35,7 @@ Vitrine.exe --autostart                       started by an autostart entry (Run
 
 ## Starting and the running instance
 
-Only **one instance runs per Windows session** (mutex `Local\ICT-Baden.Vitrine.SingleInstance`). When Vitrine is already running in the session, a second start hands its request to the running instance over the local interface (`\\.\pipe\ICT-Baden.Vitrine.<session>`) and ends. It hands over only if the process serving the pipe (checked with `GetNamedPipeServerProcessId`) is the same file or another Vitrine build of the same publisher (version information: product *Vitrine*, company *ICT-Baden*) – e.g. the `.scr` copy for the screen saver. If the hand-over fails (another program owns the pipe name or the running instance does not answer), `--lock` and the screen saver lock **Windows** instead, so a lock request is never lost; a settings request is dropped:
+Only **one instance runs per Windows session** (mutex `Local\ICT-Baden.Vitrine.SingleInstance`). When Vitrine is already running in the session, a second start hands its request to the running instance over the local interface (`\\.\pipe\ICT-Baden.Vitrine.<session>`) and ends. It hands over only if the process serving the pipe (checked with `GetNamedPipeServerProcessId`) is the same file or another Vitrine build of the same publisher (version information: product *Vitrine*, company *ICT Baden GmbH*, or *ICT-Baden* as in builds up to 0.5.1) – e.g. the `.scr` copy for the screen saver. If the hand-over fails (another program owns the pipe name or the running instance does not answer), `--lock` and the screen saver lock **Windows** instead, so a lock request is never lost; a settings request is dropped:
 
 | Call | Vitrine not running | Vitrine already running |
 |---|---|---|

@@ -137,7 +137,7 @@
 
 Ein Eintrag pro Bereich: Monitor:X,Y,Breite,Höhe in Prozent des Monitors. Monitor 1 ist der Hauptmonitor, dann von links nach rechts; * steht für jeden Monitor. Beispiel: 1:0,0,30,100 verdeckt das linke Drittel von Monitor 1. Nicht lesbare Einträge werden übergangen und in der Übersicht der Einstellungen gemeldet (VIT-0015).</string>
       <string id="Appearance_RevealProcesses">Programme, die sichtbar bleiben</string>
-      <string id="Appearance_RevealProcesses_Help">Für die Darstellung „Nur ausgewählte Programme“: Alles ist verdeckt außer den Fenstern dieser Programme (Programmdatei, z. B. Chromeleon.exe). Fenster anderer Programme, die darüber liegen, bleiben verdeckt.</string>
+      <string id="Appearance_RevealProcesses_Help">Für die Darstellung „Nur ausgewählte Programme“: Alles ist verdeckt außer den Fenstern dieser Programme (Programmdatei, z. B. mes.exe). Fenster anderer Programme, die darüber liegen, bleiben verdeckt.</string>
       <string id="Entra_AuthenticationContext">Authentifizierungskontext</string>
       <string id="Entra_AuthenticationContext_Help">Authentifizierungskontext für bedingten Zugriff (c1 bis c99), den Vitrine bei jeder Anmeldung mit Microsoft Entra ID anfordert. Mit einer Richtlinie für bedingten Zugriff zu diesem Kontext kann Microsoft Entra ID eine bestimmte Authentifizierungsstärke verlangen, z. B. Passkeys (FIDO2). Leer = keiner. Jeder andere Wert lässt Vitrine die Microsoft-Anmeldung ablehnen (VIT-0116), statt ohne ihn anzumelden.</string>
       <string id="Entra_SignatureAuthenticationContext">Authentifizierungskontext für Signaturen</string>
