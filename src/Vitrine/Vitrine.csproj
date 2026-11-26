@@ -45,15 +45,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client" Version="[4.84.1]" />
     <!-- Windows-Dienst „ICT-Baden Vitrine“ (Vitrine.exe mit Schalter service): ServiceBase mit Sitzungsereignissen -->
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.13" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="11.0.0" />
     <!-- Eigenes Anmeldefenster für Microsoft (Standard seit 2026-10-27, statt WAM): WebView2-Steuerelement mit Profil nur
          für den einen Versuch. Lizenz aus dem Paket (nuspec <license type="file">LICENSE.txt</license>): BSD-artig
          (Weitergabe als Binärdatei mit Copyright-Hinweis erlaubt), auch für WebView2Loader.dll; Text in
          THIRD-PARTY-NOTICES.txt. Die WebView2-Laufzeit selbst gehört zu Windows und wird nicht mitgeliefert. -->
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4258.31" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4370.26" />
     <!-- Sicherheitsschlüssel im Active Directory (Fido.Store = ActiveDirectory): LDAP mit Negotiate, Signieren und
          Verschlüsseln. Microsoft, Lizenzausdruck MIT (nuspec); Eintrag in THIRD-PARTY-NOTICES.txt. -->
-    <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.13" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="11.0.0" />
   </ItemGroup>
   <!-- WebView2Loader.dll wie msalruntime.dll nur über die Laufzeit-Assets des Pakets (neben Vitrine.exe, in der Einzeldatei
        eingebettet), nicht zusätzlich als Kopie unter runtimes\<arch>\native für alle drei Architekturen. Die XML-Doku der
